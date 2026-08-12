@@ -9,46 +9,4 @@ package app.rappeloids.protos.v1;
 public interface ListUsersRequestOrBuilder extends
     // @@protoc_insertion_point(interface_extends:rappeloids.v1.ListUsersRequest)
     com.google.protobuf.MessageOrBuilder {
-
-  /**
-   * <code>int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The pageSize.
-   */
-  int getPageSize();
-
-  /**
-   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The pageToken.
-   */
-  java.lang.String getPageToken();
-  /**
-   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for pageToken.
-   */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
-
-  /**
-   * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The filter.
-   */
-  java.lang.String getFilter();
-  /**
-   * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for filter.
-   */
-  com.google.protobuf.ByteString
-      getFilterBytes();
-
-  /**
-   * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The orderBy.
-   */
-  java.lang.String getOrderBy();
-  /**
-   * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for orderBy.
-   */
-  com.google.protobuf.ByteString
-      getOrderByBytes();
 }

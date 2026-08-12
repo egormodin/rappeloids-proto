@@ -87,25 +87,21 @@ public final class Users extends com.google.protobuf.GeneratedFile {
       "me\030\001 \001(\tB\033\340A\002\372A\025\n\023rappeloids.app/User\"q\n" +
       "\021UpdateUserRequest\022&\n\004user\030\001 \001(\0132\023.rappe" +
       "loids.v1.UserB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132" +
-      "\032.google.protobuf.FieldMaskB\003\340A\001\"o\n\020List" +
-      "UsersRequest\022\026\n\tpage_size\030\001 \001(\005B\003\340A\001\022\027\n\n" +
-      "page_token\030\002 \001(\tB\003\340A\001\022\023\n\006filter\030\003 \001(\tB\003\340" +
-      "A\001\022\025\n\010order_by\030\004 \001(\tB\003\340A\001\"d\n\021ListUsersRe" +
-      "sponse\022\"\n\005users\030\001 \003(\0132\023.rappeloids.v1.Us" +
-      "er\022\027\n\017next_page_token\030\002 \001(\t\022\022\n\ntotal_siz" +
-      "e\030\003 \001(\0052\274\003\n\014UsersService\022`\n\007GetUser\022\035.ra" +
-      "ppeloids.v1.GetUserRequest\032\023.rappeloids." +
-      "v1.User\"!\332A\004name\202\323\344\223\002\024\022\022/v1/{name=users/" +
-      "*}\022Q\n\014GetMyProfile\022\026.google.protobuf.Emp" +
-      "ty\032\023.rappeloids.v1.User\"\024\202\323\344\223\002\016\022\014/v1/use" +
-      "rs:me\022}\n\nUpdateUser\022 .rappeloids.v1.Upda" +
-      "teUserRequest\032\023.rappeloids.v1.User\"8\332A\020u" +
-      "ser,update_mask\202\323\344\223\002\0372\027/v1/{user.name=us" +
-      "ers/*}:\004user\022a\n\tListUsers\022\037.rappeloids.v" +
-      "1.ListUsersRequest\032 .rappeloids.v1.ListU" +
-      "sersResponse\"\021\202\323\344\223\002\013\022\t/v1/users\032\025\312A\022api." +
-      "rappeloids.appB\034\n\030app.rappeloids.protos." +
-      "v1P\001b\006proto3"
+      "\032.google.protobuf.FieldMaskB\003\340A\001\"\022\n\020List" +
+      "UsersRequest\"7\n\021ListUsersResponse\022\"\n\005use" +
+      "rs\030\001 \003(\0132\023.rappeloids.v1.User2\274\003\n\014UsersS" +
+      "ervice\022`\n\007GetUser\022\035.rappeloids.v1.GetUse" +
+      "rRequest\032\023.rappeloids.v1.User\"!\332A\004name\202\323" +
+      "\344\223\002\024\022\022/v1/{name=users/*}\022Q\n\014GetMyProfile" +
+      "\022\026.google.protobuf.Empty\032\023.rappeloids.v1" +
+      ".User\"\024\202\323\344\223\002\016\022\014/v1/users:me\022}\n\nUpdateUse" +
+      "r\022 .rappeloids.v1.UpdateUserRequest\032\023.ra" +
+      "ppeloids.v1.User\"8\332A\020user,update_mask\202\323\344" +
+      "\223\002\0372\027/v1/{user.name=users/*}:\004user\022a\n\tLi" +
+      "stUsers\022\037.rappeloids.v1.ListUsersRequest" +
+      "\032 .rappeloids.v1.ListUsersResponse\"\021\202\323\344\223" +
+      "\002\013\022\t/v1/users\032\025\312A\022api.rappeloids.appB\034\n\030" +
+      "app.rappeloids.protos.v1P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -147,13 +143,13 @@ public final class Users extends com.google.protobuf.GeneratedFile {
     internal_static_rappeloids_v1_ListUsersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_rappeloids_v1_ListUsersRequest_descriptor,
-        new java.lang.String[] { "PageSize", "PageToken", "Filter", "OrderBy", });
+        new java.lang.String[] { });
     internal_static_rappeloids_v1_ListUsersResponse_descriptor =
       getDescriptor().getMessageType(4);
     internal_static_rappeloids_v1_ListUsersResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_rappeloids_v1_ListUsersResponse_descriptor,
-        new java.lang.String[] { "Users", "NextPageToken", "TotalSize", });
+        new java.lang.String[] { "Users", });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();

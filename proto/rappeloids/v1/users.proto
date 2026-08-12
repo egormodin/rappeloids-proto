@@ -103,15 +103,8 @@ message UpdateUserRequest {
   google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
-message ListUsersRequest {
-  int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
-  string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
-  string filter = 3 [(google.api.field_behavior) = OPTIONAL];
-  string order_by = 4 [(google.api.field_behavior) = OPTIONAL];
-}
+message ListUsersRequest {}
 
 message ListUsersResponse {
   repeated User users = 1;
-  string next_page_token = 2;
-  int32 total_size = 3;
 }

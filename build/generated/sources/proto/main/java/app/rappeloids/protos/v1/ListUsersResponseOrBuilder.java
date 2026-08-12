@@ -33,22 +33,4 @@ public interface ListUsersResponseOrBuilder extends
    */
   app.rappeloids.protos.v1.UserOrBuilder getUsersOrBuilder(
       int index);
-
-  /**
-   * <code>string next_page_token = 2;</code>
-   * @return The nextPageToken.
-   */
-  java.lang.String getNextPageToken();
-  /**
-   * <code>string next_page_token = 2;</code>
-   * @return The bytes for nextPageToken.
-   */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
-
-  /**
-   * <code>int32 total_size = 3;</code>
-   * @return The totalSize.
-   */
-  int getTotalSize();
 }
