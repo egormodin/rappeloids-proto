@@ -135,24 +135,31 @@ public object UserKt {
 
     /**
      * ```
-     * Assigned security role ("user", "admin").
+     * Assigned security role.
      * ```
      *
-     * `string role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];`
+     * `.rappeloids.v1.User.Role role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];`
      */
-    public var role: kotlin.String
+    public var role: app.rappeloids.protos.v1.User.Role
       @kotlin.jvm.JvmName("getRole")
         get() = _builder.role
       @kotlin.jvm.JvmName("setRole")
         set(value) {
         _builder.role = value
       }
+    public var roleValue: kotlin.Int
+      @kotlin.jvm.JvmName("getRoleValue")
+        get() = _builder.roleValue
+      @kotlin.jvm.JvmName("setRoleValue")
+        set(value) {
+        _builder.roleValue = value
+      }
     /**
      * ```
-     * Assigned security role ("user", "admin").
+     * Assigned security role.
      * ```
      *
-     * `string role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];`
+     * `.rappeloids.v1.User.Role role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];`
      */
     public fun clearRole() {
       _builder.clearRole()

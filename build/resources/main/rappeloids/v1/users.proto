@@ -58,6 +58,13 @@ message User {
     singular: "user"
   };
 
+  // Assigned security role.
+  enum Role {
+    ROLE_UNSPECIFIED = 0;
+    ROLE_USER = 1;
+    ROLE_ADMIN = 2;
+  }
+
   // Resource name: "users/{user_id}"
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
@@ -70,8 +77,8 @@ message User {
   // Profile avatar photo URL.
   string avatar_url = 5 [(google.api.field_behavior) = OPTIONAL];
 
-  // Assigned security role ("user", "admin").
-  string role = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Assigned security role.
+  Role role = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // User preferences map.
   map<string, string> preferences = 7 [(google.api.field_behavior) = OPTIONAL];

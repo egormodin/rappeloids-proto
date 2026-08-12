@@ -92,23 +92,22 @@ public interface UserOrBuilder extends
 
   /**
    * <pre>
-   * Assigned security role ("user", "admin").
+   * Assigned security role.
    * </pre>
    *
-   * <code>string role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The role.
+   * <code>.rappeloids.v1.User.Role role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The enum numeric value on the wire for role.
    */
-  java.lang.String getRole();
+  int getRoleValue();
   /**
    * <pre>
-   * Assigned security role ("user", "admin").
+   * Assigned security role.
    * </pre>
    *
-   * <code>string role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The bytes for role.
+   * <code>.rappeloids.v1.User.Role role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The role.
    */
-  com.google.protobuf.ByteString
-      getRoleBytes();
+  app.rappeloids.protos.v1.User.Role getRole();
 
   /**
    * <pre>

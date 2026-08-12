@@ -71,39 +71,41 @@ public final class Users extends com.google.protobuf.GeneratedFile {
       "vior.proto\032\031google/api/resource.proto\032\033g" +
       "oogle/protobuf/empty.proto\032 google/proto" +
       "buf/field_mask.proto\032\037google/protobuf/ti" +
-      "mestamp.proto\"\211\003\n\004User\022\021\n\004name\030\001 \001(\tB\003\340A" +
+      "mestamp.proto\"\340\003\n\004User\022\021\n\004name\030\001 \001(\tB\003\340A" +
       "\010\022\022\n\005email\030\003 \001(\tB\003\340A\002\022\031\n\014display_name\030\004 " +
-      "\001(\tB\003\340A\002\022\027\n\navatar_url\030\005 \001(\tB\003\340A\001\022\021\n\004rol" +
-      "e\030\006 \001(\tB\003\340A\003\022>\n\013preferences\030\007 \003(\0132$.rapp" +
-      "eloids.v1.User.PreferencesEntryB\003\340A\001\0224\n\013" +
-      "create_time\030\010 \001(\0132\032.google.protobuf.Time" +
-      "stampB\003\340A\003\0224\n\013update_time\030\t \001(\0132\032.google" +
-      ".protobuf.TimestampB\003\340A\003\0322\n\020PreferencesE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:3\352A" +
-      "0\n\023rappeloids.app/User\022\014users/{user}*\005us" +
-      "ers2\004user\";\n\016GetUserRequest\022)\n\004name\030\001 \001(" +
-      "\tB\033\340A\002\372A\025\n\023rappeloids.app/User\"q\n\021Update" +
-      "UserRequest\022&\n\004user\030\001 \001(\0132\023.rappeloids.v" +
-      "1.UserB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.googl" +
-      "e.protobuf.FieldMaskB\003\340A\001\"o\n\020ListUsersRe" +
-      "quest\022\026\n\tpage_size\030\001 \001(\005B\003\340A\001\022\027\n\npage_to" +
-      "ken\030\002 \001(\tB\003\340A\001\022\023\n\006filter\030\003 \001(\tB\003\340A\001\022\025\n\010o" +
-      "rder_by\030\004 \001(\tB\003\340A\001\"d\n\021ListUsersResponse\022" +
-      "\"\n\005users\030\001 \003(\0132\023.rappeloids.v1.User\022\027\n\017n" +
-      "ext_page_token\030\002 \001(\t\022\022\n\ntotal_size\030\003 \001(\005" +
-      "2\274\003\n\014UsersService\022`\n\007GetUser\022\035.rappeloid" +
-      "s.v1.GetUserRequest\032\023.rappeloids.v1.User" +
-      "\"!\332A\004name\202\323\344\223\002\024\022\022/v1/{name=users/*}\022Q\n\014G" +
-      "etMyProfile\022\026.google.protobuf.Empty\032\023.ra" +
-      "ppeloids.v1.User\"\024\202\323\344\223\002\016\022\014/v1/users:me\022}" +
-      "\n\nUpdateUser\022 .rappeloids.v1.UpdateUserR" +
-      "equest\032\023.rappeloids.v1.User\"8\332A\020user,upd" +
-      "ate_mask\202\323\344\223\002\0372\027/v1/{user.name=users/*}:" +
-      "\004user\022a\n\tListUsers\022\037.rappeloids.v1.ListU" +
-      "sersRequest\032 .rappeloids.v1.ListUsersRes" +
-      "ponse\"\021\202\323\344\223\002\013\022\t/v1/users\032\025\312A\022api.rappelo" +
-      "ids.appB\034\n\030app.rappeloids.protos.v1P\001b\006p" +
-      "roto3"
+      "\001(\tB\003\340A\002\022\027\n\navatar_url\030\005 \001(\tB\003\340A\001\022+\n\004rol" +
+      "e\030\006 \001(\0162\030.rappeloids.v1.User.RoleB\003\340A\003\022>" +
+      "\n\013preferences\030\007 \003(\0132$.rappeloids.v1.User" +
+      ".PreferencesEntryB\003\340A\001\0224\n\013create_time\030\010 " +
+      "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013" +
+      "update_time\030\t \001(\0132\032.google.protobuf.Time" +
+      "stampB\003\340A\003\0322\n\020PreferencesEntry\022\013\n\003key\030\001 " +
+      "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\";\n\004Role\022\024\n\020ROLE_U" +
+      "NSPECIFIED\020\000\022\r\n\tROLE_USER\020\001\022\016\n\nROLE_ADMI" +
+      "N\020\002:3\352A0\n\023rappeloids.app/User\022\014users/{us" +
+      "er}*\005users2\004user\";\n\016GetUserRequest\022)\n\004na" +
+      "me\030\001 \001(\tB\033\340A\002\372A\025\n\023rappeloids.app/User\"q\n" +
+      "\021UpdateUserRequest\022&\n\004user\030\001 \001(\0132\023.rappe" +
+      "loids.v1.UserB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132" +
+      "\032.google.protobuf.FieldMaskB\003\340A\001\"o\n\020List" +
+      "UsersRequest\022\026\n\tpage_size\030\001 \001(\005B\003\340A\001\022\027\n\n" +
+      "page_token\030\002 \001(\tB\003\340A\001\022\023\n\006filter\030\003 \001(\tB\003\340" +
+      "A\001\022\025\n\010order_by\030\004 \001(\tB\003\340A\001\"d\n\021ListUsersRe" +
+      "sponse\022\"\n\005users\030\001 \003(\0132\023.rappeloids.v1.Us" +
+      "er\022\027\n\017next_page_token\030\002 \001(\t\022\022\n\ntotal_siz" +
+      "e\030\003 \001(\0052\274\003\n\014UsersService\022`\n\007GetUser\022\035.ra" +
+      "ppeloids.v1.GetUserRequest\032\023.rappeloids." +
+      "v1.User\"!\332A\004name\202\323\344\223\002\024\022\022/v1/{name=users/" +
+      "*}\022Q\n\014GetMyProfile\022\026.google.protobuf.Emp" +
+      "ty\032\023.rappeloids.v1.User\"\024\202\323\344\223\002\016\022\014/v1/use" +
+      "rs:me\022}\n\nUpdateUser\022 .rappeloids.v1.Upda" +
+      "teUserRequest\032\023.rappeloids.v1.User\"8\332A\020u" +
+      "ser,update_mask\202\323\344\223\002\0372\027/v1/{user.name=us" +
+      "ers/*}:\004user\022a\n\tListUsers\022\037.rappeloids.v" +
+      "1.ListUsersRequest\032 .rappeloids.v1.ListU" +
+      "sersResponse\"\021\202\323\344\223\002\013\022\t/v1/users\032\025\312A\022api." +
+      "rappeloids.appB\034\n\030app.rappeloids.protos." +
+      "v1P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

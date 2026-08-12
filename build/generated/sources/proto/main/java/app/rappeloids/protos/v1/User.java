@@ -36,7 +36,7 @@ private static final long serialVersionUID = 0L;
     email_ = "";
     displayName_ = "";
     avatarUrl_ = "";
-    role_ = "";
+    role_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -62,6 +62,136 @@ private static final long serialVersionUID = 0L;
     return app.rappeloids.protos.v1.Users.internal_static_rappeloids_v1_User_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             app.rappeloids.protos.v1.User.class, app.rappeloids.protos.v1.User.Builder.class);
+  }
+
+  /**
+   * <pre>
+   * Assigned security role.
+   * </pre>
+   *
+   * Protobuf enum {@code rappeloids.v1.User.Role}
+   */
+  public enum Role
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>ROLE_UNSPECIFIED = 0;</code>
+     */
+    ROLE_UNSPECIFIED(0),
+    /**
+     * <code>ROLE_USER = 1;</code>
+     */
+    ROLE_USER(1),
+    /**
+     * <code>ROLE_ADMIN = 2;</code>
+     */
+    ROLE_ADMIN(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 33,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        "Role");
+    }
+    /**
+     * <code>ROLE_UNSPECIFIED = 0;</code>
+     */
+    public static final int ROLE_UNSPECIFIED_VALUE = 0;
+    /**
+     * <code>ROLE_USER = 1;</code>
+     */
+    public static final int ROLE_USER_VALUE = 1;
+    /**
+     * <code>ROLE_ADMIN = 2;</code>
+     */
+    public static final int ROLE_ADMIN_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Role valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Role forNumber(int value) {
+      switch (value) {
+        case 0: return ROLE_UNSPECIFIED;
+        case 1: return ROLE_USER;
+        case 2: return ROLE_ADMIN;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Role>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Role> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Role>() {
+            public Role findValueByNumber(int number) {
+              return Role.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return app.rappeloids.protos.v1.User.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Role[] VALUES = values();
+
+    public static Role valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Role(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:rappeloids.v1.User.Role)
   }
 
   private int bitField0_;
@@ -254,50 +384,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ROLE_FIELD_NUMBER = 6;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object role_ = "";
+  private int role_ = 0;
   /**
    * <pre>
-   * Assigned security role ("user", "admin").
+   * Assigned security role.
    * </pre>
    *
-   * <code>string role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The role.
+   * <code>.rappeloids.v1.User.Role role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The enum numeric value on the wire for role.
    */
-  @java.lang.Override
-  public java.lang.String getRole() {
-    java.lang.Object ref = role_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      role_ = s;
-      return s;
-    }
+  @java.lang.Override public int getRoleValue() {
+    return role_;
   }
   /**
    * <pre>
-   * Assigned security role ("user", "admin").
+   * Assigned security role.
    * </pre>
    *
-   * <code>string role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The bytes for role.
+   * <code>.rappeloids.v1.User.Role role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The role.
    */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getRoleBytes() {
-    java.lang.Object ref = role_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      role_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  @java.lang.Override public app.rappeloids.protos.v1.User.Role getRole() {
+    app.rappeloids.protos.v1.User.Role result = app.rappeloids.protos.v1.User.Role.forNumber(role_);
+    return result == null ? app.rappeloids.protos.v1.User.Role.UNRECOGNIZED : result;
   }
 
   public static final int PREFERENCES_FIELD_NUMBER = 7;
@@ -497,8 +606,8 @@ java.lang.String defaultValue) {
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(avatarUrl_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, avatarUrl_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(role_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 6, role_);
+    if (role_ != app.rappeloids.protos.v1.User.Role.ROLE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(6, role_);
     }
     com.google.protobuf.GeneratedMessage
       .serializeStringMapTo(
@@ -533,8 +642,9 @@ java.lang.String defaultValue) {
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(avatarUrl_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, avatarUrl_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(role_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, role_);
+    if (role_ != app.rappeloids.protos.v1.User.Role.ROLE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(6, role_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
          : internalGetPreferences().getMap().entrySet()) {
@@ -577,8 +687,7 @@ java.lang.String defaultValue) {
         .equals(other.getDisplayName())) return false;
     if (!getAvatarUrl()
         .equals(other.getAvatarUrl())) return false;
-    if (!getRole()
-        .equals(other.getRole())) return false;
+    if (role_ != other.role_) return false;
     if (!internalGetPreferences().equals(
         other.internalGetPreferences())) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
@@ -611,7 +720,7 @@ java.lang.String defaultValue) {
     hash = (37 * hash) + AVATAR_URL_FIELD_NUMBER;
     hash = (53 * hash) + getAvatarUrl().hashCode();
     hash = (37 * hash) + ROLE_FIELD_NUMBER;
-    hash = (53 * hash) + getRole().hashCode();
+    hash = (53 * hash) + role_;
     if (!internalGetPreferences().getMap().isEmpty()) {
       hash = (37 * hash) + PREFERENCES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetPreferences().hashCode();
@@ -792,7 +901,7 @@ java.lang.String defaultValue) {
       email_ = "";
       displayName_ = "";
       avatarUrl_ = "";
-      role_ = "";
+      role_ = 0;
       internalGetMutablePreferences().clear();
       createTime_ = null;
       if (createTimeBuilder_ != null) {
@@ -904,10 +1013,8 @@ java.lang.String defaultValue) {
         bitField0_ |= 0x00000008;
         onChanged();
       }
-      if (!other.getRole().isEmpty()) {
-        role_ = other.role_;
-        bitField0_ |= 0x00000010;
-        onChanged();
+      if (other.role_ != 0) {
+        setRoleValue(other.getRoleValue());
       }
       internalGetMutablePreferences().mergeFrom(
           other.internalGetPreferences());
@@ -964,11 +1071,11 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00000008;
               break;
             } // case 42
-            case 50: {
-              role_ = input.readStringRequireUtf8();
+            case 48: {
+              role_ = input.readEnum();
               bitField0_ |= 0x00000010;
               break;
-            } // case 50
+            } // case 48
             case 58: {
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
               preferences__ = input.readMessage(
@@ -1377,94 +1484,73 @@ java.lang.String defaultValue) {
       return this;
     }
 
-    private java.lang.Object role_ = "";
+    private int role_ = 0;
     /**
      * <pre>
-     * Assigned security role ("user", "admin").
+     * Assigned security role.
      * </pre>
      *
-     * <code>string role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.rappeloids.v1.User.Role role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The enum numeric value on the wire for role.
+     */
+    @java.lang.Override public int getRoleValue() {
+      return role_;
+    }
+    /**
+     * <pre>
+     * Assigned security role.
+     * </pre>
+     *
+     * <code>.rappeloids.v1.User.Role role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The enum numeric value on the wire for role to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoleValue(int value) {
+      role_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Assigned security role.
+     * </pre>
+     *
+     * <code>.rappeloids.v1.User.Role role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The role.
      */
-    public java.lang.String getRole() {
-      java.lang.Object ref = role_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        role_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public app.rappeloids.protos.v1.User.Role getRole() {
+      app.rappeloids.protos.v1.User.Role result = app.rappeloids.protos.v1.User.Role.forNumber(role_);
+      return result == null ? app.rappeloids.protos.v1.User.Role.UNRECOGNIZED : result;
     }
     /**
      * <pre>
-     * Assigned security role ("user", "admin").
+     * Assigned security role.
      * </pre>
      *
-     * <code>string role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The bytes for role.
-     */
-    public com.google.protobuf.ByteString
-        getRoleBytes() {
-      java.lang.Object ref = role_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        role_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Assigned security role ("user", "admin").
-     * </pre>
-     *
-     * <code>string role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.rappeloids.v1.User.Role role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The role to set.
      * @return This builder for chaining.
      */
-    public Builder setRole(
-        java.lang.String value) {
+    public Builder setRole(app.rappeloids.protos.v1.User.Role value) {
       if (value == null) { throw new NullPointerException(); }
-      role_ = value;
       bitField0_ |= 0x00000010;
+      role_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Assigned security role ("user", "admin").
+     * Assigned security role.
      * </pre>
      *
-     * <code>string role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.rappeloids.v1.User.Role role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearRole() {
-      role_ = getDefaultInstance().getRole();
       bitField0_ = (bitField0_ & ~0x00000010);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Assigned security role ("user", "admin").
-     * </pre>
-     *
-     * <code>string role = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param value The bytes for role to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRoleBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      role_ = value;
-      bitField0_ |= 0x00000010;
+      role_ = 0;
       onChanged();
       return this;
     }
