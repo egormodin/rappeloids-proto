@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+package rappeloids.v1;
+
+option java_multiple_files = true;
+option java_package = "app.rappeloids.protos.v1";
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/field_behavior.proto";
+import "google/protobuf/empty.proto";
+
+// Service managing historical canyon descent logs and expedition history.
+service HistoryService {
+  option (google.api.default_host) = "api.rappeloids.app";
+
+  // Lists all historical canyon descent records with user participation.
+  rpc ListHistory(ListHistoryRequest) returns (ListHistoryResponse) {
+    option (google.api.http) = {
+      get: "/v1/history"
+    };
+  }
+
+  // Atomically applies batch updates/inserts/deletions to history descents, trips, and participant statuses.
+  rpc BatchUpdateHistory(BatchUpdateHistoryRequest) returns (BatchUpdateHistoryResponse) {
+    option (google.api.http) = {
+      post: "/v1/history:batchUpdate"
+      body: "*"
+    };
+  }
+}
+
+message HistoryEntry {
+  string id = 1 [(google.api.field_behavior) = REQUIRED];
+  string trip_id = 2 [(google.api.field_behavior) = OPTIONAL];
+  string canyon_id = 3 [(google.api.field_behavior) = REQUIRED];
+  string canyon_name = 4 [(google.api.field_behavior) = OPTIONAL];
+  string date = 5 [(google.api.field_behavior) = OPTIONAL];
+  int32 order = 6 [(google.api.field_behavior) = OPTIONAL];
+  string photos_link = 7 [(google.api.field_behavior) = OPTIONAL];
+  map<string, string> user_statuses = 8 [(google.api.field_behavior) = OPTIONAL];
+}
+
+message ListHistoryRequest {
+  int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
+  string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
+  string filter = 3 [(google.api.field_behavior) = OPTIONAL];
+}
+
+message ListHistoryResponse {
+  repeated HistoryEntry entries = 1;
+  string next_page_token = 2;
+  int32 total_size = 3;
+}
+
+message HistoryEntryUpdate {
+  string id = 1 [(google.api.field_behavior) = REQUIRED];
+  string trip_id = 2 [(google.api.field_behavior) = OPTIONAL];
+  string canyon_id = 3 [(google.api.field_behavior) = REQUIRED];
+  string date = 4 [(google.api.field_behavior) = OPTIONAL];
+  int32 order = 5 [(google.api.field_behavior) = OPTIONAL];
+  string photos_link = 6 [(google.api.field_behavior) = OPTIONAL];
+  map<string, string> user_statuses = 7 [(google.api.field_behavior) = OPTIONAL];
+}
+
+message BatchUpdateHistoryRequest {
+  repeated HistoryEntryUpdate upserts = 1;
+  repeated string delete_ids = 2;
+}
+
+message BatchUpdateHistoryResponse {
+  int32 updated_count = 1;
+  repeated HistoryEntry entries = 2;
+}
