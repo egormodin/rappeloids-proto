@@ -36,11 +36,6 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     displayName_ = "";
     parentRegion_ = "";
-    country_ = "";
-    season_ = "";
-    description_ = "";
-    imageUrl_ = "";
-    link_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -56,7 +51,6 @@ private static final long serialVersionUID = 0L;
             app.rappeloids.protos.v1.Region.class, app.rappeloids.protos.v1.Region.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
@@ -247,345 +241,19 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int COUNTRY_FIELD_NUMBER = 5;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object country_ = "";
-  /**
-   * <pre>
-   * Country where the region is located.
-   * </pre>
-   *
-   * <code>string country = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The country.
-   */
-  @java.lang.Override
-  public java.lang.String getCountry() {
-    java.lang.Object ref = country_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      country_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Country where the region is located.
-   * </pre>
-   *
-   * <code>string country = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for country.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getCountryBytes() {
-    java.lang.Object ref = country_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      country_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int SEASON_FIELD_NUMBER = 6;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object season_ = "";
-  /**
-   * <pre>
-   * Primary season for canyoneering (e.g. "Spring to Autumn").
-   * </pre>
-   *
-   * <code>string season = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The season.
-   */
-  @java.lang.Override
-  public java.lang.String getSeason() {
-    java.lang.Object ref = season_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      season_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Primary season for canyoneering (e.g. "Spring to Autumn").
-   * </pre>
-   *
-   * <code>string season = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for season.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSeasonBytes() {
-    java.lang.Object ref = season_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      season_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DESCRIPTION_FIELD_NUMBER = 7;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object description_ = "";
-  /**
-   * <pre>
-   * Descriptive beta and overview of the area.
-   * </pre>
-   *
-   * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The description.
-   */
-  @java.lang.Override
-  public java.lang.String getDescription() {
-    java.lang.Object ref = description_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      description_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Descriptive beta and overview of the area.
-   * </pre>
-   *
-   * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for description.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getDescriptionBytes() {
-    java.lang.Object ref = description_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      description_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int IMAGE_URL_FIELD_NUMBER = 8;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object imageUrl_ = "";
-  /**
-   * <pre>
-   * Primary banner or showcase image URL.
-   * </pre>
-   *
-   * <code>string image_url = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The imageUrl.
-   */
-  @java.lang.Override
-  public java.lang.String getImageUrl() {
-    java.lang.Object ref = imageUrl_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      imageUrl_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Primary banner or showcase image URL.
-   * </pre>
-   *
-   * <code>string image_url = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for imageUrl.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getImageUrlBytes() {
-    java.lang.Object ref = imageUrl_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      imageUrl_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int LINK_FIELD_NUMBER = 9;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object link_ = "";
-  /**
-   * <pre>
-   * External reference link.
-   * </pre>
-   *
-   * <code>string link = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The link.
-   */
-  @java.lang.Override
-  public java.lang.String getLink() {
-    java.lang.Object ref = link_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      link_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * External reference link.
-   * </pre>
-   *
-   * <code>string link = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for link.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getLinkBytes() {
-    java.lang.Object ref = link_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      link_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int CANYON_COUNT_FIELD_NUMBER = 10;
-  private int canyonCount_ = 0;
-  /**
-   * <pre>
-   * Total count of canyons in this region.
-   * </pre>
-   *
-   * <code>int32 canyon_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The canyonCount.
-   */
-  @java.lang.Override
-  public int getCanyonCount() {
-    return canyonCount_;
-  }
-
-  public static final int HISTORY_VISIBLE_FIELD_NUMBER = 11;
+  public static final int HISTORY_VISIBLE_FIELD_NUMBER = 5;
   private boolean historyVisible_ = false;
   /**
    * <pre>
    * Whether region is visible in history views.
    * </pre>
    *
-   * <code>bool history_visible = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool history_visible = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The historyVisible.
    */
   @java.lang.Override
   public boolean getHistoryVisible() {
     return historyVisible_;
-  }
-
-  public static final int CREATE_TIME_FIELD_NUMBER = 12;
-  private com.google.protobuf.Timestamp createTime_;
-  /**
-   * <pre>
-   * Timestamp when the region was created (AIP-142).
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return Whether the createTime field is set.
-   */
-  @java.lang.Override
-  public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <pre>
-   * Timestamp when the region was created (AIP-142).
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The createTime.
-   */
-  @java.lang.Override
-  public com.google.protobuf.Timestamp getCreateTime() {
-    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
-  }
-  /**
-   * <pre>
-   * Timestamp when the region was created (AIP-142).
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
-  }
-
-  public static final int UPDATE_TIME_FIELD_NUMBER = 13;
-  private com.google.protobuf.Timestamp updateTime_;
-  /**
-   * <pre>
-   * Timestamp when the region was last updated (AIP-142).
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp update_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return Whether the updateTime field is set.
-   */
-  @java.lang.Override
-  public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   * Timestamp when the region was last updated (AIP-142).
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp update_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The updateTime.
-   */
-  @java.lang.Override
-  public com.google.protobuf.Timestamp getUpdateTime() {
-    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
-  }
-  /**
-   * <pre>
-   * Timestamp when the region was last updated (AIP-142).
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp update_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -614,32 +282,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parentRegion_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, parentRegion_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(country_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 5, country_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(season_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 6, season_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 7, description_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(imageUrl_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 8, imageUrl_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(link_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 9, link_);
-    }
-    if (canyonCount_ != 0) {
-      output.writeInt32(10, canyonCount_);
-    }
     if (historyVisible_ != false) {
-      output.writeBool(11, historyVisible_);
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(12, getCreateTime());
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(13, getUpdateTime());
+      output.writeBool(5, historyVisible_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -662,36 +306,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parentRegion_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, parentRegion_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(country_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, country_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(season_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, season_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, description_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(imageUrl_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, imageUrl_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(link_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, link_);
-    }
-    if (canyonCount_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(10, canyonCount_);
-    }
     if (historyVisible_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(11, historyVisible_);
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, getCreateTime());
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, getUpdateTime());
+        .computeBoolSize(5, historyVisible_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -716,30 +333,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDisplayName())) return false;
     if (!getParentRegion()
         .equals(other.getParentRegion())) return false;
-    if (!getCountry()
-        .equals(other.getCountry())) return false;
-    if (!getSeason()
-        .equals(other.getSeason())) return false;
-    if (!getDescription()
-        .equals(other.getDescription())) return false;
-    if (!getImageUrl()
-        .equals(other.getImageUrl())) return false;
-    if (!getLink()
-        .equals(other.getLink())) return false;
-    if (getCanyonCount()
-        != other.getCanyonCount()) return false;
     if (getHistoryVisible()
         != other.getHistoryVisible()) return false;
-    if (hasCreateTime() != other.hasCreateTime()) return false;
-    if (hasCreateTime()) {
-      if (!getCreateTime()
-          .equals(other.getCreateTime())) return false;
-    }
-    if (hasUpdateTime() != other.hasUpdateTime()) return false;
-    if (hasUpdateTime()) {
-      if (!getUpdateTime()
-          .equals(other.getUpdateTime())) return false;
-    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -759,29 +354,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + PARENT_REGION_FIELD_NUMBER;
     hash = (53 * hash) + getParentRegion().hashCode();
-    hash = (37 * hash) + COUNTRY_FIELD_NUMBER;
-    hash = (53 * hash) + getCountry().hashCode();
-    hash = (37 * hash) + SEASON_FIELD_NUMBER;
-    hash = (53 * hash) + getSeason().hashCode();
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + IMAGE_URL_FIELD_NUMBER;
-    hash = (53 * hash) + getImageUrl().hashCode();
-    hash = (37 * hash) + LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getLink().hashCode();
-    hash = (37 * hash) + CANYON_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getCanyonCount();
     hash = (37 * hash) + HISTORY_VISIBLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getHistoryVisible());
-    if (hasCreateTime()) {
-      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getCreateTime().hashCode();
-    }
-    if (hasUpdateTime()) {
-      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getUpdateTime().hashCode();
-    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -905,20 +480,13 @@ private static final long serialVersionUID = 0L;
 
     // Construct using app.rappeloids.protos.v1.Region.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessage
-              .alwaysUseFieldBuilders) {
-        internalGetCreateTimeFieldBuilder();
-        internalGetUpdateTimeFieldBuilder();
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
@@ -928,23 +496,7 @@ private static final long serialVersionUID = 0L;
       id_ = "";
       displayName_ = "";
       parentRegion_ = "";
-      country_ = "";
-      season_ = "";
-      description_ = "";
-      imageUrl_ = "";
-      link_ = "";
-      canyonCount_ = 0;
       historyVisible_ = false;
-      createTime_ = null;
-      if (createTimeBuilder_ != null) {
-        createTimeBuilder_.dispose();
-        createTimeBuilder_ = null;
-      }
-      updateTime_ = null;
-      if (updateTimeBuilder_ != null) {
-        updateTimeBuilder_.dispose();
-        updateTimeBuilder_ = null;
-      }
       return this;
     }
 
@@ -991,40 +543,8 @@ private static final long serialVersionUID = 0L;
         result.parentRegion_ = parentRegion_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.country_ = country_;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.season_ = season_;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.description_ = description_;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.imageUrl_ = imageUrl_;
-      }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.link_ = link_;
-      }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.canyonCount_ = canyonCount_;
-      }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.historyVisible_ = historyVisible_;
       }
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.createTime_ = createTimeBuilder_ == null
-            ? createTime_
-            : createTimeBuilder_.build();
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.updateTime_ = updateTimeBuilder_ == null
-            ? updateTime_
-            : updateTimeBuilder_.build();
-        to_bitField0_ |= 0x00000002;
-      }
-      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1059,42 +579,8 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000008;
         onChanged();
       }
-      if (!other.getCountry().isEmpty()) {
-        country_ = other.country_;
-        bitField0_ |= 0x00000010;
-        onChanged();
-      }
-      if (!other.getSeason().isEmpty()) {
-        season_ = other.season_;
-        bitField0_ |= 0x00000020;
-        onChanged();
-      }
-      if (!other.getDescription().isEmpty()) {
-        description_ = other.description_;
-        bitField0_ |= 0x00000040;
-        onChanged();
-      }
-      if (!other.getImageUrl().isEmpty()) {
-        imageUrl_ = other.imageUrl_;
-        bitField0_ |= 0x00000080;
-        onChanged();
-      }
-      if (!other.getLink().isEmpty()) {
-        link_ = other.link_;
-        bitField0_ |= 0x00000100;
-        onChanged();
-      }
-      if (other.getCanyonCount() != 0) {
-        setCanyonCount(other.getCanyonCount());
-      }
       if (other.getHistoryVisible() != false) {
         setHistoryVisible(other.getHistoryVisible());
-      }
-      if (other.hasCreateTime()) {
-        mergeCreateTime(other.getCreateTime());
-      }
-      if (other.hasUpdateTime()) {
-        mergeUpdateTime(other.getUpdateTime());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1142,55 +628,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 34
-            case 42: {
-              country_ = input.readStringRequireUtf8();
+            case 40: {
+              historyVisible_ = input.readBool();
               bitField0_ |= 0x00000010;
               break;
-            } // case 42
-            case 50: {
-              season_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
-              break;
-            } // case 50
-            case 58: {
-              description_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
-              break;
-            } // case 58
-            case 66: {
-              imageUrl_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
-              break;
-            } // case 66
-            case 74: {
-              link_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
-              break;
-            } // case 74
-            case 80: {
-              canyonCount_ = input.readInt32();
-              bitField0_ |= 0x00000200;
-              break;
-            } // case 80
-            case 88: {
-              historyVisible_ = input.readBool();
-              bitField0_ |= 0x00000400;
-              break;
-            } // case 88
-            case 98: {
-              input.readMessage(
-                  internalGetCreateTimeFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              bitField0_ |= 0x00000800;
-              break;
-            } // case 98
-            case 106: {
-              input.readMessage(
-                  internalGetUpdateTimeFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              bitField0_ |= 0x00001000;
-              break;
-            } // case 106
+            } // case 40
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1581,517 +1023,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object country_ = "";
-    /**
-     * <pre>
-     * Country where the region is located.
-     * </pre>
-     *
-     * <code>string country = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The country.
-     */
-    public java.lang.String getCountry() {
-      java.lang.Object ref = country_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        country_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Country where the region is located.
-     * </pre>
-     *
-     * <code>string country = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for country.
-     */
-    public com.google.protobuf.ByteString
-        getCountryBytes() {
-      java.lang.Object ref = country_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        country_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Country where the region is located.
-     * </pre>
-     *
-     * <code>string country = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The country to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCountry(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      country_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Country where the region is located.
-     * </pre>
-     *
-     * <code>string country = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCountry() {
-      country_ = getDefaultInstance().getCountry();
-      bitField0_ = (bitField0_ & ~0x00000010);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Country where the region is located.
-     * </pre>
-     *
-     * <code>string country = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for country to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCountryBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      country_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object season_ = "";
-    /**
-     * <pre>
-     * Primary season for canyoneering (e.g. "Spring to Autumn").
-     * </pre>
-     *
-     * <code>string season = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The season.
-     */
-    public java.lang.String getSeason() {
-      java.lang.Object ref = season_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        season_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Primary season for canyoneering (e.g. "Spring to Autumn").
-     * </pre>
-     *
-     * <code>string season = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for season.
-     */
-    public com.google.protobuf.ByteString
-        getSeasonBytes() {
-      java.lang.Object ref = season_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        season_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Primary season for canyoneering (e.g. "Spring to Autumn").
-     * </pre>
-     *
-     * <code>string season = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The season to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSeason(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      season_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Primary season for canyoneering (e.g. "Spring to Autumn").
-     * </pre>
-     *
-     * <code>string season = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSeason() {
-      season_ = getDefaultInstance().getSeason();
-      bitField0_ = (bitField0_ & ~0x00000020);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Primary season for canyoneering (e.g. "Spring to Autumn").
-     * </pre>
-     *
-     * <code>string season = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for season to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSeasonBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      season_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object description_ = "";
-    /**
-     * <pre>
-     * Descriptive beta and overview of the area.
-     * </pre>
-     *
-     * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The description.
-     */
-    public java.lang.String getDescription() {
-      java.lang.Object ref = description_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        description_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Descriptive beta and overview of the area.
-     * </pre>
-     *
-     * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for description.
-     */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
-      java.lang.Object ref = description_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        description_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Descriptive beta and overview of the area.
-     * </pre>
-     *
-     * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The description to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDescription(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      description_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Descriptive beta and overview of the area.
-     * </pre>
-     *
-     * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDescription() {
-      description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000040);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Descriptive beta and overview of the area.
-     * </pre>
-     *
-     * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for description to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDescriptionBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      description_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object imageUrl_ = "";
-    /**
-     * <pre>
-     * Primary banner or showcase image URL.
-     * </pre>
-     *
-     * <code>string image_url = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The imageUrl.
-     */
-    public java.lang.String getImageUrl() {
-      java.lang.Object ref = imageUrl_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        imageUrl_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Primary banner or showcase image URL.
-     * </pre>
-     *
-     * <code>string image_url = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for imageUrl.
-     */
-    public com.google.protobuf.ByteString
-        getImageUrlBytes() {
-      java.lang.Object ref = imageUrl_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        imageUrl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Primary banner or showcase image URL.
-     * </pre>
-     *
-     * <code>string image_url = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The imageUrl to set.
-     * @return This builder for chaining.
-     */
-    public Builder setImageUrl(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      imageUrl_ = value;
-      bitField0_ |= 0x00000080;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Primary banner or showcase image URL.
-     * </pre>
-     *
-     * <code>string image_url = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearImageUrl() {
-      imageUrl_ = getDefaultInstance().getImageUrl();
-      bitField0_ = (bitField0_ & ~0x00000080);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Primary banner or showcase image URL.
-     * </pre>
-     *
-     * <code>string image_url = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for imageUrl to set.
-     * @return This builder for chaining.
-     */
-    public Builder setImageUrlBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      imageUrl_ = value;
-      bitField0_ |= 0x00000080;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object link_ = "";
-    /**
-     * <pre>
-     * External reference link.
-     * </pre>
-     *
-     * <code>string link = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The link.
-     */
-    public java.lang.String getLink() {
-      java.lang.Object ref = link_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        link_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * External reference link.
-     * </pre>
-     *
-     * <code>string link = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for link.
-     */
-    public com.google.protobuf.ByteString
-        getLinkBytes() {
-      java.lang.Object ref = link_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        link_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * External reference link.
-     * </pre>
-     *
-     * <code>string link = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The link to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLink(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      link_ = value;
-      bitField0_ |= 0x00000100;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * External reference link.
-     * </pre>
-     *
-     * <code>string link = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearLink() {
-      link_ = getDefaultInstance().getLink();
-      bitField0_ = (bitField0_ & ~0x00000100);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * External reference link.
-     * </pre>
-     *
-     * <code>string link = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for link to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLinkBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      link_ = value;
-      bitField0_ |= 0x00000100;
-      onChanged();
-      return this;
-    }
-
-    private int canyonCount_ ;
-    /**
-     * <pre>
-     * Total count of canyons in this region.
-     * </pre>
-     *
-     * <code>int32 canyon_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The canyonCount.
-     */
-    @java.lang.Override
-    public int getCanyonCount() {
-      return canyonCount_;
-    }
-    /**
-     * <pre>
-     * Total count of canyons in this region.
-     * </pre>
-     *
-     * <code>int32 canyon_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param value The canyonCount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCanyonCount(int value) {
-
-      canyonCount_ = value;
-      bitField0_ |= 0x00000200;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Total count of canyons in this region.
-     * </pre>
-     *
-     * <code>int32 canyon_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCanyonCount() {
-      bitField0_ = (bitField0_ & ~0x00000200);
-      canyonCount_ = 0;
-      onChanged();
-      return this;
-    }
-
     private boolean historyVisible_ ;
     /**
      * <pre>
      * Whether region is visible in history views.
      * </pre>
      *
-     * <code>bool history_visible = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool history_visible = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The historyVisible.
      */
     @java.lang.Override
@@ -2103,14 +1041,14 @@ private static final long serialVersionUID = 0L;
      * Whether region is visible in history views.
      * </pre>
      *
-     * <code>bool history_visible = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool history_visible = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The historyVisible to set.
      * @return This builder for chaining.
      */
     public Builder setHistoryVisible(boolean value) {
 
       historyVisible_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2119,328 +1057,14 @@ private static final long serialVersionUID = 0L;
      * Whether region is visible in history views.
      * </pre>
      *
-     * <code>bool history_visible = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool history_visible = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearHistoryVisible() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000010);
       historyVisible_ = false;
       onChanged();
       return this;
-    }
-
-    private com.google.protobuf.Timestamp createTime_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
-    /**
-     * <pre>
-     * Timestamp when the region was created (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return Whether the createTime field is set.
-     */
-    public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000800) != 0);
-    }
-    /**
-     * <pre>
-     * Timestamp when the region was created (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The createTime.
-     */
-    public com.google.protobuf.Timestamp getCreateTime() {
-      if (createTimeBuilder_ == null) {
-        return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
-      } else {
-        return createTimeBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Timestamp when the region was created (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
-      if (createTimeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        createTime_ = value;
-      } else {
-        createTimeBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000800;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Timestamp when the region was created (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public Builder setCreateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (createTimeBuilder_ == null) {
-        createTime_ = builderForValue.build();
-      } else {
-        createTimeBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000800;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Timestamp when the region was created (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
-      if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0) &&
-          createTime_ != null &&
-          createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          getCreateTimeBuilder().mergeFrom(value);
-        } else {
-          createTime_ = value;
-        }
-      } else {
-        createTimeBuilder_.mergeFrom(value);
-      }
-      if (createTime_ != null) {
-        bitField0_ |= 0x00000800;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Timestamp when the region was created (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000800);
-      createTime_ = null;
-      if (createTimeBuilder_ != null) {
-        createTimeBuilder_.dispose();
-        createTimeBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Timestamp when the region was created (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000800;
-      onChanged();
-      return internalGetCreateTimeFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Timestamp when the region was created (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-      if (createTimeBuilder_ != null) {
-        return createTimeBuilder_.getMessageOrBuilder();
-      } else {
-        return createTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
-      }
-    }
-    /**
-     * <pre>
-     * Timestamp when the region was created (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp create_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-        internalGetCreateTimeFieldBuilder() {
-      if (createTimeBuilder_ == null) {
-        createTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getCreateTime(),
-                getParentForChildren(),
-                isClean());
-        createTime_ = null;
-      }
-      return createTimeBuilder_;
-    }
-
-    private com.google.protobuf.Timestamp updateTime_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
-    /**
-     * <pre>
-     * Timestamp when the region was last updated (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp update_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return Whether the updateTime field is set.
-     */
-    public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00001000) != 0);
-    }
-    /**
-     * <pre>
-     * Timestamp when the region was last updated (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp update_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The updateTime.
-     */
-    public com.google.protobuf.Timestamp getUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
-      } else {
-        return updateTimeBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Timestamp when the region was last updated (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp update_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
-      if (updateTimeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        updateTime_ = value;
-      } else {
-        updateTimeBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00001000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Timestamp when the region was last updated (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp update_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public Builder setUpdateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = builderForValue.build();
-      } else {
-        updateTimeBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00001000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Timestamp when the region was last updated (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp update_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
-      if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0) &&
-          updateTime_ != null &&
-          updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          getUpdateTimeBuilder().mergeFrom(value);
-        } else {
-          updateTime_ = value;
-        }
-      } else {
-        updateTimeBuilder_.mergeFrom(value);
-      }
-      if (updateTime_ != null) {
-        bitField0_ |= 0x00001000;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Timestamp when the region was last updated (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp update_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00001000);
-      updateTime_ = null;
-      if (updateTimeBuilder_ != null) {
-        updateTimeBuilder_.dispose();
-        updateTimeBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Timestamp when the region was last updated (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp update_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00001000;
-      onChanged();
-      return internalGetUpdateTimeFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Timestamp when the region was last updated (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp update_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-      if (updateTimeBuilder_ != null) {
-        return updateTimeBuilder_.getMessageOrBuilder();
-      } else {
-        return updateTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
-      }
-    }
-    /**
-     * <pre>
-     * Timestamp when the region was last updated (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp update_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-        internalGetUpdateTimeFieldBuilder() {
-      if (updateTimeBuilder_ == null) {
-        updateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getUpdateTime(),
-                getParentForChildren(),
-                isClean());
-        updateTime_ = null;
-      }
-      return updateTimeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:rappeloids.v1.Region)

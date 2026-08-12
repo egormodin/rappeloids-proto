@@ -84,32 +84,8 @@ message Region {
     (google.api.resource_reference).type = "rappeloids.app/Region"
   ];
 
-  // Country where the region is located.
-  string country = 5 [(google.api.field_behavior) = OPTIONAL];
-
-  // Primary season for canyoneering (e.g. "Spring to Autumn").
-  string season = 6 [(google.api.field_behavior) = OPTIONAL];
-
-  // Descriptive beta and overview of the area.
-  string description = 7 [(google.api.field_behavior) = OPTIONAL];
-
-  // Primary banner or showcase image URL.
-  string image_url = 8 [(google.api.field_behavior) = OPTIONAL];
-
-  // External reference link.
-  string link = 9 [(google.api.field_behavior) = OPTIONAL];
-
-  // Total count of canyons in this region.
-  int32 canyon_count = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
-
   // Whether region is visible in history views.
-  bool history_visible = 11 [(google.api.field_behavior) = OPTIONAL];
-
-  // Timestamp when the region was created (AIP-142).
-  google.protobuf.Timestamp create_time = 12 [(google.api.field_behavior) = OUTPUT_ONLY];
-
-  // Timestamp when the region was last updated (AIP-142).
-  google.protobuf.Timestamp update_time = 13 [(google.api.field_behavior) = OUTPUT_ONLY];
+  bool history_visible = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListRegionsRequest {

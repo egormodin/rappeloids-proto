@@ -76,50 +76,43 @@ public final class Regions extends com.google.protobuf.GeneratedFile {
       "havior.proto\032\031google/api/resource.proto\032" +
       "\033google/protobuf/empty.proto\032 google/pro" +
       "tobuf/field_mask.proto\032\037google/protobuf/" +
-      "timestamp.proto\"\321\003\n\006Region\022\021\n\004name\030\001 \001(\t" +
+      "timestamp.proto\"\332\001\n\006Region\022\021\n\004name\030\001 \001(\t" +
       "B\003\340A\010\022\017\n\002id\030\002 \001(\tB\003\340A\003\022\031\n\014display_name\030\003" +
       " \001(\tB\003\340A\002\0224\n\rparent_region\030\004 \001(\tB\035\340A\001\372A\027" +
-      "\n\025rappeloids.app/Region\022\024\n\007country\030\005 \001(\t" +
-      "B\003\340A\001\022\023\n\006season\030\006 \001(\tB\003\340A\001\022\030\n\013descriptio" +
-      "n\030\007 \001(\tB\003\340A\001\022\026\n\timage_url\030\010 \001(\tB\003\340A\001\022\021\n\004" +
-      "link\030\t \001(\tB\003\340A\001\022\031\n\014canyon_count\030\n \001(\005B\003\340" +
-      "A\003\022\034\n\017history_visible\030\013 \001(\010B\003\340A\001\0224\n\013crea" +
-      "te_time\030\014 \001(\0132\032.google.protobuf.Timestam" +
-      "pB\003\340A\003\0224\n\013update_time\030\r \001(\0132\032.google.pro" +
-      "tobuf.TimestampB\003\340A\003:=\352A:\n\025rappeloids.ap" +
-      "p/Region\022\020regions/{region}*\007regions2\006reg" +
-      "ion\"q\n\022ListRegionsRequest\022\026\n\tpage_size\030\001" +
-      " \001(\005B\003\340A\001\022\027\n\npage_token\030\002 \001(\tB\003\340A\001\022\023\n\006fi" +
-      "lter\030\003 \001(\tB\003\340A\001\022\025\n\010order_by\030\004 \001(\tB\003\340A\001\"j" +
-      "\n\023ListRegionsResponse\022&\n\007regions\030\001 \003(\0132\025" +
-      ".rappeloids.v1.Region\022\027\n\017next_page_token" +
-      "\030\002 \001(\t\022\022\n\ntotal_size\030\003 \001(\005\"?\n\020GetRegionR" +
-      "equest\022+\n\004name\030\001 \001(\tB\035\340A\002\372A\027\n\025rappeloids" +
-      ".app/Region\"Y\n\023CreateRegionRequest\022\026\n\tre" +
-      "gion_id\030\001 \001(\tB\003\340A\001\022*\n\006region\030\002 \001(\0132\025.rap" +
-      "peloids.v1.RegionB\003\340A\002\"w\n\023UpdateRegionRe" +
-      "quest\022*\n\006region\030\001 \001(\0132\025.rappeloids.v1.Re" +
-      "gionB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google." +
-      "protobuf.FieldMaskB\003\340A\001\"B\n\023DeleteRegionR" +
-      "equest\022+\n\004name\030\001 \001(\tB\035\340A\002\372A\027\n\025rappeloids" +
-      ".app/Region2\366\004\n\016RegionsService\022i\n\013ListRe" +
-      "gions\022!.rappeloids.v1.ListRegionsRequest" +
-      "\032\".rappeloids.v1.ListRegionsResponse\"\023\202\323" +
-      "\344\223\002\r\022\013/v1/regions\022h\n\tGetRegion\022\037.rappelo" +
-      "ids.v1.GetRegionRequest\032\025.rappeloids.v1." +
-      "Region\"#\332A\004name\202\323\344\223\002\026\022\024/v1/{name=regions" +
-      "/*}\022y\n\014CreateRegion\022\".rappeloids.v1.Crea" +
-      "teRegionRequest\032\025.rappeloids.v1.Region\"." +
-      "\332A\020region,region_id\202\323\344\223\002\025\"\013/v1/regions:\006" +
-      "region\022\213\001\n\014UpdateRegion\022\".rappeloids.v1." +
-      "UpdateRegionRequest\032\025.rappeloids.v1.Regi" +
-      "on\"@\332A\022region,update_mask\202\323\344\223\002%2\033/v1/{re" +
-      "gion.name=regions/*}:\006region\022o\n\014DeleteRe" +
-      "gion\022\".rappeloids.v1.DeleteRegionRequest" +
-      "\032\026.google.protobuf.Empty\"#\332A\004name\202\323\344\223\002\026*" +
-      "\024/v1/{name=regions/*}\032\025\312A\022api.rappeloids" +
-      ".appB\034\n\030app.rappeloids.protos.v1P\001b\006prot" +
-      "o3"
+      "\n\025rappeloids.app/Region\022\034\n\017history_visib" +
+      "le\030\005 \001(\010B\003\340A\001:=\352A:\n\025rappeloids.app/Regio" +
+      "n\022\020regions/{region}*\007regions2\006region\"q\n\022" +
+      "ListRegionsRequest\022\026\n\tpage_size\030\001 \001(\005B\003\340" +
+      "A\001\022\027\n\npage_token\030\002 \001(\tB\003\340A\001\022\023\n\006filter\030\003 " +
+      "\001(\tB\003\340A\001\022\025\n\010order_by\030\004 \001(\tB\003\340A\001\"j\n\023ListR" +
+      "egionsResponse\022&\n\007regions\030\001 \003(\0132\025.rappel" +
+      "oids.v1.Region\022\027\n\017next_page_token\030\002 \001(\t\022" +
+      "\022\n\ntotal_size\030\003 \001(\005\"?\n\020GetRegionRequest\022" +
+      "+\n\004name\030\001 \001(\tB\035\340A\002\372A\027\n\025rappeloids.app/Re" +
+      "gion\"Y\n\023CreateRegionRequest\022\026\n\tregion_id" +
+      "\030\001 \001(\tB\003\340A\001\022*\n\006region\030\002 \001(\0132\025.rappeloids" +
+      ".v1.RegionB\003\340A\002\"w\n\023UpdateRegionRequest\022*" +
+      "\n\006region\030\001 \001(\0132\025.rappeloids.v1.RegionB\003\340" +
+      "A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.protobu" +
+      "f.FieldMaskB\003\340A\001\"B\n\023DeleteRegionRequest\022" +
+      "+\n\004name\030\001 \001(\tB\035\340A\002\372A\027\n\025rappeloids.app/Re" +
+      "gion2\366\004\n\016RegionsService\022i\n\013ListRegions\022!" +
+      ".rappeloids.v1.ListRegionsRequest\032\".rapp" +
+      "eloids.v1.ListRegionsResponse\"\023\202\323\344\223\002\r\022\013/" +
+      "v1/regions\022h\n\tGetRegion\022\037.rappeloids.v1." +
+      "GetRegionRequest\032\025.rappeloids.v1.Region\"" +
+      "#\332A\004name\202\323\344\223\002\026\022\024/v1/{name=regions/*}\022y\n\014" +
+      "CreateRegion\022\".rappeloids.v1.CreateRegio" +
+      "nRequest\032\025.rappeloids.v1.Region\".\332A\020regi" +
+      "on,region_id\202\323\344\223\002\025\"\013/v1/regions:\006region\022" +
+      "\213\001\n\014UpdateRegion\022\".rappeloids.v1.UpdateR" +
+      "egionRequest\032\025.rappeloids.v1.Region\"@\332A\022" +
+      "region,update_mask\202\323\344\223\002%2\033/v1/{region.na" +
+      "me=regions/*}:\006region\022o\n\014DeleteRegion\022\"." +
+      "rappeloids.v1.DeleteRegionRequest\032\026.goog" +
+      "le.protobuf.Empty\"#\332A\004name\202\323\344\223\002\026*\024/v1/{n" +
+      "ame=regions/*}\032\025\312A\022api.rappeloids.appB\034\n" +
+      "\030app.rappeloids.protos.v1P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -137,7 +130,7 @@ public final class Regions extends com.google.protobuf.GeneratedFile {
     internal_static_rappeloids_v1_Region_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_rappeloids_v1_Region_descriptor,
-        new java.lang.String[] { "Name", "Id", "DisplayName", "ParentRegion", "Country", "Season", "Description", "ImageUrl", "Link", "CanyonCount", "HistoryVisible", "CreateTime", "UpdateTime", });
+        new java.lang.String[] { "Name", "Id", "DisplayName", "ParentRegion", "HistoryVisible", });
     internal_static_rappeloids_v1_ListRegionsRequest_descriptor =
       getDescriptor().getMessageType(1);
     internal_static_rappeloids_v1_ListRegionsRequest_fieldAccessorTable = new
