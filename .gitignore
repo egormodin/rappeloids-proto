@@ -1,0 +1,6 @@
+node_modules/
+dist/
+src/gen/
+.buf/
+*.log
+.DS_Store

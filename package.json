@@ -1,0 +1,38 @@
+{
+  "name": "@egormodin/rappeloids-proto",
+  "version": "1.0.0",
+  "description": "Shared Protobuf definitions and TypeScript gRPC/Connect clients for Rappeloids",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "proto"
+  ],
+  "scripts": {
+    "generate": "npx @bufbuild/buf generate proto --include-imports",
+    "build": "npm run generate && npx tsc",
+    "lint": "npx @bufbuild/buf lint proto",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "^2.13.0",
+    "@connectrpc/connect": "^2.1.2",
+    "@connectrpc/connect-web": "^2.1.2"
+  },
+  "devDependencies": {
+    "@bufbuild/buf": "^1.50.0",
+    "@bufbuild/protoc-gen-es": "^2.13.0",
+    "typescript": "^5.7.3"
+  }
+}
