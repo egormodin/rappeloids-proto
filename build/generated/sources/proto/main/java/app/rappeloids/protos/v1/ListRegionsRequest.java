@@ -28,9 +28,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListRegionsRequest() {
-    pageToken_ = "";
-    filter_ = "";
-    orderBy_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -44,162 +41,6 @@ private static final long serialVersionUID = 0L;
     return app.rappeloids.protos.v1.Regions.internal_static_rappeloids_v1_ListRegionsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             app.rappeloids.protos.v1.ListRegionsRequest.class, app.rappeloids.protos.v1.ListRegionsRequest.Builder.class);
-  }
-
-  public static final int PAGE_SIZE_FIELD_NUMBER = 1;
-  private int pageSize_ = 0;
-  /**
-   * <pre>
-   * Maximum number of items to return (AIP-158).
-   * </pre>
-   *
-   * <code>int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The pageSize.
-   */
-  @java.lang.Override
-  public int getPageSize() {
-    return pageSize_;
-  }
-
-  public static final int PAGE_TOKEN_FIELD_NUMBER = 2;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object pageToken_ = "";
-  /**
-   * <pre>
-   * Page token from a previous response (AIP-158).
-   * </pre>
-   *
-   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The pageToken.
-   */
-  @java.lang.Override
-  public java.lang.String getPageToken() {
-    java.lang.Object ref = pageToken_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      pageToken_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Page token from a previous response (AIP-158).
-   * </pre>
-   *
-   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for pageToken.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getPageTokenBytes() {
-    java.lang.Object ref = pageToken_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      pageToken_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int FILTER_FIELD_NUMBER = 3;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object filter_ = "";
-  /**
-   * <pre>
-   * Filter expression (AIP-160).
-   * </pre>
-   *
-   * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The filter.
-   */
-  @java.lang.Override
-  public java.lang.String getFilter() {
-    java.lang.Object ref = filter_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      filter_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Filter expression (AIP-160).
-   * </pre>
-   *
-   * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for filter.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getFilterBytes() {
-    java.lang.Object ref = filter_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      filter_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int ORDER_BY_FIELD_NUMBER = 4;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object orderBy_ = "";
-  /**
-   * <pre>
-   * Order by field expression (AIP-132).
-   * </pre>
-   *
-   * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The orderBy.
-   */
-  @java.lang.Override
-  public java.lang.String getOrderBy() {
-    java.lang.Object ref = orderBy_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      orderBy_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Order by field expression (AIP-132).
-   * </pre>
-   *
-   * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for orderBy.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getOrderByBytes() {
-    java.lang.Object ref = orderBy_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      orderBy_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -216,18 +57,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (pageSize_ != 0) {
-      output.writeInt32(1, pageSize_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pageToken_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, pageToken_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, filter_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(orderBy_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, orderBy_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -237,19 +66,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (pageSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, pageSize_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pageToken_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, pageToken_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, filter_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(orderBy_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, orderBy_);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -265,14 +81,6 @@ private static final long serialVersionUID = 0L;
     }
     app.rappeloids.protos.v1.ListRegionsRequest other = (app.rappeloids.protos.v1.ListRegionsRequest) obj;
 
-    if (getPageSize()
-        != other.getPageSize()) return false;
-    if (!getPageToken()
-        .equals(other.getPageToken())) return false;
-    if (!getFilter()
-        .equals(other.getFilter())) return false;
-    if (!getOrderBy()
-        .equals(other.getOrderBy())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -284,14 +92,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getPageSize();
-    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getPageToken().hashCode();
-    hash = (37 * hash) + FILTER_FIELD_NUMBER;
-    hash = (53 * hash) + getFilter().hashCode();
-    hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
-    hash = (53 * hash) + getOrderBy().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -422,11 +222,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      bitField0_ = 0;
-      pageSize_ = 0;
-      pageToken_ = "";
-      filter_ = "";
-      orderBy_ = "";
       return this;
     }
 
@@ -453,25 +248,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public app.rappeloids.protos.v1.ListRegionsRequest buildPartial() {
       app.rappeloids.protos.v1.ListRegionsRequest result = new app.rappeloids.protos.v1.ListRegionsRequest(this);
-      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
-    }
-
-    private void buildPartial0(app.rappeloids.protos.v1.ListRegionsRequest result) {
-      int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.pageSize_ = pageSize_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.pageToken_ = pageToken_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.filter_ = filter_;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.orderBy_ = orderBy_;
-      }
     }
 
     @java.lang.Override
@@ -486,24 +264,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(app.rappeloids.protos.v1.ListRegionsRequest other) {
       if (other == app.rappeloids.protos.v1.ListRegionsRequest.getDefaultInstance()) return this;
-      if (other.getPageSize() != 0) {
-        setPageSize(other.getPageSize());
-      }
-      if (!other.getPageToken().isEmpty()) {
-        pageToken_ = other.pageToken_;
-        bitField0_ |= 0x00000002;
-        onChanged();
-      }
-      if (!other.getFilter().isEmpty()) {
-        filter_ = other.filter_;
-        bitField0_ |= 0x00000004;
-        onChanged();
-      }
-      if (!other.getOrderBy().isEmpty()) {
-        orderBy_ = other.orderBy_;
-        bitField0_ |= 0x00000008;
-        onChanged();
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -530,26 +290,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-              pageSize_ = input.readInt32();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 8
-            case 18: {
-              pageToken_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
-              break;
-            } // case 18
-            case 26: {
-              filter_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
-              break;
-            } // case 26
-            case 34: {
-              orderBy_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
-              break;
-            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -563,327 +303,6 @@ private static final long serialVersionUID = 0L;
       } finally {
         onChanged();
       } // finally
-      return this;
-    }
-    private int bitField0_;
-
-    private int pageSize_ ;
-    /**
-     * <pre>
-     * Maximum number of items to return (AIP-158).
-     * </pre>
-     *
-     * <code>int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The pageSize.
-     */
-    @java.lang.Override
-    public int getPageSize() {
-      return pageSize_;
-    }
-    /**
-     * <pre>
-     * Maximum number of items to return (AIP-158).
-     * </pre>
-     *
-     * <code>int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The pageSize to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPageSize(int value) {
-
-      pageSize_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Maximum number of items to return (AIP-158).
-     * </pre>
-     *
-     * <code>int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPageSize() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      pageSize_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object pageToken_ = "";
-    /**
-     * <pre>
-     * Page token from a previous response (AIP-158).
-     * </pre>
-     *
-     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The pageToken.
-     */
-    public java.lang.String getPageToken() {
-      java.lang.Object ref = pageToken_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        pageToken_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Page token from a previous response (AIP-158).
-     * </pre>
-     *
-     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for pageToken.
-     */
-    public com.google.protobuf.ByteString
-        getPageTokenBytes() {
-      java.lang.Object ref = pageToken_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        pageToken_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Page token from a previous response (AIP-158).
-     * </pre>
-     *
-     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The pageToken to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPageToken(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      pageToken_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Page token from a previous response (AIP-158).
-     * </pre>
-     *
-     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPageToken() {
-      pageToken_ = getDefaultInstance().getPageToken();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Page token from a previous response (AIP-158).
-     * </pre>
-     *
-     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for pageToken to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPageTokenBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      pageToken_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object filter_ = "";
-    /**
-     * <pre>
-     * Filter expression (AIP-160).
-     * </pre>
-     *
-     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The filter.
-     */
-    public java.lang.String getFilter() {
-      java.lang.Object ref = filter_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        filter_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Filter expression (AIP-160).
-     * </pre>
-     *
-     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for filter.
-     */
-    public com.google.protobuf.ByteString
-        getFilterBytes() {
-      java.lang.Object ref = filter_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        filter_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Filter expression (AIP-160).
-     * </pre>
-     *
-     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The filter to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFilter(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      filter_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Filter expression (AIP-160).
-     * </pre>
-     *
-     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearFilter() {
-      filter_ = getDefaultInstance().getFilter();
-      bitField0_ = (bitField0_ & ~0x00000004);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Filter expression (AIP-160).
-     * </pre>
-     *
-     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for filter to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFilterBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      filter_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object orderBy_ = "";
-    /**
-     * <pre>
-     * Order by field expression (AIP-132).
-     * </pre>
-     *
-     * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The orderBy.
-     */
-    public java.lang.String getOrderBy() {
-      java.lang.Object ref = orderBy_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        orderBy_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Order by field expression (AIP-132).
-     * </pre>
-     *
-     * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for orderBy.
-     */
-    public com.google.protobuf.ByteString
-        getOrderByBytes() {
-      java.lang.Object ref = orderBy_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        orderBy_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Order by field expression (AIP-132).
-     * </pre>
-     *
-     * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The orderBy to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOrderBy(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      orderBy_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Order by field expression (AIP-132).
-     * </pre>
-     *
-     * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearOrderBy() {
-      orderBy_ = getDefaultInstance().getOrderBy();
-      bitField0_ = (bitField0_ & ~0x00000008);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Order by field expression (AIP-132).
-     * </pre>
-     *
-     * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for orderBy to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOrderByBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      orderBy_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
       return this;
     }
 

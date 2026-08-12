@@ -99,40 +99,6 @@ public object ListRegionsResponseKt {
     public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Region, RegionsProxy>.clear() {
       _builder.clearRegions()
     }
-
-    /**
-     * `string next_page_token = 2;`
-     */
-    public var nextPageToken: kotlin.String
-      @kotlin.jvm.JvmName("getNextPageToken")
-        get() = _builder.nextPageToken
-      @kotlin.jvm.JvmName("setNextPageToken")
-        set(value) {
-        _builder.nextPageToken = value
-      }
-    /**
-     * `string next_page_token = 2;`
-     */
-    public fun clearNextPageToken() {
-      _builder.clearNextPageToken()
-    }
-
-    /**
-     * `int32 total_size = 3;`
-     */
-    public var totalSize: kotlin.Int
-      @kotlin.jvm.JvmName("getTotalSize")
-        get() = _builder.totalSize
-      @kotlin.jvm.JvmName("setTotalSize")
-        set(value) {
-        _builder.totalSize = value
-      }
-    /**
-     * `int32 total_size = 3;`
-     */
-    public fun clearTotalSize() {
-      _builder.clearTotalSize()
-    }
   }
 }
 @kotlin.jvm.JvmSynthetic
