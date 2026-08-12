@@ -165,9 +165,6 @@ message Canyon {
   string shuttle = 26 [(google.api.field_behavior) = OPTIONAL];
   string vehicle = 27 [(google.api.field_behavior) = OPTIONAL];
 
-  // Indicates user-contributed custom route.
-  bool is_custom = 30 [(google.api.field_behavior) = OPTIONAL];
-
   // User ID of the creator/author (AIP-122).
   string author_id = 31 [
     (google.api.field_behavior) = OUTPUT_ONLY,
@@ -179,12 +176,6 @@ message Canyon {
   repeated RappelPitch pitches = 33 [(google.api.field_behavior) = OPTIONAL];
   repeated CanyonLink links = 34 [(google.api.field_behavior) = OPTIONAL];
   repeated QualityRating quality_ratings = 35 [(google.api.field_behavior) = OPTIONAL];
-
-  // Timestamp when the canyon was created (AIP-142).
-  google.protobuf.Timestamp create_time = 36 [(google.api.field_behavior) = OUTPUT_ONLY];
-
-  // Timestamp when the canyon was last updated (AIP-142).
-  google.protobuf.Timestamp update_time = 37 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 message GpxTrack {

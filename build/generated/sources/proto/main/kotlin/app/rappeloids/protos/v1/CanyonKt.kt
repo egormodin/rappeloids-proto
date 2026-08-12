@@ -656,31 +656,6 @@ public object CanyonKt {
 
     /**
      * ```
-     * Indicates user-contributed custom route.
-     * ```
-     *
-     * `bool is_custom = 30 [(.google.api.field_behavior) = OPTIONAL];`
-     */
-    public var isCustom: kotlin.Boolean
-      @kotlin.jvm.JvmName("getIsCustom")
-        get() = _builder.isCustom
-      @kotlin.jvm.JvmName("setIsCustom")
-        set(value) {
-        _builder.isCustom = value
-      }
-    /**
-     * ```
-     * Indicates user-contributed custom route.
-     * ```
-     *
-     * `bool is_custom = 30 [(.google.api.field_behavior) = OPTIONAL];`
-     */
-    public fun clearIsCustom() {
-      _builder.clearIsCustom()
-    }
-
-    /**
-     * ```
      * User ID of the creator/author (AIP-122).
      * ```
      *
@@ -1015,93 +990,9 @@ public object CanyonKt {
     public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.QualityRating, QualityRatingsProxy>.clear() {
       _builder.clearQualityRatings()
     }
-
-    /**
-     * ```
-     * Timestamp when the canyon was created (AIP-142).
-     * ```
-     *
-     * `.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];`
-     */
-    public var createTime: com.google.protobuf.Timestamp
-      @kotlin.jvm.JvmName("getCreateTime")
-        get() = _builder.createTime
-      @kotlin.jvm.JvmName("setCreateTime")
-        set(value) {
-        _builder.createTime = value
-      }
-    /**
-     * ```
-     * Timestamp when the canyon was created (AIP-142).
-     * ```
-     *
-     * `.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];`
-     */
-    public fun clearCreateTime() {
-      _builder.clearCreateTime()
-    }
-    /**
-     * ```
-     * Timestamp when the canyon was created (AIP-142).
-     * ```
-     *
-     * `.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];`
-     * @return Whether the createTime field is set.
-     */
-    public fun hasCreateTime(): kotlin.Boolean {
-      return _builder.hasCreateTime()
-    }
-
-    public val CanyonKt.Dsl.createTimeOrNull: com.google.protobuf.Timestamp?
-      get() = _builder.createTimeOrNull
-
-    /**
-     * ```
-     * Timestamp when the canyon was last updated (AIP-142).
-     * ```
-     *
-     * `.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];`
-     */
-    public var updateTime: com.google.protobuf.Timestamp
-      @kotlin.jvm.JvmName("getUpdateTime")
-        get() = _builder.updateTime
-      @kotlin.jvm.JvmName("setUpdateTime")
-        set(value) {
-        _builder.updateTime = value
-      }
-    /**
-     * ```
-     * Timestamp when the canyon was last updated (AIP-142).
-     * ```
-     *
-     * `.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];`
-     */
-    public fun clearUpdateTime() {
-      _builder.clearUpdateTime()
-    }
-    /**
-     * ```
-     * Timestamp when the canyon was last updated (AIP-142).
-     * ```
-     *
-     * `.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];`
-     * @return Whether the updateTime field is set.
-     */
-    public fun hasUpdateTime(): kotlin.Boolean {
-      return _builder.hasUpdateTime()
-    }
-
-    public val CanyonKt.Dsl.updateTimeOrNull: com.google.protobuf.Timestamp?
-      get() = _builder.updateTimeOrNull
   }
 }
 @kotlin.jvm.JvmSynthetic
 public inline fun app.rappeloids.protos.v1.Canyon.copy(block: `app.rappeloids.protos.v1`.CanyonKt.Dsl.() -> kotlin.Unit): app.rappeloids.protos.v1.Canyon =
   `app.rappeloids.protos.v1`.CanyonKt.Dsl._create(this.toBuilder()).apply { block() }._build()
-
-public val app.rappeloids.protos.v1.CanyonOrBuilder.createTimeOrNull: com.google.protobuf.Timestamp?
-  get() = if (hasCreateTime()) getCreateTime() else null
-
-public val app.rappeloids.protos.v1.CanyonOrBuilder.updateTimeOrNull: com.google.protobuf.Timestamp?
-  get() = if (hasUpdateTime()) getUpdateTime() else null
 

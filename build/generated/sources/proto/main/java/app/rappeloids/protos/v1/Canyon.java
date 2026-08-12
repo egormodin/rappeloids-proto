@@ -74,7 +74,6 @@ private static final long serialVersionUID = 0L;
             app.rappeloids.protos.v1.Canyon.class, app.rappeloids.protos.v1.Canyon.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
@@ -1130,21 +1129,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int IS_CUSTOM_FIELD_NUMBER = 30;
-  private boolean isCustom_ = false;
-  /**
-   * <pre>
-   * Indicates user-contributed custom route.
-   * </pre>
-   *
-   * <code>bool is_custom = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The isCustom.
-   */
-  @java.lang.Override
-  public boolean getIsCustom() {
-    return isCustom_;
-  }
-
   public static final int AUTHOR_ID_FIELD_NUMBER = 31;
   @SuppressWarnings("serial")
   private volatile java.lang.Object authorId_ = "";
@@ -1376,82 +1360,6 @@ private static final long serialVersionUID = 0L;
     return qualityRatings_.get(index);
   }
 
-  public static final int CREATE_TIME_FIELD_NUMBER = 36;
-  private com.google.protobuf.Timestamp createTime_;
-  /**
-   * <pre>
-   * Timestamp when the canyon was created (AIP-142).
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return Whether the createTime field is set.
-   */
-  @java.lang.Override
-  public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <pre>
-   * Timestamp when the canyon was created (AIP-142).
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The createTime.
-   */
-  @java.lang.Override
-  public com.google.protobuf.Timestamp getCreateTime() {
-    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
-  }
-  /**
-   * <pre>
-   * Timestamp when the canyon was created (AIP-142).
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
-  }
-
-  public static final int UPDATE_TIME_FIELD_NUMBER = 37;
-  private com.google.protobuf.Timestamp updateTime_;
-  /**
-   * <pre>
-   * Timestamp when the canyon was last updated (AIP-142).
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return Whether the updateTime field is set.
-   */
-  @java.lang.Override
-  public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   * Timestamp when the canyon was last updated (AIP-142).
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The updateTime.
-   */
-  @java.lang.Override
-  public com.google.protobuf.Timestamp getUpdateTime() {
-    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
-  }
-  /**
-   * <pre>
-   * Timestamp when the canyon was last updated (AIP-142).
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1547,9 +1455,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(vehicle_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 27, vehicle_);
     }
-    if (isCustom_ != false) {
-      output.writeBool(30, isCustom_);
-    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(authorId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 31, authorId_);
     }
@@ -1564,12 +1469,6 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < qualityRatings_.size(); i++) {
       output.writeMessage(35, qualityRatings_.get(i));
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(36, getCreateTime());
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(37, getUpdateTime());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1666,10 +1565,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(vehicle_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(27, vehicle_);
     }
-    if (isCustom_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(30, isCustom_);
-    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(authorId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(31, authorId_);
     }
@@ -1688,14 +1583,6 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < qualityRatings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(35, qualityRatings_.get(i));
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(36, getCreateTime());
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(37, getUpdateTime());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1770,8 +1657,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getShuttle())) return false;
     if (!getVehicle()
         .equals(other.getVehicle())) return false;
-    if (getIsCustom()
-        != other.getIsCustom()) return false;
     if (!getAuthorId()
         .equals(other.getAuthorId())) return false;
     if (!getGpxTracksList()
@@ -1782,16 +1667,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLinksList())) return false;
     if (!getQualityRatingsList()
         .equals(other.getQualityRatingsList())) return false;
-    if (hasCreateTime() != other.hasCreateTime()) return false;
-    if (hasCreateTime()) {
-      if (!getCreateTime()
-          .equals(other.getCreateTime())) return false;
-    }
-    if (hasUpdateTime() != other.hasUpdateTime()) return false;
-    if (hasUpdateTime()) {
-      if (!getUpdateTime()
-          .equals(other.getUpdateTime())) return false;
-    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1861,9 +1736,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getShuttle().hashCode();
     hash = (37 * hash) + VEHICLE_FIELD_NUMBER;
     hash = (53 * hash) + getVehicle().hashCode();
-    hash = (37 * hash) + IS_CUSTOM_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsCustom());
     hash = (37 * hash) + AUTHOR_ID_FIELD_NUMBER;
     hash = (53 * hash) + getAuthorId().hashCode();
     if (getGpxTracksCount() > 0) {
@@ -1881,14 +1753,6 @@ private static final long serialVersionUID = 0L;
     if (getQualityRatingsCount() > 0) {
       hash = (37 * hash) + QUALITY_RATINGS_FIELD_NUMBER;
       hash = (53 * hash) + getQualityRatingsList().hashCode();
-    }
-    if (hasCreateTime()) {
-      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getCreateTime().hashCode();
-    }
-    if (hasUpdateTime()) {
-      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getUpdateTime().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2013,30 +1877,18 @@ private static final long serialVersionUID = 0L;
 
     // Construct using app.rappeloids.protos.v1.Canyon.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessage
-              .alwaysUseFieldBuilders) {
-        internalGetGpxTracksFieldBuilder();
-        internalGetPitchesFieldBuilder();
-        internalGetLinksFieldBuilder();
-        internalGetQualityRatingsFieldBuilder();
-        internalGetCreateTimeFieldBuilder();
-        internalGetUpdateTimeFieldBuilder();
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      bitField1_ = 0;
       name_ = "";
       id_ = "";
       regionId_ = "";
@@ -2064,7 +1916,6 @@ private static final long serialVersionUID = 0L;
       permits_ = "";
       shuttle_ = "";
       vehicle_ = "";
-      isCustom_ = false;
       authorId_ = "";
       if (gpxTracksBuilder_ == null) {
         gpxTracks_ = java.util.Collections.emptyList();
@@ -2072,38 +1923,28 @@ private static final long serialVersionUID = 0L;
         gpxTracks_ = null;
         gpxTracksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       if (pitchesBuilder_ == null) {
         pitches_ = java.util.Collections.emptyList();
       } else {
         pitches_ = null;
         pitchesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       if (linksBuilder_ == null) {
         links_ = java.util.Collections.emptyList();
       } else {
         links_ = null;
         linksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       if (qualityRatingsBuilder_ == null) {
         qualityRatings_ = java.util.Collections.emptyList();
       } else {
         qualityRatings_ = null;
         qualityRatingsBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000001);
-      createTime_ = null;
-      if (createTimeBuilder_ != null) {
-        createTimeBuilder_.dispose();
-        createTimeBuilder_ = null;
-      }
-      updateTime_ = null;
-      if (updateTimeBuilder_ != null) {
-        updateTimeBuilder_.dispose();
-        updateTimeBuilder_ = null;
-      }
+      bitField0_ = (bitField0_ & ~0x80000000);
       return this;
     }
 
@@ -2132,43 +1973,42 @@ private static final long serialVersionUID = 0L;
       app.rappeloids.protos.v1.Canyon result = new app.rappeloids.protos.v1.Canyon(this);
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
-      if (bitField1_ != 0) { buildPartial1(result); }
       onBuilt();
       return result;
     }
 
     private void buildPartialRepeatedFields(app.rappeloids.protos.v1.Canyon result) {
       if (gpxTracksBuilder_ == null) {
-        if (((bitField0_ & 0x20000000) != 0)) {
+        if (((bitField0_ & 0x10000000) != 0)) {
           gpxTracks_ = java.util.Collections.unmodifiableList(gpxTracks_);
-          bitField0_ = (bitField0_ & ~0x20000000);
+          bitField0_ = (bitField0_ & ~0x10000000);
         }
         result.gpxTracks_ = gpxTracks_;
       } else {
         result.gpxTracks_ = gpxTracksBuilder_.build();
       }
       if (pitchesBuilder_ == null) {
-        if (((bitField0_ & 0x40000000) != 0)) {
+        if (((bitField0_ & 0x20000000) != 0)) {
           pitches_ = java.util.Collections.unmodifiableList(pitches_);
-          bitField0_ = (bitField0_ & ~0x40000000);
+          bitField0_ = (bitField0_ & ~0x20000000);
         }
         result.pitches_ = pitches_;
       } else {
         result.pitches_ = pitchesBuilder_.build();
       }
       if (linksBuilder_ == null) {
-        if (((bitField0_ & 0x80000000) != 0)) {
+        if (((bitField0_ & 0x40000000) != 0)) {
           links_ = java.util.Collections.unmodifiableList(links_);
-          bitField0_ = (bitField0_ & ~0x80000000);
+          bitField0_ = (bitField0_ & ~0x40000000);
         }
         result.links_ = links_;
       } else {
         result.links_ = linksBuilder_.build();
       }
       if (qualityRatingsBuilder_ == null) {
-        if (((bitField1_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x80000000) != 0)) {
           qualityRatings_ = java.util.Collections.unmodifiableList(qualityRatings_);
-          bitField1_ = (bitField1_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x80000000);
         }
         result.qualityRatings_ = qualityRatings_;
       } else {
@@ -2260,29 +2100,8 @@ private static final long serialVersionUID = 0L;
         result.vehicle_ = vehicle_;
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
-        result.isCustom_ = isCustom_;
-      }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
         result.authorId_ = authorId_;
       }
-    }
-
-    private void buildPartial1(app.rappeloids.protos.v1.Canyon result) {
-      int from_bitField1_ = bitField1_;
-      int to_bitField0_ = 0;
-      if (((from_bitField1_ & 0x00000002) != 0)) {
-        result.createTime_ = createTimeBuilder_ == null
-            ? createTime_
-            : createTimeBuilder_.build();
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField1_ & 0x00000004) != 0)) {
-        result.updateTime_ = updateTimeBuilder_ == null
-            ? updateTime_
-            : updateTimeBuilder_.build();
-        to_bitField0_ |= 0x00000002;
-      }
-      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -2422,19 +2241,16 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x04000000;
         onChanged();
       }
-      if (other.getIsCustom() != false) {
-        setIsCustom(other.getIsCustom());
-      }
       if (!other.getAuthorId().isEmpty()) {
         authorId_ = other.authorId_;
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       if (gpxTracksBuilder_ == null) {
         if (!other.gpxTracks_.isEmpty()) {
           if (gpxTracks_.isEmpty()) {
             gpxTracks_ = other.gpxTracks_;
-            bitField0_ = (bitField0_ & ~0x20000000);
+            bitField0_ = (bitField0_ & ~0x10000000);
           } else {
             ensureGpxTracksIsMutable();
             gpxTracks_.addAll(other.gpxTracks_);
@@ -2447,7 +2263,7 @@ private static final long serialVersionUID = 0L;
             gpxTracksBuilder_.dispose();
             gpxTracksBuilder_ = null;
             gpxTracks_ = other.gpxTracks_;
-            bitField0_ = (bitField0_ & ~0x20000000);
+            bitField0_ = (bitField0_ & ~0x10000000);
             gpxTracksBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  internalGetGpxTracksFieldBuilder() : null;
@@ -2460,7 +2276,7 @@ private static final long serialVersionUID = 0L;
         if (!other.pitches_.isEmpty()) {
           if (pitches_.isEmpty()) {
             pitches_ = other.pitches_;
-            bitField0_ = (bitField0_ & ~0x40000000);
+            bitField0_ = (bitField0_ & ~0x20000000);
           } else {
             ensurePitchesIsMutable();
             pitches_.addAll(other.pitches_);
@@ -2473,7 +2289,7 @@ private static final long serialVersionUID = 0L;
             pitchesBuilder_.dispose();
             pitchesBuilder_ = null;
             pitches_ = other.pitches_;
-            bitField0_ = (bitField0_ & ~0x40000000);
+            bitField0_ = (bitField0_ & ~0x20000000);
             pitchesBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  internalGetPitchesFieldBuilder() : null;
@@ -2486,7 +2302,7 @@ private static final long serialVersionUID = 0L;
         if (!other.links_.isEmpty()) {
           if (links_.isEmpty()) {
             links_ = other.links_;
-            bitField0_ = (bitField0_ & ~0x80000000);
+            bitField0_ = (bitField0_ & ~0x40000000);
           } else {
             ensureLinksIsMutable();
             links_.addAll(other.links_);
@@ -2499,7 +2315,7 @@ private static final long serialVersionUID = 0L;
             linksBuilder_.dispose();
             linksBuilder_ = null;
             links_ = other.links_;
-            bitField0_ = (bitField0_ & ~0x80000000);
+            bitField0_ = (bitField0_ & ~0x40000000);
             linksBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  internalGetLinksFieldBuilder() : null;
@@ -2512,7 +2328,7 @@ private static final long serialVersionUID = 0L;
         if (!other.qualityRatings_.isEmpty()) {
           if (qualityRatings_.isEmpty()) {
             qualityRatings_ = other.qualityRatings_;
-            bitField1_ = (bitField1_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x80000000);
           } else {
             ensureQualityRatingsIsMutable();
             qualityRatings_.addAll(other.qualityRatings_);
@@ -2525,7 +2341,7 @@ private static final long serialVersionUID = 0L;
             qualityRatingsBuilder_.dispose();
             qualityRatingsBuilder_ = null;
             qualityRatings_ = other.qualityRatings_;
-            bitField1_ = (bitField1_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x80000000);
             qualityRatingsBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  internalGetQualityRatingsFieldBuilder() : null;
@@ -2533,12 +2349,6 @@ private static final long serialVersionUID = 0L;
             qualityRatingsBuilder_.addAllMessages(other.qualityRatings_);
           }
         }
-      }
-      if (other.hasCreateTime()) {
-        mergeCreateTime(other.getCreateTime());
-      }
-      if (other.hasUpdateTime()) {
-        mergeUpdateTime(other.getUpdateTime());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2701,14 +2511,9 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x04000000;
               break;
             } // case 218
-            case 240: {
-              isCustom_ = input.readBool();
-              bitField0_ |= 0x08000000;
-              break;
-            } // case 240
             case 250: {
               authorId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x10000000;
+              bitField0_ |= 0x08000000;
               break;
             } // case 250
             case 258: {
@@ -2763,20 +2568,6 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 282
-            case 290: {
-              input.readMessage(
-                  internalGetCreateTimeFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              bitField1_ |= 0x00000002;
-              break;
-            } // case 290
-            case 298: {
-              input.readMessage(
-                  internalGetUpdateTimeFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              bitField1_ |= 0x00000004;
-              break;
-            } // case 298
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2793,7 +2584,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     private int bitField0_;
-    private int bitField1_;
 
     private java.lang.Object name_ = "";
     /**
@@ -4904,50 +4694,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean isCustom_ ;
-    /**
-     * <pre>
-     * Indicates user-contributed custom route.
-     * </pre>
-     *
-     * <code>bool is_custom = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The isCustom.
-     */
-    @java.lang.Override
-    public boolean getIsCustom() {
-      return isCustom_;
-    }
-    /**
-     * <pre>
-     * Indicates user-contributed custom route.
-     * </pre>
-     *
-     * <code>bool is_custom = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The isCustom to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIsCustom(boolean value) {
-
-      isCustom_ = value;
-      bitField0_ |= 0x08000000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Indicates user-contributed custom route.
-     * </pre>
-     *
-     * <code>bool is_custom = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearIsCustom() {
-      bitField0_ = (bitField0_ & ~0x08000000);
-      isCustom_ = false;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object authorId_ = "";
     /**
      * <pre>
@@ -5003,7 +4749,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       authorId_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -5017,7 +4763,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAuthorId() {
       authorId_ = getDefaultInstance().getAuthorId();
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       onChanged();
       return this;
     }
@@ -5035,7 +4781,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       authorId_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -5043,9 +4789,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<app.rappeloids.protos.v1.GpxTrack> gpxTracks_ =
       java.util.Collections.emptyList();
     private void ensureGpxTracksIsMutable() {
-      if (!((bitField0_ & 0x20000000) != 0)) {
+      if (!((bitField0_ & 0x10000000) != 0)) {
         gpxTracks_ = new java.util.ArrayList<app.rappeloids.protos.v1.GpxTrack>(gpxTracks_);
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x10000000;
        }
     }
 
@@ -5239,7 +4985,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearGpxTracks() {
       if (gpxTracksBuilder_ == null) {
         gpxTracks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x20000000);
+        bitField0_ = (bitField0_ & ~0x10000000);
         onChanged();
       } else {
         gpxTracksBuilder_.clear();
@@ -5344,7 +5090,7 @@ private static final long serialVersionUID = 0L;
         gpxTracksBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
             app.rappeloids.protos.v1.GpxTrack, app.rappeloids.protos.v1.GpxTrack.Builder, app.rappeloids.protos.v1.GpxTrackOrBuilder>(
                 gpxTracks_,
-                ((bitField0_ & 0x20000000) != 0),
+                ((bitField0_ & 0x10000000) != 0),
                 getParentForChildren(),
                 isClean());
         gpxTracks_ = null;
@@ -5355,9 +5101,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<app.rappeloids.protos.v1.RappelPitch> pitches_ =
       java.util.Collections.emptyList();
     private void ensurePitchesIsMutable() {
-      if (!((bitField0_ & 0x40000000) != 0)) {
+      if (!((bitField0_ & 0x20000000) != 0)) {
         pitches_ = new java.util.ArrayList<app.rappeloids.protos.v1.RappelPitch>(pitches_);
-        bitField0_ |= 0x40000000;
+        bitField0_ |= 0x20000000;
        }
     }
 
@@ -5507,7 +5253,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPitches() {
       if (pitchesBuilder_ == null) {
         pitches_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x40000000);
+        bitField0_ = (bitField0_ & ~0x20000000);
         onChanged();
       } else {
         pitchesBuilder_.clear();
@@ -5584,7 +5330,7 @@ private static final long serialVersionUID = 0L;
         pitchesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
             app.rappeloids.protos.v1.RappelPitch, app.rappeloids.protos.v1.RappelPitch.Builder, app.rappeloids.protos.v1.RappelPitchOrBuilder>(
                 pitches_,
-                ((bitField0_ & 0x40000000) != 0),
+                ((bitField0_ & 0x20000000) != 0),
                 getParentForChildren(),
                 isClean());
         pitches_ = null;
@@ -5595,9 +5341,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<app.rappeloids.protos.v1.CanyonLink> links_ =
       java.util.Collections.emptyList();
     private void ensureLinksIsMutable() {
-      if (!((bitField0_ & 0x80000000) != 0)) {
+      if (!((bitField0_ & 0x40000000) != 0)) {
         links_ = new java.util.ArrayList<app.rappeloids.protos.v1.CanyonLink>(links_);
-        bitField0_ |= 0x80000000;
+        bitField0_ |= 0x40000000;
        }
     }
 
@@ -5747,7 +5493,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearLinks() {
       if (linksBuilder_ == null) {
         links_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x80000000);
+        bitField0_ = (bitField0_ & ~0x40000000);
         onChanged();
       } else {
         linksBuilder_.clear();
@@ -5824,7 +5570,7 @@ private static final long serialVersionUID = 0L;
         linksBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
             app.rappeloids.protos.v1.CanyonLink, app.rappeloids.protos.v1.CanyonLink.Builder, app.rappeloids.protos.v1.CanyonLinkOrBuilder>(
                 links_,
-                ((bitField0_ & 0x80000000) != 0),
+                ((bitField0_ & 0x40000000) != 0),
                 getParentForChildren(),
                 isClean());
         links_ = null;
@@ -5835,9 +5581,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<app.rappeloids.protos.v1.QualityRating> qualityRatings_ =
       java.util.Collections.emptyList();
     private void ensureQualityRatingsIsMutable() {
-      if (!((bitField1_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x80000000) != 0)) {
         qualityRatings_ = new java.util.ArrayList<app.rappeloids.protos.v1.QualityRating>(qualityRatings_);
-        bitField1_ |= 0x00000001;
+        bitField0_ |= 0x80000000;
        }
     }
 
@@ -5987,7 +5733,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearQualityRatings() {
       if (qualityRatingsBuilder_ == null) {
         qualityRatings_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x80000000);
         onChanged();
       } else {
         qualityRatingsBuilder_.clear();
@@ -6064,326 +5810,12 @@ private static final long serialVersionUID = 0L;
         qualityRatingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
             app.rappeloids.protos.v1.QualityRating, app.rappeloids.protos.v1.QualityRating.Builder, app.rappeloids.protos.v1.QualityRatingOrBuilder>(
                 qualityRatings_,
-                ((bitField1_ & 0x00000001) != 0),
+                ((bitField0_ & 0x80000000) != 0),
                 getParentForChildren(),
                 isClean());
         qualityRatings_ = null;
       }
       return qualityRatingsBuilder_;
-    }
-
-    private com.google.protobuf.Timestamp createTime_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
-    /**
-     * <pre>
-     * Timestamp when the canyon was created (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return Whether the createTime field is set.
-     */
-    public boolean hasCreateTime() {
-      return ((bitField1_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     * Timestamp when the canyon was created (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The createTime.
-     */
-    public com.google.protobuf.Timestamp getCreateTime() {
-      if (createTimeBuilder_ == null) {
-        return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
-      } else {
-        return createTimeBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Timestamp when the canyon was created (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
-      if (createTimeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        createTime_ = value;
-      } else {
-        createTimeBuilder_.setMessage(value);
-      }
-      bitField1_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Timestamp when the canyon was created (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public Builder setCreateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (createTimeBuilder_ == null) {
-        createTime_ = builderForValue.build();
-      } else {
-        createTimeBuilder_.setMessage(builderForValue.build());
-      }
-      bitField1_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Timestamp when the canyon was created (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
-      if (createTimeBuilder_ == null) {
-        if (((bitField1_ & 0x00000002) != 0) &&
-          createTime_ != null &&
-          createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          getCreateTimeBuilder().mergeFrom(value);
-        } else {
-          createTime_ = value;
-        }
-      } else {
-        createTimeBuilder_.mergeFrom(value);
-      }
-      if (createTime_ != null) {
-        bitField1_ |= 0x00000002;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Timestamp when the canyon was created (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public Builder clearCreateTime() {
-      bitField1_ = (bitField1_ & ~0x00000002);
-      createTime_ = null;
-      if (createTimeBuilder_ != null) {
-        createTimeBuilder_.dispose();
-        createTimeBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Timestamp when the canyon was created (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField1_ |= 0x00000002;
-      onChanged();
-      return internalGetCreateTimeFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Timestamp when the canyon was created (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-      if (createTimeBuilder_ != null) {
-        return createTimeBuilder_.getMessageOrBuilder();
-      } else {
-        return createTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
-      }
-    }
-    /**
-     * <pre>
-     * Timestamp when the canyon was created (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-        internalGetCreateTimeFieldBuilder() {
-      if (createTimeBuilder_ == null) {
-        createTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getCreateTime(),
-                getParentForChildren(),
-                isClean());
-        createTime_ = null;
-      }
-      return createTimeBuilder_;
-    }
-
-    private com.google.protobuf.Timestamp updateTime_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
-    /**
-     * <pre>
-     * Timestamp when the canyon was last updated (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return Whether the updateTime field is set.
-     */
-    public boolean hasUpdateTime() {
-      return ((bitField1_ & 0x00000004) != 0);
-    }
-    /**
-     * <pre>
-     * Timestamp when the canyon was last updated (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The updateTime.
-     */
-    public com.google.protobuf.Timestamp getUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
-      } else {
-        return updateTimeBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Timestamp when the canyon was last updated (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
-      if (updateTimeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        updateTime_ = value;
-      } else {
-        updateTimeBuilder_.setMessage(value);
-      }
-      bitField1_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Timestamp when the canyon was last updated (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public Builder setUpdateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = builderForValue.build();
-      } else {
-        updateTimeBuilder_.setMessage(builderForValue.build());
-      }
-      bitField1_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Timestamp when the canyon was last updated (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
-      if (updateTimeBuilder_ == null) {
-        if (((bitField1_ & 0x00000004) != 0) &&
-          updateTime_ != null &&
-          updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          getUpdateTimeBuilder().mergeFrom(value);
-        } else {
-          updateTime_ = value;
-        }
-      } else {
-        updateTimeBuilder_.mergeFrom(value);
-      }
-      if (updateTime_ != null) {
-        bitField1_ |= 0x00000004;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Timestamp when the canyon was last updated (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public Builder clearUpdateTime() {
-      bitField1_ = (bitField1_ & ~0x00000004);
-      updateTime_ = null;
-      if (updateTimeBuilder_ != null) {
-        updateTimeBuilder_.dispose();
-        updateTimeBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Timestamp when the canyon was last updated (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField1_ |= 0x00000004;
-      onChanged();
-      return internalGetUpdateTimeFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Timestamp when the canyon was last updated (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-      if (updateTimeBuilder_ != null) {
-        return updateTimeBuilder_.getMessageOrBuilder();
-      } else {
-        return updateTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
-      }
-    }
-    /**
-     * <pre>
-     * Timestamp when the canyon was last updated (AIP-142).
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-        internalGetUpdateTimeFieldBuilder() {
-      if (updateTimeBuilder_ == null) {
-        updateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getUpdateTime(),
-                getParentForChildren(),
-                isClean());
-        updateTime_ = null;
-      }
-      return updateTimeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:rappeloids.v1.Canyon)

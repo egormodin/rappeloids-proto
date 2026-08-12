@@ -448,16 +448,6 @@ public interface CanyonOrBuilder extends
 
   /**
    * <pre>
-   * Indicates user-contributed custom route.
-   * </pre>
-   *
-   * <code>bool is_custom = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The isCustom.
-   */
-  boolean getIsCustom();
-
-  /**
-   * <pre>
    * User ID of the creator/author (AIP-122).
    * </pre>
    *
@@ -591,58 +581,4 @@ public interface CanyonOrBuilder extends
    */
   app.rappeloids.protos.v1.QualityRatingOrBuilder getQualityRatingsOrBuilder(
       int index);
-
-  /**
-   * <pre>
-   * Timestamp when the canyon was created (AIP-142).
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return Whether the createTime field is set.
-   */
-  boolean hasCreateTime();
-  /**
-   * <pre>
-   * Timestamp when the canyon was created (AIP-142).
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The createTime.
-   */
-  com.google.protobuf.Timestamp getCreateTime();
-  /**
-   * <pre>
-   * Timestamp when the canyon was created (AIP-142).
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   */
-  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
-
-  /**
-   * <pre>
-   * Timestamp when the canyon was last updated (AIP-142).
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return Whether the updateTime field is set.
-   */
-  boolean hasUpdateTime();
-  /**
-   * <pre>
-   * Timestamp when the canyon was last updated (AIP-142).
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The updateTime.
-   */
-  com.google.protobuf.Timestamp getUpdateTime();
-  /**
-   * <pre>
-   * Timestamp when the canyon was last updated (AIP-142).
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   */
-  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 }
