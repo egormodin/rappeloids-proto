@@ -471,44 +471,41 @@ public interface CanyonOrBuilder extends
    * Collections
    * </pre>
    *
-   * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the gpxTrackIds.
    */
-  java.util.List<app.rappeloids.protos.v1.GpxTrack> 
-      getGpxTracksList();
+  java.util.List<java.lang.String>
+      getGpxTrackIdsList();
   /**
    * <pre>
    * Collections
    * </pre>
    *
-   * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The count of gpxTrackIds.
    */
-  app.rappeloids.protos.v1.GpxTrack getGpxTracks(int index);
+  int getGpxTrackIdsCount();
   /**
    * <pre>
    * Collections
    * </pre>
    *
-   * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the element to return.
+   * @return The gpxTrackIds at the given index.
    */
-  int getGpxTracksCount();
+  java.lang.String getGpxTrackIds(int index);
   /**
    * <pre>
    * Collections
    * </pre>
    *
-   * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the gpxTrackIds at the given index.
    */
-  java.util.List<? extends app.rappeloids.protos.v1.GpxTrackOrBuilder> 
-      getGpxTracksOrBuilderList();
-  /**
-   * <pre>
-   * Collections
-   * </pre>
-   *
-   * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
-   */
-  app.rappeloids.protos.v1.GpxTrackOrBuilder getGpxTracksOrBuilder(
-      int index);
+  com.google.protobuf.ByteString
+      getGpxTrackIdsBytes(int index);
 
   /**
    * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>

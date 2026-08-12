@@ -1,0 +1,92 @@
+syntax = "proto3";
+
+package rappeloids.v1;
+
+option java_multiple_files = true;
+option java_package = "app.rappeloids.protos.v1";
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
+
+// Service managing GPX tracks and routes.
+service GpxService {
+  option (google.api.default_host) = "api.rappeloids.app";
+
+  // Gets a single GPX track by resource name or ID (AIP-131).
+  rpc GetGpxTrack(GetGpxTrackRequest) returns (GpxTrack) {
+    option (google.api.http) = {
+      get: "/v1/{name=gpxTracks/*}"
+      additional_bindings {
+        get: "/v1/gpxTracks/{name}"
+      }
+    };
+    option (google.api.method_signature) = "name";
+  }
+
+  // Lists default GPX tracks for all canyons in a specified region.
+  rpc ListRegionGpxTracks(ListRegionGpxTracksRequest) returns (ListRegionGpxTracksResponse) {
+    option (google.api.http) = {
+      get: "/v1/regions/{region}/gpxTracks"
+      additional_bindings {
+        get: "/v1/{parent=regions/*}/gpxTracks"
+      }
+    };
+  }
+}
+
+// GPX track resource following AIP-122.
+message GpxTrack {
+  option (google.api.resource) = {
+    type: "rappeloids.app/GpxTrack"
+    pattern: "gpxTracks/{gpx_track}"
+    pattern: "canyons/{canyon}/gpxTracks/{gpx_track}"
+    plural: "gpxTracks"
+    singular: "gpxTrack"
+  };
+
+  // The resource name of the GPX track (e.g. "gpxTracks/{id}").
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
+
+  // The ID of the GPX track.
+  string id = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // ID of the canyon this track belongs to.
+  string canyon_id = 3 [(google.api.field_behavior) = OPTIONAL];
+
+  // Name or title of the track (e.g. "Main Route", "Approach").
+  string display_name = 4 [(google.api.field_behavior) = REQUIRED];
+
+  // Raw GPX XML string content.
+  string gpx_content = 5 [(google.api.field_behavior) = REQUIRED];
+
+  // Whether this is the default track for the canyon.
+  bool is_default = 6 [(google.api.field_behavior) = OPTIONAL];
+
+  // Indicates if the track was constructed/generated algorithmically.
+  bool is_constructed = 7 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional description or note for the track.
+  string description = 8 [(google.api.field_behavior) = OPTIONAL];
+}
+
+message GetGpxTrackRequest {
+  // Format: "gpxTracks/{id}" or "{id}"
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "rappeloids.app/GpxTrack"
+  ];
+}
+
+message ListRegionGpxTracksRequest {
+  // Region ID or parent: "regions/{region_id}" or "{region_id}"
+  string region = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "rappeloids.app/Region"
+  ];
+}
+
+message ListRegionGpxTracksResponse {
+  repeated GpxTrack tracks = 1;
+}

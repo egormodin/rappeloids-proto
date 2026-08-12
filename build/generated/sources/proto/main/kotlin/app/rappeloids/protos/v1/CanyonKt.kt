@@ -684,44 +684,45 @@ public object CanyonKt {
      * generics.
      */
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
-    public class GpxTracksProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
+    public class GpxTrackIdsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
      * ```
      * Collections
      * ```
      *
-     * `repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];`
+     * @return A list containing the gpxTrackIds.
      */
-     public val gpxTracks: com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.GpxTrack, GpxTracksProxy>
-      @kotlin.jvm.JvmSynthetic
-  get() = com.google.protobuf.kotlin.DslList(
-        _builder.gpxTracksList
+    public val gpxTrackIds: com.google.protobuf.kotlin.DslList<kotlin.String, GpxTrackIdsProxy>
+    @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+      get() = com.google.protobuf.kotlin.DslList(
+        _builder.gpxTrackIdsList
       )
     /**
      * ```
      * Collections
      * ```
      *
-     * `repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];`
-     * @param value The gpxTracks to add.
+     * `repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];`
+     * @param value The gpxTrackIds to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addGpxTracks")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.GpxTrack, GpxTracksProxy>.add(value: app.rappeloids.protos.v1.GpxTrack) {
-      _builder.addGpxTracks(value)
+@kotlin.jvm.JvmName("addGpxTrackIds")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, GpxTrackIdsProxy>.add(value: kotlin.String) {
+      _builder.addGpxTrackIds(value)
     }
     /**
      * ```
      * Collections
      * ```
      *
-     * `repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];`
-     * @param value The gpxTracks to add.
+     * `repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];`
+     * @param value The gpxTrackIds to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignGpxTracks")
+@kotlin.jvm.JvmName("plusAssignGpxTrackIds")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.GpxTrack, GpxTracksProxy>.plusAssign(value: app.rappeloids.protos.v1.GpxTrack) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, GpxTrackIdsProxy>.plusAssign(value: kotlin.String) {
       add(value)
     }
     /**
@@ -729,26 +730,26 @@ public object CanyonKt {
      * Collections
      * ```
      *
-     * `repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];`
-     * @param values The gpxTracks to add.
+     * `repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];`
+     * @param values The gpxTrackIds to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAllGpxTracks")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.GpxTrack, GpxTracksProxy>.addAll(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.GpxTrack>) {
-      _builder.addAllGpxTracks(values)
+@kotlin.jvm.JvmName("addAllGpxTrackIds")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, GpxTrackIdsProxy>.addAll(values: kotlin.collections.Iterable<kotlin.String>) {
+      _builder.addAllGpxTrackIds(values)
     }
     /**
      * ```
      * Collections
      * ```
      *
-     * `repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];`
-     * @param values The gpxTracks to add.
+     * `repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];`
+     * @param values The gpxTrackIds to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAllGpxTracks")
+@kotlin.jvm.JvmName("plusAssignAllGpxTrackIds")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.GpxTrack, GpxTracksProxy>.plusAssign(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.GpxTrack>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, GpxTrackIdsProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.String>) {
       addAll(values)
     }
     /**
@@ -756,28 +757,26 @@ public object CanyonKt {
      * Collections
      * ```
      *
-     * `repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];`
      * @param index The index to set the value at.
-     * @param value The gpxTracks to set.
+     * @param value The gpxTrackIds to set.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setGpxTracks")
-    public operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.GpxTrack, GpxTracksProxy>.set(index: kotlin.Int, value: app.rappeloids.protos.v1.GpxTrack) {
-      _builder.setGpxTracks(index, value)
-    }
-    /**
+@kotlin.jvm.JvmName("setGpxTrackIds")
+    public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, GpxTrackIdsProxy>.set(index: kotlin.Int, value: kotlin.String) {
+      _builder.setGpxTrackIds(index, value)
+    }/**
      * ```
      * Collections
      * ```
      *
-     * `repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];`
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("clearGpxTracks")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.GpxTrack, GpxTracksProxy>.clear() {
-      _builder.clearGpxTracks()
+@kotlin.jvm.JvmName("setGpxTrackIds")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, GpxTrackIdsProxy>.clear() {
+      _builder.clearGpxTrackIds()
     }
-
     /**
      * An uninstantiable, behaviorless type to represent the field in
      * generics.

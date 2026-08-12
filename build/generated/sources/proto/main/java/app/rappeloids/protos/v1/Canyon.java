@@ -55,7 +55,8 @@ private static final long serialVersionUID = 0L;
     shuttle_ = "";
     vehicle_ = "";
     authorId_ = "";
-    gpxTracks_ = java.util.Collections.emptyList();
+    gpxTrackIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     pitches_ = java.util.Collections.emptyList();
     links_ = java.util.Collections.emptyList();
     qualityRatings_ = java.util.Collections.emptyList();
@@ -1176,65 +1177,57 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int GPX_TRACKS_FIELD_NUMBER = 32;
+  public static final int GPX_TRACK_IDS_FIELD_NUMBER = 32;
   @SuppressWarnings("serial")
-  private java.util.List<app.rappeloids.protos.v1.GpxTrack> gpxTracks_;
+  private com.google.protobuf.LazyStringArrayList gpxTrackIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    * <pre>
    * Collections
    * </pre>
    *
-   * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the gpxTrackIds.
    */
-  @java.lang.Override
-  public java.util.List<app.rappeloids.protos.v1.GpxTrack> getGpxTracksList() {
-    return gpxTracks_;
+  public com.google.protobuf.ProtocolStringList
+      getGpxTrackIdsList() {
+    return gpxTrackIds_;
   }
   /**
    * <pre>
    * Collections
    * </pre>
    *
-   * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The count of gpxTrackIds.
    */
-  @java.lang.Override
-  public java.util.List<? extends app.rappeloids.protos.v1.GpxTrackOrBuilder> 
-      getGpxTracksOrBuilderList() {
-    return gpxTracks_;
+  public int getGpxTrackIdsCount() {
+    return gpxTrackIds_.size();
   }
   /**
    * <pre>
    * Collections
    * </pre>
    *
-   * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the element to return.
+   * @return The gpxTrackIds at the given index.
    */
-  @java.lang.Override
-  public int getGpxTracksCount() {
-    return gpxTracks_.size();
+  public java.lang.String getGpxTrackIds(int index) {
+    return gpxTrackIds_.get(index);
   }
   /**
    * <pre>
    * Collections
    * </pre>
    *
-   * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the gpxTrackIds at the given index.
    */
-  @java.lang.Override
-  public app.rappeloids.protos.v1.GpxTrack getGpxTracks(int index) {
-    return gpxTracks_.get(index);
-  }
-  /**
-   * <pre>
-   * Collections
-   * </pre>
-   *
-   * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
-   */
-  @java.lang.Override
-  public app.rappeloids.protos.v1.GpxTrackOrBuilder getGpxTracksOrBuilder(
-      int index) {
-    return gpxTracks_.get(index);
+  public com.google.protobuf.ByteString
+      getGpxTrackIdsBytes(int index) {
+    return gpxTrackIds_.getByteString(index);
   }
 
   public static final int PITCHES_FIELD_NUMBER = 33;
@@ -1458,8 +1451,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(authorId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 31, authorId_);
     }
-    for (int i = 0; i < gpxTracks_.size(); i++) {
-      output.writeMessage(32, gpxTracks_.get(i));
+    for (int i = 0; i < gpxTrackIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 32, gpxTrackIds_.getRaw(i));
     }
     for (int i = 0; i < pitches_.size(); i++) {
       output.writeMessage(33, pitches_.get(i));
@@ -1568,9 +1561,13 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(authorId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(31, authorId_);
     }
-    for (int i = 0; i < gpxTracks_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(32, gpxTracks_.get(i));
+    {
+      int dataSize = 0;
+      for (int i = 0; i < gpxTrackIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(gpxTrackIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getGpxTrackIdsList().size();
     }
     for (int i = 0; i < pitches_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -1659,8 +1656,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getVehicle())) return false;
     if (!getAuthorId()
         .equals(other.getAuthorId())) return false;
-    if (!getGpxTracksList()
-        .equals(other.getGpxTracksList())) return false;
+    if (!getGpxTrackIdsList()
+        .equals(other.getGpxTrackIdsList())) return false;
     if (!getPitchesList()
         .equals(other.getPitchesList())) return false;
     if (!getLinksList()
@@ -1738,9 +1735,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getVehicle().hashCode();
     hash = (37 * hash) + AUTHOR_ID_FIELD_NUMBER;
     hash = (53 * hash) + getAuthorId().hashCode();
-    if (getGpxTracksCount() > 0) {
-      hash = (37 * hash) + GPX_TRACKS_FIELD_NUMBER;
-      hash = (53 * hash) + getGpxTracksList().hashCode();
+    if (getGpxTrackIdsCount() > 0) {
+      hash = (37 * hash) + GPX_TRACK_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getGpxTrackIdsList().hashCode();
     }
     if (getPitchesCount() > 0) {
       hash = (37 * hash) + PITCHES_FIELD_NUMBER;
@@ -1917,13 +1914,8 @@ private static final long serialVersionUID = 0L;
       shuttle_ = "";
       vehicle_ = "";
       authorId_ = "";
-      if (gpxTracksBuilder_ == null) {
-        gpxTracks_ = java.util.Collections.emptyList();
-      } else {
-        gpxTracks_ = null;
-        gpxTracksBuilder_.clear();
-      }
-      bitField0_ = (bitField0_ & ~0x10000000);
+      gpxTrackIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       if (pitchesBuilder_ == null) {
         pitches_ = java.util.Collections.emptyList();
       } else {
@@ -1978,15 +1970,6 @@ private static final long serialVersionUID = 0L;
     }
 
     private void buildPartialRepeatedFields(app.rappeloids.protos.v1.Canyon result) {
-      if (gpxTracksBuilder_ == null) {
-        if (((bitField0_ & 0x10000000) != 0)) {
-          gpxTracks_ = java.util.Collections.unmodifiableList(gpxTracks_);
-          bitField0_ = (bitField0_ & ~0x10000000);
-        }
-        result.gpxTracks_ = gpxTracks_;
-      } else {
-        result.gpxTracks_ = gpxTracksBuilder_.build();
-      }
       if (pitchesBuilder_ == null) {
         if (((bitField0_ & 0x20000000) != 0)) {
           pitches_ = java.util.Collections.unmodifiableList(pitches_);
@@ -2101,6 +2084,10 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
         result.authorId_ = authorId_;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        gpxTrackIds_.makeImmutable();
+        result.gpxTrackIds_ = gpxTrackIds_;
       }
     }
 
@@ -2246,31 +2233,15 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x08000000;
         onChanged();
       }
-      if (gpxTracksBuilder_ == null) {
-        if (!other.gpxTracks_.isEmpty()) {
-          if (gpxTracks_.isEmpty()) {
-            gpxTracks_ = other.gpxTracks_;
-            bitField0_ = (bitField0_ & ~0x10000000);
-          } else {
-            ensureGpxTracksIsMutable();
-            gpxTracks_.addAll(other.gpxTracks_);
-          }
-          onChanged();
+      if (!other.gpxTrackIds_.isEmpty()) {
+        if (gpxTrackIds_.isEmpty()) {
+          gpxTrackIds_ = other.gpxTrackIds_;
+          bitField0_ |= 0x10000000;
+        } else {
+          ensureGpxTrackIdsIsMutable();
+          gpxTrackIds_.addAll(other.gpxTrackIds_);
         }
-      } else {
-        if (!other.gpxTracks_.isEmpty()) {
-          if (gpxTracksBuilder_.isEmpty()) {
-            gpxTracksBuilder_.dispose();
-            gpxTracksBuilder_ = null;
-            gpxTracks_ = other.gpxTracks_;
-            bitField0_ = (bitField0_ & ~0x10000000);
-            gpxTracksBuilder_ = 
-              com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                 internalGetGpxTracksFieldBuilder() : null;
-          } else {
-            gpxTracksBuilder_.addAllMessages(other.gpxTracks_);
-          }
-        }
+        onChanged();
       }
       if (pitchesBuilder_ == null) {
         if (!other.pitches_.isEmpty()) {
@@ -2517,16 +2488,9 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 250
             case 258: {
-              app.rappeloids.protos.v1.GpxTrack m =
-                  input.readMessage(
-                      app.rappeloids.protos.v1.GpxTrack.parser(),
-                      extensionRegistry);
-              if (gpxTracksBuilder_ == null) {
-                ensureGpxTracksIsMutable();
-                gpxTracks_.add(m);
-              } else {
-                gpxTracksBuilder_.addMessage(m);
-              }
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureGpxTrackIdsIsMutable();
+              gpxTrackIds_.add(s);
               break;
             } // case 258
             case 266: {
@@ -4786,79 +4750,80 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<app.rappeloids.protos.v1.GpxTrack> gpxTracks_ =
-      java.util.Collections.emptyList();
-    private void ensureGpxTracksIsMutable() {
-      if (!((bitField0_ & 0x10000000) != 0)) {
-        gpxTracks_ = new java.util.ArrayList<app.rappeloids.protos.v1.GpxTrack>(gpxTracks_);
-        bitField0_ |= 0x10000000;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilder<
-        app.rappeloids.protos.v1.GpxTrack, app.rappeloids.protos.v1.GpxTrack.Builder, app.rappeloids.protos.v1.GpxTrackOrBuilder> gpxTracksBuilder_;
-
-    /**
-     * <pre>
-     * Collections
-     * </pre>
-     *
-     * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public java.util.List<app.rappeloids.protos.v1.GpxTrack> getGpxTracksList() {
-      if (gpxTracksBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(gpxTracks_);
-      } else {
-        return gpxTracksBuilder_.getMessageList();
+    private com.google.protobuf.LazyStringArrayList gpxTrackIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureGpxTrackIdsIsMutable() {
+      if (!gpxTrackIds_.isModifiable()) {
+        gpxTrackIds_ = new com.google.protobuf.LazyStringArrayList(gpxTrackIds_);
       }
+      bitField0_ |= 0x10000000;
     }
     /**
      * <pre>
      * Collections
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return A list containing the gpxTrackIds.
      */
-    public int getGpxTracksCount() {
-      if (gpxTracksBuilder_ == null) {
-        return gpxTracks_.size();
-      } else {
-        return gpxTracksBuilder_.getCount();
-      }
+    public com.google.protobuf.ProtocolStringList
+        getGpxTrackIdsList() {
+      gpxTrackIds_.makeImmutable();
+      return gpxTrackIds_;
     }
     /**
      * <pre>
      * Collections
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The count of gpxTrackIds.
      */
-    public app.rappeloids.protos.v1.GpxTrack getGpxTracks(int index) {
-      if (gpxTracksBuilder_ == null) {
-        return gpxTracks_.get(index);
-      } else {
-        return gpxTracksBuilder_.getMessage(index);
-      }
+    public int getGpxTrackIdsCount() {
+      return gpxTrackIds_.size();
     }
     /**
      * <pre>
      * Collections
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index of the element to return.
+     * @return The gpxTrackIds at the given index.
      */
-    public Builder setGpxTracks(
-        int index, app.rappeloids.protos.v1.GpxTrack value) {
-      if (gpxTracksBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureGpxTracksIsMutable();
-        gpxTracks_.set(index, value);
-        onChanged();
-      } else {
-        gpxTracksBuilder_.setMessage(index, value);
-      }
+    public java.lang.String getGpxTrackIds(int index) {
+      return gpxTrackIds_.get(index);
+    }
+    /**
+     * <pre>
+     * Collections
+     * </pre>
+     *
+     * <code>repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the gpxTrackIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getGpxTrackIdsBytes(int index) {
+      return gpxTrackIds_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * Collections
+     * </pre>
+     *
+     * <code>repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param index The index to set the value at.
+     * @param value The gpxTrackIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGpxTrackIds(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureGpxTrackIdsIsMutable();
+      gpxTrackIds_.set(index, value);
+      bitField0_ |= 0x10000000;
+      onChanged();
       return this;
     }
     /**
@@ -4866,17 +4831,17 @@ private static final long serialVersionUID = 0L;
      * Collections
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The gpxTrackIds to add.
+     * @return This builder for chaining.
      */
-    public Builder setGpxTracks(
-        int index, app.rappeloids.protos.v1.GpxTrack.Builder builderForValue) {
-      if (gpxTracksBuilder_ == null) {
-        ensureGpxTracksIsMutable();
-        gpxTracks_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        gpxTracksBuilder_.setMessage(index, builderForValue.build());
-      }
+    public Builder addGpxTrackIds(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureGpxTrackIdsIsMutable();
+      gpxTrackIds_.add(value);
+      bitField0_ |= 0x10000000;
+      onChanged();
       return this;
     }
     /**
@@ -4884,19 +4849,17 @@ private static final long serialVersionUID = 0L;
      * Collections
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param values The gpxTrackIds to add.
+     * @return This builder for chaining.
      */
-    public Builder addGpxTracks(app.rappeloids.protos.v1.GpxTrack value) {
-      if (gpxTracksBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureGpxTracksIsMutable();
-        gpxTracks_.add(value);
-        onChanged();
-      } else {
-        gpxTracksBuilder_.addMessage(value);
-      }
+    public Builder addAllGpxTrackIds(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureGpxTrackIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, gpxTrackIds_);
+      bitField0_ |= 0x10000000;
+      onChanged();
       return this;
     }
     /**
@@ -4904,20 +4867,14 @@ private static final long serialVersionUID = 0L;
      * Collections
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
      */
-    public Builder addGpxTracks(
-        int index, app.rappeloids.protos.v1.GpxTrack value) {
-      if (gpxTracksBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureGpxTracksIsMutable();
-        gpxTracks_.add(index, value);
-        onChanged();
-      } else {
-        gpxTracksBuilder_.addMessage(index, value);
-      }
+    public Builder clearGpxTrackIds() {
+      gpxTrackIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x10000000);;
+      onChanged();
       return this;
     }
     /**
@@ -4925,177 +4882,19 @@ private static final long serialVersionUID = 0L;
      * Collections
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated string gpx_track_ids = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes of the gpxTrackIds to add.
+     * @return This builder for chaining.
      */
-    public Builder addGpxTracks(
-        app.rappeloids.protos.v1.GpxTrack.Builder builderForValue) {
-      if (gpxTracksBuilder_ == null) {
-        ensureGpxTracksIsMutable();
-        gpxTracks_.add(builderForValue.build());
-        onChanged();
-      } else {
-        gpxTracksBuilder_.addMessage(builderForValue.build());
-      }
+    public Builder addGpxTrackIdsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureGpxTrackIdsIsMutable();
+      gpxTrackIds_.add(value);
+      bitField0_ |= 0x10000000;
+      onChanged();
       return this;
-    }
-    /**
-     * <pre>
-     * Collections
-     * </pre>
-     *
-     * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public Builder addGpxTracks(
-        int index, app.rappeloids.protos.v1.GpxTrack.Builder builderForValue) {
-      if (gpxTracksBuilder_ == null) {
-        ensureGpxTracksIsMutable();
-        gpxTracks_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        gpxTracksBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Collections
-     * </pre>
-     *
-     * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public Builder addAllGpxTracks(
-        java.lang.Iterable<? extends app.rappeloids.protos.v1.GpxTrack> values) {
-      if (gpxTracksBuilder_ == null) {
-        ensureGpxTracksIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, gpxTracks_);
-        onChanged();
-      } else {
-        gpxTracksBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Collections
-     * </pre>
-     *
-     * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public Builder clearGpxTracks() {
-      if (gpxTracksBuilder_ == null) {
-        gpxTracks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x10000000);
-        onChanged();
-      } else {
-        gpxTracksBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Collections
-     * </pre>
-     *
-     * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public Builder removeGpxTracks(int index) {
-      if (gpxTracksBuilder_ == null) {
-        ensureGpxTracksIsMutable();
-        gpxTracks_.remove(index);
-        onChanged();
-      } else {
-        gpxTracksBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Collections
-     * </pre>
-     *
-     * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public app.rappeloids.protos.v1.GpxTrack.Builder getGpxTracksBuilder(
-        int index) {
-      return internalGetGpxTracksFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <pre>
-     * Collections
-     * </pre>
-     *
-     * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public app.rappeloids.protos.v1.GpxTrackOrBuilder getGpxTracksOrBuilder(
-        int index) {
-      if (gpxTracksBuilder_ == null) {
-        return gpxTracks_.get(index);  } else {
-        return gpxTracksBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <pre>
-     * Collections
-     * </pre>
-     *
-     * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public java.util.List<? extends app.rappeloids.protos.v1.GpxTrackOrBuilder> 
-         getGpxTracksOrBuilderList() {
-      if (gpxTracksBuilder_ != null) {
-        return gpxTracksBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(gpxTracks_);
-      }
-    }
-    /**
-     * <pre>
-     * Collections
-     * </pre>
-     *
-     * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public app.rappeloids.protos.v1.GpxTrack.Builder addGpxTracksBuilder() {
-      return internalGetGpxTracksFieldBuilder().addBuilder(
-          app.rappeloids.protos.v1.GpxTrack.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * Collections
-     * </pre>
-     *
-     * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public app.rappeloids.protos.v1.GpxTrack.Builder addGpxTracksBuilder(
-        int index) {
-      return internalGetGpxTracksFieldBuilder().addBuilder(
-          index, app.rappeloids.protos.v1.GpxTrack.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * Collections
-     * </pre>
-     *
-     * <code>repeated .rappeloids.v1.GpxTrack gpx_tracks = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    public java.util.List<app.rappeloids.protos.v1.GpxTrack.Builder> 
-         getGpxTracksBuilderList() {
-      return internalGetGpxTracksFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilder<
-        app.rappeloids.protos.v1.GpxTrack, app.rappeloids.protos.v1.GpxTrack.Builder, app.rappeloids.protos.v1.GpxTrackOrBuilder> 
-        internalGetGpxTracksFieldBuilder() {
-      if (gpxTracksBuilder_ == null) {
-        gpxTracksBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-            app.rappeloids.protos.v1.GpxTrack, app.rappeloids.protos.v1.GpxTrack.Builder, app.rappeloids.protos.v1.GpxTrackOrBuilder>(
-                gpxTracks_,
-                ((bitField0_ & 0x10000000) != 0),
-                getParentForChildren(),
-                isClean());
-        gpxTracks_ = null;
-      }
-      return gpxTracksBuilder_;
     }
 
     private java.util.List<app.rappeloids.protos.v1.RappelPitch> pitches_ =

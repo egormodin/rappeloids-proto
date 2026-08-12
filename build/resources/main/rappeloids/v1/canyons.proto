@@ -172,19 +172,10 @@ message Canyon {
   ];
 
   // Collections
-  repeated GpxTrack gpx_tracks = 32 [(google.api.field_behavior) = OPTIONAL];
+  repeated string gpx_track_ids = 32 [(google.api.field_behavior) = OPTIONAL];
   repeated RappelPitch pitches = 33 [(google.api.field_behavior) = OPTIONAL];
   repeated CanyonLink links = 34 [(google.api.field_behavior) = OPTIONAL];
   repeated QualityRating quality_ratings = 35 [(google.api.field_behavior) = OPTIONAL];
-}
-
-message GpxTrack {
-  string id = 1 [(google.api.field_behavior) = OPTIONAL];
-  string name = 2 [(google.api.field_behavior) = REQUIRED];
-  string gpx_content = 3 [(google.api.field_behavior) = REQUIRED];
-  bool is_default = 4 [(google.api.field_behavior) = OPTIONAL];
-  bool is_constructed = 5 [(google.api.field_behavior) = OPTIONAL];
-  string description = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message RappelPitch {
