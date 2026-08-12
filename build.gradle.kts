@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "app.rappeloids"
-version = "1.0.0"
+version = "1.1.0"
 
 dependencies {
     api(libs.kotlin.stdlib)
@@ -60,7 +60,7 @@ publishing {
             from(components["java"])
             groupId = "app.rappeloids"
             artifactId = "rappeloids-proto"
-            version = "1.0.0"
+            version = project.version.toString()
         }
     }
     repositories {
