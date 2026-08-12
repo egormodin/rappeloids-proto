@@ -387,52 +387,27 @@ public object CanyonKt {
 
     /**
      * ```
-     * Recommended best months (e.g. "Jul - Sep").
+     * Recommended season or best months (e.g. "Summer", "Jul - Sep").
      * ```
      *
-     * `string best_month = 15 [(.google.api.field_behavior) = OPTIONAL];`
+     * `string season = 15 [(.google.api.field_behavior) = OPTIONAL];`
      */
-    public var bestMonth: kotlin.String
-      @kotlin.jvm.JvmName("getBestMonth")
-        get() = _builder.bestMonth
-      @kotlin.jvm.JvmName("setBestMonth")
+    public var season: kotlin.String
+      @kotlin.jvm.JvmName("getSeason")
+        get() = _builder.season
+      @kotlin.jvm.JvmName("setSeason")
         set(value) {
-        _builder.bestMonth = value
+        _builder.season = value
       }
     /**
      * ```
-     * Recommended best months (e.g. "Jul - Sep").
+     * Recommended season or best months (e.g. "Summer", "Jul - Sep").
      * ```
      *
-     * `string best_month = 15 [(.google.api.field_behavior) = OPTIONAL];`
+     * `string season = 15 [(.google.api.field_behavior) = OPTIONAL];`
      */
-    public fun clearBestMonth() {
-      _builder.clearBestMonth()
-    }
-
-    /**
-     * ```
-     * Recommended season (e.g. "Summer").
-     * ```
-     *
-     * `string best_season = 16 [(.google.api.field_behavior) = OPTIONAL];`
-     */
-    public var bestSeason: kotlin.String
-      @kotlin.jvm.JvmName("getBestSeason")
-        get() = _builder.bestSeason
-      @kotlin.jvm.JvmName("setBestSeason")
-        set(value) {
-        _builder.bestSeason = value
-      }
-    /**
-     * ```
-     * Recommended season (e.g. "Summer").
-     * ```
-     *
-     * `string best_season = 16 [(.google.api.field_behavior) = OPTIONAL];`
-     */
-    public fun clearBestSeason() {
-      _builder.clearBestSeason()
+    public fun clearSeason() {
+      _builder.clearSeason()
     }
 
     /**

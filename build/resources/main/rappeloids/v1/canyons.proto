@@ -140,11 +140,8 @@ message Canyon {
   // Typical total duration string (e.g. "4-6 hours").
   string duration = 14 [(google.api.field_behavior) = OPTIONAL];
 
-  // Recommended best months (e.g. "Jul - Sep").
-  string best_month = 15 [(google.api.field_behavior) = OPTIONAL];
-
-  // Recommended season (e.g. "Summer").
-  string best_season = 16 [(google.api.field_behavior) = OPTIONAL];
+  // Recommended season or best months (e.g. "Summer", "Jul - Sep").
+  string season = 15 [(google.api.field_behavior) = OPTIONAL];
 
   // Total route distance in kilometers.
   double distance_km = 17 [(google.api.field_behavior) = OPTIONAL];

@@ -44,8 +44,7 @@ private static final long serialVersionUID = 0L;
     riskRating_ = "";
     difficulty_ = "";
     duration_ = "";
-    bestMonth_ = "";
-    bestSeason_ = "";
+    season_ = "";
     overview_ = "";
     approach_ = "";
     descent_ = "";
@@ -3972,94 +3971,47 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int BEST_MONTH_FIELD_NUMBER = 15;
+  public static final int SEASON_FIELD_NUMBER = 15;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object bestMonth_ = "";
+  private volatile java.lang.Object season_ = "";
   /**
    * <pre>
-   * Recommended best months (e.g. "Jul - Sep").
+   * Recommended season or best months (e.g. "Summer", "Jul - Sep").
    * </pre>
    *
-   * <code>string best_month = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bestMonth.
+   * <code>string season = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The season.
    */
   @java.lang.Override
-  public java.lang.String getBestMonth() {
-    java.lang.Object ref = bestMonth_;
+  public java.lang.String getSeason() {
+    java.lang.Object ref = season_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      bestMonth_ = s;
+      season_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * Recommended best months (e.g. "Jul - Sep").
+   * Recommended season or best months (e.g. "Summer", "Jul - Sep").
    * </pre>
    *
-   * <code>string best_month = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for bestMonth.
+   * <code>string season = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for season.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getBestMonthBytes() {
-    java.lang.Object ref = bestMonth_;
+      getSeasonBytes() {
+    java.lang.Object ref = season_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      bestMonth_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int BEST_SEASON_FIELD_NUMBER = 16;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object bestSeason_ = "";
-  /**
-   * <pre>
-   * Recommended season (e.g. "Summer").
-   * </pre>
-   *
-   * <code>string best_season = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bestSeason.
-   */
-  @java.lang.Override
-  public java.lang.String getBestSeason() {
-    java.lang.Object ref = bestSeason_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      bestSeason_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Recommended season (e.g. "Summer").
-   * </pre>
-   *
-   * <code>string best_season = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for bestSeason.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getBestSeasonBytes() {
-    java.lang.Object ref = bestSeason_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      bestSeason_ = b;
+      season_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -4710,11 +4662,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(duration_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 14, duration_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(bestMonth_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 15, bestMonth_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(bestSeason_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 16, bestSeason_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(season_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 15, season_);
     }
     if (java.lang.Double.doubleToRawLongBits(distanceKm_) != 0) {
       output.writeDouble(17, distanceKm_);
@@ -4817,11 +4766,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(duration_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(14, duration_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(bestMonth_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(15, bestMonth_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(bestSeason_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(16, bestSeason_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(season_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(15, season_);
     }
     if (java.lang.Double.doubleToRawLongBits(distanceKm_) != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -4926,10 +4872,8 @@ private static final long serialVersionUID = 0L;
             other.getMaxRappelMeters())) return false;
     if (!getDuration()
         .equals(other.getDuration())) return false;
-    if (!getBestMonth()
-        .equals(other.getBestMonth())) return false;
-    if (!getBestSeason()
-        .equals(other.getBestSeason())) return false;
+    if (!getSeason()
+        .equals(other.getSeason())) return false;
     if (java.lang.Double.doubleToLongBits(getDistanceKm())
         != java.lang.Double.doubleToLongBits(
             other.getDistanceKm())) return false;
@@ -5005,10 +4949,8 @@ private static final long serialVersionUID = 0L;
         java.lang.Double.doubleToLongBits(getMaxRappelMeters()));
     hash = (37 * hash) + DURATION_FIELD_NUMBER;
     hash = (53 * hash) + getDuration().hashCode();
-    hash = (37 * hash) + BEST_MONTH_FIELD_NUMBER;
-    hash = (53 * hash) + getBestMonth().hashCode();
-    hash = (37 * hash) + BEST_SEASON_FIELD_NUMBER;
-    hash = (53 * hash) + getBestSeason().hashCode();
+    hash = (37 * hash) + SEASON_FIELD_NUMBER;
+    hash = (53 * hash) + getSeason().hashCode();
     hash = (37 * hash) + DISTANCE_KM_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getDistanceKm()));
@@ -5201,8 +5143,7 @@ private static final long serialVersionUID = 0L;
       rappelsCount_ = 0;
       maxRappelMeters_ = 0D;
       duration_ = "";
-      bestMonth_ = "";
-      bestSeason_ = "";
+      season_ = "";
       distanceKm_ = 0D;
       elevationDropMeters_ = 0D;
       elevationGainMeters_ = 0D;
@@ -5223,21 +5164,21 @@ private static final long serialVersionUID = 0L;
         pitches_ = null;
         pitchesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       if (linksBuilder_ == null) {
         links_ = java.util.Collections.emptyList();
       } else {
         links_ = null;
         linksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       if (qualityRatingsBuilder_ == null) {
         qualityRatings_ = java.util.Collections.emptyList();
       } else {
         qualityRatings_ = null;
         qualityRatingsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       return this;
     }
 
@@ -5272,27 +5213,27 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartialRepeatedFields(app.rappeloids.protos.v1.Canyon result) {
       if (pitchesBuilder_ == null) {
-        if (((bitField0_ & 0x20000000) != 0)) {
+        if (((bitField0_ & 0x10000000) != 0)) {
           pitches_ = java.util.Collections.unmodifiableList(pitches_);
-          bitField0_ = (bitField0_ & ~0x20000000);
+          bitField0_ = (bitField0_ & ~0x10000000);
         }
         result.pitches_ = pitches_;
       } else {
         result.pitches_ = pitchesBuilder_.build();
       }
       if (linksBuilder_ == null) {
-        if (((bitField0_ & 0x40000000) != 0)) {
+        if (((bitField0_ & 0x20000000) != 0)) {
           links_ = java.util.Collections.unmodifiableList(links_);
-          bitField0_ = (bitField0_ & ~0x40000000);
+          bitField0_ = (bitField0_ & ~0x20000000);
         }
         result.links_ = links_;
       } else {
         result.links_ = linksBuilder_.build();
       }
       if (qualityRatingsBuilder_ == null) {
-        if (((bitField0_ & 0x80000000) != 0)) {
+        if (((bitField0_ & 0x40000000) != 0)) {
           qualityRatings_ = java.util.Collections.unmodifiableList(qualityRatings_);
-          bitField0_ = (bitField0_ & ~0x80000000);
+          bitField0_ = (bitField0_ & ~0x40000000);
         }
         result.qualityRatings_ = qualityRatings_;
       } else {
@@ -5345,48 +5286,45 @@ private static final long serialVersionUID = 0L;
         result.duration_ = duration_;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.bestMonth_ = bestMonth_;
+        result.season_ = season_;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.bestSeason_ = bestSeason_;
-      }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.distanceKm_ = distanceKm_;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.elevationDropMeters_ = elevationDropMeters_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.elevationGainMeters_ = elevationGainMeters_;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.overview_ = overview_;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.approach_ = approach_;
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.descent_ = descent_;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.exit_ = exit_;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.redTape_ = redTape_;
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.permits_ = permits_;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.shuttle_ = shuttle_;
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.vehicle_ = vehicle_;
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.authorId_ = authorId_;
       }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         gpxTrackIds_.makeImmutable();
         result.gpxTrackIds_ = gpxTrackIds_;
       }
@@ -5470,14 +5408,9 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00002000;
         onChanged();
       }
-      if (!other.getBestMonth().isEmpty()) {
-        bestMonth_ = other.bestMonth_;
+      if (!other.getSeason().isEmpty()) {
+        season_ = other.season_;
         bitField0_ |= 0x00004000;
-        onChanged();
-      }
-      if (!other.getBestSeason().isEmpty()) {
-        bestSeason_ = other.bestSeason_;
-        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (java.lang.Double.doubleToRawLongBits(other.getDistanceKm()) != 0) {
@@ -5491,53 +5424,53 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getOverview().isEmpty()) {
         overview_ = other.overview_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (!other.getApproach().isEmpty()) {
         approach_ = other.approach_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (!other.getDescent().isEmpty()) {
         descent_ = other.descent_;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (!other.getExit().isEmpty()) {
         exit_ = other.exit_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (!other.getRedTape().isEmpty()) {
         redTape_ = other.redTape_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       if (!other.getPermits().isEmpty()) {
         permits_ = other.permits_;
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       if (!other.getShuttle().isEmpty()) {
         shuttle_ = other.shuttle_;
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       if (!other.getVehicle().isEmpty()) {
         vehicle_ = other.vehicle_;
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       if (!other.getAuthorId().isEmpty()) {
         authorId_ = other.authorId_;
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       if (!other.gpxTrackIds_.isEmpty()) {
         if (gpxTrackIds_.isEmpty()) {
           gpxTrackIds_ = other.gpxTrackIds_;
-          bitField0_ |= 0x10000000;
+          bitField0_ |= 0x08000000;
         } else {
           ensureGpxTrackIdsIsMutable();
           gpxTrackIds_.addAll(other.gpxTrackIds_);
@@ -5548,7 +5481,7 @@ private static final long serialVersionUID = 0L;
         if (!other.pitches_.isEmpty()) {
           if (pitches_.isEmpty()) {
             pitches_ = other.pitches_;
-            bitField0_ = (bitField0_ & ~0x20000000);
+            bitField0_ = (bitField0_ & ~0x10000000);
           } else {
             ensurePitchesIsMutable();
             pitches_.addAll(other.pitches_);
@@ -5561,7 +5494,7 @@ private static final long serialVersionUID = 0L;
             pitchesBuilder_.dispose();
             pitchesBuilder_ = null;
             pitches_ = other.pitches_;
-            bitField0_ = (bitField0_ & ~0x20000000);
+            bitField0_ = (bitField0_ & ~0x10000000);
             pitchesBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  internalGetPitchesFieldBuilder() : null;
@@ -5574,7 +5507,7 @@ private static final long serialVersionUID = 0L;
         if (!other.links_.isEmpty()) {
           if (links_.isEmpty()) {
             links_ = other.links_;
-            bitField0_ = (bitField0_ & ~0x40000000);
+            bitField0_ = (bitField0_ & ~0x20000000);
           } else {
             ensureLinksIsMutable();
             links_.addAll(other.links_);
@@ -5587,7 +5520,7 @@ private static final long serialVersionUID = 0L;
             linksBuilder_.dispose();
             linksBuilder_ = null;
             links_ = other.links_;
-            bitField0_ = (bitField0_ & ~0x40000000);
+            bitField0_ = (bitField0_ & ~0x20000000);
             linksBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  internalGetLinksFieldBuilder() : null;
@@ -5600,7 +5533,7 @@ private static final long serialVersionUID = 0L;
         if (!other.qualityRatings_.isEmpty()) {
           if (qualityRatings_.isEmpty()) {
             qualityRatings_ = other.qualityRatings_;
-            bitField0_ = (bitField0_ & ~0x80000000);
+            bitField0_ = (bitField0_ & ~0x40000000);
           } else {
             ensureQualityRatingsIsMutable();
             qualityRatings_.addAll(other.qualityRatings_);
@@ -5613,7 +5546,7 @@ private static final long serialVersionUID = 0L;
             qualityRatingsBuilder_.dispose();
             qualityRatingsBuilder_ = null;
             qualityRatings_ = other.qualityRatings_;
-            bitField0_ = (bitField0_ & ~0x80000000);
+            bitField0_ = (bitField0_ & ~0x40000000);
             qualityRatingsBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  internalGetQualityRatingsFieldBuilder() : null;
@@ -5719,73 +5652,68 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 114
             case 122: {
-              bestMonth_ = input.readStringRequireUtf8();
+              season_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00004000;
               break;
             } // case 122
-            case 130: {
-              bestSeason_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00008000;
-              break;
-            } // case 130
             case 137: {
               distanceKm_ = input.readDouble();
-              bitField0_ |= 0x00010000;
+              bitField0_ |= 0x00008000;
               break;
             } // case 137
             case 145: {
               elevationDropMeters_ = input.readDouble();
-              bitField0_ |= 0x00020000;
+              bitField0_ |= 0x00010000;
               break;
             } // case 145
             case 153: {
               elevationGainMeters_ = input.readDouble();
-              bitField0_ |= 0x00040000;
+              bitField0_ |= 0x00020000;
               break;
             } // case 153
             case 162: {
               overview_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00080000;
+              bitField0_ |= 0x00040000;
               break;
             } // case 162
             case 170: {
               approach_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00100000;
+              bitField0_ |= 0x00080000;
               break;
             } // case 170
             case 178: {
               descent_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00200000;
+              bitField0_ |= 0x00100000;
               break;
             } // case 178
             case 186: {
               exit_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00400000;
+              bitField0_ |= 0x00200000;
               break;
             } // case 186
             case 194: {
               redTape_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00800000;
+              bitField0_ |= 0x00400000;
               break;
             } // case 194
             case 202: {
               permits_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x01000000;
+              bitField0_ |= 0x00800000;
               break;
             } // case 202
             case 210: {
               shuttle_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x02000000;
+              bitField0_ |= 0x01000000;
               break;
             } // case 210
             case 218: {
               vehicle_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x04000000;
+              bitField0_ |= 0x02000000;
               break;
             } // case 218
             case 250: {
               authorId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x08000000;
+              bitField0_ |= 0x04000000;
               break;
             } // case 250
             case 258: {
@@ -7047,22 +6975,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object bestMonth_ = "";
+    private java.lang.Object season_ = "";
     /**
      * <pre>
-     * Recommended best months (e.g. "Jul - Sep").
+     * Recommended season or best months (e.g. "Summer", "Jul - Sep").
      * </pre>
      *
-     * <code>string best_month = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bestMonth.
+     * <code>string season = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The season.
      */
-    public java.lang.String getBestMonth() {
-      java.lang.Object ref = bestMonth_;
+    public java.lang.String getSeason() {
+      java.lang.Object ref = season_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        bestMonth_ = s;
+        season_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -7070,20 +6998,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Recommended best months (e.g. "Jul - Sep").
+     * Recommended season or best months (e.g. "Summer", "Jul - Sep").
      * </pre>
      *
-     * <code>string best_month = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for bestMonth.
+     * <code>string season = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for season.
      */
     public com.google.protobuf.ByteString
-        getBestMonthBytes() {
-      java.lang.Object ref = bestMonth_;
+        getSeasonBytes() {
+      java.lang.Object ref = season_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        bestMonth_ = b;
+        season_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -7091,142 +7019,50 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Recommended best months (e.g. "Jul - Sep").
+     * Recommended season or best months (e.g. "Summer", "Jul - Sep").
      * </pre>
      *
-     * <code>string best_month = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bestMonth to set.
+     * <code>string season = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The season to set.
      * @return This builder for chaining.
      */
-    public Builder setBestMonth(
+    public Builder setSeason(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      bestMonth_ = value;
+      season_ = value;
       bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Recommended best months (e.g. "Jul - Sep").
+     * Recommended season or best months (e.g. "Summer", "Jul - Sep").
      * </pre>
      *
-     * <code>string best_month = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string season = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
-    public Builder clearBestMonth() {
-      bestMonth_ = getDefaultInstance().getBestMonth();
+    public Builder clearSeason() {
+      season_ = getDefaultInstance().getSeason();
       bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Recommended best months (e.g. "Jul - Sep").
+     * Recommended season or best months (e.g. "Summer", "Jul - Sep").
      * </pre>
      *
-     * <code>string best_month = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for bestMonth to set.
+     * <code>string season = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for season to set.
      * @return This builder for chaining.
      */
-    public Builder setBestMonthBytes(
+    public Builder setSeasonBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      bestMonth_ = value;
+      season_ = value;
       bitField0_ |= 0x00004000;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object bestSeason_ = "";
-    /**
-     * <pre>
-     * Recommended season (e.g. "Summer").
-     * </pre>
-     *
-     * <code>string best_season = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bestSeason.
-     */
-    public java.lang.String getBestSeason() {
-      java.lang.Object ref = bestSeason_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        bestSeason_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Recommended season (e.g. "Summer").
-     * </pre>
-     *
-     * <code>string best_season = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for bestSeason.
-     */
-    public com.google.protobuf.ByteString
-        getBestSeasonBytes() {
-      java.lang.Object ref = bestSeason_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        bestSeason_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Recommended season (e.g. "Summer").
-     * </pre>
-     *
-     * <code>string best_season = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bestSeason to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBestSeason(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      bestSeason_ = value;
-      bitField0_ |= 0x00008000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Recommended season (e.g. "Summer").
-     * </pre>
-     *
-     * <code>string best_season = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearBestSeason() {
-      bestSeason_ = getDefaultInstance().getBestSeason();
-      bitField0_ = (bitField0_ & ~0x00008000);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Recommended season (e.g. "Summer").
-     * </pre>
-     *
-     * <code>string best_season = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for bestSeason to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBestSeasonBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      bestSeason_ = value;
-      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -7256,7 +7092,7 @@ private static final long serialVersionUID = 0L;
     public Builder setDistanceKm(double value) {
 
       distanceKm_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -7269,7 +7105,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDistanceKm() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       distanceKm_ = 0D;
       onChanged();
       return this;
@@ -7300,7 +7136,7 @@ private static final long serialVersionUID = 0L;
     public Builder setElevationDropMeters(double value) {
 
       elevationDropMeters_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -7313,7 +7149,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearElevationDropMeters() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       elevationDropMeters_ = 0D;
       onChanged();
       return this;
@@ -7344,7 +7180,7 @@ private static final long serialVersionUID = 0L;
     public Builder setElevationGainMeters(double value) {
 
       elevationGainMeters_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -7357,7 +7193,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearElevationGainMeters() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       elevationGainMeters_ = 0D;
       onChanged();
       return this;
@@ -7418,7 +7254,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       overview_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7432,7 +7268,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearOverview() {
       overview_ = getDefaultInstance().getOverview();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -7450,7 +7286,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       overview_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7498,7 +7334,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       approach_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7508,7 +7344,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearApproach() {
       approach_ = getDefaultInstance().getApproach();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -7522,7 +7358,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       approach_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7570,7 +7406,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       descent_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7580,7 +7416,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDescent() {
       descent_ = getDefaultInstance().getDescent();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -7594,7 +7430,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       descent_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7642,7 +7478,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       exit_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7652,7 +7488,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearExit() {
       exit_ = getDefaultInstance().getExit();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -7666,7 +7502,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       exit_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7714,7 +7550,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       redTape_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7724,7 +7560,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearRedTape() {
       redTape_ = getDefaultInstance().getRedTape();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -7738,7 +7574,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       redTape_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7786,7 +7622,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       permits_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7796,7 +7632,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearPermits() {
       permits_ = getDefaultInstance().getPermits();
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -7810,7 +7646,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       permits_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7858,7 +7694,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       shuttle_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7868,7 +7704,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearShuttle() {
       shuttle_ = getDefaultInstance().getShuttle();
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -7882,7 +7718,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       shuttle_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7930,7 +7766,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       vehicle_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7940,7 +7776,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearVehicle() {
       vehicle_ = getDefaultInstance().getVehicle();
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       onChanged();
       return this;
     }
@@ -7954,7 +7790,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       vehicle_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -8014,7 +7850,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       authorId_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -8028,7 +7864,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAuthorId() {
       authorId_ = getDefaultInstance().getAuthorId();
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       onChanged();
       return this;
     }
@@ -8046,7 +7882,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       authorId_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -8057,7 +7893,7 @@ private static final long serialVersionUID = 0L;
       if (!gpxTrackIds_.isModifiable()) {
         gpxTrackIds_ = new com.google.protobuf.LazyStringArrayList(gpxTrackIds_);
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x08000000;
     }
     /**
      * <pre>
@@ -8123,7 +7959,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureGpxTrackIdsIsMutable();
       gpxTrackIds_.set(index, value);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8141,7 +7977,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureGpxTrackIdsIsMutable();
       gpxTrackIds_.add(value);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8159,7 +7995,7 @@ private static final long serialVersionUID = 0L;
       ensureGpxTrackIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, gpxTrackIds_);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8174,7 +8010,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearGpxTrackIds() {
       gpxTrackIds_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x10000000);;
+      bitField0_ = (bitField0_ & ~0x08000000);;
       onChanged();
       return this;
     }
@@ -8193,7 +8029,7 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensureGpxTrackIdsIsMutable();
       gpxTrackIds_.add(value);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8201,9 +8037,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<app.rappeloids.protos.v1.Canyon.RappelPitch> pitches_ =
       java.util.Collections.emptyList();
     private void ensurePitchesIsMutable() {
-      if (!((bitField0_ & 0x20000000) != 0)) {
+      if (!((bitField0_ & 0x10000000) != 0)) {
         pitches_ = new java.util.ArrayList<app.rappeloids.protos.v1.Canyon.RappelPitch>(pitches_);
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x10000000;
        }
     }
 
@@ -8353,7 +8189,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPitches() {
       if (pitchesBuilder_ == null) {
         pitches_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x20000000);
+        bitField0_ = (bitField0_ & ~0x10000000);
         onChanged();
       } else {
         pitchesBuilder_.clear();
@@ -8430,7 +8266,7 @@ private static final long serialVersionUID = 0L;
         pitchesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
             app.rappeloids.protos.v1.Canyon.RappelPitch, app.rappeloids.protos.v1.Canyon.RappelPitch.Builder, app.rappeloids.protos.v1.Canyon.RappelPitchOrBuilder>(
                 pitches_,
-                ((bitField0_ & 0x20000000) != 0),
+                ((bitField0_ & 0x10000000) != 0),
                 getParentForChildren(),
                 isClean());
         pitches_ = null;
@@ -8441,9 +8277,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<app.rappeloids.protos.v1.Canyon.CanyonLink> links_ =
       java.util.Collections.emptyList();
     private void ensureLinksIsMutable() {
-      if (!((bitField0_ & 0x40000000) != 0)) {
+      if (!((bitField0_ & 0x20000000) != 0)) {
         links_ = new java.util.ArrayList<app.rappeloids.protos.v1.Canyon.CanyonLink>(links_);
-        bitField0_ |= 0x40000000;
+        bitField0_ |= 0x20000000;
        }
     }
 
@@ -8593,7 +8429,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearLinks() {
       if (linksBuilder_ == null) {
         links_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x40000000);
+        bitField0_ = (bitField0_ & ~0x20000000);
         onChanged();
       } else {
         linksBuilder_.clear();
@@ -8670,7 +8506,7 @@ private static final long serialVersionUID = 0L;
         linksBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
             app.rappeloids.protos.v1.Canyon.CanyonLink, app.rappeloids.protos.v1.Canyon.CanyonLink.Builder, app.rappeloids.protos.v1.Canyon.CanyonLinkOrBuilder>(
                 links_,
-                ((bitField0_ & 0x40000000) != 0),
+                ((bitField0_ & 0x20000000) != 0),
                 getParentForChildren(),
                 isClean());
         links_ = null;
@@ -8681,9 +8517,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<app.rappeloids.protos.v1.Canyon.QualityRating> qualityRatings_ =
       java.util.Collections.emptyList();
     private void ensureQualityRatingsIsMutable() {
-      if (!((bitField0_ & 0x80000000) != 0)) {
+      if (!((bitField0_ & 0x40000000) != 0)) {
         qualityRatings_ = new java.util.ArrayList<app.rappeloids.protos.v1.Canyon.QualityRating>(qualityRatings_);
-        bitField0_ |= 0x80000000;
+        bitField0_ |= 0x40000000;
        }
     }
 
@@ -8833,7 +8669,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearQualityRatings() {
       if (qualityRatingsBuilder_ == null) {
         qualityRatings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x80000000);
+        bitField0_ = (bitField0_ & ~0x40000000);
         onChanged();
       } else {
         qualityRatingsBuilder_.clear();
@@ -8910,7 +8746,7 @@ private static final long serialVersionUID = 0L;
         qualityRatingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
             app.rappeloids.protos.v1.Canyon.QualityRating, app.rappeloids.protos.v1.Canyon.QualityRating.Builder, app.rappeloids.protos.v1.Canyon.QualityRatingOrBuilder>(
                 qualityRatings_,
-                ((bitField0_ & 0x80000000) != 0),
+                ((bitField0_ & 0x40000000) != 0),
                 getParentForChildren(),
                 isClean());
         qualityRatings_ = null;

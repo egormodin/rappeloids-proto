@@ -102,7 +102,7 @@ public final class Canyons extends com.google.protobuf.GeneratedFile {
       "\033google/protobuf/empty.proto\032 google/pro" +
       "tobuf/field_mask.proto\032\037google/protobuf/" +
       "timestamp.proto\032\032rappeloids/v1/common.pr" +
-      "oto\"\320\013\n\006Canyon\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\017\n\002id\030" +
+      "oto\"\262\013\n\006Canyon\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\017\n\002id\030" +
       "\002 \001(\tB\003\340A\003\0220\n\tregion_id\030\003 \001(\tB\035\340A\002\372A\027\n\025r" +
       "appeloids.app/Region\022\031\n\014display_name\030\004 \001" +
       "(\tB\003\340A\002\022\021\n\004link\030\005 \001(\tB\003\340A\001\022\030\n\013descriptio" +
@@ -111,80 +111,80 @@ public final class Canyons extends com.google.protobuf.GeneratedFile {
       "ating\030\t \001(\tB\003\340A\001\022\030\n\013risk_rating\030\n \001(\tB\003\340" +
       "A\001\022\027\n\ndifficulty\030\013 \001(\tB\003\340A\001\022\032\n\rrappels_c" +
       "ount\030\014 \001(\005B\003\340A\001\022\036\n\021max_rappel_meters\030\r \001" +
-      "(\001B\003\340A\001\022\025\n\010duration\030\016 \001(\tB\003\340A\001\022\027\n\nbest_m" +
-      "onth\030\017 \001(\tB\003\340A\001\022\030\n\013best_season\030\020 \001(\tB\003\340A" +
-      "\001\022\030\n\013distance_km\030\021 \001(\001B\003\340A\001\022\"\n\025elevation" +
-      "_drop_meters\030\022 \001(\001B\003\340A\001\022\"\n\025elevation_gai" +
-      "n_meters\030\023 \001(\001B\003\340A\001\022\025\n\010overview\030\024 \001(\tB\003\340" +
-      "A\001\022\025\n\010approach\030\025 \001(\tB\003\340A\001\022\024\n\007descent\030\026 \001" +
-      "(\tB\003\340A\001\022\021\n\004exit\030\027 \001(\tB\003\340A\001\022\025\n\010red_tape\030\030" +
-      " \001(\tB\003\340A\001\022\024\n\007permits\030\031 \001(\tB\003\340A\001\022\024\n\007shutt" +
-      "le\030\032 \001(\tB\003\340A\001\022\024\n\007vehicle\030\033 \001(\tB\003\340A\001\022.\n\ta" +
-      "uthor_id\030\037 \001(\tB\033\340A\003\372A\025\n\023rappeloids.app/U" +
-      "ser\022\032\n\rgpx_track_ids\030  \003(\tB\003\340A\001\0227\n\007pitch" +
-      "es\030! \003(\0132!.rappeloids.v1.Canyon.RappelPi" +
-      "tchB\003\340A\001\0224\n\005links\030\" \003(\0132 .rappeloids.v1." +
-      "Canyon.CanyonLinkB\003\340A\001\022A\n\017quality_rating" +
-      "s\030# \003(\0132#.rappeloids.v1.Canyon.QualityRa" +
-      "tingB\003\340A\001\032\272\002\n\013RappelPitch\022\017\n\002id\030\001 \001(\tB\003\340" +
-      "A\001\022\021\n\004name\030\002 \001(\tB\003\340A\002\022\023\n\006length\030\003 \001(\tB\003\340" +
-      "A\001\022\023\n\006anchor\030\004 \001(\tB\003\340A\001\022\025\n\010has_pool\030\005 \001(" +
-      "\010B\003\340A\001\022\030\n\013pools_count\030\006 \001(\005B\003\340A\001\022\030\n\013desc" +
-      "ription\030\007 \001(\tB\003\340A\001\022\024\n\007section\030\010 \001(\tB\003\340A\001" +
-      "\022\033\n\016is_alternative\030\t \001(\010B\003\340A\001\022\023\n\006alt_of\030" +
-      "\n \001(\tB\003\340A\001\022\026\n\tis_staged\030\013 \001(\010B\003\340A\001\022\030\n\013st" +
-      "aged_note\030\014 \001(\tB\003\340A\001\022\030\n\013escape_exit\030\r \001(" +
-      "\tB\003\340A\001\0322\n\nCanyonLink\022\022\n\005title\030\001 \001(\tB\003\340A\002" +
-      "\022\020\n\003url\030\002 \001(\tB\003\340A\002\0328\n\rQualityRating\022\023\n\006s" +
-      "ource\030\001 \001(\tB\003\340A\002\022\022\n\005value\030\002 \001(\tB\003\340A\002:`\352A" +
-      "]\n\025rappeloids.app/Canyon\022\020canyons/{canyo" +
-      "n}\022!regions/{region}/canyons/{canyon}*\007c" +
-      "anyons2\006canyon\"\272\001\n\022ListCanyonsRequest\022-\n" +
-      "\006parent\030\001 \001(\tB\035\340A\001\372A\027\n\025rappeloids.app/Re" +
-      "gion\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_tok" +
-      "en\030\003 \001(\tB\003\340A\001\022-\n\006region\030\004 \001(\tB\035\340A\001\372A\027\n\025r" +
-      "appeloids.app/Region\022\025\n\010order_by\030\005 \001(\tB\003" +
-      "\340A\001\"j\n\023ListCanyonsResponse\022&\n\007canyons\030\001 " +
-      "\003(\0132\025.rappeloids.v1.Canyon\022\027\n\017next_page_" +
-      "token\030\002 \001(\t\022\022\n\ntotal_size\030\003 \001(\005\"?\n\020GetCa" +
-      "nyonRequest\022+\n\004name\030\001 \001(\tB\035\340A\002\372A\027\n\025rappe" +
-      "loids.app/Canyon\"\210\001\n\023CreateCanyonRequest" +
-      "\022-\n\006parent\030\001 \001(\tB\035\340A\001\372A\027\n\025rappeloids.app" +
-      "/Region\022\026\n\tcanyon_id\030\002 \001(\tB\003\340A\001\022*\n\006canyo" +
-      "n\030\003 \001(\0132\025.rappeloids.v1.CanyonB\003\340A\002\"w\n\023U" +
-      "pdateCanyonRequest\022*\n\006canyon\030\001 \001(\0132\025.rap" +
-      "peloids.v1.CanyonB\003\340A\002\0224\n\013update_mask\030\002 " +
-      "\001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"B\n\023" +
-      "DeleteCanyonRequest\022+\n\004name\030\001 \001(\tB\035\340A\002\372A" +
-      "\027\n\025rappeloids.app/Canyon\"F\n\026BatchGetCany" +
-      "onsRequest\022,\n\005names\030\001 \003(\tB\035\340A\002\372A\027\n\025rappe" +
-      "loids.app/Canyon\"A\n\027BatchGetCanyonsRespo" +
-      "nse\022&\n\007canyons\030\001 \003(\0132\025.rappeloids.v1.Can" +
-      "yon2\273\007\n\016CanyonsService\022\213\001\n\013ListCanyons\022!" +
-      ".rappeloids.v1.ListCanyonsRequest\032\".rapp" +
-      "eloids.v1.ListCanyonsResponse\"5\202\323\344\223\002/\022\013/" +
-      "v1/canyonsZ \022\036/v1/{parent=regions/*}/can" +
-      "yons\022\212\001\n\tGetCanyon\022\037.rappeloids.v1.GetCa" +
-      "nyonRequest\032\025.rappeloids.v1.Canyon\"E\332A\004n" +
-      "ame\202\323\344\223\0028\022\024/v1/{name=canyons/*}Z \022\036/v1/{" +
-      "name=regions/*/canyons/*}\022\243\001\n\014CreateCany" +
-      "on\022\".rappeloids.v1.CreateCanyonRequest\032\025" +
-      ".rappeloids.v1.Canyon\"X\332A\020canyon,canyon_" +
-      "id\202\323\344\223\002?\"\013/v1/canyons:\006canyonZ(\"\036/v1/{pa" +
-      "rent=regions/*}/canyons:\006canyon\022\274\001\n\014Upda" +
-      "teCanyon\022\".rappeloids.v1.UpdateCanyonReq" +
-      "uest\032\025.rappeloids.v1.Canyon\"q\332A\022canyon,u" +
-      "pdate_mask\202\323\344\223\002V2\033/v1/{canyon.name=canyo" +
-      "ns/*}:\006canyonZ/2%/v1/{canyon.name=region" +
-      "s/*/canyons/*}:\006canyon\022\221\001\n\014DeleteCanyon\022" +
-      "\".rappeloids.v1.DeleteCanyonRequest\032\026.go" +
-      "ogle.protobuf.Empty\"E\332A\004name\202\323\344\223\0028*\024/v1/" +
-      "{name=canyons/*}Z *\036/v1/{name=regions/*/" +
-      "canyons/*}\022~\n\017BatchGetCanyons\022%.rappeloi" +
-      "ds.v1.BatchGetCanyonsRequest\032&.rappeloid" +
-      "s.v1.BatchGetCanyonsResponse\"\034\202\323\344\223\002\026\022\024/v" +
-      "1/canyons:batchGet\032\025\312A\022api.rappeloids.ap" +
-      "pB\034\n\030app.rappeloids.protos.v1P\001b\006proto3"
+      "(\001B\003\340A\001\022\025\n\010duration\030\016 \001(\tB\003\340A\001\022\023\n\006season" +
+      "\030\017 \001(\tB\003\340A\001\022\030\n\013distance_km\030\021 \001(\001B\003\340A\001\022\"\n" +
+      "\025elevation_drop_meters\030\022 \001(\001B\003\340A\001\022\"\n\025ele" +
+      "vation_gain_meters\030\023 \001(\001B\003\340A\001\022\025\n\010overvie" +
+      "w\030\024 \001(\tB\003\340A\001\022\025\n\010approach\030\025 \001(\tB\003\340A\001\022\024\n\007d" +
+      "escent\030\026 \001(\tB\003\340A\001\022\021\n\004exit\030\027 \001(\tB\003\340A\001\022\025\n\010" +
+      "red_tape\030\030 \001(\tB\003\340A\001\022\024\n\007permits\030\031 \001(\tB\003\340A" +
+      "\001\022\024\n\007shuttle\030\032 \001(\tB\003\340A\001\022\024\n\007vehicle\030\033 \001(\t" +
+      "B\003\340A\001\022.\n\tauthor_id\030\037 \001(\tB\033\340A\003\372A\025\n\023rappel" +
+      "oids.app/User\022\032\n\rgpx_track_ids\030  \003(\tB\003\340A" +
+      "\001\0227\n\007pitches\030! \003(\0132!.rappeloids.v1.Canyo" +
+      "n.RappelPitchB\003\340A\001\0224\n\005links\030\" \003(\0132 .rapp" +
+      "eloids.v1.Canyon.CanyonLinkB\003\340A\001\022A\n\017qual" +
+      "ity_ratings\030# \003(\0132#.rappeloids.v1.Canyon" +
+      ".QualityRatingB\003\340A\001\032\272\002\n\013RappelPitch\022\017\n\002i" +
+      "d\030\001 \001(\tB\003\340A\001\022\021\n\004name\030\002 \001(\tB\003\340A\002\022\023\n\006lengt" +
+      "h\030\003 \001(\tB\003\340A\001\022\023\n\006anchor\030\004 \001(\tB\003\340A\001\022\025\n\010has" +
+      "_pool\030\005 \001(\010B\003\340A\001\022\030\n\013pools_count\030\006 \001(\005B\003\340" +
+      "A\001\022\030\n\013description\030\007 \001(\tB\003\340A\001\022\024\n\007section\030" +
+      "\010 \001(\tB\003\340A\001\022\033\n\016is_alternative\030\t \001(\010B\003\340A\001\022" +
+      "\023\n\006alt_of\030\n \001(\tB\003\340A\001\022\026\n\tis_staged\030\013 \001(\010B" +
+      "\003\340A\001\022\030\n\013staged_note\030\014 \001(\tB\003\340A\001\022\030\n\013escape" +
+      "_exit\030\r \001(\tB\003\340A\001\0322\n\nCanyonLink\022\022\n\005title\030" +
+      "\001 \001(\tB\003\340A\002\022\020\n\003url\030\002 \001(\tB\003\340A\002\0328\n\rQualityR" +
+      "ating\022\023\n\006source\030\001 \001(\tB\003\340A\002\022\022\n\005value\030\002 \001(" +
+      "\tB\003\340A\002:`\352A]\n\025rappeloids.app/Canyon\022\020cany" +
+      "ons/{canyon}\022!regions/{region}/canyons/{" +
+      "canyon}*\007canyons2\006canyon\"\272\001\n\022ListCanyons" +
+      "Request\022-\n\006parent\030\001 \001(\tB\035\340A\001\372A\027\n\025rappelo" +
+      "ids.app/Region\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027" +
+      "\n\npage_token\030\003 \001(\tB\003\340A\001\022-\n\006region\030\004 \001(\tB" +
+      "\035\340A\001\372A\027\n\025rappeloids.app/Region\022\025\n\010order_" +
+      "by\030\005 \001(\tB\003\340A\001\"j\n\023ListCanyonsResponse\022&\n\007" +
+      "canyons\030\001 \003(\0132\025.rappeloids.v1.Canyon\022\027\n\017" +
+      "next_page_token\030\002 \001(\t\022\022\n\ntotal_size\030\003 \001(" +
+      "\005\"?\n\020GetCanyonRequest\022+\n\004name\030\001 \001(\tB\035\340A\002" +
+      "\372A\027\n\025rappeloids.app/Canyon\"\210\001\n\023CreateCan" +
+      "yonRequest\022-\n\006parent\030\001 \001(\tB\035\340A\001\372A\027\n\025rapp" +
+      "eloids.app/Region\022\026\n\tcanyon_id\030\002 \001(\tB\003\340A" +
+      "\001\022*\n\006canyon\030\003 \001(\0132\025.rappeloids.v1.Canyon" +
+      "B\003\340A\002\"w\n\023UpdateCanyonRequest\022*\n\006canyon\030\001" +
+      " \001(\0132\025.rappeloids.v1.CanyonB\003\340A\002\0224\n\013upda" +
+      "te_mask\030\002 \001(\0132\032.google.protobuf.FieldMas" +
+      "kB\003\340A\001\"B\n\023DeleteCanyonRequest\022+\n\004name\030\001 " +
+      "\001(\tB\035\340A\002\372A\027\n\025rappeloids.app/Canyon\"F\n\026Ba" +
+      "tchGetCanyonsRequest\022,\n\005names\030\001 \003(\tB\035\340A\002" +
+      "\372A\027\n\025rappeloids.app/Canyon\"A\n\027BatchGetCa" +
+      "nyonsResponse\022&\n\007canyons\030\001 \003(\0132\025.rappelo" +
+      "ids.v1.Canyon2\273\007\n\016CanyonsService\022\213\001\n\013Lis" +
+      "tCanyons\022!.rappeloids.v1.ListCanyonsRequ" +
+      "est\032\".rappeloids.v1.ListCanyonsResponse\"" +
+      "5\202\323\344\223\002/\022\013/v1/canyonsZ \022\036/v1/{parent=regi" +
+      "ons/*}/canyons\022\212\001\n\tGetCanyon\022\037.rappeloid" +
+      "s.v1.GetCanyonRequest\032\025.rappeloids.v1.Ca" +
+      "nyon\"E\332A\004name\202\323\344\223\0028\022\024/v1/{name=canyons/*" +
+      "}Z \022\036/v1/{name=regions/*/canyons/*}\022\243\001\n\014" +
+      "CreateCanyon\022\".rappeloids.v1.CreateCanyo" +
+      "nRequest\032\025.rappeloids.v1.Canyon\"X\332A\020cany" +
+      "on,canyon_id\202\323\344\223\002?\"\013/v1/canyons:\006canyonZ" +
+      "(\"\036/v1/{parent=regions/*}/canyons:\006canyo" +
+      "n\022\274\001\n\014UpdateCanyon\022\".rappeloids.v1.Updat" +
+      "eCanyonRequest\032\025.rappeloids.v1.Canyon\"q\332" +
+      "A\022canyon,update_mask\202\323\344\223\002V2\033/v1/{canyon." +
+      "name=canyons/*}:\006canyonZ/2%/v1/{canyon.n" +
+      "ame=regions/*/canyons/*}:\006canyon\022\221\001\n\014Del" +
+      "eteCanyon\022\".rappeloids.v1.DeleteCanyonRe" +
+      "quest\032\026.google.protobuf.Empty\"E\332A\004name\202\323" +
+      "\344\223\0028*\024/v1/{name=canyons/*}Z *\036/v1/{name=" +
+      "regions/*/canyons/*}\022~\n\017BatchGetCanyons\022" +
+      "%.rappeloids.v1.BatchGetCanyonsRequest\032&" +
+      ".rappeloids.v1.BatchGetCanyonsResponse\"\034" +
+      "\202\323\344\223\002\026\022\024/v1/canyons:batchGet\032\025\312A\022api.rap" +
+      "peloids.appB\034\n\030app.rappeloids.protos.v1P" +
+      "\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -203,7 +203,7 @@ public final class Canyons extends com.google.protobuf.GeneratedFile {
     internal_static_rappeloids_v1_Canyon_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_rappeloids_v1_Canyon_descriptor,
-        new java.lang.String[] { "Name", "Id", "RegionId", "DisplayName", "Link", "Description", "TechnicalRating", "WaterRating", "TimeRating", "RiskRating", "Difficulty", "RappelsCount", "MaxRappelMeters", "Duration", "BestMonth", "BestSeason", "DistanceKm", "ElevationDropMeters", "ElevationGainMeters", "Overview", "Approach", "Descent", "Exit", "RedTape", "Permits", "Shuttle", "Vehicle", "AuthorId", "GpxTrackIds", "Pitches", "Links", "QualityRatings", });
+        new java.lang.String[] { "Name", "Id", "RegionId", "DisplayName", "Link", "Description", "TechnicalRating", "WaterRating", "TimeRating", "RiskRating", "Difficulty", "RappelsCount", "MaxRappelMeters", "Duration", "Season", "DistanceKm", "ElevationDropMeters", "ElevationGainMeters", "Overview", "Approach", "Descent", "Exit", "RedTape", "Permits", "Shuttle", "Vehicle", "AuthorId", "GpxTrackIds", "Pitches", "Links", "QualityRatings", });
     internal_static_rappeloids_v1_Canyon_RappelPitch_descriptor =
       internal_static_rappeloids_v1_Canyon_descriptor.getNestedType(0);
     internal_static_rappeloids_v1_Canyon_RappelPitch_fieldAccessorTable = new

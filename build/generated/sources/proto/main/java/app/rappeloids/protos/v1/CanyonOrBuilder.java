@@ -274,43 +274,23 @@ public interface CanyonOrBuilder extends
 
   /**
    * <pre>
-   * Recommended best months (e.g. "Jul - Sep").
+   * Recommended season or best months (e.g. "Summer", "Jul - Sep").
    * </pre>
    *
-   * <code>string best_month = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bestMonth.
+   * <code>string season = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The season.
    */
-  java.lang.String getBestMonth();
+  java.lang.String getSeason();
   /**
    * <pre>
-   * Recommended best months (e.g. "Jul - Sep").
+   * Recommended season or best months (e.g. "Summer", "Jul - Sep").
    * </pre>
    *
-   * <code>string best_month = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for bestMonth.
+   * <code>string season = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for season.
    */
   com.google.protobuf.ByteString
-      getBestMonthBytes();
-
-  /**
-   * <pre>
-   * Recommended season (e.g. "Summer").
-   * </pre>
-   *
-   * <code>string best_season = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bestSeason.
-   */
-  java.lang.String getBestSeason();
-  /**
-   * <pre>
-   * Recommended season (e.g. "Summer").
-   * </pre>
-   *
-   * <code>string best_season = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for bestSeason.
-   */
-  com.google.protobuf.ByteString
-      getBestSeasonBytes();
+      getSeasonBytes();
 
   /**
    * <pre>
