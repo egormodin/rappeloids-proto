@@ -508,74 +508,74 @@ public interface CanyonOrBuilder extends
       getGpxTrackIdsBytes(int index);
 
   /**
-   * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.util.List<app.rappeloids.protos.v1.RappelPitch> 
+  java.util.List<app.rappeloids.protos.v1.Canyon.RappelPitch> 
       getPitchesList();
   /**
-   * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  app.rappeloids.protos.v1.RappelPitch getPitches(int index);
+  app.rappeloids.protos.v1.Canyon.RappelPitch getPitches(int index);
   /**
-   * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getPitchesCount();
   /**
-   * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.util.List<? extends app.rappeloids.protos.v1.RappelPitchOrBuilder> 
+  java.util.List<? extends app.rappeloids.protos.v1.Canyon.RappelPitchOrBuilder> 
       getPitchesOrBuilderList();
   /**
-   * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  app.rappeloids.protos.v1.RappelPitchOrBuilder getPitchesOrBuilder(
+  app.rappeloids.protos.v1.Canyon.RappelPitchOrBuilder getPitchesOrBuilder(
       int index);
 
   /**
-   * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.util.List<app.rappeloids.protos.v1.CanyonLink> 
+  java.util.List<app.rappeloids.protos.v1.Canyon.CanyonLink> 
       getLinksList();
   /**
-   * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  app.rappeloids.protos.v1.CanyonLink getLinks(int index);
+  app.rappeloids.protos.v1.Canyon.CanyonLink getLinks(int index);
   /**
-   * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLinksCount();
   /**
-   * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.util.List<? extends app.rappeloids.protos.v1.CanyonLinkOrBuilder> 
+  java.util.List<? extends app.rappeloids.protos.v1.Canyon.CanyonLinkOrBuilder> 
       getLinksOrBuilderList();
   /**
-   * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  app.rappeloids.protos.v1.CanyonLinkOrBuilder getLinksOrBuilder(
+  app.rappeloids.protos.v1.Canyon.CanyonLinkOrBuilder getLinksOrBuilder(
       int index);
 
   /**
-   * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.util.List<app.rappeloids.protos.v1.QualityRating> 
+  java.util.List<app.rappeloids.protos.v1.Canyon.QualityRating> 
       getQualityRatingsList();
   /**
-   * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  app.rappeloids.protos.v1.QualityRating getQualityRatings(int index);
+  app.rappeloids.protos.v1.Canyon.QualityRating getQualityRatings(int index);
   /**
-   * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getQualityRatingsCount();
   /**
-   * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.util.List<? extends app.rappeloids.protos.v1.QualityRatingOrBuilder> 
+  java.util.List<? extends app.rappeloids.protos.v1.Canyon.QualityRatingOrBuilder> 
       getQualityRatingsOrBuilderList();
   /**
-   * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  app.rappeloids.protos.v1.QualityRatingOrBuilder getQualityRatingsOrBuilder(
+  app.rappeloids.protos.v1.Canyon.QualityRatingOrBuilder getQualityRatingsOrBuilder(
       int index);
 }

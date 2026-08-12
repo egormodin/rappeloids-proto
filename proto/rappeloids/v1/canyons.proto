@@ -171,40 +171,40 @@ message Canyon {
     (google.api.resource_reference).type = "rappeloids.app/User"
   ];
 
+  message RappelPitch {
+    string id = 1 [(google.api.field_behavior) = OPTIONAL];
+    string name = 2 [(google.api.field_behavior) = REQUIRED];
+    string length = 3 [(google.api.field_behavior) = OPTIONAL];
+    string anchor = 4 [(google.api.field_behavior) = OPTIONAL];
+    bool has_pool = 5 [(google.api.field_behavior) = OPTIONAL];
+    int32 pools_count = 6 [(google.api.field_behavior) = OPTIONAL];
+    string description = 7 [(google.api.field_behavior) = OPTIONAL];
+    string section = 8 [(google.api.field_behavior) = OPTIONAL];
+    bool is_alternative = 9 [(google.api.field_behavior) = OPTIONAL];
+    string alt_of = 10 [(google.api.field_behavior) = OPTIONAL];
+    bool is_staged = 11 [(google.api.field_behavior) = OPTIONAL];
+    string staged_note = 12 [(google.api.field_behavior) = OPTIONAL];
+    string escape_exit = 13 [(google.api.field_behavior) = OPTIONAL];
+  }
+
+  message CanyonLink {
+    string title = 1 [(google.api.field_behavior) = REQUIRED];
+    string url = 2 [(google.api.field_behavior) = REQUIRED];
+  }
+
+  message QualityRating {
+    string source = 1 [(google.api.field_behavior) = REQUIRED];
+    string score = 2 [(google.api.field_behavior) = REQUIRED];
+    string display_score = 3 [(google.api.field_behavior) = OPTIONAL];
+    double max_score = 4 [(google.api.field_behavior) = OPTIONAL];
+    string url = 5 [(google.api.field_behavior) = OPTIONAL];
+  }
+
   // Collections
   repeated string gpx_track_ids = 32 [(google.api.field_behavior) = OPTIONAL];
   repeated RappelPitch pitches = 33 [(google.api.field_behavior) = OPTIONAL];
   repeated CanyonLink links = 34 [(google.api.field_behavior) = OPTIONAL];
   repeated QualityRating quality_ratings = 35 [(google.api.field_behavior) = OPTIONAL];
-}
-
-message RappelPitch {
-  string id = 1 [(google.api.field_behavior) = OPTIONAL];
-  string name = 2 [(google.api.field_behavior) = REQUIRED];
-  string length = 3 [(google.api.field_behavior) = OPTIONAL];
-  string anchor = 4 [(google.api.field_behavior) = OPTIONAL];
-  bool has_pool = 5 [(google.api.field_behavior) = OPTIONAL];
-  int32 pools_count = 6 [(google.api.field_behavior) = OPTIONAL];
-  string description = 7 [(google.api.field_behavior) = OPTIONAL];
-  string section = 8 [(google.api.field_behavior) = OPTIONAL];
-  bool is_alternative = 9 [(google.api.field_behavior) = OPTIONAL];
-  string alt_of = 10 [(google.api.field_behavior) = OPTIONAL];
-  bool is_staged = 11 [(google.api.field_behavior) = OPTIONAL];
-  string staged_note = 12 [(google.api.field_behavior) = OPTIONAL];
-  string escape_exit = 13 [(google.api.field_behavior) = OPTIONAL];
-}
-
-message CanyonLink {
-  string title = 1 [(google.api.field_behavior) = REQUIRED];
-  string url = 2 [(google.api.field_behavior) = REQUIRED];
-}
-
-message QualityRating {
-  string source = 1 [(google.api.field_behavior) = REQUIRED];
-  string score = 2 [(google.api.field_behavior) = REQUIRED];
-  string display_score = 3 [(google.api.field_behavior) = OPTIONAL];
-  double max_score = 4 [(google.api.field_behavior) = OPTIONAL];
-  string url = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListCanyonsRequest {

@@ -75,6 +75,3677 @@ private static final long serialVersionUID = 0L;
             app.rappeloids.protos.v1.Canyon.class, app.rappeloids.protos.v1.Canyon.Builder.class);
   }
 
+  public interface RappelPitchOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:rappeloids.v1.Canyon.RappelPitch)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>string length = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The length.
+     */
+    java.lang.String getLength();
+    /**
+     * <code>string length = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for length.
+     */
+    com.google.protobuf.ByteString
+        getLengthBytes();
+
+    /**
+     * <code>string anchor = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The anchor.
+     */
+    java.lang.String getAnchor();
+    /**
+     * <code>string anchor = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for anchor.
+     */
+    com.google.protobuf.ByteString
+        getAnchorBytes();
+
+    /**
+     * <code>bool has_pool = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The hasPool.
+     */
+    boolean getHasPool();
+
+    /**
+     * <code>int32 pools_count = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The poolsCount.
+     */
+    int getPoolsCount();
+
+    /**
+     * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The description.
+     */
+    java.lang.String getDescription();
+    /**
+     * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
+
+    /**
+     * <code>string section = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The section.
+     */
+    java.lang.String getSection();
+    /**
+     * <code>string section = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for section.
+     */
+    com.google.protobuf.ByteString
+        getSectionBytes();
+
+    /**
+     * <code>bool is_alternative = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The isAlternative.
+     */
+    boolean getIsAlternative();
+
+    /**
+     * <code>string alt_of = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The altOf.
+     */
+    java.lang.String getAltOf();
+    /**
+     * <code>string alt_of = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for altOf.
+     */
+    com.google.protobuf.ByteString
+        getAltOfBytes();
+
+    /**
+     * <code>bool is_staged = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The isStaged.
+     */
+    boolean getIsStaged();
+
+    /**
+     * <code>string staged_note = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The stagedNote.
+     */
+    java.lang.String getStagedNote();
+    /**
+     * <code>string staged_note = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for stagedNote.
+     */
+    com.google.protobuf.ByteString
+        getStagedNoteBytes();
+
+    /**
+     * <code>string escape_exit = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The escapeExit.
+     */
+    java.lang.String getEscapeExit();
+    /**
+     * <code>string escape_exit = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for escapeExit.
+     */
+    com.google.protobuf.ByteString
+        getEscapeExitBytes();
+  }
+  /**
+   * Protobuf type {@code rappeloids.v1.Canyon.RappelPitch}
+   */
+  public static final class RappelPitch extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:rappeloids.v1.Canyon.RappelPitch)
+      RappelPitchOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 33,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        "RappelPitch");
+    }
+    // Use RappelPitch.newBuilder() to construct.
+    private RappelPitch(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private RappelPitch() {
+      id_ = "";
+      name_ = "";
+      length_ = "";
+      anchor_ = "";
+      description_ = "";
+      section_ = "";
+      altOf_ = "";
+      stagedNote_ = "";
+      escapeExit_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return app.rappeloids.protos.v1.Canyons.internal_static_rappeloids_v1_Canyon_RappelPitch_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return app.rappeloids.protos.v1.Canyons.internal_static_rappeloids_v1_Canyon_RappelPitch_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              app.rappeloids.protos.v1.Canyon.RappelPitch.class, app.rappeloids.protos.v1.Canyon.RappelPitch.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
+    /**
+     * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LENGTH_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object length_ = "";
+    /**
+     * <code>string length = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The length.
+     */
+    @java.lang.Override
+    public java.lang.String getLength() {
+      java.lang.Object ref = length_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        length_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string length = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for length.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLengthBytes() {
+      java.lang.Object ref = length_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        length_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ANCHOR_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object anchor_ = "";
+    /**
+     * <code>string anchor = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The anchor.
+     */
+    @java.lang.Override
+    public java.lang.String getAnchor() {
+      java.lang.Object ref = anchor_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        anchor_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string anchor = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for anchor.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAnchorBytes() {
+      java.lang.Object ref = anchor_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        anchor_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HAS_POOL_FIELD_NUMBER = 5;
+    private boolean hasPool_ = false;
+    /**
+     * <code>bool has_pool = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The hasPool.
+     */
+    @java.lang.Override
+    public boolean getHasPool() {
+      return hasPool_;
+    }
+
+    public static final int POOLS_COUNT_FIELD_NUMBER = 6;
+    private int poolsCount_ = 0;
+    /**
+     * <code>int32 pools_count = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The poolsCount.
+     */
+    @java.lang.Override
+    public int getPoolsCount() {
+      return poolsCount_;
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
+    /**
+     * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SECTION_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object section_ = "";
+    /**
+     * <code>string section = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The section.
+     */
+    @java.lang.Override
+    public java.lang.String getSection() {
+      java.lang.Object ref = section_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        section_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string section = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for section.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSectionBytes() {
+      java.lang.Object ref = section_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        section_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IS_ALTERNATIVE_FIELD_NUMBER = 9;
+    private boolean isAlternative_ = false;
+    /**
+     * <code>bool is_alternative = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The isAlternative.
+     */
+    @java.lang.Override
+    public boolean getIsAlternative() {
+      return isAlternative_;
+    }
+
+    public static final int ALT_OF_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object altOf_ = "";
+    /**
+     * <code>string alt_of = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The altOf.
+     */
+    @java.lang.Override
+    public java.lang.String getAltOf() {
+      java.lang.Object ref = altOf_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        altOf_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string alt_of = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for altOf.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAltOfBytes() {
+      java.lang.Object ref = altOf_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        altOf_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IS_STAGED_FIELD_NUMBER = 11;
+    private boolean isStaged_ = false;
+    /**
+     * <code>bool is_staged = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The isStaged.
+     */
+    @java.lang.Override
+    public boolean getIsStaged() {
+      return isStaged_;
+    }
+
+    public static final int STAGED_NOTE_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object stagedNote_ = "";
+    /**
+     * <code>string staged_note = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The stagedNote.
+     */
+    @java.lang.Override
+    public java.lang.String getStagedNote() {
+      java.lang.Object ref = stagedNote_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stagedNote_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string staged_note = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for stagedNote.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStagedNoteBytes() {
+      java.lang.Object ref = stagedNote_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        stagedNote_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ESCAPE_EXIT_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object escapeExit_ = "";
+    /**
+     * <code>string escape_exit = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The escapeExit.
+     */
+    @java.lang.Override
+    public java.lang.String getEscapeExit() {
+      java.lang.Object ref = escapeExit_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        escapeExit_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string escape_exit = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for escapeExit.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEscapeExitBytes() {
+      java.lang.Object ref = escapeExit_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        escapeExit_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(length_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, length_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(anchor_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, anchor_);
+      }
+      if (hasPool_ != false) {
+        output.writeBool(5, hasPool_);
+      }
+      if (poolsCount_ != 0) {
+        output.writeInt32(6, poolsCount_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, description_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(section_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 8, section_);
+      }
+      if (isAlternative_ != false) {
+        output.writeBool(9, isAlternative_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(altOf_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 10, altOf_);
+      }
+      if (isStaged_ != false) {
+        output.writeBool(11, isStaged_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(stagedNote_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 12, stagedNote_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(escapeExit_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 13, escapeExit_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(length_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, length_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(anchor_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, anchor_);
+      }
+      if (hasPool_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, hasPool_);
+      }
+      if (poolsCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, poolsCount_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, description_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(section_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, section_);
+      }
+      if (isAlternative_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, isAlternative_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(altOf_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(10, altOf_);
+      }
+      if (isStaged_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(11, isStaged_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(stagedNote_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(12, stagedNote_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(escapeExit_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(13, escapeExit_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof app.rappeloids.protos.v1.Canyon.RappelPitch)) {
+        return super.equals(obj);
+      }
+      app.rappeloids.protos.v1.Canyon.RappelPitch other = (app.rappeloids.protos.v1.Canyon.RappelPitch) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getLength()
+          .equals(other.getLength())) return false;
+      if (!getAnchor()
+          .equals(other.getAnchor())) return false;
+      if (getHasPool()
+          != other.getHasPool()) return false;
+      if (getPoolsCount()
+          != other.getPoolsCount()) return false;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (!getSection()
+          .equals(other.getSection())) return false;
+      if (getIsAlternative()
+          != other.getIsAlternative()) return false;
+      if (!getAltOf()
+          .equals(other.getAltOf())) return false;
+      if (getIsStaged()
+          != other.getIsStaged()) return false;
+      if (!getStagedNote()
+          .equals(other.getStagedNote())) return false;
+      if (!getEscapeExit()
+          .equals(other.getEscapeExit())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + LENGTH_FIELD_NUMBER;
+      hash = (53 * hash) + getLength().hashCode();
+      hash = (37 * hash) + ANCHOR_FIELD_NUMBER;
+      hash = (53 * hash) + getAnchor().hashCode();
+      hash = (37 * hash) + HAS_POOL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getHasPool());
+      hash = (37 * hash) + POOLS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getPoolsCount();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + SECTION_FIELD_NUMBER;
+      hash = (53 * hash) + getSection().hashCode();
+      hash = (37 * hash) + IS_ALTERNATIVE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsAlternative());
+      hash = (37 * hash) + ALT_OF_FIELD_NUMBER;
+      hash = (53 * hash) + getAltOf().hashCode();
+      hash = (37 * hash) + IS_STAGED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsStaged());
+      hash = (37 * hash) + STAGED_NOTE_FIELD_NUMBER;
+      hash = (53 * hash) + getStagedNote().hashCode();
+      hash = (37 * hash) + ESCAPE_EXIT_FIELD_NUMBER;
+      hash = (53 * hash) + getEscapeExit().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static app.rappeloids.protos.v1.Canyon.RappelPitch parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static app.rappeloids.protos.v1.Canyon.RappelPitch parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.Canyon.RappelPitch parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static app.rappeloids.protos.v1.Canyon.RappelPitch parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.Canyon.RappelPitch parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static app.rappeloids.protos.v1.Canyon.RappelPitch parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.Canyon.RappelPitch parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static app.rappeloids.protos.v1.Canyon.RappelPitch parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static app.rappeloids.protos.v1.Canyon.RappelPitch parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static app.rappeloids.protos.v1.Canyon.RappelPitch parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.Canyon.RappelPitch parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static app.rappeloids.protos.v1.Canyon.RappelPitch parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(app.rappeloids.protos.v1.Canyon.RappelPitch prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code rappeloids.v1.Canyon.RappelPitch}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:rappeloids.v1.Canyon.RappelPitch)
+        app.rappeloids.protos.v1.Canyon.RappelPitchOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return app.rappeloids.protos.v1.Canyons.internal_static_rappeloids_v1_Canyon_RappelPitch_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return app.rappeloids.protos.v1.Canyons.internal_static_rappeloids_v1_Canyon_RappelPitch_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                app.rappeloids.protos.v1.Canyon.RappelPitch.class, app.rappeloids.protos.v1.Canyon.RappelPitch.Builder.class);
+      }
+
+      // Construct using app.rappeloids.protos.v1.Canyon.RappelPitch.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = "";
+        name_ = "";
+        length_ = "";
+        anchor_ = "";
+        hasPool_ = false;
+        poolsCount_ = 0;
+        description_ = "";
+        section_ = "";
+        isAlternative_ = false;
+        altOf_ = "";
+        isStaged_ = false;
+        stagedNote_ = "";
+        escapeExit_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return app.rappeloids.protos.v1.Canyons.internal_static_rappeloids_v1_Canyon_RappelPitch_descriptor;
+      }
+
+      @java.lang.Override
+      public app.rappeloids.protos.v1.Canyon.RappelPitch getDefaultInstanceForType() {
+        return app.rappeloids.protos.v1.Canyon.RappelPitch.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public app.rappeloids.protos.v1.Canyon.RappelPitch build() {
+        app.rappeloids.protos.v1.Canyon.RappelPitch result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public app.rappeloids.protos.v1.Canyon.RappelPitch buildPartial() {
+        app.rappeloids.protos.v1.Canyon.RappelPitch result = new app.rappeloids.protos.v1.Canyon.RappelPitch(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(app.rappeloids.protos.v1.Canyon.RappelPitch result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.length_ = length_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.anchor_ = anchor_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.hasPool_ = hasPool_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.poolsCount_ = poolsCount_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.description_ = description_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.section_ = section_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.isAlternative_ = isAlternative_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.altOf_ = altOf_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.isStaged_ = isStaged_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.stagedNote_ = stagedNote_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.escapeExit_ = escapeExit_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof app.rappeloids.protos.v1.Canyon.RappelPitch) {
+          return mergeFrom((app.rappeloids.protos.v1.Canyon.RappelPitch)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(app.rappeloids.protos.v1.Canyon.RappelPitch other) {
+        if (other == app.rappeloids.protos.v1.Canyon.RappelPitch.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getLength().isEmpty()) {
+          length_ = other.length_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getAnchor().isEmpty()) {
+          anchor_ = other.anchor_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (other.getHasPool() != false) {
+          setHasPool(other.getHasPool());
+        }
+        if (other.getPoolsCount() != 0) {
+          setPoolsCount(other.getPoolsCount());
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        if (!other.getSection().isEmpty()) {
+          section_ = other.section_;
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        if (other.getIsAlternative() != false) {
+          setIsAlternative(other.getIsAlternative());
+        }
+        if (!other.getAltOf().isEmpty()) {
+          altOf_ = other.altOf_;
+          bitField0_ |= 0x00000200;
+          onChanged();
+        }
+        if (other.getIsStaged() != false) {
+          setIsStaged(other.getIsStaged());
+        }
+        if (!other.getStagedNote().isEmpty()) {
+          stagedNote_ = other.stagedNote_;
+          bitField0_ |= 0x00000800;
+          onChanged();
+        }
+        if (!other.getEscapeExit().isEmpty()) {
+          escapeExit_ = other.escapeExit_;
+          bitField0_ |= 0x00001000;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                id_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                length_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                anchor_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 40: {
+                hasPool_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 48: {
+                poolsCount_ = input.readInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              case 58: {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+              case 66: {
+                section_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+              case 72: {
+                isAlternative_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
+              case 82: {
+                altOf_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+              case 88: {
+                isStaged_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 88
+              case 98: {
+                stagedNote_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
+              case 106: {
+                escapeExit_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object length_ = "";
+      /**
+       * <code>string length = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The length.
+       */
+      public java.lang.String getLength() {
+        java.lang.Object ref = length_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          length_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string length = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The bytes for length.
+       */
+      public com.google.protobuf.ByteString
+          getLengthBytes() {
+        java.lang.Object ref = length_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          length_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string length = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The length to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLength(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        length_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string length = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLength() {
+        length_ = getDefaultInstance().getLength();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string length = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The bytes for length to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLengthBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        length_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object anchor_ = "";
+      /**
+       * <code>string anchor = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The anchor.
+       */
+      public java.lang.String getAnchor() {
+        java.lang.Object ref = anchor_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          anchor_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string anchor = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The bytes for anchor.
+       */
+      public com.google.protobuf.ByteString
+          getAnchorBytes() {
+        java.lang.Object ref = anchor_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          anchor_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string anchor = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The anchor to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAnchor(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        anchor_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string anchor = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAnchor() {
+        anchor_ = getDefaultInstance().getAnchor();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string anchor = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The bytes for anchor to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAnchorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        anchor_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private boolean hasPool_ ;
+      /**
+       * <code>bool has_pool = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The hasPool.
+       */
+      @java.lang.Override
+      public boolean getHasPool() {
+        return hasPool_;
+      }
+      /**
+       * <code>bool has_pool = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The hasPool to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHasPool(boolean value) {
+
+        hasPool_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool has_pool = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHasPool() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        hasPool_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int poolsCount_ ;
+      /**
+       * <code>int32 pools_count = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The poolsCount.
+       */
+      @java.lang.Override
+      public int getPoolsCount() {
+        return poolsCount_;
+      }
+      /**
+       * <code>int32 pools_count = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The poolsCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPoolsCount(int value) {
+
+        poolsCount_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 pools_count = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPoolsCount() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        poolsCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        description_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        description_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object section_ = "";
+      /**
+       * <code>string section = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The section.
+       */
+      public java.lang.String getSection() {
+        java.lang.Object ref = section_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          section_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string section = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The bytes for section.
+       */
+      public com.google.protobuf.ByteString
+          getSectionBytes() {
+        java.lang.Object ref = section_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          section_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string section = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The section to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSection(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        section_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string section = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSection() {
+        section_ = getDefaultInstance().getSection();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string section = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The bytes for section to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSectionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        section_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      private boolean isAlternative_ ;
+      /**
+       * <code>bool is_alternative = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The isAlternative.
+       */
+      @java.lang.Override
+      public boolean getIsAlternative() {
+        return isAlternative_;
+      }
+      /**
+       * <code>bool is_alternative = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The isAlternative to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsAlternative(boolean value) {
+
+        isAlternative_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_alternative = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsAlternative() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        isAlternative_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object altOf_ = "";
+      /**
+       * <code>string alt_of = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The altOf.
+       */
+      public java.lang.String getAltOf() {
+        java.lang.Object ref = altOf_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          altOf_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string alt_of = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The bytes for altOf.
+       */
+      public com.google.protobuf.ByteString
+          getAltOfBytes() {
+        java.lang.Object ref = altOf_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          altOf_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string alt_of = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The altOf to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAltOf(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        altOf_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string alt_of = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAltOf() {
+        altOf_ = getDefaultInstance().getAltOf();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string alt_of = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The bytes for altOf to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAltOfBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        altOf_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      private boolean isStaged_ ;
+      /**
+       * <code>bool is_staged = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The isStaged.
+       */
+      @java.lang.Override
+      public boolean getIsStaged() {
+        return isStaged_;
+      }
+      /**
+       * <code>bool is_staged = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The isStaged to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsStaged(boolean value) {
+
+        isStaged_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_staged = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsStaged() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        isStaged_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object stagedNote_ = "";
+      /**
+       * <code>string staged_note = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The stagedNote.
+       */
+      public java.lang.String getStagedNote() {
+        java.lang.Object ref = stagedNote_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          stagedNote_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string staged_note = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The bytes for stagedNote.
+       */
+      public com.google.protobuf.ByteString
+          getStagedNoteBytes() {
+        java.lang.Object ref = stagedNote_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          stagedNote_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string staged_note = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The stagedNote to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStagedNote(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        stagedNote_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string staged_note = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStagedNote() {
+        stagedNote_ = getDefaultInstance().getStagedNote();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string staged_note = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The bytes for stagedNote to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStagedNoteBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        stagedNote_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object escapeExit_ = "";
+      /**
+       * <code>string escape_exit = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The escapeExit.
+       */
+      public java.lang.String getEscapeExit() {
+        java.lang.Object ref = escapeExit_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          escapeExit_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string escape_exit = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The bytes for escapeExit.
+       */
+      public com.google.protobuf.ByteString
+          getEscapeExitBytes() {
+        java.lang.Object ref = escapeExit_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          escapeExit_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string escape_exit = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The escapeExit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEscapeExit(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        escapeExit_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string escape_exit = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEscapeExit() {
+        escapeExit_ = getDefaultInstance().getEscapeExit();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string escape_exit = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The bytes for escapeExit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEscapeExitBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        escapeExit_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:rappeloids.v1.Canyon.RappelPitch)
+    }
+
+    // @@protoc_insertion_point(class_scope:rappeloids.v1.Canyon.RappelPitch)
+    private static final app.rappeloids.protos.v1.Canyon.RappelPitch DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new app.rappeloids.protos.v1.Canyon.RappelPitch();
+    }
+
+    public static app.rappeloids.protos.v1.Canyon.RappelPitch getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RappelPitch>
+        PARSER = new com.google.protobuf.AbstractParser<RappelPitch>() {
+      @java.lang.Override
+      public RappelPitch parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<RappelPitch> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RappelPitch> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public app.rappeloids.protos.v1.Canyon.RappelPitch getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CanyonLinkOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:rappeloids.v1.Canyon.CanyonLink)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The title.
+     */
+    java.lang.String getTitle();
+    /**
+     * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for title.
+     */
+    com.google.protobuf.ByteString
+        getTitleBytes();
+
+    /**
+     * <code>string url = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The url.
+     */
+    java.lang.String getUrl();
+    /**
+     * <code>string url = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for url.
+     */
+    com.google.protobuf.ByteString
+        getUrlBytes();
+  }
+  /**
+   * Protobuf type {@code rappeloids.v1.Canyon.CanyonLink}
+   */
+  public static final class CanyonLink extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:rappeloids.v1.Canyon.CanyonLink)
+      CanyonLinkOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 33,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        "CanyonLink");
+    }
+    // Use CanyonLink.newBuilder() to construct.
+    private CanyonLink(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private CanyonLink() {
+      title_ = "";
+      url_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return app.rappeloids.protos.v1.Canyons.internal_static_rappeloids_v1_Canyon_CanyonLink_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return app.rappeloids.protos.v1.Canyons.internal_static_rappeloids_v1_Canyon_CanyonLink_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              app.rappeloids.protos.v1.Canyon.CanyonLink.class, app.rappeloids.protos.v1.Canyon.CanyonLink.Builder.class);
+    }
+
+    public static final int TITLE_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object title_ = "";
+    /**
+     * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The title.
+     */
+    @java.lang.Override
+    public java.lang.String getTitle() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        title_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for title.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTitleBytes() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        title_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int URL_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object url_ = "";
+    /**
+     * <code>string url = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The url.
+     */
+    @java.lang.Override
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string url = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for url.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(title_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, title_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, url_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(title_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, title_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, url_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof app.rappeloids.protos.v1.Canyon.CanyonLink)) {
+        return super.equals(obj);
+      }
+      app.rappeloids.protos.v1.Canyon.CanyonLink other = (app.rappeloids.protos.v1.Canyon.CanyonLink) obj;
+
+      if (!getTitle()
+          .equals(other.getTitle())) return false;
+      if (!getUrl()
+          .equals(other.getUrl())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TITLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTitle().hashCode();
+      hash = (37 * hash) + URL_FIELD_NUMBER;
+      hash = (53 * hash) + getUrl().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static app.rappeloids.protos.v1.Canyon.CanyonLink parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static app.rappeloids.protos.v1.Canyon.CanyonLink parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.Canyon.CanyonLink parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static app.rappeloids.protos.v1.Canyon.CanyonLink parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.Canyon.CanyonLink parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static app.rappeloids.protos.v1.Canyon.CanyonLink parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.Canyon.CanyonLink parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static app.rappeloids.protos.v1.Canyon.CanyonLink parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static app.rappeloids.protos.v1.Canyon.CanyonLink parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static app.rappeloids.protos.v1.Canyon.CanyonLink parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.Canyon.CanyonLink parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static app.rappeloids.protos.v1.Canyon.CanyonLink parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(app.rappeloids.protos.v1.Canyon.CanyonLink prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code rappeloids.v1.Canyon.CanyonLink}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:rappeloids.v1.Canyon.CanyonLink)
+        app.rappeloids.protos.v1.Canyon.CanyonLinkOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return app.rappeloids.protos.v1.Canyons.internal_static_rappeloids_v1_Canyon_CanyonLink_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return app.rappeloids.protos.v1.Canyons.internal_static_rappeloids_v1_Canyon_CanyonLink_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                app.rappeloids.protos.v1.Canyon.CanyonLink.class, app.rappeloids.protos.v1.Canyon.CanyonLink.Builder.class);
+      }
+
+      // Construct using app.rappeloids.protos.v1.Canyon.CanyonLink.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        title_ = "";
+        url_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return app.rappeloids.protos.v1.Canyons.internal_static_rappeloids_v1_Canyon_CanyonLink_descriptor;
+      }
+
+      @java.lang.Override
+      public app.rappeloids.protos.v1.Canyon.CanyonLink getDefaultInstanceForType() {
+        return app.rappeloids.protos.v1.Canyon.CanyonLink.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public app.rappeloids.protos.v1.Canyon.CanyonLink build() {
+        app.rappeloids.protos.v1.Canyon.CanyonLink result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public app.rappeloids.protos.v1.Canyon.CanyonLink buildPartial() {
+        app.rappeloids.protos.v1.Canyon.CanyonLink result = new app.rappeloids.protos.v1.Canyon.CanyonLink(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(app.rappeloids.protos.v1.Canyon.CanyonLink result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.title_ = title_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.url_ = url_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof app.rappeloids.protos.v1.Canyon.CanyonLink) {
+          return mergeFrom((app.rappeloids.protos.v1.Canyon.CanyonLink)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(app.rappeloids.protos.v1.Canyon.CanyonLink other) {
+        if (other == app.rappeloids.protos.v1.Canyon.CanyonLink.getDefaultInstance()) return this;
+        if (!other.getTitle().isEmpty()) {
+          title_ = other.title_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getUrl().isEmpty()) {
+          url_ = other.url_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                title_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                url_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object title_ = "";
+      /**
+       * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The title.
+       */
+      public java.lang.String getTitle() {
+        java.lang.Object ref = title_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          title_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The bytes for title.
+       */
+      public com.google.protobuf.ByteString
+          getTitleBytes() {
+        java.lang.Object ref = title_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          title_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @param value The title to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTitle(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        title_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTitle() {
+        title_ = getDefaultInstance().getTitle();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string title = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @param value The bytes for title to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTitleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        title_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object url_ = "";
+      /**
+       * <code>string url = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The url.
+       */
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          url_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string url = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The bytes for url.
+       */
+      public com.google.protobuf.ByteString
+          getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string url = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @param value The url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        url_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string url = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUrl() {
+        url_ = getDefaultInstance().getUrl();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string url = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @param value The bytes for url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        url_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:rappeloids.v1.Canyon.CanyonLink)
+    }
+
+    // @@protoc_insertion_point(class_scope:rappeloids.v1.Canyon.CanyonLink)
+    private static final app.rappeloids.protos.v1.Canyon.CanyonLink DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new app.rappeloids.protos.v1.Canyon.CanyonLink();
+    }
+
+    public static app.rappeloids.protos.v1.Canyon.CanyonLink getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CanyonLink>
+        PARSER = new com.google.protobuf.AbstractParser<CanyonLink>() {
+      @java.lang.Override
+      public CanyonLink parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<CanyonLink> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CanyonLink> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public app.rappeloids.protos.v1.Canyon.CanyonLink getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface QualityRatingOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:rappeloids.v1.Canyon.QualityRating)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The source.
+     */
+    java.lang.String getSource();
+    /**
+     * <code>string source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for source.
+     */
+    com.google.protobuf.ByteString
+        getSourceBytes();
+
+    /**
+     * <code>string score = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The score.
+     */
+    java.lang.String getScore();
+    /**
+     * <code>string score = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for score.
+     */
+    com.google.protobuf.ByteString
+        getScoreBytes();
+
+    /**
+     * <code>string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The displayScore.
+     */
+    java.lang.String getDisplayScore();
+    /**
+     * <code>string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for displayScore.
+     */
+    com.google.protobuf.ByteString
+        getDisplayScoreBytes();
+
+    /**
+     * <code>double max_score = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The maxScore.
+     */
+    double getMaxScore();
+
+    /**
+     * <code>string url = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The url.
+     */
+    java.lang.String getUrl();
+    /**
+     * <code>string url = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for url.
+     */
+    com.google.protobuf.ByteString
+        getUrlBytes();
+  }
+  /**
+   * Protobuf type {@code rappeloids.v1.Canyon.QualityRating}
+   */
+  public static final class QualityRating extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:rappeloids.v1.Canyon.QualityRating)
+      QualityRatingOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 33,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        "QualityRating");
+    }
+    // Use QualityRating.newBuilder() to construct.
+    private QualityRating(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private QualityRating() {
+      source_ = "";
+      score_ = "";
+      displayScore_ = "";
+      url_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return app.rappeloids.protos.v1.Canyons.internal_static_rappeloids_v1_Canyon_QualityRating_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return app.rappeloids.protos.v1.Canyons.internal_static_rappeloids_v1_Canyon_QualityRating_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              app.rappeloids.protos.v1.Canyon.QualityRating.class, app.rappeloids.protos.v1.Canyon.QualityRating.Builder.class);
+    }
+
+    public static final int SOURCE_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object source_ = "";
+    /**
+     * <code>string source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The source.
+     */
+    @java.lang.Override
+    public java.lang.String getSource() {
+      java.lang.Object ref = source_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        source_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for source.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSourceBytes() {
+      java.lang.Object ref = source_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        source_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SCORE_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object score_ = "";
+    /**
+     * <code>string score = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The score.
+     */
+    @java.lang.Override
+    public java.lang.String getScore() {
+      java.lang.Object ref = score_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        score_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string score = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for score.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getScoreBytes() {
+      java.lang.Object ref = score_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        score_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DISPLAY_SCORE_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayScore_ = "";
+    /**
+     * <code>string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The displayScore.
+     */
+    @java.lang.Override
+    public java.lang.String getDisplayScore() {
+      java.lang.Object ref = displayScore_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayScore_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for displayScore.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDisplayScoreBytes() {
+      java.lang.Object ref = displayScore_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        displayScore_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MAX_SCORE_FIELD_NUMBER = 4;
+    private double maxScore_ = 0D;
+    /**
+     * <code>double max_score = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The maxScore.
+     */
+    @java.lang.Override
+    public double getMaxScore() {
+      return maxScore_;
+    }
+
+    public static final int URL_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object url_ = "";
+    /**
+     * <code>string url = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The url.
+     */
+    @java.lang.Override
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string url = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for url.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(source_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, source_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(score_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, score_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayScore_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, displayScore_);
+      }
+      if (java.lang.Double.doubleToRawLongBits(maxScore_) != 0) {
+        output.writeDouble(4, maxScore_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, url_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(source_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, source_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(score_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, score_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayScore_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, displayScore_);
+      }
+      if (java.lang.Double.doubleToRawLongBits(maxScore_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(4, maxScore_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, url_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof app.rappeloids.protos.v1.Canyon.QualityRating)) {
+        return super.equals(obj);
+      }
+      app.rappeloids.protos.v1.Canyon.QualityRating other = (app.rappeloids.protos.v1.Canyon.QualityRating) obj;
+
+      if (!getSource()
+          .equals(other.getSource())) return false;
+      if (!getScore()
+          .equals(other.getScore())) return false;
+      if (!getDisplayScore()
+          .equals(other.getDisplayScore())) return false;
+      if (java.lang.Double.doubleToLongBits(getMaxScore())
+          != java.lang.Double.doubleToLongBits(
+              other.getMaxScore())) return false;
+      if (!getUrl()
+          .equals(other.getUrl())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getSource().hashCode();
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getScore().hashCode();
+      hash = (37 * hash) + DISPLAY_SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayScore().hashCode();
+      hash = (37 * hash) + MAX_SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getMaxScore()));
+      hash = (37 * hash) + URL_FIELD_NUMBER;
+      hash = (53 * hash) + getUrl().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static app.rappeloids.protos.v1.Canyon.QualityRating parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static app.rappeloids.protos.v1.Canyon.QualityRating parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.Canyon.QualityRating parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static app.rappeloids.protos.v1.Canyon.QualityRating parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.Canyon.QualityRating parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static app.rappeloids.protos.v1.Canyon.QualityRating parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.Canyon.QualityRating parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static app.rappeloids.protos.v1.Canyon.QualityRating parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static app.rappeloids.protos.v1.Canyon.QualityRating parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static app.rappeloids.protos.v1.Canyon.QualityRating parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.Canyon.QualityRating parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static app.rappeloids.protos.v1.Canyon.QualityRating parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(app.rappeloids.protos.v1.Canyon.QualityRating prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code rappeloids.v1.Canyon.QualityRating}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:rappeloids.v1.Canyon.QualityRating)
+        app.rappeloids.protos.v1.Canyon.QualityRatingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return app.rappeloids.protos.v1.Canyons.internal_static_rappeloids_v1_Canyon_QualityRating_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return app.rappeloids.protos.v1.Canyons.internal_static_rappeloids_v1_Canyon_QualityRating_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                app.rappeloids.protos.v1.Canyon.QualityRating.class, app.rappeloids.protos.v1.Canyon.QualityRating.Builder.class);
+      }
+
+      // Construct using app.rappeloids.protos.v1.Canyon.QualityRating.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        source_ = "";
+        score_ = "";
+        displayScore_ = "";
+        maxScore_ = 0D;
+        url_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return app.rappeloids.protos.v1.Canyons.internal_static_rappeloids_v1_Canyon_QualityRating_descriptor;
+      }
+
+      @java.lang.Override
+      public app.rappeloids.protos.v1.Canyon.QualityRating getDefaultInstanceForType() {
+        return app.rappeloids.protos.v1.Canyon.QualityRating.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public app.rappeloids.protos.v1.Canyon.QualityRating build() {
+        app.rappeloids.protos.v1.Canyon.QualityRating result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public app.rappeloids.protos.v1.Canyon.QualityRating buildPartial() {
+        app.rappeloids.protos.v1.Canyon.QualityRating result = new app.rappeloids.protos.v1.Canyon.QualityRating(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(app.rappeloids.protos.v1.Canyon.QualityRating result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.source_ = source_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.score_ = score_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.displayScore_ = displayScore_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.maxScore_ = maxScore_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.url_ = url_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof app.rappeloids.protos.v1.Canyon.QualityRating) {
+          return mergeFrom((app.rappeloids.protos.v1.Canyon.QualityRating)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(app.rappeloids.protos.v1.Canyon.QualityRating other) {
+        if (other == app.rappeloids.protos.v1.Canyon.QualityRating.getDefaultInstance()) return this;
+        if (!other.getSource().isEmpty()) {
+          source_ = other.source_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getScore().isEmpty()) {
+          score_ = other.score_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getDisplayScore().isEmpty()) {
+          displayScore_ = other.displayScore_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (java.lang.Double.doubleToRawLongBits(other.getMaxScore()) != 0) {
+          setMaxScore(other.getMaxScore());
+        }
+        if (!other.getUrl().isEmpty()) {
+          url_ = other.url_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                source_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                score_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                displayScore_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 33: {
+                maxScore_ = input.readDouble();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 33
+              case 42: {
+                url_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object source_ = "";
+      /**
+       * <code>string source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The source.
+       */
+      public java.lang.String getSource() {
+        java.lang.Object ref = source_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          source_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The bytes for source.
+       */
+      public com.google.protobuf.ByteString
+          getSourceBytes() {
+        java.lang.Object ref = source_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          source_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @param value The source to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSource(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        source_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSource() {
+        source_ = getDefaultInstance().getSource();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @param value The bytes for source to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        source_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object score_ = "";
+      /**
+       * <code>string score = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The score.
+       */
+      public java.lang.String getScore() {
+        java.lang.Object ref = score_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          score_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string score = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The bytes for score.
+       */
+      public com.google.protobuf.ByteString
+          getScoreBytes() {
+        java.lang.Object ref = score_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          score_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string score = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @param value The score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScore(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        score_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string score = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScore() {
+        score_ = getDefaultInstance().getScore();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string score = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @param value The bytes for score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScoreBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        score_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object displayScore_ = "";
+      /**
+       * <code>string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The displayScore.
+       */
+      public java.lang.String getDisplayScore() {
+        java.lang.Object ref = displayScore_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          displayScore_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The bytes for displayScore.
+       */
+      public com.google.protobuf.ByteString
+          getDisplayScoreBytes() {
+        java.lang.Object ref = displayScore_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          displayScore_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The displayScore to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayScore(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        displayScore_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDisplayScore() {
+        displayScore_ = getDefaultInstance().getDisplayScore();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The bytes for displayScore to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayScoreBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        displayScore_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private double maxScore_ ;
+      /**
+       * <code>double max_score = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The maxScore.
+       */
+      @java.lang.Override
+      public double getMaxScore() {
+        return maxScore_;
+      }
+      /**
+       * <code>double max_score = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The maxScore to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxScore(double value) {
+
+        maxScore_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double max_score = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxScore() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        maxScore_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object url_ = "";
+      /**
+       * <code>string url = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The url.
+       */
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          url_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string url = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The bytes for url.
+       */
+      public com.google.protobuf.ByteString
+          getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string url = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        url_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string url = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUrl() {
+        url_ = getDefaultInstance().getUrl();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string url = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The bytes for url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        url_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:rappeloids.v1.Canyon.QualityRating)
+    }
+
+    // @@protoc_insertion_point(class_scope:rappeloids.v1.Canyon.QualityRating)
+    private static final app.rappeloids.protos.v1.Canyon.QualityRating DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new app.rappeloids.protos.v1.Canyon.QualityRating();
+    }
+
+    public static app.rappeloids.protos.v1.Canyon.QualityRating getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QualityRating>
+        PARSER = new com.google.protobuf.AbstractParser<QualityRating>() {
+      @java.lang.Override
+      public QualityRating parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<QualityRating> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QualityRating> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public app.rappeloids.protos.v1.Canyon.QualityRating getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
@@ -1232,123 +4903,123 @@ private static final long serialVersionUID = 0L;
 
   public static final int PITCHES_FIELD_NUMBER = 33;
   @SuppressWarnings("serial")
-  private java.util.List<app.rappeloids.protos.v1.RappelPitch> pitches_;
+  private java.util.List<app.rappeloids.protos.v1.Canyon.RappelPitch> pitches_;
   /**
-   * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.util.List<app.rappeloids.protos.v1.RappelPitch> getPitchesList() {
+  public java.util.List<app.rappeloids.protos.v1.Canyon.RappelPitch> getPitchesList() {
     return pitches_;
   }
   /**
-   * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.util.List<? extends app.rappeloids.protos.v1.RappelPitchOrBuilder> 
+  public java.util.List<? extends app.rappeloids.protos.v1.Canyon.RappelPitchOrBuilder> 
       getPitchesOrBuilderList() {
     return pitches_;
   }
   /**
-   * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public int getPitchesCount() {
     return pitches_.size();
   }
   /**
-   * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public app.rappeloids.protos.v1.RappelPitch getPitches(int index) {
+  public app.rappeloids.protos.v1.Canyon.RappelPitch getPitches(int index) {
     return pitches_.get(index);
   }
   /**
-   * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public app.rappeloids.protos.v1.RappelPitchOrBuilder getPitchesOrBuilder(
+  public app.rappeloids.protos.v1.Canyon.RappelPitchOrBuilder getPitchesOrBuilder(
       int index) {
     return pitches_.get(index);
   }
 
   public static final int LINKS_FIELD_NUMBER = 34;
   @SuppressWarnings("serial")
-  private java.util.List<app.rappeloids.protos.v1.CanyonLink> links_;
+  private java.util.List<app.rappeloids.protos.v1.Canyon.CanyonLink> links_;
   /**
-   * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.util.List<app.rappeloids.protos.v1.CanyonLink> getLinksList() {
+  public java.util.List<app.rappeloids.protos.v1.Canyon.CanyonLink> getLinksList() {
     return links_;
   }
   /**
-   * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.util.List<? extends app.rappeloids.protos.v1.CanyonLinkOrBuilder> 
+  public java.util.List<? extends app.rappeloids.protos.v1.Canyon.CanyonLinkOrBuilder> 
       getLinksOrBuilderList() {
     return links_;
   }
   /**
-   * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public int getLinksCount() {
     return links_.size();
   }
   /**
-   * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public app.rappeloids.protos.v1.CanyonLink getLinks(int index) {
+  public app.rappeloids.protos.v1.Canyon.CanyonLink getLinks(int index) {
     return links_.get(index);
   }
   /**
-   * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public app.rappeloids.protos.v1.CanyonLinkOrBuilder getLinksOrBuilder(
+  public app.rappeloids.protos.v1.Canyon.CanyonLinkOrBuilder getLinksOrBuilder(
       int index) {
     return links_.get(index);
   }
 
   public static final int QUALITY_RATINGS_FIELD_NUMBER = 35;
   @SuppressWarnings("serial")
-  private java.util.List<app.rappeloids.protos.v1.QualityRating> qualityRatings_;
+  private java.util.List<app.rappeloids.protos.v1.Canyon.QualityRating> qualityRatings_;
   /**
-   * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.util.List<app.rappeloids.protos.v1.QualityRating> getQualityRatingsList() {
+  public java.util.List<app.rappeloids.protos.v1.Canyon.QualityRating> getQualityRatingsList() {
     return qualityRatings_;
   }
   /**
-   * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.util.List<? extends app.rappeloids.protos.v1.QualityRatingOrBuilder> 
+  public java.util.List<? extends app.rappeloids.protos.v1.Canyon.QualityRatingOrBuilder> 
       getQualityRatingsOrBuilderList() {
     return qualityRatings_;
   }
   /**
-   * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public int getQualityRatingsCount() {
     return qualityRatings_.size();
   }
   /**
-   * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public app.rappeloids.protos.v1.QualityRating getQualityRatings(int index) {
+  public app.rappeloids.protos.v1.Canyon.QualityRating getQualityRatings(int index) {
     return qualityRatings_.get(index);
   }
   /**
-   * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public app.rappeloids.protos.v1.QualityRatingOrBuilder getQualityRatingsOrBuilder(
+  public app.rappeloids.protos.v1.Canyon.QualityRatingOrBuilder getQualityRatingsOrBuilder(
       int index) {
     return qualityRatings_.get(index);
   }
@@ -2494,9 +6165,9 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 258
             case 266: {
-              app.rappeloids.protos.v1.RappelPitch m =
+              app.rappeloids.protos.v1.Canyon.RappelPitch m =
                   input.readMessage(
-                      app.rappeloids.protos.v1.RappelPitch.parser(),
+                      app.rappeloids.protos.v1.Canyon.RappelPitch.parser(),
                       extensionRegistry);
               if (pitchesBuilder_ == null) {
                 ensurePitchesIsMutable();
@@ -2507,9 +6178,9 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 266
             case 274: {
-              app.rappeloids.protos.v1.CanyonLink m =
+              app.rappeloids.protos.v1.Canyon.CanyonLink m =
                   input.readMessage(
-                      app.rappeloids.protos.v1.CanyonLink.parser(),
+                      app.rappeloids.protos.v1.Canyon.CanyonLink.parser(),
                       extensionRegistry);
               if (linksBuilder_ == null) {
                 ensureLinksIsMutable();
@@ -2520,9 +6191,9 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 274
             case 282: {
-              app.rappeloids.protos.v1.QualityRating m =
+              app.rappeloids.protos.v1.Canyon.QualityRating m =
                   input.readMessage(
-                      app.rappeloids.protos.v1.QualityRating.parser(),
+                      app.rappeloids.protos.v1.Canyon.QualityRating.parser(),
                       extensionRegistry);
               if (qualityRatingsBuilder_ == null) {
                 ensureQualityRatingsIsMutable();
@@ -4897,22 +8568,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<app.rappeloids.protos.v1.RappelPitch> pitches_ =
+    private java.util.List<app.rappeloids.protos.v1.Canyon.RappelPitch> pitches_ =
       java.util.Collections.emptyList();
     private void ensurePitchesIsMutable() {
       if (!((bitField0_ & 0x20000000) != 0)) {
-        pitches_ = new java.util.ArrayList<app.rappeloids.protos.v1.RappelPitch>(pitches_);
+        pitches_ = new java.util.ArrayList<app.rappeloids.protos.v1.Canyon.RappelPitch>(pitches_);
         bitField0_ |= 0x20000000;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilder<
-        app.rappeloids.protos.v1.RappelPitch, app.rappeloids.protos.v1.RappelPitch.Builder, app.rappeloids.protos.v1.RappelPitchOrBuilder> pitchesBuilder_;
+        app.rappeloids.protos.v1.Canyon.RappelPitch, app.rappeloids.protos.v1.Canyon.RappelPitch.Builder, app.rappeloids.protos.v1.Canyon.RappelPitchOrBuilder> pitchesBuilder_;
 
     /**
-     * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.util.List<app.rappeloids.protos.v1.RappelPitch> getPitchesList() {
+    public java.util.List<app.rappeloids.protos.v1.Canyon.RappelPitch> getPitchesList() {
       if (pitchesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(pitches_);
       } else {
@@ -4920,7 +8591,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getPitchesCount() {
       if (pitchesBuilder_ == null) {
@@ -4930,9 +8601,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.RappelPitch getPitches(int index) {
+    public app.rappeloids.protos.v1.Canyon.RappelPitch getPitches(int index) {
       if (pitchesBuilder_ == null) {
         return pitches_.get(index);
       } else {
@@ -4940,10 +8611,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPitches(
-        int index, app.rappeloids.protos.v1.RappelPitch value) {
+        int index, app.rappeloids.protos.v1.Canyon.RappelPitch value) {
       if (pitchesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4957,10 +8628,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPitches(
-        int index, app.rappeloids.protos.v1.RappelPitch.Builder builderForValue) {
+        int index, app.rappeloids.protos.v1.Canyon.RappelPitch.Builder builderForValue) {
       if (pitchesBuilder_ == null) {
         ensurePitchesIsMutable();
         pitches_.set(index, builderForValue.build());
@@ -4971,9 +8642,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder addPitches(app.rappeloids.protos.v1.RappelPitch value) {
+    public Builder addPitches(app.rappeloids.protos.v1.Canyon.RappelPitch value) {
       if (pitchesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4987,10 +8658,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addPitches(
-        int index, app.rappeloids.protos.v1.RappelPitch value) {
+        int index, app.rappeloids.protos.v1.Canyon.RappelPitch value) {
       if (pitchesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5004,10 +8675,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addPitches(
-        app.rappeloids.protos.v1.RappelPitch.Builder builderForValue) {
+        app.rappeloids.protos.v1.Canyon.RappelPitch.Builder builderForValue) {
       if (pitchesBuilder_ == null) {
         ensurePitchesIsMutable();
         pitches_.add(builderForValue.build());
@@ -5018,10 +8689,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addPitches(
-        int index, app.rappeloids.protos.v1.RappelPitch.Builder builderForValue) {
+        int index, app.rappeloids.protos.v1.Canyon.RappelPitch.Builder builderForValue) {
       if (pitchesBuilder_ == null) {
         ensurePitchesIsMutable();
         pitches_.add(index, builderForValue.build());
@@ -5032,10 +8703,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addAllPitches(
-        java.lang.Iterable<? extends app.rappeloids.protos.v1.RappelPitch> values) {
+        java.lang.Iterable<? extends app.rappeloids.protos.v1.Canyon.RappelPitch> values) {
       if (pitchesBuilder_ == null) {
         ensurePitchesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -5047,7 +8718,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearPitches() {
       if (pitchesBuilder_ == null) {
@@ -5060,7 +8731,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removePitches(int index) {
       if (pitchesBuilder_ == null) {
@@ -5073,16 +8744,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.RappelPitch.Builder getPitchesBuilder(
+    public app.rappeloids.protos.v1.Canyon.RappelPitch.Builder getPitchesBuilder(
         int index) {
       return internalGetPitchesFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.RappelPitchOrBuilder getPitchesOrBuilder(
+    public app.rappeloids.protos.v1.Canyon.RappelPitchOrBuilder getPitchesOrBuilder(
         int index) {
       if (pitchesBuilder_ == null) {
         return pitches_.get(index);  } else {
@@ -5090,9 +8761,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.util.List<? extends app.rappeloids.protos.v1.RappelPitchOrBuilder> 
+    public java.util.List<? extends app.rappeloids.protos.v1.Canyon.RappelPitchOrBuilder> 
          getPitchesOrBuilderList() {
       if (pitchesBuilder_ != null) {
         return pitchesBuilder_.getMessageOrBuilderList();
@@ -5101,33 +8772,33 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.RappelPitch.Builder addPitchesBuilder() {
+    public app.rappeloids.protos.v1.Canyon.RappelPitch.Builder addPitchesBuilder() {
       return internalGetPitchesFieldBuilder().addBuilder(
-          app.rappeloids.protos.v1.RappelPitch.getDefaultInstance());
+          app.rappeloids.protos.v1.Canyon.RappelPitch.getDefaultInstance());
     }
     /**
-     * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.RappelPitch.Builder addPitchesBuilder(
+    public app.rappeloids.protos.v1.Canyon.RappelPitch.Builder addPitchesBuilder(
         int index) {
       return internalGetPitchesFieldBuilder().addBuilder(
-          index, app.rappeloids.protos.v1.RappelPitch.getDefaultInstance());
+          index, app.rappeloids.protos.v1.Canyon.RappelPitch.getDefaultInstance());
     }
     /**
-     * <code>repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.util.List<app.rappeloids.protos.v1.RappelPitch.Builder> 
+    public java.util.List<app.rappeloids.protos.v1.Canyon.RappelPitch.Builder> 
          getPitchesBuilderList() {
       return internalGetPitchesFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilder<
-        app.rappeloids.protos.v1.RappelPitch, app.rappeloids.protos.v1.RappelPitch.Builder, app.rappeloids.protos.v1.RappelPitchOrBuilder> 
+        app.rappeloids.protos.v1.Canyon.RappelPitch, app.rappeloids.protos.v1.Canyon.RappelPitch.Builder, app.rappeloids.protos.v1.Canyon.RappelPitchOrBuilder> 
         internalGetPitchesFieldBuilder() {
       if (pitchesBuilder_ == null) {
         pitchesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-            app.rappeloids.protos.v1.RappelPitch, app.rappeloids.protos.v1.RappelPitch.Builder, app.rappeloids.protos.v1.RappelPitchOrBuilder>(
+            app.rappeloids.protos.v1.Canyon.RappelPitch, app.rappeloids.protos.v1.Canyon.RappelPitch.Builder, app.rappeloids.protos.v1.Canyon.RappelPitchOrBuilder>(
                 pitches_,
                 ((bitField0_ & 0x20000000) != 0),
                 getParentForChildren(),
@@ -5137,22 +8808,22 @@ private static final long serialVersionUID = 0L;
       return pitchesBuilder_;
     }
 
-    private java.util.List<app.rappeloids.protos.v1.CanyonLink> links_ =
+    private java.util.List<app.rappeloids.protos.v1.Canyon.CanyonLink> links_ =
       java.util.Collections.emptyList();
     private void ensureLinksIsMutable() {
       if (!((bitField0_ & 0x40000000) != 0)) {
-        links_ = new java.util.ArrayList<app.rappeloids.protos.v1.CanyonLink>(links_);
+        links_ = new java.util.ArrayList<app.rappeloids.protos.v1.Canyon.CanyonLink>(links_);
         bitField0_ |= 0x40000000;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilder<
-        app.rappeloids.protos.v1.CanyonLink, app.rappeloids.protos.v1.CanyonLink.Builder, app.rappeloids.protos.v1.CanyonLinkOrBuilder> linksBuilder_;
+        app.rappeloids.protos.v1.Canyon.CanyonLink, app.rappeloids.protos.v1.Canyon.CanyonLink.Builder, app.rappeloids.protos.v1.Canyon.CanyonLinkOrBuilder> linksBuilder_;
 
     /**
-     * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.util.List<app.rappeloids.protos.v1.CanyonLink> getLinksList() {
+    public java.util.List<app.rappeloids.protos.v1.Canyon.CanyonLink> getLinksList() {
       if (linksBuilder_ == null) {
         return java.util.Collections.unmodifiableList(links_);
       } else {
@@ -5160,7 +8831,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getLinksCount() {
       if (linksBuilder_ == null) {
@@ -5170,9 +8841,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.CanyonLink getLinks(int index) {
+    public app.rappeloids.protos.v1.Canyon.CanyonLink getLinks(int index) {
       if (linksBuilder_ == null) {
         return links_.get(index);
       } else {
@@ -5180,10 +8851,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLinks(
-        int index, app.rappeloids.protos.v1.CanyonLink value) {
+        int index, app.rappeloids.protos.v1.Canyon.CanyonLink value) {
       if (linksBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5197,10 +8868,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLinks(
-        int index, app.rappeloids.protos.v1.CanyonLink.Builder builderForValue) {
+        int index, app.rappeloids.protos.v1.Canyon.CanyonLink.Builder builderForValue) {
       if (linksBuilder_ == null) {
         ensureLinksIsMutable();
         links_.set(index, builderForValue.build());
@@ -5211,9 +8882,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder addLinks(app.rappeloids.protos.v1.CanyonLink value) {
+    public Builder addLinks(app.rappeloids.protos.v1.Canyon.CanyonLink value) {
       if (linksBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5227,10 +8898,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addLinks(
-        int index, app.rappeloids.protos.v1.CanyonLink value) {
+        int index, app.rappeloids.protos.v1.Canyon.CanyonLink value) {
       if (linksBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5244,10 +8915,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addLinks(
-        app.rappeloids.protos.v1.CanyonLink.Builder builderForValue) {
+        app.rappeloids.protos.v1.Canyon.CanyonLink.Builder builderForValue) {
       if (linksBuilder_ == null) {
         ensureLinksIsMutable();
         links_.add(builderForValue.build());
@@ -5258,10 +8929,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addLinks(
-        int index, app.rappeloids.protos.v1.CanyonLink.Builder builderForValue) {
+        int index, app.rappeloids.protos.v1.Canyon.CanyonLink.Builder builderForValue) {
       if (linksBuilder_ == null) {
         ensureLinksIsMutable();
         links_.add(index, builderForValue.build());
@@ -5272,10 +8943,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addAllLinks(
-        java.lang.Iterable<? extends app.rappeloids.protos.v1.CanyonLink> values) {
+        java.lang.Iterable<? extends app.rappeloids.protos.v1.Canyon.CanyonLink> values) {
       if (linksBuilder_ == null) {
         ensureLinksIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -5287,7 +8958,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearLinks() {
       if (linksBuilder_ == null) {
@@ -5300,7 +8971,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLinks(int index) {
       if (linksBuilder_ == null) {
@@ -5313,16 +8984,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.CanyonLink.Builder getLinksBuilder(
+    public app.rappeloids.protos.v1.Canyon.CanyonLink.Builder getLinksBuilder(
         int index) {
       return internalGetLinksFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.CanyonLinkOrBuilder getLinksOrBuilder(
+    public app.rappeloids.protos.v1.Canyon.CanyonLinkOrBuilder getLinksOrBuilder(
         int index) {
       if (linksBuilder_ == null) {
         return links_.get(index);  } else {
@@ -5330,9 +9001,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.util.List<? extends app.rappeloids.protos.v1.CanyonLinkOrBuilder> 
+    public java.util.List<? extends app.rappeloids.protos.v1.Canyon.CanyonLinkOrBuilder> 
          getLinksOrBuilderList() {
       if (linksBuilder_ != null) {
         return linksBuilder_.getMessageOrBuilderList();
@@ -5341,33 +9012,33 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.CanyonLink.Builder addLinksBuilder() {
+    public app.rappeloids.protos.v1.Canyon.CanyonLink.Builder addLinksBuilder() {
       return internalGetLinksFieldBuilder().addBuilder(
-          app.rappeloids.protos.v1.CanyonLink.getDefaultInstance());
+          app.rappeloids.protos.v1.Canyon.CanyonLink.getDefaultInstance());
     }
     /**
-     * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.CanyonLink.Builder addLinksBuilder(
+    public app.rappeloids.protos.v1.Canyon.CanyonLink.Builder addLinksBuilder(
         int index) {
       return internalGetLinksFieldBuilder().addBuilder(
-          index, app.rappeloids.protos.v1.CanyonLink.getDefaultInstance());
+          index, app.rappeloids.protos.v1.Canyon.CanyonLink.getDefaultInstance());
     }
     /**
-     * <code>repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.util.List<app.rappeloids.protos.v1.CanyonLink.Builder> 
+    public java.util.List<app.rappeloids.protos.v1.Canyon.CanyonLink.Builder> 
          getLinksBuilderList() {
       return internalGetLinksFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilder<
-        app.rappeloids.protos.v1.CanyonLink, app.rappeloids.protos.v1.CanyonLink.Builder, app.rappeloids.protos.v1.CanyonLinkOrBuilder> 
+        app.rappeloids.protos.v1.Canyon.CanyonLink, app.rappeloids.protos.v1.Canyon.CanyonLink.Builder, app.rappeloids.protos.v1.Canyon.CanyonLinkOrBuilder> 
         internalGetLinksFieldBuilder() {
       if (linksBuilder_ == null) {
         linksBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-            app.rappeloids.protos.v1.CanyonLink, app.rappeloids.protos.v1.CanyonLink.Builder, app.rappeloids.protos.v1.CanyonLinkOrBuilder>(
+            app.rappeloids.protos.v1.Canyon.CanyonLink, app.rappeloids.protos.v1.Canyon.CanyonLink.Builder, app.rappeloids.protos.v1.Canyon.CanyonLinkOrBuilder>(
                 links_,
                 ((bitField0_ & 0x40000000) != 0),
                 getParentForChildren(),
@@ -5377,22 +9048,22 @@ private static final long serialVersionUID = 0L;
       return linksBuilder_;
     }
 
-    private java.util.List<app.rappeloids.protos.v1.QualityRating> qualityRatings_ =
+    private java.util.List<app.rappeloids.protos.v1.Canyon.QualityRating> qualityRatings_ =
       java.util.Collections.emptyList();
     private void ensureQualityRatingsIsMutable() {
       if (!((bitField0_ & 0x80000000) != 0)) {
-        qualityRatings_ = new java.util.ArrayList<app.rappeloids.protos.v1.QualityRating>(qualityRatings_);
+        qualityRatings_ = new java.util.ArrayList<app.rappeloids.protos.v1.Canyon.QualityRating>(qualityRatings_);
         bitField0_ |= 0x80000000;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilder<
-        app.rappeloids.protos.v1.QualityRating, app.rappeloids.protos.v1.QualityRating.Builder, app.rappeloids.protos.v1.QualityRatingOrBuilder> qualityRatingsBuilder_;
+        app.rappeloids.protos.v1.Canyon.QualityRating, app.rappeloids.protos.v1.Canyon.QualityRating.Builder, app.rappeloids.protos.v1.Canyon.QualityRatingOrBuilder> qualityRatingsBuilder_;
 
     /**
-     * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.util.List<app.rappeloids.protos.v1.QualityRating> getQualityRatingsList() {
+    public java.util.List<app.rappeloids.protos.v1.Canyon.QualityRating> getQualityRatingsList() {
       if (qualityRatingsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(qualityRatings_);
       } else {
@@ -5400,7 +9071,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getQualityRatingsCount() {
       if (qualityRatingsBuilder_ == null) {
@@ -5410,9 +9081,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.QualityRating getQualityRatings(int index) {
+    public app.rappeloids.protos.v1.Canyon.QualityRating getQualityRatings(int index) {
       if (qualityRatingsBuilder_ == null) {
         return qualityRatings_.get(index);
       } else {
@@ -5420,10 +9091,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setQualityRatings(
-        int index, app.rappeloids.protos.v1.QualityRating value) {
+        int index, app.rappeloids.protos.v1.Canyon.QualityRating value) {
       if (qualityRatingsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5437,10 +9108,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setQualityRatings(
-        int index, app.rappeloids.protos.v1.QualityRating.Builder builderForValue) {
+        int index, app.rappeloids.protos.v1.Canyon.QualityRating.Builder builderForValue) {
       if (qualityRatingsBuilder_ == null) {
         ensureQualityRatingsIsMutable();
         qualityRatings_.set(index, builderForValue.build());
@@ -5451,9 +9122,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder addQualityRatings(app.rappeloids.protos.v1.QualityRating value) {
+    public Builder addQualityRatings(app.rappeloids.protos.v1.Canyon.QualityRating value) {
       if (qualityRatingsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5467,10 +9138,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addQualityRatings(
-        int index, app.rappeloids.protos.v1.QualityRating value) {
+        int index, app.rappeloids.protos.v1.Canyon.QualityRating value) {
       if (qualityRatingsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5484,10 +9155,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addQualityRatings(
-        app.rappeloids.protos.v1.QualityRating.Builder builderForValue) {
+        app.rappeloids.protos.v1.Canyon.QualityRating.Builder builderForValue) {
       if (qualityRatingsBuilder_ == null) {
         ensureQualityRatingsIsMutable();
         qualityRatings_.add(builderForValue.build());
@@ -5498,10 +9169,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addQualityRatings(
-        int index, app.rappeloids.protos.v1.QualityRating.Builder builderForValue) {
+        int index, app.rappeloids.protos.v1.Canyon.QualityRating.Builder builderForValue) {
       if (qualityRatingsBuilder_ == null) {
         ensureQualityRatingsIsMutable();
         qualityRatings_.add(index, builderForValue.build());
@@ -5512,10 +9183,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addAllQualityRatings(
-        java.lang.Iterable<? extends app.rappeloids.protos.v1.QualityRating> values) {
+        java.lang.Iterable<? extends app.rappeloids.protos.v1.Canyon.QualityRating> values) {
       if (qualityRatingsBuilder_ == null) {
         ensureQualityRatingsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -5527,7 +9198,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearQualityRatings() {
       if (qualityRatingsBuilder_ == null) {
@@ -5540,7 +9211,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeQualityRatings(int index) {
       if (qualityRatingsBuilder_ == null) {
@@ -5553,16 +9224,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.QualityRating.Builder getQualityRatingsBuilder(
+    public app.rappeloids.protos.v1.Canyon.QualityRating.Builder getQualityRatingsBuilder(
         int index) {
       return internalGetQualityRatingsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.QualityRatingOrBuilder getQualityRatingsOrBuilder(
+    public app.rappeloids.protos.v1.Canyon.QualityRatingOrBuilder getQualityRatingsOrBuilder(
         int index) {
       if (qualityRatingsBuilder_ == null) {
         return qualityRatings_.get(index);  } else {
@@ -5570,9 +9241,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.util.List<? extends app.rappeloids.protos.v1.QualityRatingOrBuilder> 
+    public java.util.List<? extends app.rappeloids.protos.v1.Canyon.QualityRatingOrBuilder> 
          getQualityRatingsOrBuilderList() {
       if (qualityRatingsBuilder_ != null) {
         return qualityRatingsBuilder_.getMessageOrBuilderList();
@@ -5581,33 +9252,33 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.QualityRating.Builder addQualityRatingsBuilder() {
+    public app.rappeloids.protos.v1.Canyon.QualityRating.Builder addQualityRatingsBuilder() {
       return internalGetQualityRatingsFieldBuilder().addBuilder(
-          app.rappeloids.protos.v1.QualityRating.getDefaultInstance());
+          app.rappeloids.protos.v1.Canyon.QualityRating.getDefaultInstance());
     }
     /**
-     * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.QualityRating.Builder addQualityRatingsBuilder(
+    public app.rappeloids.protos.v1.Canyon.QualityRating.Builder addQualityRatingsBuilder(
         int index) {
       return internalGetQualityRatingsFieldBuilder().addBuilder(
-          index, app.rappeloids.protos.v1.QualityRating.getDefaultInstance());
+          index, app.rappeloids.protos.v1.Canyon.QualityRating.getDefaultInstance());
     }
     /**
-     * <code>repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.util.List<app.rappeloids.protos.v1.QualityRating.Builder> 
+    public java.util.List<app.rappeloids.protos.v1.Canyon.QualityRating.Builder> 
          getQualityRatingsBuilderList() {
       return internalGetQualityRatingsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilder<
-        app.rappeloids.protos.v1.QualityRating, app.rappeloids.protos.v1.QualityRating.Builder, app.rappeloids.protos.v1.QualityRatingOrBuilder> 
+        app.rappeloids.protos.v1.Canyon.QualityRating, app.rappeloids.protos.v1.Canyon.QualityRating.Builder, app.rappeloids.protos.v1.Canyon.QualityRatingOrBuilder> 
         internalGetQualityRatingsFieldBuilder() {
       if (qualityRatingsBuilder_ == null) {
         qualityRatingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-            app.rappeloids.protos.v1.QualityRating, app.rappeloids.protos.v1.QualityRating.Builder, app.rappeloids.protos.v1.QualityRatingOrBuilder>(
+            app.rappeloids.protos.v1.Canyon.QualityRating, app.rappeloids.protos.v1.Canyon.QualityRating.Builder, app.rappeloids.protos.v1.Canyon.QualityRatingOrBuilder>(
                 qualityRatings_,
                 ((bitField0_ & 0x80000000) != 0),
                 getParentForChildren(),

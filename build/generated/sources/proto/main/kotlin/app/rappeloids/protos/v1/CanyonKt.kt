@@ -784,67 +784,67 @@ public object CanyonKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class PitchesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];`
      */
-     public val pitches: com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.RappelPitch, PitchesProxy>
+     public val pitches: com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.RappelPitch, PitchesProxy>
       @kotlin.jvm.JvmSynthetic
   get() = com.google.protobuf.kotlin.DslList(
         _builder.pitchesList
       )
     /**
-     * `repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];`
      * @param value The pitches to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addPitches")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.RappelPitch, PitchesProxy>.add(value: app.rappeloids.protos.v1.RappelPitch) {
+    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.RappelPitch, PitchesProxy>.add(value: app.rappeloids.protos.v1.Canyon.RappelPitch) {
       _builder.addPitches(value)
     }
     /**
-     * `repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];`
      * @param value The pitches to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignPitches")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.RappelPitch, PitchesProxy>.plusAssign(value: app.rappeloids.protos.v1.RappelPitch) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.RappelPitch, PitchesProxy>.plusAssign(value: app.rappeloids.protos.v1.Canyon.RappelPitch) {
       add(value)
     }
     /**
-     * `repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];`
      * @param values The pitches to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addAllPitches")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.RappelPitch, PitchesProxy>.addAll(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.RappelPitch>) {
+    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.RappelPitch, PitchesProxy>.addAll(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.Canyon.RappelPitch>) {
       _builder.addAllPitches(values)
     }
     /**
-     * `repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];`
      * @param values The pitches to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignAllPitches")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.RappelPitch, PitchesProxy>.plusAssign(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.RappelPitch>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.RappelPitch, PitchesProxy>.plusAssign(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.Canyon.RappelPitch>) {
       addAll(values)
     }
     /**
-     * `repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];`
      * @param index The index to set the value at.
      * @param value The pitches to set.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setPitches")
-    public operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.RappelPitch, PitchesProxy>.set(index: kotlin.Int, value: app.rappeloids.protos.v1.RappelPitch) {
+    public operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.RappelPitch, PitchesProxy>.set(index: kotlin.Int, value: app.rappeloids.protos.v1.Canyon.RappelPitch) {
       _builder.setPitches(index, value)
     }
     /**
-     * `repeated .rappeloids.v1.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.RappelPitch pitches = 33 [(.google.api.field_behavior) = OPTIONAL];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearPitches")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.RappelPitch, PitchesProxy>.clear() {
+    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.RappelPitch, PitchesProxy>.clear() {
       _builder.clearPitches()
     }
 
@@ -855,67 +855,67 @@ public object CanyonKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class LinksProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];`
      */
-     public val links: com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.CanyonLink, LinksProxy>
+     public val links: com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.CanyonLink, LinksProxy>
       @kotlin.jvm.JvmSynthetic
   get() = com.google.protobuf.kotlin.DslList(
         _builder.linksList
       )
     /**
-     * `repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];`
      * @param value The links to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addLinks")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.CanyonLink, LinksProxy>.add(value: app.rappeloids.protos.v1.CanyonLink) {
+    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.CanyonLink, LinksProxy>.add(value: app.rappeloids.protos.v1.Canyon.CanyonLink) {
       _builder.addLinks(value)
     }
     /**
-     * `repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];`
      * @param value The links to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignLinks")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.CanyonLink, LinksProxy>.plusAssign(value: app.rappeloids.protos.v1.CanyonLink) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.CanyonLink, LinksProxy>.plusAssign(value: app.rappeloids.protos.v1.Canyon.CanyonLink) {
       add(value)
     }
     /**
-     * `repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];`
      * @param values The links to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addAllLinks")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.CanyonLink, LinksProxy>.addAll(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.CanyonLink>) {
+    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.CanyonLink, LinksProxy>.addAll(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.Canyon.CanyonLink>) {
       _builder.addAllLinks(values)
     }
     /**
-     * `repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];`
      * @param values The links to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignAllLinks")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.CanyonLink, LinksProxy>.plusAssign(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.CanyonLink>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.CanyonLink, LinksProxy>.plusAssign(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.Canyon.CanyonLink>) {
       addAll(values)
     }
     /**
-     * `repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];`
      * @param index The index to set the value at.
      * @param value The links to set.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setLinks")
-    public operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.CanyonLink, LinksProxy>.set(index: kotlin.Int, value: app.rappeloids.protos.v1.CanyonLink) {
+    public operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.CanyonLink, LinksProxy>.set(index: kotlin.Int, value: app.rappeloids.protos.v1.Canyon.CanyonLink) {
       _builder.setLinks(index, value)
     }
     /**
-     * `repeated .rappeloids.v1.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.CanyonLink links = 34 [(.google.api.field_behavior) = OPTIONAL];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearLinks")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.CanyonLink, LinksProxy>.clear() {
+    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.CanyonLink, LinksProxy>.clear() {
       _builder.clearLinks()
     }
 
@@ -926,72 +926,493 @@ public object CanyonKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class QualityRatingsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];`
      */
-     public val qualityRatings: com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.QualityRating, QualityRatingsProxy>
+     public val qualityRatings: com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.QualityRating, QualityRatingsProxy>
       @kotlin.jvm.JvmSynthetic
   get() = com.google.protobuf.kotlin.DslList(
         _builder.qualityRatingsList
       )
     /**
-     * `repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];`
      * @param value The qualityRatings to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addQualityRatings")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.QualityRating, QualityRatingsProxy>.add(value: app.rappeloids.protos.v1.QualityRating) {
+    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.QualityRating, QualityRatingsProxy>.add(value: app.rappeloids.protos.v1.Canyon.QualityRating) {
       _builder.addQualityRatings(value)
     }
     /**
-     * `repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];`
      * @param value The qualityRatings to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignQualityRatings")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.QualityRating, QualityRatingsProxy>.plusAssign(value: app.rappeloids.protos.v1.QualityRating) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.QualityRating, QualityRatingsProxy>.plusAssign(value: app.rappeloids.protos.v1.Canyon.QualityRating) {
       add(value)
     }
     /**
-     * `repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];`
      * @param values The qualityRatings to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addAllQualityRatings")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.QualityRating, QualityRatingsProxy>.addAll(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.QualityRating>) {
+    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.QualityRating, QualityRatingsProxy>.addAll(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.Canyon.QualityRating>) {
       _builder.addAllQualityRatings(values)
     }
     /**
-     * `repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];`
      * @param values The qualityRatings to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignAllQualityRatings")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.QualityRating, QualityRatingsProxy>.plusAssign(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.QualityRating>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.QualityRating, QualityRatingsProxy>.plusAssign(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.Canyon.QualityRating>) {
       addAll(values)
     }
     /**
-     * `repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];`
      * @param index The index to set the value at.
      * @param value The qualityRatings to set.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setQualityRatings")
-    public operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.QualityRating, QualityRatingsProxy>.set(index: kotlin.Int, value: app.rappeloids.protos.v1.QualityRating) {
+    public operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.QualityRating, QualityRatingsProxy>.set(index: kotlin.Int, value: app.rappeloids.protos.v1.Canyon.QualityRating) {
       _builder.setQualityRatings(index, value)
     }
     /**
-     * `repeated .rappeloids.v1.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Canyon.QualityRating quality_ratings = 35 [(.google.api.field_behavior) = OPTIONAL];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearQualityRatings")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.QualityRating, QualityRatingsProxy>.clear() {
+    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Canyon.QualityRating, QualityRatingsProxy>.clear() {
       _builder.clearQualityRatings()
+    }
+  }
+  @kotlin.jvm.JvmName("-initializerappelPitch")
+  public inline fun rappelPitch(block: app.rappeloids.protos.v1.CanyonKt.RappelPitchKt.Dsl.() -> kotlin.Unit): app.rappeloids.protos.v1.Canyon.RappelPitch =
+    app.rappeloids.protos.v1.CanyonKt.RappelPitchKt.Dsl._create(app.rappeloids.protos.v1.Canyon.RappelPitch.newBuilder()).apply { block() }._build()
+  /**
+   * Protobuf type `rappeloids.v1.Canyon.RappelPitch`
+   */
+  public object RappelPitchKt {
+    @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+    @com.google.protobuf.kotlin.ProtoDslMarker
+    public class Dsl private constructor(
+      private val _builder: app.rappeloids.protos.v1.Canyon.RappelPitch.Builder
+    ) {
+      public companion object {
+        @kotlin.jvm.JvmSynthetic
+    @kotlin.PublishedApi
+        internal fun _create(builder: app.rappeloids.protos.v1.Canyon.RappelPitch.Builder): Dsl = Dsl(builder)
+      }
+
+      @kotlin.jvm.JvmSynthetic
+  @kotlin.PublishedApi
+      internal fun _build(): app.rappeloids.protos.v1.Canyon.RappelPitch = _builder.build()
+
+      /**
+       * `string id = 1 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public var id: kotlin.String
+        @kotlin.jvm.JvmName("getId")
+          get() = _builder.id
+        @kotlin.jvm.JvmName("setId")
+          set(value) {
+          _builder.id = value
+        }
+      /**
+       * `string id = 1 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public fun clearId() {
+        _builder.clearId()
+      }
+
+      /**
+       * `string name = 2 [(.google.api.field_behavior) = REQUIRED];`
+       */
+      public var name: kotlin.String
+        @kotlin.jvm.JvmName("getName")
+          get() = _builder.name
+        @kotlin.jvm.JvmName("setName")
+          set(value) {
+          _builder.name = value
+        }
+      /**
+       * `string name = 2 [(.google.api.field_behavior) = REQUIRED];`
+       */
+      public fun clearName() {
+        _builder.clearName()
+      }
+
+      /**
+       * `string length = 3 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public var length: kotlin.String
+        @kotlin.jvm.JvmName("getLength")
+          get() = _builder.length
+        @kotlin.jvm.JvmName("setLength")
+          set(value) {
+          _builder.length = value
+        }
+      /**
+       * `string length = 3 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public fun clearLength() {
+        _builder.clearLength()
+      }
+
+      /**
+       * `string anchor = 4 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public var anchor: kotlin.String
+        @kotlin.jvm.JvmName("getAnchor")
+          get() = _builder.anchor
+        @kotlin.jvm.JvmName("setAnchor")
+          set(value) {
+          _builder.anchor = value
+        }
+      /**
+       * `string anchor = 4 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public fun clearAnchor() {
+        _builder.clearAnchor()
+      }
+
+      /**
+       * `bool has_pool = 5 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public var hasPool: kotlin.Boolean
+        @kotlin.jvm.JvmName("getHasPool")
+          get() = _builder.hasPool
+        @kotlin.jvm.JvmName("setHasPool")
+          set(value) {
+          _builder.hasPool = value
+        }
+      /**
+       * `bool has_pool = 5 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public fun clearHasPool() {
+        _builder.clearHasPool()
+      }
+
+      /**
+       * `int32 pools_count = 6 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public var poolsCount: kotlin.Int
+        @kotlin.jvm.JvmName("getPoolsCount")
+          get() = _builder.poolsCount
+        @kotlin.jvm.JvmName("setPoolsCount")
+          set(value) {
+          _builder.poolsCount = value
+        }
+      /**
+       * `int32 pools_count = 6 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public fun clearPoolsCount() {
+        _builder.clearPoolsCount()
+      }
+
+      /**
+       * `string description = 7 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public var description: kotlin.String
+        @kotlin.jvm.JvmName("getDescription")
+          get() = _builder.description
+        @kotlin.jvm.JvmName("setDescription")
+          set(value) {
+          _builder.description = value
+        }
+      /**
+       * `string description = 7 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public fun clearDescription() {
+        _builder.clearDescription()
+      }
+
+      /**
+       * `string section = 8 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public var section: kotlin.String
+        @kotlin.jvm.JvmName("getSection")
+          get() = _builder.section
+        @kotlin.jvm.JvmName("setSection")
+          set(value) {
+          _builder.section = value
+        }
+      /**
+       * `string section = 8 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public fun clearSection() {
+        _builder.clearSection()
+      }
+
+      /**
+       * `bool is_alternative = 9 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public var isAlternative: kotlin.Boolean
+        @kotlin.jvm.JvmName("getIsAlternative")
+          get() = _builder.isAlternative
+        @kotlin.jvm.JvmName("setIsAlternative")
+          set(value) {
+          _builder.isAlternative = value
+        }
+      /**
+       * `bool is_alternative = 9 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public fun clearIsAlternative() {
+        _builder.clearIsAlternative()
+      }
+
+      /**
+       * `string alt_of = 10 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public var altOf: kotlin.String
+        @kotlin.jvm.JvmName("getAltOf")
+          get() = _builder.altOf
+        @kotlin.jvm.JvmName("setAltOf")
+          set(value) {
+          _builder.altOf = value
+        }
+      /**
+       * `string alt_of = 10 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public fun clearAltOf() {
+        _builder.clearAltOf()
+      }
+
+      /**
+       * `bool is_staged = 11 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public var isStaged: kotlin.Boolean
+        @kotlin.jvm.JvmName("getIsStaged")
+          get() = _builder.isStaged
+        @kotlin.jvm.JvmName("setIsStaged")
+          set(value) {
+          _builder.isStaged = value
+        }
+      /**
+       * `bool is_staged = 11 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public fun clearIsStaged() {
+        _builder.clearIsStaged()
+      }
+
+      /**
+       * `string staged_note = 12 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public var stagedNote: kotlin.String
+        @kotlin.jvm.JvmName("getStagedNote")
+          get() = _builder.stagedNote
+        @kotlin.jvm.JvmName("setStagedNote")
+          set(value) {
+          _builder.stagedNote = value
+        }
+      /**
+       * `string staged_note = 12 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public fun clearStagedNote() {
+        _builder.clearStagedNote()
+      }
+
+      /**
+       * `string escape_exit = 13 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public var escapeExit: kotlin.String
+        @kotlin.jvm.JvmName("getEscapeExit")
+          get() = _builder.escapeExit
+        @kotlin.jvm.JvmName("setEscapeExit")
+          set(value) {
+          _builder.escapeExit = value
+        }
+      /**
+       * `string escape_exit = 13 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public fun clearEscapeExit() {
+        _builder.clearEscapeExit()
+      }
+    }
+  }
+  @kotlin.jvm.JvmName("-initializecanyonLink")
+  public inline fun canyonLink(block: app.rappeloids.protos.v1.CanyonKt.CanyonLinkKt.Dsl.() -> kotlin.Unit): app.rappeloids.protos.v1.Canyon.CanyonLink =
+    app.rappeloids.protos.v1.CanyonKt.CanyonLinkKt.Dsl._create(app.rappeloids.protos.v1.Canyon.CanyonLink.newBuilder()).apply { block() }._build()
+  /**
+   * Protobuf type `rappeloids.v1.Canyon.CanyonLink`
+   */
+  public object CanyonLinkKt {
+    @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+    @com.google.protobuf.kotlin.ProtoDslMarker
+    public class Dsl private constructor(
+      private val _builder: app.rappeloids.protos.v1.Canyon.CanyonLink.Builder
+    ) {
+      public companion object {
+        @kotlin.jvm.JvmSynthetic
+    @kotlin.PublishedApi
+        internal fun _create(builder: app.rappeloids.protos.v1.Canyon.CanyonLink.Builder): Dsl = Dsl(builder)
+      }
+
+      @kotlin.jvm.JvmSynthetic
+  @kotlin.PublishedApi
+      internal fun _build(): app.rappeloids.protos.v1.Canyon.CanyonLink = _builder.build()
+
+      /**
+       * `string title = 1 [(.google.api.field_behavior) = REQUIRED];`
+       */
+      public var title: kotlin.String
+        @kotlin.jvm.JvmName("getTitle")
+          get() = _builder.title
+        @kotlin.jvm.JvmName("setTitle")
+          set(value) {
+          _builder.title = value
+        }
+      /**
+       * `string title = 1 [(.google.api.field_behavior) = REQUIRED];`
+       */
+      public fun clearTitle() {
+        _builder.clearTitle()
+      }
+
+      /**
+       * `string url = 2 [(.google.api.field_behavior) = REQUIRED];`
+       */
+      public var url: kotlin.String
+        @kotlin.jvm.JvmName("getUrl")
+          get() = _builder.url
+        @kotlin.jvm.JvmName("setUrl")
+          set(value) {
+          _builder.url = value
+        }
+      /**
+       * `string url = 2 [(.google.api.field_behavior) = REQUIRED];`
+       */
+      public fun clearUrl() {
+        _builder.clearUrl()
+      }
+    }
+  }
+  @kotlin.jvm.JvmName("-initializequalityRating")
+  public inline fun qualityRating(block: app.rappeloids.protos.v1.CanyonKt.QualityRatingKt.Dsl.() -> kotlin.Unit): app.rappeloids.protos.v1.Canyon.QualityRating =
+    app.rappeloids.protos.v1.CanyonKt.QualityRatingKt.Dsl._create(app.rappeloids.protos.v1.Canyon.QualityRating.newBuilder()).apply { block() }._build()
+  /**
+   * Protobuf type `rappeloids.v1.Canyon.QualityRating`
+   */
+  public object QualityRatingKt {
+    @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+    @com.google.protobuf.kotlin.ProtoDslMarker
+    public class Dsl private constructor(
+      private val _builder: app.rappeloids.protos.v1.Canyon.QualityRating.Builder
+    ) {
+      public companion object {
+        @kotlin.jvm.JvmSynthetic
+    @kotlin.PublishedApi
+        internal fun _create(builder: app.rappeloids.protos.v1.Canyon.QualityRating.Builder): Dsl = Dsl(builder)
+      }
+
+      @kotlin.jvm.JvmSynthetic
+  @kotlin.PublishedApi
+      internal fun _build(): app.rappeloids.protos.v1.Canyon.QualityRating = _builder.build()
+
+      /**
+       * `string source = 1 [(.google.api.field_behavior) = REQUIRED];`
+       */
+      public var source: kotlin.String
+        @kotlin.jvm.JvmName("getSource")
+          get() = _builder.source
+        @kotlin.jvm.JvmName("setSource")
+          set(value) {
+          _builder.source = value
+        }
+      /**
+       * `string source = 1 [(.google.api.field_behavior) = REQUIRED];`
+       */
+      public fun clearSource() {
+        _builder.clearSource()
+      }
+
+      /**
+       * `string score = 2 [(.google.api.field_behavior) = REQUIRED];`
+       */
+      public var score: kotlin.String
+        @kotlin.jvm.JvmName("getScore")
+          get() = _builder.score
+        @kotlin.jvm.JvmName("setScore")
+          set(value) {
+          _builder.score = value
+        }
+      /**
+       * `string score = 2 [(.google.api.field_behavior) = REQUIRED];`
+       */
+      public fun clearScore() {
+        _builder.clearScore()
+      }
+
+      /**
+       * `string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public var displayScore: kotlin.String
+        @kotlin.jvm.JvmName("getDisplayScore")
+          get() = _builder.displayScore
+        @kotlin.jvm.JvmName("setDisplayScore")
+          set(value) {
+          _builder.displayScore = value
+        }
+      /**
+       * `string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public fun clearDisplayScore() {
+        _builder.clearDisplayScore()
+      }
+
+      /**
+       * `double max_score = 4 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public var maxScore: kotlin.Double
+        @kotlin.jvm.JvmName("getMaxScore")
+          get() = _builder.maxScore
+        @kotlin.jvm.JvmName("setMaxScore")
+          set(value) {
+          _builder.maxScore = value
+        }
+      /**
+       * `double max_score = 4 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public fun clearMaxScore() {
+        _builder.clearMaxScore()
+      }
+
+      /**
+       * `string url = 5 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public var url: kotlin.String
+        @kotlin.jvm.JvmName("getUrl")
+          get() = _builder.url
+        @kotlin.jvm.JvmName("setUrl")
+          set(value) {
+          _builder.url = value
+        }
+      /**
+       * `string url = 5 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public fun clearUrl() {
+        _builder.clearUrl()
+      }
     }
   }
 }
 @kotlin.jvm.JvmSynthetic
 public inline fun app.rappeloids.protos.v1.Canyon.copy(block: `app.rappeloids.protos.v1`.CanyonKt.Dsl.() -> kotlin.Unit): app.rappeloids.protos.v1.Canyon =
   `app.rappeloids.protos.v1`.CanyonKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+
+@kotlin.jvm.JvmSynthetic
+public inline fun app.rappeloids.protos.v1.Canyon.RappelPitch.copy(block: `app.rappeloids.protos.v1`.CanyonKt.RappelPitchKt.Dsl.() -> kotlin.Unit): app.rappeloids.protos.v1.Canyon.RappelPitch =
+  `app.rappeloids.protos.v1`.CanyonKt.RappelPitchKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+
+@kotlin.jvm.JvmSynthetic
+public inline fun app.rappeloids.protos.v1.Canyon.CanyonLink.copy(block: `app.rappeloids.protos.v1`.CanyonKt.CanyonLinkKt.Dsl.() -> kotlin.Unit): app.rappeloids.protos.v1.Canyon.CanyonLink =
+  `app.rappeloids.protos.v1`.CanyonKt.CanyonLinkKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+
+@kotlin.jvm.JvmSynthetic
+public inline fun app.rappeloids.protos.v1.Canyon.QualityRating.copy(block: `app.rappeloids.protos.v1`.CanyonKt.QualityRatingKt.Dsl.() -> kotlin.Unit): app.rappeloids.protos.v1.Canyon.QualityRating =
+  `app.rappeloids.protos.v1`.CanyonKt.QualityRatingKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 
