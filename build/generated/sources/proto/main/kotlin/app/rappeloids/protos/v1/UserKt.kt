@@ -60,31 +60,6 @@ public object UserKt {
 
     /**
      * ```
-     * The unique identifier of the user.
-     * ```
-     *
-     * `string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];`
-     */
-    public var id: kotlin.String
-      @kotlin.jvm.JvmName("getId")
-        get() = _builder.id
-      @kotlin.jvm.JvmName("setId")
-        set(value) {
-        _builder.id = value
-      }
-    /**
-     * ```
-     * The unique identifier of the user.
-     * ```
-     *
-     * `string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];`
-     */
-    public fun clearId() {
-      _builder.clearId()
-    }
-
-    /**
-     * ```
      * Email address of the user.
      * ```
      *

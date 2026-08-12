@@ -61,9 +61,6 @@ message User {
   // Resource name: "users/{user_id}"
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-  // The unique identifier of the user.
-  string id = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
-
   // Email address of the user.
   string email = 3 [(google.api.field_behavior) = REQUIRED];
 

@@ -32,26 +32,6 @@ public interface UserOrBuilder extends
 
   /**
    * <pre>
-   * The unique identifier of the user.
-   * </pre>
-   *
-   * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The id.
-   */
-  java.lang.String getId();
-  /**
-   * <pre>
-   * The unique identifier of the user.
-   * </pre>
-   *
-   * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString
-      getIdBytes();
-
-  /**
-   * <pre>
    * Email address of the user.
    * </pre>
    *
