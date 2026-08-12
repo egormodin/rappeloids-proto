@@ -4,7 +4,12 @@
   "type": "module",
   "description": "Shared Protobuf definitions and TypeScript gRPC/Connect clients for Rappeloids",
   "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/egormodin/rappeloids-proto.git"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
