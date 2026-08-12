@@ -53,6 +53,9 @@ jobs:
         run: |
           ./gradlew publishGprPublicationToGitHubPackagesRepository || echo "Maven package version already published, continuing..."
 
+      - name: Package NPM tarball
+        run: npm pack
+
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/v')
         env:
@@ -60,5 +63,7 @@ jobs:
         run: |
           gh release create "${{ github.ref_name }}" \
             build/libs/*.jar \
+            *.tgz \
             --title "Release ${{ github.ref_name }}" \
             --generate-notes
+
