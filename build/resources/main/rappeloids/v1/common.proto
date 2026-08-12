@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package rappeloids.v1;
+
+option java_multiple_files = true;
+option java_package = "app.rappeloids.v1";
+
+import "google/api/field_behavior.proto";
+
+// Geographic point representing latitude, longitude, and optional elevation.
+message GeoPoint {
+  // Latitude in degrees. Must be in the range [-90.0, +90.0].
+  double latitude = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Longitude in degrees. Must be in the range [-180.0, +180.0].
+  double longitude = 2 [(google.api.field_behavior) = REQUIRED];
+
+  // Altitude above sea level in meters.
+  double elevation_meters = 3 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Monetary value with standard 3-letter currency code and units/nanos split (AIP-213).
+message Money {
+  // The 3-letter currency code defined in ISO 4217 (e.g. "USD", "EUR").
+  string currency_code = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // The whole units of the amount.
+  int64 units = 2 [(google.api.field_behavior) = REQUIRED];
+
+  // Number of nano (10^-9) units of the amount.
+  int32 nanos = 3 [(google.api.field_behavior) = OPTIONAL];
+}

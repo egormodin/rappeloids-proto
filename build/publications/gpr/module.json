@@ -1,0 +1,180 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "app.rappeloids",
+    "module": "rappeloids-proto",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.6.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "com.google.protobuf",
+          "module": "protobuf-java",
+          "version": {
+            "requires": "4.33.2"
+          }
+        },
+        {
+          "group": "com.google.protobuf",
+          "module": "protobuf-kotlin",
+          "version": {
+            "requires": "4.33.2"
+          }
+        },
+        {
+          "group": "io.grpc",
+          "module": "grpc-protobuf",
+          "version": {
+            "requires": "1.82.2"
+          }
+        },
+        {
+          "group": "io.grpc",
+          "module": "grpc-stub",
+          "version": {
+            "requires": "1.82.2"
+          }
+        },
+        {
+          "group": "io.grpc",
+          "module": "grpc-kotlin-stub",
+          "version": {
+            "requires": "1.4.1"
+          }
+        },
+        {
+          "group": "com.google.api.grpc",
+          "module": "proto-google-common-protos",
+          "version": {
+            "requires": "2.65.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "rappeloids-proto-1.0.0.jar",
+          "url": "rappeloids-proto-1.0.0.jar",
+          "size": 1081570,
+          "sha512": "b21e71a9966a991366d69a44d24c63862750a5c83b721c748afdcaf6ea1f25628bf79dd0e52767306bc77d7581ee9bb1b43613e432737cecd7ff9c92b8ccf4f8",
+          "sha256": "650495853eb434c61ec6f8b21660060deab8d2d2a9f565747180ca1b1f857443",
+          "sha1": "e25d092ef35ad66a26ab73adae227273b053fb22",
+          "md5": "c8d941e4be1f008c5425ab1f75b2f776"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.3.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "com.google.protobuf",
+          "module": "protobuf-java",
+          "version": {
+            "requires": "4.33.2"
+          }
+        },
+        {
+          "group": "com.google.protobuf",
+          "module": "protobuf-kotlin",
+          "version": {
+            "requires": "4.33.2"
+          }
+        },
+        {
+          "group": "io.grpc",
+          "module": "grpc-protobuf",
+          "version": {
+            "requires": "1.82.2"
+          }
+        },
+        {
+          "group": "io.grpc",
+          "module": "grpc-stub",
+          "version": {
+            "requires": "1.82.2"
+          }
+        },
+        {
+          "group": "io.grpc",
+          "module": "grpc-kotlin-stub",
+          "version": {
+            "requires": "1.4.1"
+          }
+        },
+        {
+          "group": "com.google.api.grpc",
+          "module": "proto-google-common-protos",
+          "version": {
+            "requires": "2.65.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "rappeloids-proto-1.0.0.jar",
+          "url": "rappeloids-proto-1.0.0.jar",
+          "size": 1081570,
+          "sha512": "b21e71a9966a991366d69a44d24c63862750a5c83b721c748afdcaf6ea1f25628bf79dd0e52767306bc77d7581ee9bb1b43613e432737cecd7ff9c92b8ccf4f8",
+          "sha256": "650495853eb434c61ec6f8b21660060deab8d2d2a9f565747180ca1b1f857443",
+          "sha1": "e25d092ef35ad66a26ab73adae227273b053fb22",
+          "md5": "c8d941e4be1f008c5425ab1f75b2f776"
+        }
+      ]
+    }
+  ]
+}

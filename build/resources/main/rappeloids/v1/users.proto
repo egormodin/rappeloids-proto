@@ -1,0 +1,113 @@
+syntax = "proto3";
+
+package rappeloids.v1;
+
+option java_multiple_files = true;
+option java_package = "app.rappeloids.v1";
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/field_mask.proto";
+import "google/protobuf/timestamp.proto";
+
+// Service managing user accounts, authentication profiles, and preferences (AIP-121).
+service UsersService {
+  option (google.api.default_host) = "api.rappeloids.app";
+
+  // Gets a user profile by resource name (AIP-131).
+  rpc GetUser(GetUserRequest) returns (User) {
+    option (google.api.http) = {
+      get: "/v1/{name=users/*}"
+    };
+    option (google.api.method_signature) = "name";
+  }
+
+  // Gets the profile of the currently authenticated caller.
+  rpc GetMyProfile(google.protobuf.Empty) returns (User) {
+    option (google.api.http) = {
+      get: "/v1/users:me"
+    };
+  }
+
+  // Updates a user profile (AIP-134). Requires self or admin.
+  rpc UpdateUser(UpdateUserRequest) returns (User) {
+    option (google.api.http) = {
+      patch: "/v1/{user.name=users/*}"
+      body: "user"
+    };
+    option (google.api.method_signature) = "user,update_mask";
+  }
+
+  // Lists users with pagination (AIP-132).
+  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse) {
+    option (google.api.http) = {
+      get: "/v1/users"
+    };
+  }
+}
+
+// User profile resource following AIP-122.
+message User {
+  option (google.api.resource) = {
+    type: "rappeloids.app/User"
+    pattern: "users/{user}"
+    plural: "users"
+    singular: "user"
+  };
+
+  // Resource name: "users/{user_id}"
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
+
+  // The unique identifier of the user.
+  string id = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Email address of the user.
+  string email = 3 [(google.api.field_behavior) = REQUIRED];
+
+  // Display name.
+  string display_name = 4 [(google.api.field_behavior) = REQUIRED];
+
+  // Profile avatar photo URL.
+  string avatar_url = 5 [(google.api.field_behavior) = OPTIONAL];
+
+  // Assigned security role ("user", "admin").
+  string role = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // User preferences map.
+  map<string, string> preferences = 7 [(google.api.field_behavior) = OPTIONAL];
+
+  // Timestamp when the account was created (AIP-142).
+  google.protobuf.Timestamp create_time = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Timestamp when the account was last updated (AIP-142).
+  google.protobuf.Timestamp update_time = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+message GetUserRequest {
+  // Format: "users/{user_id}"
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "rappeloids.app/User"
+  ];
+}
+
+message UpdateUserRequest {
+  User user = 1 [(google.api.field_behavior) = REQUIRED];
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+}
+
+message ListUsersRequest {
+  int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
+  string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
+  string filter = 3 [(google.api.field_behavior) = OPTIONAL];
+  string order_by = 4 [(google.api.field_behavior) = OPTIONAL];
+}
+
+message ListUsersResponse {
+  repeated User users = 1;
+  string next_page_token = 2;
+  int32 total_size = 3;
+}
