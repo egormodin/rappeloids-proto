@@ -3,7 +3,7 @@ syntax = "proto3";
 package rappeloids.v1;
 
 option java_multiple_files = true;
-option java_package = "app.rappeloids.v1";
+option java_package = "app.rappeloids.protos.v1";
 
 import "google/api/annotations.proto";
 import "google/api/client.proto";
