@@ -244,8 +244,11 @@ message ListCanyonsRequest {
   // Page token from a previous response (AIP-158).
   string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 
-  // Filter expression (AIP-160).
-  string filter = 4 [(google.api.field_behavior) = OPTIONAL];
+  // Region resource name or identifier (e.g. "regions/zion" or "zion").
+  string region = 4 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.resource_reference).type = "rappeloids.app/Region"
+  ];
 
   // Sort order (AIP-132).
   string order_by = 5 [(google.api.field_behavior) = OPTIONAL];

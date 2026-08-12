@@ -62,23 +62,23 @@ public interface ListCanyonsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Filter expression (AIP-160).
+   * Region resource name or identifier (e.g. "regions/zion" or "zion").
    * </pre>
    *
-   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The filter.
+   * <code>string region = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+   * @return The region.
    */
-  java.lang.String getFilter();
+  java.lang.String getRegion();
   /**
    * <pre>
-   * Filter expression (AIP-160).
+   * Region resource name or identifier (e.g. "regions/zion" or "zion").
    * </pre>
    *
-   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for filter.
+   * <code>string region = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for region.
    */
   com.google.protobuf.ByteString
-      getFilterBytes();
+      getRegionBytes();
 
   /**
    * <pre>

@@ -106,27 +106,27 @@ public object ListCanyonsRequestKt {
 
     /**
      * ```
-     * Filter expression (AIP-160).
+     * Region resource name or identifier (e.g. "regions/zion" or "zion").
      * ```
      *
-     * `string filter = 4 [(.google.api.field_behavior) = OPTIONAL];`
+     * `string region = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }`
      */
-    public var filter: kotlin.String
-      @kotlin.jvm.JvmName("getFilter")
-        get() = _builder.filter
-      @kotlin.jvm.JvmName("setFilter")
+    public var region: kotlin.String
+      @kotlin.jvm.JvmName("getRegion")
+        get() = _builder.region
+      @kotlin.jvm.JvmName("setRegion")
         set(value) {
-        _builder.filter = value
+        _builder.region = value
       }
     /**
      * ```
-     * Filter expression (AIP-160).
+     * Region resource name or identifier (e.g. "regions/zion" or "zion").
      * ```
      *
-     * `string filter = 4 [(.google.api.field_behavior) = OPTIONAL];`
+     * `string region = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }`
      */
-    public fun clearFilter() {
-      _builder.clearFilter()
+    public fun clearRegion() {
+      _builder.clearRegion()
     }
 
     /**
