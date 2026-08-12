@@ -1,6 +1,6 @@
 {
   "name": "@egormodin/rappeloids-proto",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "description": "Shared Protobuf definitions and TypeScript gRPC/Connect clients for Rappeloids",
   "publishConfig": {

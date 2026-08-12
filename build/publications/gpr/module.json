@@ -3,7 +3,7 @@
   "component": {
     "group": "app.rappeloids",
     "module": "rappeloids-proto",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -85,8 +85,8 @@
       ],
       "files": [
         {
-          "name": "rappeloids-proto-1.1.0.jar",
-          "url": "rappeloids-proto-1.1.0.jar",
+          "name": "rappeloids-proto-1.2.0.jar",
+          "url": "rappeloids-proto-1.2.0.jar",
           "size": 1280145,
           "sha512": "f7c741b8d69b6b511bdbda254e35c3ce88b7ff454c45b837b5269f257f58b7f68697d4db148a249430a18f42219144d011b0dd3303caf4f15f106b79c8fa1f7b",
           "sha256": "b1387781f4649fecb045495230da1aed00c234eab5717f86192c6f2f1eab3515",
@@ -166,8 +166,8 @@
       ],
       "files": [
         {
-          "name": "rappeloids-proto-1.1.0.jar",
-          "url": "rappeloids-proto-1.1.0.jar",
+          "name": "rappeloids-proto-1.2.0.jar",
+          "url": "rappeloids-proto-1.2.0.jar",
           "size": 1280145,
           "sha512": "f7c741b8d69b6b511bdbda254e35c3ce88b7ff454c45b837b5269f257f58b7f68697d4db148a249430a18f42219144d011b0dd3303caf4f15f106b79c8fa1f7b",
           "sha256": "b1387781f4649fecb045495230da1aed00c234eab5717f86192c6f2f1eab3515",
