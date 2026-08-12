@@ -11,7 +11,6 @@ import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
-import "google/protobuf/timestamp.proto";
 
 // Service managing user accounts, authentication profiles, and preferences (AIP-121).
 service UsersService {
@@ -82,12 +81,6 @@ message User {
 
   // User preferences map.
   map<string, string> preferences = 7 [(google.api.field_behavior) = OPTIONAL];
-
-  // Timestamp when the account was created (AIP-142).
-  google.protobuf.Timestamp create_time = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
-
-  // Timestamp when the account was last updated (AIP-142).
-  google.protobuf.Timestamp update_time = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 message GetUserRequest {

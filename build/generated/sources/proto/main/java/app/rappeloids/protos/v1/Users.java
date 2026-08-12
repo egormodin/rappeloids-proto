@@ -70,38 +70,35 @@ public final class Users extends com.google.protobuf.GeneratedFile {
       "/api/client.proto\032\037google/api/field_beha" +
       "vior.proto\032\031google/api/resource.proto\032\033g" +
       "oogle/protobuf/empty.proto\032 google/proto" +
-      "buf/field_mask.proto\032\037google/protobuf/ti" +
-      "mestamp.proto\"\340\003\n\004User\022\021\n\004name\030\001 \001(\tB\003\340A" +
-      "\010\022\022\n\005email\030\003 \001(\tB\003\340A\002\022\031\n\014display_name\030\004 " +
-      "\001(\tB\003\340A\002\022\027\n\navatar_url\030\005 \001(\tB\003\340A\001\022+\n\004rol" +
-      "e\030\006 \001(\0162\030.rappeloids.v1.User.RoleB\003\340A\003\022>" +
-      "\n\013preferences\030\007 \003(\0132$.rappeloids.v1.User" +
-      ".PreferencesEntryB\003\340A\001\0224\n\013create_time\030\010 " +
-      "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013" +
-      "update_time\030\t \001(\0132\032.google.protobuf.Time" +
-      "stampB\003\340A\003\0322\n\020PreferencesEntry\022\013\n\003key\030\001 " +
-      "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\";\n\004Role\022\024\n\020ROLE_U" +
-      "NSPECIFIED\020\000\022\r\n\tROLE_USER\020\001\022\016\n\nROLE_ADMI" +
-      "N\020\002:3\352A0\n\023rappeloids.app/User\022\014users/{us" +
-      "er}*\005users2\004user\";\n\016GetUserRequest\022)\n\004na" +
-      "me\030\001 \001(\tB\033\340A\002\372A\025\n\023rappeloids.app/User\"q\n" +
-      "\021UpdateUserRequest\022&\n\004user\030\001 \001(\0132\023.rappe" +
-      "loids.v1.UserB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132" +
-      "\032.google.protobuf.FieldMaskB\003\340A\001\"\022\n\020List" +
-      "UsersRequest\"7\n\021ListUsersResponse\022\"\n\005use" +
-      "rs\030\001 \003(\0132\023.rappeloids.v1.User2\274\003\n\014UsersS" +
-      "ervice\022`\n\007GetUser\022\035.rappeloids.v1.GetUse" +
-      "rRequest\032\023.rappeloids.v1.User\"!\332A\004name\202\323" +
-      "\344\223\002\024\022\022/v1/{name=users/*}\022Q\n\014GetMyProfile" +
-      "\022\026.google.protobuf.Empty\032\023.rappeloids.v1" +
-      ".User\"\024\202\323\344\223\002\016\022\014/v1/users:me\022}\n\nUpdateUse" +
-      "r\022 .rappeloids.v1.UpdateUserRequest\032\023.ra" +
-      "ppeloids.v1.User\"8\332A\020user,update_mask\202\323\344" +
-      "\223\002\0372\027/v1/{user.name=users/*}:\004user\022a\n\tLi" +
-      "stUsers\022\037.rappeloids.v1.ListUsersRequest" +
-      "\032 .rappeloids.v1.ListUsersResponse\"\021\202\323\344\223" +
-      "\002\013\022\t/v1/users\032\025\312A\022api.rappeloids.appB\034\n\030" +
-      "app.rappeloids.protos.v1P\001b\006proto3"
+      "buf/field_mask.proto\"\364\002\n\004User\022\021\n\004name\030\001 " +
+      "\001(\tB\003\340A\010\022\022\n\005email\030\003 \001(\tB\003\340A\002\022\031\n\014display_" +
+      "name\030\004 \001(\tB\003\340A\002\022\027\n\navatar_url\030\005 \001(\tB\003\340A\001" +
+      "\022+\n\004role\030\006 \001(\0162\030.rappeloids.v1.User.Role" +
+      "B\003\340A\003\022>\n\013preferences\030\007 \003(\0132$.rappeloids." +
+      "v1.User.PreferencesEntryB\003\340A\001\0322\n\020Prefere" +
+      "ncesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
+      "\001\";\n\004Role\022\024\n\020ROLE_UNSPECIFIED\020\000\022\r\n\tROLE_" +
+      "USER\020\001\022\016\n\nROLE_ADMIN\020\002:3\352A0\n\023rappeloids." +
+      "app/User\022\014users/{user}*\005users2\004user\";\n\016G" +
+      "etUserRequest\022)\n\004name\030\001 \001(\tB\033\340A\002\372A\025\n\023rap" +
+      "peloids.app/User\"q\n\021UpdateUserRequest\022&\n" +
+      "\004user\030\001 \001(\0132\023.rappeloids.v1.UserB\003\340A\002\0224\n" +
+      "\013update_mask\030\002 \001(\0132\032.google.protobuf.Fie" +
+      "ldMaskB\003\340A\001\"\022\n\020ListUsersRequest\"7\n\021ListU" +
+      "sersResponse\022\"\n\005users\030\001 \003(\0132\023.rappeloids" +
+      ".v1.User2\274\003\n\014UsersService\022`\n\007GetUser\022\035.r" +
+      "appeloids.v1.GetUserRequest\032\023.rappeloids" +
+      ".v1.User\"!\332A\004name\202\323\344\223\002\024\022\022/v1/{name=users" +
+      "/*}\022Q\n\014GetMyProfile\022\026.google.protobuf.Em" +
+      "pty\032\023.rappeloids.v1.User\"\024\202\323\344\223\002\016\022\014/v1/us" +
+      "ers:me\022}\n\nUpdateUser\022 .rappeloids.v1.Upd" +
+      "ateUserRequest\032\023.rappeloids.v1.User\"8\332A\020" +
+      "user,update_mask\202\323\344\223\002\0372\027/v1/{user.name=u" +
+      "sers/*}:\004user\022a\n\tListUsers\022\037.rappeloids." +
+      "v1.ListUsersRequest\032 .rappeloids.v1.List" +
+      "UsersResponse\"\021\202\323\344\223\002\013\022\t/v1/users\032\025\312A\022api" +
+      ".rappeloids.appB\034\n\030app.rappeloids.protos" +
+      ".v1P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -112,14 +109,13 @@ public final class Users extends com.google.protobuf.GeneratedFile {
           com.google.api.ResourceProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
         });
     internal_static_rappeloids_v1_User_descriptor =
       getDescriptor().getMessageType(0);
     internal_static_rappeloids_v1_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_rappeloids_v1_User_descriptor,
-        new java.lang.String[] { "Name", "Email", "DisplayName", "AvatarUrl", "Role", "Preferences", "CreateTime", "UpdateTime", });
+        new java.lang.String[] { "Name", "Email", "DisplayName", "AvatarUrl", "Role", "Preferences", });
     internal_static_rappeloids_v1_User_PreferencesEntry_descriptor =
       internal_static_rappeloids_v1_User_descriptor.getNestedType(0);
     internal_static_rappeloids_v1_User_PreferencesEntry_fieldAccessorTable = new
@@ -157,7 +153,6 @@ public final class Users extends com.google.protobuf.GeneratedFile {
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

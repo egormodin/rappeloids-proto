@@ -249,93 +249,9 @@ public object UserKt {
       .clear() {
          _builder.clearPreferences()
        }
-
-    /**
-     * ```
-     * Timestamp when the account was created (AIP-142).
-     * ```
-     *
-     * `.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];`
-     */
-    public var createTime: com.google.protobuf.Timestamp
-      @kotlin.jvm.JvmName("getCreateTime")
-        get() = _builder.createTime
-      @kotlin.jvm.JvmName("setCreateTime")
-        set(value) {
-        _builder.createTime = value
-      }
-    /**
-     * ```
-     * Timestamp when the account was created (AIP-142).
-     * ```
-     *
-     * `.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];`
-     */
-    public fun clearCreateTime() {
-      _builder.clearCreateTime()
-    }
-    /**
-     * ```
-     * Timestamp when the account was created (AIP-142).
-     * ```
-     *
-     * `.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];`
-     * @return Whether the createTime field is set.
-     */
-    public fun hasCreateTime(): kotlin.Boolean {
-      return _builder.hasCreateTime()
-    }
-
-    public val UserKt.Dsl.createTimeOrNull: com.google.protobuf.Timestamp?
-      get() = _builder.createTimeOrNull
-
-    /**
-     * ```
-     * Timestamp when the account was last updated (AIP-142).
-     * ```
-     *
-     * `.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];`
-     */
-    public var updateTime: com.google.protobuf.Timestamp
-      @kotlin.jvm.JvmName("getUpdateTime")
-        get() = _builder.updateTime
-      @kotlin.jvm.JvmName("setUpdateTime")
-        set(value) {
-        _builder.updateTime = value
-      }
-    /**
-     * ```
-     * Timestamp when the account was last updated (AIP-142).
-     * ```
-     *
-     * `.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];`
-     */
-    public fun clearUpdateTime() {
-      _builder.clearUpdateTime()
-    }
-    /**
-     * ```
-     * Timestamp when the account was last updated (AIP-142).
-     * ```
-     *
-     * `.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];`
-     * @return Whether the updateTime field is set.
-     */
-    public fun hasUpdateTime(): kotlin.Boolean {
-      return _builder.hasUpdateTime()
-    }
-
-    public val UserKt.Dsl.updateTimeOrNull: com.google.protobuf.Timestamp?
-      get() = _builder.updateTimeOrNull
   }
 }
 @kotlin.jvm.JvmSynthetic
 public inline fun app.rappeloids.protos.v1.User.copy(block: `app.rappeloids.protos.v1`.UserKt.Dsl.() -> kotlin.Unit): app.rappeloids.protos.v1.User =
   `app.rappeloids.protos.v1`.UserKt.Dsl._create(this.toBuilder()).apply { block() }._build()
-
-public val app.rappeloids.protos.v1.UserOrBuilder.createTimeOrNull: com.google.protobuf.Timestamp?
-  get() = if (hasCreateTime()) getCreateTime() else null
-
-public val app.rappeloids.protos.v1.UserOrBuilder.updateTimeOrNull: com.google.protobuf.Timestamp?
-  get() = if (hasUpdateTime()) getUpdateTime() else null
 
