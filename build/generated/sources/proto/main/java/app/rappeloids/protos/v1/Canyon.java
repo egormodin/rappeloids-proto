@@ -54,7 +54,6 @@ private static final long serialVersionUID = 0L;
     permits_ = "";
     shuttle_ = "";
     vehicle_ = "";
-    imageUrl_ = "";
     authorId_ = "";
     gpxTracks_ = java.util.Collections.emptyList();
     pitches_ = java.util.Collections.emptyList();
@@ -1131,68 +1130,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int IMAGE_URL_FIELD_NUMBER = 28;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object imageUrl_ = "";
-  /**
-   * <pre>
-   * Main banner or photo URL.
-   * </pre>
-   *
-   * <code>string image_url = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The imageUrl.
-   */
-  @java.lang.Override
-  public java.lang.String getImageUrl() {
-    java.lang.Object ref = imageUrl_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      imageUrl_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Main banner or photo URL.
-   * </pre>
-   *
-   * <code>string image_url = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for imageUrl.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getImageUrlBytes() {
-    java.lang.Object ref = imageUrl_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      imageUrl_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int RATING_FIELD_NUMBER = 29;
-  private double rating_ = 0D;
-  /**
-   * <pre>
-   * Community star rating (0.0 to 5.0).
-   * </pre>
-   *
-   * <code>double rating = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The rating.
-   */
-  @java.lang.Override
-  public double getRating() {
-    return rating_;
-  }
-
   public static final int IS_CUSTOM_FIELD_NUMBER = 30;
   private boolean isCustom_ = false;
   /**
@@ -1610,12 +1547,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(vehicle_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 27, vehicle_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(imageUrl_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 28, imageUrl_);
-    }
-    if (java.lang.Double.doubleToRawLongBits(rating_) != 0) {
-      output.writeDouble(29, rating_);
-    }
     if (isCustom_ != false) {
       output.writeBool(30, isCustom_);
     }
@@ -1735,13 +1666,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(vehicle_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(27, vehicle_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(imageUrl_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(28, imageUrl_);
-    }
-    if (java.lang.Double.doubleToRawLongBits(rating_) != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(29, rating_);
-    }
     if (isCustom_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(30, isCustom_);
@@ -1846,11 +1770,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getShuttle())) return false;
     if (!getVehicle()
         .equals(other.getVehicle())) return false;
-    if (!getImageUrl()
-        .equals(other.getImageUrl())) return false;
-    if (java.lang.Double.doubleToLongBits(getRating())
-        != java.lang.Double.doubleToLongBits(
-            other.getRating())) return false;
     if (getIsCustom()
         != other.getIsCustom()) return false;
     if (!getAuthorId()
@@ -1942,11 +1861,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getShuttle().hashCode();
     hash = (37 * hash) + VEHICLE_FIELD_NUMBER;
     hash = (53 * hash) + getVehicle().hashCode();
-    hash = (37 * hash) + IMAGE_URL_FIELD_NUMBER;
-    hash = (53 * hash) + getImageUrl().hashCode();
-    hash = (37 * hash) + RATING_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getRating()));
     hash = (37 * hash) + IS_CUSTOM_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsCustom());
@@ -2150,8 +2064,6 @@ private static final long serialVersionUID = 0L;
       permits_ = "";
       shuttle_ = "";
       vehicle_ = "";
-      imageUrl_ = "";
-      rating_ = 0D;
       isCustom_ = false;
       authorId_ = "";
       if (gpxTracksBuilder_ == null) {
@@ -2160,28 +2072,28 @@ private static final long serialVersionUID = 0L;
         gpxTracks_ = null;
         gpxTracksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       if (pitchesBuilder_ == null) {
         pitches_ = java.util.Collections.emptyList();
       } else {
         pitches_ = null;
         pitchesBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x40000000);
       if (linksBuilder_ == null) {
         links_ = java.util.Collections.emptyList();
       } else {
         links_ = null;
         linksBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x80000000);
       if (qualityRatingsBuilder_ == null) {
         qualityRatings_ = java.util.Collections.emptyList();
       } else {
         qualityRatings_ = null;
         qualityRatingsBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000001);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2227,36 +2139,36 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartialRepeatedFields(app.rappeloids.protos.v1.Canyon result) {
       if (gpxTracksBuilder_ == null) {
-        if (((bitField0_ & 0x80000000) != 0)) {
+        if (((bitField0_ & 0x20000000) != 0)) {
           gpxTracks_ = java.util.Collections.unmodifiableList(gpxTracks_);
-          bitField0_ = (bitField0_ & ~0x80000000);
+          bitField0_ = (bitField0_ & ~0x20000000);
         }
         result.gpxTracks_ = gpxTracks_;
       } else {
         result.gpxTracks_ = gpxTracksBuilder_.build();
       }
       if (pitchesBuilder_ == null) {
-        if (((bitField1_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x40000000) != 0)) {
           pitches_ = java.util.Collections.unmodifiableList(pitches_);
-          bitField1_ = (bitField1_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x40000000);
         }
         result.pitches_ = pitches_;
       } else {
         result.pitches_ = pitchesBuilder_.build();
       }
       if (linksBuilder_ == null) {
-        if (((bitField1_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x80000000) != 0)) {
           links_ = java.util.Collections.unmodifiableList(links_);
-          bitField1_ = (bitField1_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x80000000);
         }
         result.links_ = links_;
       } else {
         result.links_ = linksBuilder_.build();
       }
       if (qualityRatingsBuilder_ == null) {
-        if (((bitField1_ & 0x00000004) != 0)) {
+        if (((bitField1_ & 0x00000001) != 0)) {
           qualityRatings_ = java.util.Collections.unmodifiableList(qualityRatings_);
-          bitField1_ = (bitField1_ & ~0x00000004);
+          bitField1_ = (bitField1_ & ~0x00000001);
         }
         result.qualityRatings_ = qualityRatings_;
       } else {
@@ -2348,15 +2260,9 @@ private static final long serialVersionUID = 0L;
         result.vehicle_ = vehicle_;
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
-        result.imageUrl_ = imageUrl_;
-      }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
-        result.rating_ = rating_;
-      }
-      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.isCustom_ = isCustom_;
       }
-      if (((from_bitField0_ & 0x40000000) != 0)) {
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         result.authorId_ = authorId_;
       }
     }
@@ -2364,13 +2270,13 @@ private static final long serialVersionUID = 0L;
     private void buildPartial1(app.rappeloids.protos.v1.Canyon result) {
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
-      if (((from_bitField1_ & 0x00000008) != 0)) {
+      if (((from_bitField1_ & 0x00000002) != 0)) {
         result.createTime_ = createTimeBuilder_ == null
             ? createTime_
             : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField1_ & 0x00000010) != 0)) {
+      if (((from_bitField1_ & 0x00000004) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null
             ? updateTime_
             : updateTimeBuilder_.build();
@@ -2516,27 +2422,19 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x04000000;
         onChanged();
       }
-      if (!other.getImageUrl().isEmpty()) {
-        imageUrl_ = other.imageUrl_;
-        bitField0_ |= 0x08000000;
-        onChanged();
-      }
-      if (java.lang.Double.doubleToRawLongBits(other.getRating()) != 0) {
-        setRating(other.getRating());
-      }
       if (other.getIsCustom() != false) {
         setIsCustom(other.getIsCustom());
       }
       if (!other.getAuthorId().isEmpty()) {
         authorId_ = other.authorId_;
-        bitField0_ |= 0x40000000;
+        bitField0_ |= 0x10000000;
         onChanged();
       }
       if (gpxTracksBuilder_ == null) {
         if (!other.gpxTracks_.isEmpty()) {
           if (gpxTracks_.isEmpty()) {
             gpxTracks_ = other.gpxTracks_;
-            bitField0_ = (bitField0_ & ~0x80000000);
+            bitField0_ = (bitField0_ & ~0x20000000);
           } else {
             ensureGpxTracksIsMutable();
             gpxTracks_.addAll(other.gpxTracks_);
@@ -2549,7 +2447,7 @@ private static final long serialVersionUID = 0L;
             gpxTracksBuilder_.dispose();
             gpxTracksBuilder_ = null;
             gpxTracks_ = other.gpxTracks_;
-            bitField0_ = (bitField0_ & ~0x80000000);
+            bitField0_ = (bitField0_ & ~0x20000000);
             gpxTracksBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  internalGetGpxTracksFieldBuilder() : null;
@@ -2562,7 +2460,7 @@ private static final long serialVersionUID = 0L;
         if (!other.pitches_.isEmpty()) {
           if (pitches_.isEmpty()) {
             pitches_ = other.pitches_;
-            bitField1_ = (bitField1_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x40000000);
           } else {
             ensurePitchesIsMutable();
             pitches_.addAll(other.pitches_);
@@ -2575,7 +2473,7 @@ private static final long serialVersionUID = 0L;
             pitchesBuilder_.dispose();
             pitchesBuilder_ = null;
             pitches_ = other.pitches_;
-            bitField1_ = (bitField1_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x40000000);
             pitchesBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  internalGetPitchesFieldBuilder() : null;
@@ -2588,7 +2486,7 @@ private static final long serialVersionUID = 0L;
         if (!other.links_.isEmpty()) {
           if (links_.isEmpty()) {
             links_ = other.links_;
-            bitField1_ = (bitField1_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x80000000);
           } else {
             ensureLinksIsMutable();
             links_.addAll(other.links_);
@@ -2601,7 +2499,7 @@ private static final long serialVersionUID = 0L;
             linksBuilder_.dispose();
             linksBuilder_ = null;
             links_ = other.links_;
-            bitField1_ = (bitField1_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x80000000);
             linksBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  internalGetLinksFieldBuilder() : null;
@@ -2614,7 +2512,7 @@ private static final long serialVersionUID = 0L;
         if (!other.qualityRatings_.isEmpty()) {
           if (qualityRatings_.isEmpty()) {
             qualityRatings_ = other.qualityRatings_;
-            bitField1_ = (bitField1_ & ~0x00000004);
+            bitField1_ = (bitField1_ & ~0x00000001);
           } else {
             ensureQualityRatingsIsMutable();
             qualityRatings_.addAll(other.qualityRatings_);
@@ -2627,7 +2525,7 @@ private static final long serialVersionUID = 0L;
             qualityRatingsBuilder_.dispose();
             qualityRatingsBuilder_ = null;
             qualityRatings_ = other.qualityRatings_;
-            bitField1_ = (bitField1_ & ~0x00000004);
+            bitField1_ = (bitField1_ & ~0x00000001);
             qualityRatingsBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  internalGetQualityRatingsFieldBuilder() : null;
@@ -2803,24 +2701,14 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x04000000;
               break;
             } // case 218
-            case 226: {
-              imageUrl_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x08000000;
-              break;
-            } // case 226
-            case 233: {
-              rating_ = input.readDouble();
-              bitField0_ |= 0x10000000;
-              break;
-            } // case 233
             case 240: {
               isCustom_ = input.readBool();
-              bitField0_ |= 0x20000000;
+              bitField0_ |= 0x08000000;
               break;
             } // case 240
             case 250: {
               authorId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x40000000;
+              bitField0_ |= 0x10000000;
               break;
             } // case 250
             case 258: {
@@ -2879,14 +2767,14 @@ private static final long serialVersionUID = 0L;
               input.readMessage(
                   internalGetCreateTimeFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField1_ |= 0x00000008;
+              bitField1_ |= 0x00000002;
               break;
             } // case 290
             case 298: {
               input.readMessage(
                   internalGetUpdateTimeFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField1_ |= 0x00000010;
+              bitField1_ |= 0x00000004;
               break;
             } // case 298
             default: {
@@ -5016,142 +4904,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object imageUrl_ = "";
-    /**
-     * <pre>
-     * Main banner or photo URL.
-     * </pre>
-     *
-     * <code>string image_url = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The imageUrl.
-     */
-    public java.lang.String getImageUrl() {
-      java.lang.Object ref = imageUrl_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        imageUrl_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Main banner or photo URL.
-     * </pre>
-     *
-     * <code>string image_url = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for imageUrl.
-     */
-    public com.google.protobuf.ByteString
-        getImageUrlBytes() {
-      java.lang.Object ref = imageUrl_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        imageUrl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Main banner or photo URL.
-     * </pre>
-     *
-     * <code>string image_url = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The imageUrl to set.
-     * @return This builder for chaining.
-     */
-    public Builder setImageUrl(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      imageUrl_ = value;
-      bitField0_ |= 0x08000000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Main banner or photo URL.
-     * </pre>
-     *
-     * <code>string image_url = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearImageUrl() {
-      imageUrl_ = getDefaultInstance().getImageUrl();
-      bitField0_ = (bitField0_ & ~0x08000000);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Main banner or photo URL.
-     * </pre>
-     *
-     * <code>string image_url = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for imageUrl to set.
-     * @return This builder for chaining.
-     */
-    public Builder setImageUrlBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      imageUrl_ = value;
-      bitField0_ |= 0x08000000;
-      onChanged();
-      return this;
-    }
-
-    private double rating_ ;
-    /**
-     * <pre>
-     * Community star rating (0.0 to 5.0).
-     * </pre>
-     *
-     * <code>double rating = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The rating.
-     */
-    @java.lang.Override
-    public double getRating() {
-      return rating_;
-    }
-    /**
-     * <pre>
-     * Community star rating (0.0 to 5.0).
-     * </pre>
-     *
-     * <code>double rating = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The rating to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRating(double value) {
-
-      rating_ = value;
-      bitField0_ |= 0x10000000;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Community star rating (0.0 to 5.0).
-     * </pre>
-     *
-     * <code>double rating = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearRating() {
-      bitField0_ = (bitField0_ & ~0x10000000);
-      rating_ = 0D;
-      onChanged();
-      return this;
-    }
-
     private boolean isCustom_ ;
     /**
      * <pre>
@@ -5177,7 +4929,7 @@ private static final long serialVersionUID = 0L;
     public Builder setIsCustom(boolean value) {
 
       isCustom_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -5190,7 +4942,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearIsCustom() {
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       isCustom_ = false;
       onChanged();
       return this;
@@ -5251,7 +5003,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       authorId_ = value;
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -5265,7 +5017,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAuthorId() {
       authorId_ = getDefaultInstance().getAuthorId();
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       onChanged();
       return this;
     }
@@ -5283,7 +5035,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       authorId_ = value;
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -5291,9 +5043,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<app.rappeloids.protos.v1.GpxTrack> gpxTracks_ =
       java.util.Collections.emptyList();
     private void ensureGpxTracksIsMutable() {
-      if (!((bitField0_ & 0x80000000) != 0)) {
+      if (!((bitField0_ & 0x20000000) != 0)) {
         gpxTracks_ = new java.util.ArrayList<app.rappeloids.protos.v1.GpxTrack>(gpxTracks_);
-        bitField0_ |= 0x80000000;
+        bitField0_ |= 0x20000000;
        }
     }
 
@@ -5487,7 +5239,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearGpxTracks() {
       if (gpxTracksBuilder_ == null) {
         gpxTracks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x80000000);
+        bitField0_ = (bitField0_ & ~0x20000000);
         onChanged();
       } else {
         gpxTracksBuilder_.clear();
@@ -5592,7 +5344,7 @@ private static final long serialVersionUID = 0L;
         gpxTracksBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
             app.rappeloids.protos.v1.GpxTrack, app.rappeloids.protos.v1.GpxTrack.Builder, app.rappeloids.protos.v1.GpxTrackOrBuilder>(
                 gpxTracks_,
-                ((bitField0_ & 0x80000000) != 0),
+                ((bitField0_ & 0x20000000) != 0),
                 getParentForChildren(),
                 isClean());
         gpxTracks_ = null;
@@ -5603,9 +5355,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<app.rappeloids.protos.v1.RappelPitch> pitches_ =
       java.util.Collections.emptyList();
     private void ensurePitchesIsMutable() {
-      if (!((bitField1_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x40000000) != 0)) {
         pitches_ = new java.util.ArrayList<app.rappeloids.protos.v1.RappelPitch>(pitches_);
-        bitField1_ |= 0x00000001;
+        bitField0_ |= 0x40000000;
        }
     }
 
@@ -5755,7 +5507,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPitches() {
       if (pitchesBuilder_ == null) {
         pitches_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x40000000);
         onChanged();
       } else {
         pitchesBuilder_.clear();
@@ -5832,7 +5584,7 @@ private static final long serialVersionUID = 0L;
         pitchesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
             app.rappeloids.protos.v1.RappelPitch, app.rappeloids.protos.v1.RappelPitch.Builder, app.rappeloids.protos.v1.RappelPitchOrBuilder>(
                 pitches_,
-                ((bitField1_ & 0x00000001) != 0),
+                ((bitField0_ & 0x40000000) != 0),
                 getParentForChildren(),
                 isClean());
         pitches_ = null;
@@ -5843,9 +5595,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<app.rappeloids.protos.v1.CanyonLink> links_ =
       java.util.Collections.emptyList();
     private void ensureLinksIsMutable() {
-      if (!((bitField1_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x80000000) != 0)) {
         links_ = new java.util.ArrayList<app.rappeloids.protos.v1.CanyonLink>(links_);
-        bitField1_ |= 0x00000002;
+        bitField0_ |= 0x80000000;
        }
     }
 
@@ -5995,7 +5747,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearLinks() {
       if (linksBuilder_ == null) {
         links_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x80000000);
         onChanged();
       } else {
         linksBuilder_.clear();
@@ -6072,7 +5824,7 @@ private static final long serialVersionUID = 0L;
         linksBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
             app.rappeloids.protos.v1.CanyonLink, app.rappeloids.protos.v1.CanyonLink.Builder, app.rappeloids.protos.v1.CanyonLinkOrBuilder>(
                 links_,
-                ((bitField1_ & 0x00000002) != 0),
+                ((bitField0_ & 0x80000000) != 0),
                 getParentForChildren(),
                 isClean());
         links_ = null;
@@ -6083,9 +5835,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<app.rappeloids.protos.v1.QualityRating> qualityRatings_ =
       java.util.Collections.emptyList();
     private void ensureQualityRatingsIsMutable() {
-      if (!((bitField1_ & 0x00000004) != 0)) {
+      if (!((bitField1_ & 0x00000001) != 0)) {
         qualityRatings_ = new java.util.ArrayList<app.rappeloids.protos.v1.QualityRating>(qualityRatings_);
-        bitField1_ |= 0x00000004;
+        bitField1_ |= 0x00000001;
        }
     }
 
@@ -6235,7 +5987,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearQualityRatings() {
       if (qualityRatingsBuilder_ == null) {
         qualityRatings_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00000004);
+        bitField1_ = (bitField1_ & ~0x00000001);
         onChanged();
       } else {
         qualityRatingsBuilder_.clear();
@@ -6312,7 +6064,7 @@ private static final long serialVersionUID = 0L;
         qualityRatingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
             app.rappeloids.protos.v1.QualityRating, app.rappeloids.protos.v1.QualityRating.Builder, app.rappeloids.protos.v1.QualityRatingOrBuilder>(
                 qualityRatings_,
-                ((bitField1_ & 0x00000004) != 0),
+                ((bitField1_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         qualityRatings_ = null;
@@ -6332,7 +6084,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField1_ & 0x00000008) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
     /**
      * <pre>
@@ -6365,7 +6117,7 @@ private static final long serialVersionUID = 0L;
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -6383,7 +6135,7 @@ private static final long serialVersionUID = 0L;
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -6396,7 +6148,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField1_ & 0x00000008) != 0) &&
+        if (((bitField1_ & 0x00000002) != 0) &&
           createTime_ != null &&
           createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -6407,7 +6159,7 @@ private static final long serialVersionUID = 0L;
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField1_ |= 0x00000008;
+        bitField1_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -6420,7 +6172,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearCreateTime() {
-      bitField1_ = (bitField1_ & ~0x00000008);
+      bitField1_ = (bitField1_ & ~0x00000002);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -6437,7 +6189,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000002;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -6489,7 +6241,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField1_ & 0x00000010) != 0);
+      return ((bitField1_ & 0x00000004) != 0);
     }
     /**
      * <pre>
@@ -6522,7 +6274,7 @@ private static final long serialVersionUID = 0L;
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -6540,7 +6292,7 @@ private static final long serialVersionUID = 0L;
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -6553,7 +6305,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField1_ & 0x00000010) != 0) &&
+        if (((bitField1_ & 0x00000004) != 0) &&
           updateTime_ != null &&
           updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -6564,7 +6316,7 @@ private static final long serialVersionUID = 0L;
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField1_ |= 0x00000010;
+        bitField1_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -6577,7 +6329,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearUpdateTime() {
-      bitField1_ = (bitField1_ & ~0x00000010);
+      bitField1_ = (bitField1_ & ~0x00000004);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -6594,7 +6346,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000004;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }

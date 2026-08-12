@@ -656,56 +656,6 @@ public object CanyonKt {
 
     /**
      * ```
-     * Main banner or photo URL.
-     * ```
-     *
-     * `string image_url = 28 [(.google.api.field_behavior) = OPTIONAL];`
-     */
-    public var imageUrl: kotlin.String
-      @kotlin.jvm.JvmName("getImageUrl")
-        get() = _builder.imageUrl
-      @kotlin.jvm.JvmName("setImageUrl")
-        set(value) {
-        _builder.imageUrl = value
-      }
-    /**
-     * ```
-     * Main banner or photo URL.
-     * ```
-     *
-     * `string image_url = 28 [(.google.api.field_behavior) = OPTIONAL];`
-     */
-    public fun clearImageUrl() {
-      _builder.clearImageUrl()
-    }
-
-    /**
-     * ```
-     * Community star rating (0.0 to 5.0).
-     * ```
-     *
-     * `double rating = 29 [(.google.api.field_behavior) = OPTIONAL];`
-     */
-    public var rating: kotlin.Double
-      @kotlin.jvm.JvmName("getRating")
-        get() = _builder.rating
-      @kotlin.jvm.JvmName("setRating")
-        set(value) {
-        _builder.rating = value
-      }
-    /**
-     * ```
-     * Community star rating (0.0 to 5.0).
-     * ```
-     *
-     * `double rating = 29 [(.google.api.field_behavior) = OPTIONAL];`
-     */
-    public fun clearRating() {
-      _builder.clearRating()
-    }
-
-    /**
-     * ```
      * Indicates user-contributed custom route.
      * ```
      *

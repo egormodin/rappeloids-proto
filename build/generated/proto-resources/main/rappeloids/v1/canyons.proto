@@ -165,12 +165,6 @@ message Canyon {
   string shuttle = 26 [(google.api.field_behavior) = OPTIONAL];
   string vehicle = 27 [(google.api.field_behavior) = OPTIONAL];
 
-  // Main banner or photo URL.
-  string image_url = 28 [(google.api.field_behavior) = OPTIONAL];
-
-  // Community star rating (0.0 to 5.0).
-  double rating = 29 [(google.api.field_behavior) = OPTIONAL];
-
   // Indicates user-contributed custom route.
   bool is_custom = 30 [(google.api.field_behavior) = OPTIONAL];
 

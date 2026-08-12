@@ -87,11 +87,11 @@
         {
           "name": "rappeloids-proto-1.1.0.jar",
           "url": "rappeloids-proto-1.1.0.jar",
-          "size": 1229379,
-          "sha512": "ef4b882933da9b6cad91691c860b52a1d37e64ad775f2406e3a7c048a679a71873541898d8de8951af0326825d9bf0d177ba265d21fd15ba2a060496f5007725",
-          "sha256": "549d9d882e5d24881985c28ab1a8b8c57bb29fc01ca4f96c4d4f8adfe94d6b3e",
-          "sha1": "d546b4726cba5ee247780cebbf7cdde60c5fb15d",
-          "md5": "18716d8d521c8434b08dc9b2c9dce4fd"
+          "size": 1228256,
+          "sha512": "80879c99e9df992a7125c47df0bdf7244e70fa2983ba39457ef497f68dc3982bb9344183f6e64da60f2b5fa170600f90145f16d8700485efb49cbe2d52a08ac8",
+          "sha256": "6261ed2bef7ebdb2a22e2106552184c762545cafc7dd354c068de6fa3d586894",
+          "sha1": "b201f9e9e751b44c67dec599187e38992164c3d6",
+          "md5": "20f843d74c3d87135f7b31b7c3da13ce"
         }
       ]
     },
@@ -168,11 +168,11 @@
         {
           "name": "rappeloids-proto-1.1.0.jar",
           "url": "rappeloids-proto-1.1.0.jar",
-          "size": 1229379,
-          "sha512": "ef4b882933da9b6cad91691c860b52a1d37e64ad775f2406e3a7c048a679a71873541898d8de8951af0326825d9bf0d177ba265d21fd15ba2a060496f5007725",
-          "sha256": "549d9d882e5d24881985c28ab1a8b8c57bb29fc01ca4f96c4d4f8adfe94d6b3e",
-          "sha1": "d546b4726cba5ee247780cebbf7cdde60c5fb15d",
-          "md5": "18716d8d521c8434b08dc9b2c9dce4fd"
+          "size": 1228256,
+          "sha512": "80879c99e9df992a7125c47df0bdf7244e70fa2983ba39457ef497f68dc3982bb9344183f6e64da60f2b5fa170600f90145f16d8700485efb49cbe2d52a08ac8",
+          "sha256": "6261ed2bef7ebdb2a22e2106552184c762545cafc7dd354c068de6fa3d586894",
+          "sha1": "b201f9e9e751b44c67dec599187e38992164c3d6",
+          "md5": "20f843d74c3d87135f7b31b7c3da13ce"
         }
       ]
     }

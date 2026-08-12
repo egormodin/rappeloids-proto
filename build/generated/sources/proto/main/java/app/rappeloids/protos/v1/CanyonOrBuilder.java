@@ -448,36 +448,6 @@ public interface CanyonOrBuilder extends
 
   /**
    * <pre>
-   * Main banner or photo URL.
-   * </pre>
-   *
-   * <code>string image_url = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The imageUrl.
-   */
-  java.lang.String getImageUrl();
-  /**
-   * <pre>
-   * Main banner or photo URL.
-   * </pre>
-   *
-   * <code>string image_url = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for imageUrl.
-   */
-  com.google.protobuf.ByteString
-      getImageUrlBytes();
-
-  /**
-   * <pre>
-   * Community star rating (0.0 to 5.0).
-   * </pre>
-   *
-   * <code>double rating = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The rating.
-   */
-  double getRating();
-
-  /**
-   * <pre>
    * Indicates user-contributed custom route.
    * </pre>
    *
