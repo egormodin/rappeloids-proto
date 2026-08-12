@@ -2735,46 +2735,16 @@ private static final long serialVersionUID = 0L;
         getSourceBytes();
 
     /**
-     * <code>string score = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The score.
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The value.
      */
-    java.lang.String getScore();
+    java.lang.String getValue();
     /**
-     * <code>string score = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The bytes for score.
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for value.
      */
     com.google.protobuf.ByteString
-        getScoreBytes();
-
-    /**
-     * <code>string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The displayScore.
-     */
-    java.lang.String getDisplayScore();
-    /**
-     * <code>string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for displayScore.
-     */
-    com.google.protobuf.ByteString
-        getDisplayScoreBytes();
-
-    /**
-     * <code>double max_score = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The maxScore.
-     */
-    double getMaxScore();
-
-    /**
-     * <code>string url = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The url.
-     */
-    java.lang.String getUrl();
-    /**
-     * <code>string url = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for url.
-     */
-    com.google.protobuf.ByteString
-        getUrlBytes();
+        getValueBytes();
   }
   /**
    * Protobuf type {@code rappeloids.v1.Canyon.QualityRating}
@@ -2799,9 +2769,7 @@ private static final long serialVersionUID = 0L;
     }
     private QualityRating() {
       source_ = "";
-      score_ = "";
-      displayScore_ = "";
-      url_ = "";
+      value_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -2856,128 +2824,39 @@ private static final long serialVersionUID = 0L;
       }
     }
 
-    public static final int SCORE_FIELD_NUMBER = 2;
+    public static final int VALUE_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object score_ = "";
+    private volatile java.lang.Object value_ = "";
     /**
-     * <code>string score = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The score.
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The value.
      */
     @java.lang.Override
-    public java.lang.String getScore() {
-      java.lang.Object ref = score_;
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        score_ = s;
+        value_ = s;
         return s;
       }
     }
     /**
-     * <code>string score = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The bytes for score.
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for value.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getScoreBytes() {
-      java.lang.Object ref = score_;
+        getValueBytes() {
+      java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        score_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DISPLAY_SCORE_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object displayScore_ = "";
-    /**
-     * <code>string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The displayScore.
-     */
-    @java.lang.Override
-    public java.lang.String getDisplayScore() {
-      java.lang.Object ref = displayScore_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        displayScore_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for displayScore.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDisplayScoreBytes() {
-      java.lang.Object ref = displayScore_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        displayScore_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int MAX_SCORE_FIELD_NUMBER = 4;
-    private double maxScore_ = 0D;
-    /**
-     * <code>double max_score = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The maxScore.
-     */
-    @java.lang.Override
-    public double getMaxScore() {
-      return maxScore_;
-    }
-
-    public static final int URL_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object url_ = "";
-    /**
-     * <code>string url = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The url.
-     */
-    @java.lang.Override
-    public java.lang.String getUrl() {
-      java.lang.Object ref = url_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        url_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string url = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for url.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUrlBytes() {
-      java.lang.Object ref = url_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        url_ = b;
+        value_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3001,17 +2880,8 @@ private static final long serialVersionUID = 0L;
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(source_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, source_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(score_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, score_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayScore_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 3, displayScore_);
-      }
-      if (java.lang.Double.doubleToRawLongBits(maxScore_) != 0) {
-        output.writeDouble(4, maxScore_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 5, url_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(value_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, value_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3025,18 +2895,8 @@ private static final long serialVersionUID = 0L;
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(source_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(1, source_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(score_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, score_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayScore_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, displayScore_);
-      }
-      if (java.lang.Double.doubleToRawLongBits(maxScore_) != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(4, maxScore_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, url_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(value_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, value_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3055,15 +2915,8 @@ private static final long serialVersionUID = 0L;
 
       if (!getSource()
           .equals(other.getSource())) return false;
-      if (!getScore()
-          .equals(other.getScore())) return false;
-      if (!getDisplayScore()
-          .equals(other.getDisplayScore())) return false;
-      if (java.lang.Double.doubleToLongBits(getMaxScore())
-          != java.lang.Double.doubleToLongBits(
-              other.getMaxScore())) return false;
-      if (!getUrl()
-          .equals(other.getUrl())) return false;
+      if (!getValue()
+          .equals(other.getValue())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3077,15 +2930,8 @@ private static final long serialVersionUID = 0L;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getSource().hashCode();
-      hash = (37 * hash) + SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getScore().hashCode();
-      hash = (37 * hash) + DISPLAY_SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getDisplayScore().hashCode();
-      hash = (37 * hash) + MAX_SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getMaxScore()));
-      hash = (37 * hash) + URL_FIELD_NUMBER;
-      hash = (53 * hash) + getUrl().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3218,10 +3064,7 @@ private static final long serialVersionUID = 0L;
         super.clear();
         bitField0_ = 0;
         source_ = "";
-        score_ = "";
-        displayScore_ = "";
-        maxScore_ = 0D;
-        url_ = "";
+        value_ = "";
         return this;
       }
 
@@ -3259,16 +3102,7 @@ private static final long serialVersionUID = 0L;
           result.source_ = source_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.score_ = score_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.displayScore_ = displayScore_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.maxScore_ = maxScore_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.url_ = url_;
+          result.value_ = value_;
         }
       }
 
@@ -3289,22 +3123,9 @@ private static final long serialVersionUID = 0L;
           bitField0_ |= 0x00000001;
           onChanged();
         }
-        if (!other.getScore().isEmpty()) {
-          score_ = other.score_;
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
           bitField0_ |= 0x00000002;
-          onChanged();
-        }
-        if (!other.getDisplayScore().isEmpty()) {
-          displayScore_ = other.displayScore_;
-          bitField0_ |= 0x00000004;
-          onChanged();
-        }
-        if (java.lang.Double.doubleToRawLongBits(other.getMaxScore()) != 0) {
-          setMaxScore(other.getMaxScore());
-        }
-        if (!other.getUrl().isEmpty()) {
-          url_ = other.url_;
-          bitField0_ |= 0x00000010;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -3339,25 +3160,10 @@ private static final long serialVersionUID = 0L;
                 break;
               } // case 10
               case 18: {
-                score_ = input.readStringRequireUtf8();
+                value_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
-              case 26: {
-                displayScore_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 33: {
-                maxScore_ = input.readDouble();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 33
-              case 42: {
-                url_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3447,250 +3253,74 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private java.lang.Object score_ = "";
+      private java.lang.Object value_ = "";
       /**
-       * <code>string score = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-       * @return The score.
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The value.
        */
-      public java.lang.String getScore() {
-        java.lang.Object ref = score_;
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          score_ = s;
+          value_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string score = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-       * @return The bytes for score.
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The bytes for value.
        */
       public com.google.protobuf.ByteString
-          getScoreBytes() {
-        java.lang.Object ref = score_;
+          getValueBytes() {
+        java.lang.Object ref = value_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          score_ = b;
+          value_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string score = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-       * @param value The score to set.
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @param value The value to set.
        * @return This builder for chaining.
        */
-      public Builder setScore(
+      public Builder setValue(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        score_ = value;
+        value_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>string score = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return This builder for chaining.
        */
-      public Builder clearScore() {
-        score_ = getDefaultInstance().getScore();
+      public Builder clearValue() {
+        value_ = getDefaultInstance().getValue();
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
-       * <code>string score = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-       * @param value The bytes for score to set.
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @param value The bytes for value to set.
        * @return This builder for chaining.
        */
-      public Builder setScoreBytes(
+      public Builder setValueBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        score_ = value;
+        value_ = value;
         bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object displayScore_ = "";
-      /**
-       * <code>string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-       * @return The displayScore.
-       */
-      public java.lang.String getDisplayScore() {
-        java.lang.Object ref = displayScore_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          displayScore_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-       * @return The bytes for displayScore.
-       */
-      public com.google.protobuf.ByteString
-          getDisplayScoreBytes() {
-        java.lang.Object ref = displayScore_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          displayScore_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-       * @param value The displayScore to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDisplayScore(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        displayScore_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDisplayScore() {
-        displayScore_ = getDefaultInstance().getDisplayScore();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-       * @param value The bytes for displayScore to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDisplayScoreBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        displayScore_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-
-      private double maxScore_ ;
-      /**
-       * <code>double max_score = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-       * @return The maxScore.
-       */
-      @java.lang.Override
-      public double getMaxScore() {
-        return maxScore_;
-      }
-      /**
-       * <code>double max_score = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-       * @param value The maxScore to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMaxScore(double value) {
-
-        maxScore_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double max_score = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMaxScore() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        maxScore_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object url_ = "";
-      /**
-       * <code>string url = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-       * @return The url.
-       */
-      public java.lang.String getUrl() {
-        java.lang.Object ref = url_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          url_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string url = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-       * @return The bytes for url.
-       */
-      public com.google.protobuf.ByteString
-          getUrlBytes() {
-        java.lang.Object ref = url_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          url_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string url = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-       * @param value The url to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUrl(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        url_ = value;
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string url = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUrl() {
-        url_ = getDefaultInstance().getUrl();
-        bitField0_ = (bitField0_ & ~0x00000010);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string url = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-       * @param value The bytes for url to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUrlBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        url_ = value;
-        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }

@@ -1331,71 +1331,20 @@ public object CanyonKt {
       }
 
       /**
-       * `string score = 2 [(.google.api.field_behavior) = REQUIRED];`
+       * `string value = 2 [(.google.api.field_behavior) = REQUIRED];`
        */
-      public var score: kotlin.String
-        @kotlin.jvm.JvmName("getScore")
-          get() = _builder.score
-        @kotlin.jvm.JvmName("setScore")
+      public var value: kotlin.String
+        @kotlin.jvm.JvmName("getValue")
+          get() = _builder.value
+        @kotlin.jvm.JvmName("setValue")
           set(value) {
-          _builder.score = value
+          _builder.value = value
         }
       /**
-       * `string score = 2 [(.google.api.field_behavior) = REQUIRED];`
+       * `string value = 2 [(.google.api.field_behavior) = REQUIRED];`
        */
-      public fun clearScore() {
-        _builder.clearScore()
-      }
-
-      /**
-       * `string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];`
-       */
-      public var displayScore: kotlin.String
-        @kotlin.jvm.JvmName("getDisplayScore")
-          get() = _builder.displayScore
-        @kotlin.jvm.JvmName("setDisplayScore")
-          set(value) {
-          _builder.displayScore = value
-        }
-      /**
-       * `string display_score = 3 [(.google.api.field_behavior) = OPTIONAL];`
-       */
-      public fun clearDisplayScore() {
-        _builder.clearDisplayScore()
-      }
-
-      /**
-       * `double max_score = 4 [(.google.api.field_behavior) = OPTIONAL];`
-       */
-      public var maxScore: kotlin.Double
-        @kotlin.jvm.JvmName("getMaxScore")
-          get() = _builder.maxScore
-        @kotlin.jvm.JvmName("setMaxScore")
-          set(value) {
-          _builder.maxScore = value
-        }
-      /**
-       * `double max_score = 4 [(.google.api.field_behavior) = OPTIONAL];`
-       */
-      public fun clearMaxScore() {
-        _builder.clearMaxScore()
-      }
-
-      /**
-       * `string url = 5 [(.google.api.field_behavior) = OPTIONAL];`
-       */
-      public var url: kotlin.String
-        @kotlin.jvm.JvmName("getUrl")
-          get() = _builder.url
-        @kotlin.jvm.JvmName("setUrl")
-          set(value) {
-          _builder.url = value
-        }
-      /**
-       * `string url = 5 [(.google.api.field_behavior) = OPTIONAL];`
-       */
-      public fun clearUrl() {
-        _builder.clearUrl()
+      public fun clearValue() {
+        _builder.clearValue()
       }
     }
   }

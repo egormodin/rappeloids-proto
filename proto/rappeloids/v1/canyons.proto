@@ -194,10 +194,7 @@ message Canyon {
 
   message QualityRating {
     string source = 1 [(google.api.field_behavior) = REQUIRED];
-    string score = 2 [(google.api.field_behavior) = REQUIRED];
-    string display_score = 3 [(google.api.field_behavior) = OPTIONAL];
-    double max_score = 4 [(google.api.field_behavior) = OPTIONAL];
-    string url = 5 [(google.api.field_behavior) = OPTIONAL];
+    string value = 2 [(google.api.field_behavior) = REQUIRED];
   }
 
   // Collections
