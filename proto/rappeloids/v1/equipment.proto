@@ -1,0 +1,134 @@
+syntax = "proto3";
+
+package rappeloids.v1;
+
+option java_multiple_files = true;
+option java_package = "app.rappeloids.protos.v1";
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/field_mask.proto";
+
+// Service managing shared equipment inventory, gear lending, and gear registry (AIP-121).
+service EquipmentService {
+  option (google.api.default_host) = "api.rappeloids.app";
+
+  // Lists equipment items with pagination (AIP-132).
+  rpc ListEquipment(ListEquipmentRequest) returns (ListEquipmentResponse) {
+    option (google.api.http) = {
+      get: "/v1/equipment"
+    };
+  }
+
+  // Gets an equipment item by its resource name (AIP-131).
+  rpc GetEquipment(GetEquipmentRequest) returns (Equipment) {
+    option (google.api.http) = {
+      get: "/v1/{name=equipment/*}"
+    };
+    option (google.api.method_signature) = "name";
+  }
+
+  // Creates a new equipment item (AIP-133).
+  rpc CreateEquipment(CreateEquipmentRequest) returns (Equipment) {
+    option (google.api.http) = {
+      post: "/v1/equipment"
+      body: "equipment"
+    };
+    option (google.api.method_signature) = "equipment";
+  }
+
+  // Updates an existing equipment item (AIP-134).
+  rpc UpdateEquipment(UpdateEquipmentRequest) returns (Equipment) {
+    option (google.api.http) = {
+      patch: "/v1/{equipment.name=equipment/*}"
+      body: "equipment"
+    };
+    option (google.api.method_signature) = "equipment,update_mask";
+  }
+
+  // Deletes an equipment item (AIP-135).
+  rpc DeleteEquipment(DeleteEquipmentRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete: "/v1/{name=equipment/*}"
+    };
+    option (google.api.method_signature) = "name";
+  }
+}
+
+// Equipment resource representation following AIP-122.
+message Equipment {
+  option (google.api.resource) = {
+    type: "rappeloids.app/Equipment"
+    pattern: "equipment/{equipment}"
+    plural: "equipment"
+    singular: "equipment"
+  };
+
+  // The resource name of the equipment item.
+  // Format: "equipment/{equipment_id}"
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
+
+  // Item title or product name.
+  string title = 2 [(google.api.field_behavior) = REQUIRED];
+
+  // Link to the gear/product store or specs.
+  string link = 3 [(google.api.field_behavior) = OPTIONAL];
+
+  // Price string as entered or formatted (e.g. "$45.00", "$40 - $55", "Free").
+  string price = 4 [(google.api.field_behavior) = OPTIONAL];
+
+  // Image URL for the equipment item.
+  string image = 5 [(google.api.field_behavior) = OPTIONAL];
+
+  // User comments, notes, or condition details.
+  string comments = 6 [(google.api.field_behavior) = OPTIONAL];
+
+  // Resource name of the owner user (e.g. "users/user_id" or user identifier/email).
+  string owner = 7 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.resource_reference).type = "rappeloids.app/User"
+  ];
+}
+
+message ListEquipmentRequest {
+  int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
+  string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
+}
+
+message ListEquipmentResponse {
+  repeated Equipment equipment = 1;
+  string next_page_token = 2;
+  int32 total_size = 3;
+}
+
+message GetEquipmentRequest {
+  // Format: "equipment/{equipment_id}"
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "rappeloids.app/Equipment"
+  ];
+}
+
+message CreateEquipmentRequest {
+  // The equipment item to create.
+  Equipment equipment = 1 [(google.api.field_behavior) = REQUIRED];
+}
+
+message UpdateEquipmentRequest {
+  // The equipment item with updated fields.
+  Equipment equipment = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Field mask indicating which fields are to be updated (AIP-134).
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+}
+
+message DeleteEquipmentRequest {
+  // Format: "equipment/{equipment_id}"
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "rappeloids.app/Equipment"
+  ];
+}
