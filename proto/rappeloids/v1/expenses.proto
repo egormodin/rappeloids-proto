@@ -40,7 +40,7 @@ service ExpensesService {
       post: "/v1/{parent=trips/*}/expenses"
       body: "expense"
     };
-    option (google.api.method_signature) = "parent,expense,expense_id";
+    option (google.api.method_signature) = "parent,expense";
   }
 
   // Updates an expense (AIP-134). Requires payer or organizer.
@@ -186,8 +186,7 @@ message CreateExpenseRequest {
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Trip"
   ];
-  string expense_id = 2 [(google.api.field_behavior) = OPTIONAL];
-  Expense expense = 3 [(google.api.field_behavior) = REQUIRED];
+  Expense expense = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 message UpdateExpenseRequest {

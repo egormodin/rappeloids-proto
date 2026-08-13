@@ -50,7 +50,7 @@ service CanyonsService {
         body: "canyon"
       }
     };
-    option (google.api.method_signature) = "canyon,canyon_id";
+    option (google.api.method_signature) = "parent,canyon";
   }
 
   // Updates an existing canyon route (AIP-134). Requires author or admin.
@@ -246,11 +246,8 @@ message CreateCanyonRequest {
     (google.api.resource_reference).type = "rappeloids.app/Region"
   ];
 
-  // Optional client-assigned ID.
-  string canyon_id = 2 [(google.api.field_behavior) = OPTIONAL];
-
   // The canyon resource to create.
-  Canyon canyon = 3 [(google.api.field_behavior) = REQUIRED];
+  Canyon canyon = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 message UpdateCanyonRequest {

@@ -38,7 +38,7 @@ service TripsService {
       post: "/v1/trips"
       body: "trip"
     };
-    option (google.api.method_signature) = "trip,trip_id";
+    option (google.api.method_signature) = "trip";
   }
 
   // Updates an existing trip (AIP-134). Requires organizer or admin.
@@ -215,8 +215,7 @@ message GetTripRequest {
 }
 
 message CreateTripRequest {
-  string trip_id = 1 [(google.api.field_behavior) = OPTIONAL];
-  Trip trip = 2 [(google.api.field_behavior) = REQUIRED];
+  Trip trip = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
 message UpdateTripRequest {

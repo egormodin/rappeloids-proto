@@ -38,7 +38,7 @@ service RegionsService {
       post: "/v1/regions"
       body: "region"
     };
-    option (google.api.method_signature) = "region,region_id";
+    option (google.api.method_signature) = "region";
   }
 
   // Updates an existing region (AIP-134). Requires Administrator permissions.
@@ -114,11 +114,8 @@ message GetRegionRequest {
 }
 
 message CreateRegionRequest {
-  // Optional client-assigned ID.
-  string region_id = 1 [(google.api.field_behavior) = OPTIONAL];
-
   // The region resource to create.
-  Region region = 2 [(google.api.field_behavior) = REQUIRED];
+  Region region = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
 message UpdateRegionRequest {
