@@ -68,6 +68,17 @@ message Region {
     singular: "region"
   };
 
+  // Visibility state of a region.
+  enum State {
+    STATE_UNSPECIFIED = 0;
+    // Standard active state (visible in tree and app, not in history views).
+    ACTIVE = 1;
+    // Visible in history views.
+    HISTORY_VISIBLE = 2;
+    // Hidden state (admin-only in tree roots, hidden elsewhere in app).
+    HIDDEN = 3;
+  }
+
   // The resource name of the region.
   // Format: "regions/{region_id}"
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
@@ -84,11 +95,8 @@ message Region {
     (google.api.resource_reference).type = "rappeloids.app/Region"
   ];
 
-  // Whether region is visible in history views.
-  bool history_visible = 5 [(google.api.field_behavior) = OPTIONAL];
-
-  // Whether region is hidden (admin-only in tree, hidden elsewhere in app).
-  bool hidden = 6 [(google.api.field_behavior) = OPTIONAL];
+  // Region visibility state.
+  State state = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListRegionsRequest {}
