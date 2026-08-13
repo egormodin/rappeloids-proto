@@ -21,6 +21,13 @@ service HistoryService {
     };
   }
 
+  // Lists available years that have historical descent records for UI navigation (AIP-136).
+  rpc ListHistoryYears(ListHistoryYearsRequest) returns (ListHistoryYearsResponse) {
+    option (google.api.http) = {
+      get: "/v1/history:listYears"
+    };
+  }
+
   // Atomically applies batch updates/inserts/deletions to history descents, trips, and participant statuses.
   rpc BatchUpdateHistory(BatchUpdateHistoryRequest) returns (BatchUpdateHistoryResponse) {
     option (google.api.http) = {
@@ -73,9 +80,14 @@ message ListHistoryRequest {
 
 message ListHistoryResponse {
   repeated HistoryEntry entries = 1;
-  repeated int32 available_years = 2;
-  string next_page_token = 3;
-  int32 total_size = 4;
+  string next_page_token = 2;
+  int32 total_size = 3;
+}
+
+message ListHistoryYearsRequest {}
+
+message ListHistoryYearsResponse {
+  repeated int32 years = 1;
 }
 
 message HistoryEntryUpdate {
