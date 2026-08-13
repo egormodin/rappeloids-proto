@@ -39,32 +39,29 @@ message HistoryEntry {
     singular: "historyEntry"
   };
 
-  // Resource name: "history/{id}"
+  // Resource name: "history/{history_entry}"
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-  // The unique identifier of the history entry.
-  string id = 2 [(google.api.field_behavior) = REQUIRED];
-
   // Associated trip ID if grouped.
-  string trip_id = 3 [(google.api.field_behavior) = OPTIONAL];
+  string trip_id = 2 [(google.api.field_behavior) = OPTIONAL];
 
   // Canyon ID (slug or uuid).
-  string canyon_id = 4 [
+  string canyon_id = 3 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Canyon"
   ];
 
   // Human-readable canyon name.
-  string canyon_name = 5 [(google.api.field_behavior) = OPTIONAL];
+  string canyon_name = 4 [(google.api.field_behavior) = OPTIONAL];
 
   // Date of descent in YYYY-MM-DD format.
-  string date = 6 [(google.api.field_behavior) = OPTIONAL];
+  string date = 5 [(google.api.field_behavior) = OPTIONAL];
 
   // Ordering of canyon within the trip.
-  int32 order = 7 [(google.api.field_behavior) = OPTIONAL];
+  int32 order = 6 [(google.api.field_behavior) = OPTIONAL];
 
   // Map of participant user ID -> descent status.
-  map<string, string> user_statuses = 8 [(google.api.field_behavior) = OPTIONAL];
+  map<string, string> user_statuses = 7 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListHistoryRequest {
@@ -82,9 +79,16 @@ message ListHistoryResponse {
 }
 
 message HistoryEntryUpdate {
-  string id = 1 [(google.api.field_behavior) = REQUIRED];
+  // Resource name: "history/{history_entry}"
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "rappeloids.app/HistoryEntry"
+  ];
   string trip_id = 2 [(google.api.field_behavior) = OPTIONAL];
-  string canyon_id = 3 [(google.api.field_behavior) = REQUIRED];
+  string canyon_id = 3 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "rappeloids.app/Canyon"
+  ];
   string date = 4 [(google.api.field_behavior) = OPTIONAL];
   int32 order = 5 [(google.api.field_behavior) = OPTIONAL];
   map<string, string> user_statuses = 6 [(google.api.field_behavior) = OPTIONAL];
@@ -92,7 +96,11 @@ message HistoryEntryUpdate {
 
 message BatchUpdateHistoryRequest {
   repeated HistoryEntryUpdate upserts = 1;
-  repeated string delete_ids = 2;
+  // Resource names of history entries to delete (e.g. "history/{history_entry}")
+  repeated string delete_names = 2 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.resource_reference).type = "rappeloids.app/HistoryEntry"
+  ];
 }
 
 message BatchUpdateHistoryResponse {
