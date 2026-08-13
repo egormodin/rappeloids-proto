@@ -93,6 +93,16 @@ message Expense {
     singular: "expense"
   };
 
+  message Split {
+    // User resource name: "users/{user_id}"
+    string user = 1 [
+      (google.api.field_behavior) = REQUIRED,
+      (google.api.resource_reference).type = "rappeloids.app/User"
+    ];
+    Money amount = 2 [(google.api.field_behavior) = REQUIRED];
+    bool is_settled = 3 [(google.api.field_behavior) = OPTIONAL];
+  }
+
   // Resource name: "trips/{trip_id}/expenses/{expense_id}"
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
@@ -115,7 +125,7 @@ message Expense {
   string description = 6 [(google.api.field_behavior) = OPTIONAL];
 
   // User splits and owed amounts.
-  repeated ExpenseSplit splits = 7 [(google.api.field_behavior) = OPTIONAL];
+  repeated Split splits = 7 [(google.api.field_behavior) = OPTIONAL];
 
   // Timestamp when the expense was created (AIP-142).
   google.protobuf.Timestamp create_time = 8 [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -124,34 +134,24 @@ message Expense {
   google.protobuf.Timestamp update_time = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-message ExpenseSplit {
-  // User resource name: "users/{user_id}"
-  string user = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).type = "rappeloids.app/User"
-  ];
-  Money amount = 2 [(google.api.field_behavior) = REQUIRED];
-  bool is_settled = 3 [(google.api.field_behavior) = OPTIONAL];
-}
-
-message ExpenseBalance {
-  // User resource name: "users/{user_id}"
-  string user = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).type = "rappeloids.app/User"
-  ];
-  string user_name = 2 [(google.api.field_behavior) = OPTIONAL];
-  Money net_balance = 3 [(google.api.field_behavior) = REQUIRED];
-}
-
 message TripExpenseSummary {
+  message Balance {
+    // User resource name: "users/{user_id}"
+    string user = 1 [
+      (google.api.field_behavior) = REQUIRED,
+      (google.api.resource_reference).type = "rappeloids.app/User"
+    ];
+    string user_name = 2 [(google.api.field_behavior) = OPTIONAL];
+    Money net_balance = 3 [(google.api.field_behavior) = REQUIRED];
+  }
+
   // Parent trip resource name: "trips/{trip_id}"
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Trip"
   ];
   Money total_spent = 2 [(google.api.field_behavior) = REQUIRED];
-  repeated ExpenseBalance balances = 3 [(google.api.field_behavior) = OPTIONAL];
+  repeated Balance balances = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListExpensesRequest {
