@@ -14,10 +14,17 @@ import "google/protobuf/empty.proto";
 service HistoryService {
   option (google.api.default_host) = "api.rappeloids.app";
 
-  // Lists all historical canyon descent records with user participation.
+  // Lists historical canyon descent records with user participation, optionally filtered by year.
   rpc ListHistory(ListHistoryRequest) returns (ListHistoryResponse) {
     option (google.api.http) = {
       get: "/v1/history"
+    };
+  }
+
+  // Returns overall history summary statistics across all years.
+  rpc GetHistorySummary(GetHistorySummaryRequest) returns (GetHistorySummaryResponse) {
+    option (google.api.http) = {
+      get: "/v1/history:summary"
     };
   }
 
@@ -45,11 +52,21 @@ message ListHistoryRequest {
   int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
   string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
   string filter = 3 [(google.api.field_behavior) = OPTIONAL];
+  // Optional year to filter historical descent records (e.g. 2026).
+  optional int32 year = 4 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListHistoryResponse {
   repeated HistoryEntry entries = 1;
   string next_page_token = 2;
+  int32 total_size = 3;
+}
+
+message GetHistorySummaryRequest {}
+
+message GetHistorySummaryResponse {
+  repeated HistoryEntry entries = 1;
+  repeated int32 available_years = 2;
   int32 total_size = 3;
 }
 
