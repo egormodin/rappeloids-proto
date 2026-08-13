@@ -12,6 +12,7 @@ import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
+import "google/type/datetime.proto";
 import "rappeloids/v1/common.proto";
 
 // Service managing canyons, technical routes, topos, and pitch information (AIP-121).
@@ -137,8 +138,8 @@ message Canyon {
   // Maximum single rappel length in meters.
   double max_rappel_meters = 13 [(google.api.field_behavior) = OPTIONAL];
 
-  // Typical total duration string (e.g. "4-6 hours").
-  string duration = 14 [(google.api.field_behavior) = OPTIONAL];
+  // Total route time / duration.
+  TotalTime total_time = 14 [(google.api.field_behavior) = OPTIONAL];
 
   // Recommended season or best months (e.g. "Summer", "Jul - Sep").
   string season = 15 [(google.api.field_behavior) = OPTIONAL];
@@ -167,6 +168,12 @@ message Canyon {
     (google.api.field_behavior) = OUTPUT_ONLY,
     (google.api.resource_reference).type = "rappeloids.app/User"
   ];
+
+  message TotalTime {
+    google.type.DateTime total_time = 1 [(google.api.field_behavior) = OPTIONAL];
+    google.type.DateTime min_time = 2 [(google.api.field_behavior) = OPTIONAL];
+    google.type.DateTime max_time = 3 [(google.api.field_behavior) = OPTIONAL];
+  }
 
   message RappelPitch {
     string id = 1 [(google.api.field_behavior) = OPTIONAL];
