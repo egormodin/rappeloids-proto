@@ -53,8 +53,8 @@ message HistoryEntry {
   // Associated trip ID if grouped.
   string trip_id = 2 [(google.api.field_behavior) = OPTIONAL];
 
-  // Canyon ID (slug or uuid).
-  string canyon_id = 3 [
+  // Canyon resource name: "canyons/{canyon}"
+  string canyon = 3 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Canyon"
   ];
@@ -98,8 +98,8 @@ message HistoryEntryUpdate {
     (google.api.resource_reference).type = "rappeloids.app/HistoryEntry"
   ];
 
-  // Canyon ID (slug or uuid).
-  string canyon_id = 2 [
+  // Canyon resource name: "canyons/{canyon}"
+  string canyon = 2 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Canyon"
   ];
