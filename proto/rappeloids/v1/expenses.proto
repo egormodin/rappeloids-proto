@@ -69,21 +69,6 @@ service ExpensesService {
   }
 }
 
-enum ExpenseCategory {
-  EXPENSE_CATEGORY_UNSPECIFIED = 0;
-  GROCERIES = 1;
-  RESTAURANT = 2;
-  CAR_RENTAL = 3;
-  GAS = 4;
-  LODGING = 5;
-  PERMIT = 6;
-  FLIGHT = 7;
-  GEAR = 8;
-  REIMBURSE = 9;
-  GENERAL = 10;
-  OTHER = 11;
-}
-
 // Expense resource following AIP-122.
 message Expense {
   option (google.api.resource) = {
@@ -92,6 +77,21 @@ message Expense {
     plural: "expenses"
     singular: "expense"
   };
+
+  enum Category {
+    CATEGORY_UNSPECIFIED = 0;
+    GROCERIES = 1;
+    RESTAURANT = 2;
+    CAR_RENTAL = 3;
+    GAS = 4;
+    LODGING = 5;
+    PERMIT = 6;
+    FLIGHT = 7;
+    GEAR = 8;
+    REIMBURSE = 9;
+    GENERAL = 10;
+    OTHER = 11;
+  }
 
   message Split {
     // User resource name: "users/{user_id}"
@@ -119,7 +119,7 @@ message Expense {
   Money amount = 4 [(google.api.field_behavior) = REQUIRED];
 
   // Category of the expense.
-  ExpenseCategory category = 5 [(google.api.field_behavior) = OPTIONAL];
+  Category category = 5 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional notes and description.
   string description = 6 [(google.api.field_behavior) = OPTIONAL];
