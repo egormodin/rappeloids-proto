@@ -11,23 +11,39 @@ public interface HistoryEntryOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The id.
+   * <pre>
+   * Resource name: "history/{history_entry}"
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * @return The name.
    */
-  java.lang.String getId();
+  java.lang.String getName();
   /**
-   * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for id.
+   * <pre>
+   * Resource name: "history/{history_entry}"
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
-      getIdBytes();
+      getNameBytes();
 
   /**
+   * <pre>
+   * Associated trip ID if grouped.
+   * </pre>
+   *
    * <code>string trip_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The tripId.
    */
   java.lang.String getTripId();
   /**
+   * <pre>
+   * Associated trip ID if grouped.
+   * </pre>
+   *
    * <code>string trip_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for tripId.
    */
@@ -35,23 +51,39 @@ public interface HistoryEntryOrBuilder extends
       getTripIdBytes();
 
   /**
-   * <code>string canyon_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The canyonId.
+   * <pre>
+   * Canyon resource name: "canyons/{canyon}"
+   * </pre>
+   *
+   * <code>string canyon = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The canyon.
    */
-  java.lang.String getCanyonId();
+  java.lang.String getCanyon();
   /**
-   * <code>string canyon_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for canyonId.
+   * <pre>
+   * Canyon resource name: "canyons/{canyon}"
+   * </pre>
+   *
+   * <code>string canyon = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for canyon.
    */
   com.google.protobuf.ByteString
-      getCanyonIdBytes();
+      getCanyonBytes();
 
   /**
+   * <pre>
+   * Human-readable canyon name.
+   * </pre>
+   *
    * <code>string canyon_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The canyonName.
    */
   java.lang.String getCanyonName();
   /**
+   * <pre>
+   * Human-readable canyon name.
+   * </pre>
+   *
    * <code>string canyon_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for canyonName.
    */
@@ -59,41 +91,56 @@ public interface HistoryEntryOrBuilder extends
       getCanyonNameBytes();
 
   /**
-   * <code>string date = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <pre>
+   * Date of descent.
+   * </pre>
+   *
+   * <code>.google.type.Date date = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the date field is set.
+   */
+  boolean hasDate();
+  /**
+   * <pre>
+   * Date of descent.
+   * </pre>
+   *
+   * <code>.google.type.Date date = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The date.
    */
-  java.lang.String getDate();
+  com.google.type.Date getDate();
   /**
-   * <code>string date = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for date.
+   * <pre>
+   * Date of descent.
+   * </pre>
+   *
+   * <code>.google.type.Date date = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  com.google.protobuf.ByteString
-      getDateBytes();
+  com.google.type.DateOrBuilder getDateOrBuilder();
 
   /**
+   * <pre>
+   * Ordering of canyon within the trip.
+   * </pre>
+   *
    * <code>int32 order = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The order.
    */
   int getOrder();
 
   /**
-   * <code>string photos_link = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The photosLink.
-   */
-  java.lang.String getPhotosLink();
-  /**
-   * <code>string photos_link = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for photosLink.
-   */
-  com.google.protobuf.ByteString
-      getPhotosLinkBytes();
-
-  /**
-   * <code>map&lt;string, string&gt; user_statuses = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <pre>
+   * Map of participant user ID -&gt; descent status.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getUserStatusesCount();
   /**
-   * <code>map&lt;string, string&gt; user_statuses = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <pre>
+   * Map of participant user ID -&gt; descent status.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsUserStatuses(
       java.lang.String key);
@@ -104,12 +151,20 @@ public interface HistoryEntryOrBuilder extends
   java.util.Map<java.lang.String, java.lang.String>
   getUserStatuses();
   /**
-   * <code>map&lt;string, string&gt; user_statuses = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <pre>
+   * Map of participant user ID -&gt; descent status.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getUserStatusesMap();
   /**
-   * <code>map&lt;string, string&gt; user_statuses = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <pre>
+   * Map of participant user ID -&gt; descent status.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
 java.lang.String getUserStatusesOrDefault(
@@ -117,7 +172,11 @@ java.lang.String getUserStatusesOrDefault(
       /* nullable */
 java.lang.String defaultValue);
   /**
-   * <code>map&lt;string, string&gt; user_statuses = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <pre>
+   * Map of participant user ID -&gt; descent status.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getUserStatusesOrThrow(
       java.lang.String key);

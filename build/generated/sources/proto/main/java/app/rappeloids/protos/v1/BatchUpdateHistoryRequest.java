@@ -28,8 +28,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private BatchUpdateHistoryRequest() {
-    upserts_ = java.util.Collections.emptyList();
-    deleteIds_ =
+    trips_ = java.util.Collections.emptyList();
+    deleteNames_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
@@ -46,82 +46,118 @@ private static final long serialVersionUID = 0L;
             app.rappeloids.protos.v1.BatchUpdateHistoryRequest.class, app.rappeloids.protos.v1.BatchUpdateHistoryRequest.Builder.class);
   }
 
-  public static final int UPSERTS_FIELD_NUMBER = 1;
+  public static final int TRIPS_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
-  private java.util.List<app.rappeloids.protos.v1.HistoryEntryUpdate> upserts_;
+  private java.util.List<app.rappeloids.protos.v1.HistoryTripUpdate> trips_;
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+   * <pre>
+   * Trips containing their canyon descent entries (including single-entry trips).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.util.List<app.rappeloids.protos.v1.HistoryEntryUpdate> getUpsertsList() {
-    return upserts_;
+  public java.util.List<app.rappeloids.protos.v1.HistoryTripUpdate> getTripsList() {
+    return trips_;
   }
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+   * <pre>
+   * Trips containing their canyon descent entries (including single-entry trips).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.util.List<? extends app.rappeloids.protos.v1.HistoryEntryUpdateOrBuilder> 
-      getUpsertsOrBuilderList() {
-    return upserts_;
+  public java.util.List<? extends app.rappeloids.protos.v1.HistoryTripUpdateOrBuilder> 
+      getTripsOrBuilderList() {
+    return trips_;
   }
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+   * <pre>
+   * Trips containing their canyon descent entries (including single-entry trips).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public int getUpsertsCount() {
-    return upserts_.size();
+  public int getTripsCount() {
+    return trips_.size();
   }
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+   * <pre>
+   * Trips containing their canyon descent entries (including single-entry trips).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public app.rappeloids.protos.v1.HistoryEntryUpdate getUpserts(int index) {
-    return upserts_.get(index);
+  public app.rappeloids.protos.v1.HistoryTripUpdate getTrips(int index) {
+    return trips_.get(index);
   }
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+   * <pre>
+   * Trips containing their canyon descent entries (including single-entry trips).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public app.rappeloids.protos.v1.HistoryEntryUpdateOrBuilder getUpsertsOrBuilder(
+  public app.rappeloids.protos.v1.HistoryTripUpdateOrBuilder getTripsOrBuilder(
       int index) {
-    return upserts_.get(index);
+    return trips_.get(index);
   }
 
-  public static final int DELETE_IDS_FIELD_NUMBER = 2;
+  public static final int DELETE_NAMES_FIELD_NUMBER = 2;
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList deleteIds_ =
+  private com.google.protobuf.LazyStringArrayList deleteNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
   /**
-   * <code>repeated string delete_ids = 2;</code>
-   * @return A list containing the deleteIds.
+   * <pre>
+   * Resource names of history entries to delete (e.g. "history/{history_entry}").
+   * </pre>
+   *
+   * <code>repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+   * @return A list containing the deleteNames.
    */
   public com.google.protobuf.ProtocolStringList
-      getDeleteIdsList() {
-    return deleteIds_;
+      getDeleteNamesList() {
+    return deleteNames_;
   }
   /**
-   * <code>repeated string delete_ids = 2;</code>
-   * @return The count of deleteIds.
+   * <pre>
+   * Resource names of history entries to delete (e.g. "history/{history_entry}").
+   * </pre>
+   *
+   * <code>repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+   * @return The count of deleteNames.
    */
-  public int getDeleteIdsCount() {
-    return deleteIds_.size();
+  public int getDeleteNamesCount() {
+    return deleteNames_.size();
   }
   /**
-   * <code>repeated string delete_ids = 2;</code>
+   * <pre>
+   * Resource names of history entries to delete (e.g. "history/{history_entry}").
+   * </pre>
+   *
+   * <code>repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
    * @param index The index of the element to return.
-   * @return The deleteIds at the given index.
+   * @return The deleteNames at the given index.
    */
-  public java.lang.String getDeleteIds(int index) {
-    return deleteIds_.get(index);
+  public java.lang.String getDeleteNames(int index) {
+    return deleteNames_.get(index);
   }
   /**
-   * <code>repeated string delete_ids = 2;</code>
+   * <pre>
+   * Resource names of history entries to delete (e.g. "history/{history_entry}").
+   * </pre>
+   *
+   * <code>repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
    * @param index The index of the value to return.
-   * @return The bytes of the deleteIds at the given index.
+   * @return The bytes of the deleteNames at the given index.
    */
   public com.google.protobuf.ByteString
-      getDeleteIdsBytes(int index) {
-    return deleteIds_.getByteString(index);
+      getDeleteNamesBytes(int index) {
+    return deleteNames_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -138,11 +174,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < upserts_.size(); i++) {
-      output.writeMessage(1, upserts_.get(i));
+    for (int i = 0; i < trips_.size(); i++) {
+      output.writeMessage(1, trips_.get(i));
     }
-    for (int i = 0; i < deleteIds_.size(); i++) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, deleteIds_.getRaw(i));
+    for (int i = 0; i < deleteNames_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, deleteNames_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -153,17 +189,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < upserts_.size(); i++) {
+    for (int i = 0; i < trips_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, upserts_.get(i));
+        .computeMessageSize(1, trips_.get(i));
     }
     {
       int dataSize = 0;
-      for (int i = 0; i < deleteIds_.size(); i++) {
-        dataSize += computeStringSizeNoTag(deleteIds_.getRaw(i));
+      for (int i = 0; i < deleteNames_.size(); i++) {
+        dataSize += computeStringSizeNoTag(deleteNames_.getRaw(i));
       }
       size += dataSize;
-      size += 1 * getDeleteIdsList().size();
+      size += 1 * getDeleteNamesList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -180,10 +216,10 @@ private static final long serialVersionUID = 0L;
     }
     app.rappeloids.protos.v1.BatchUpdateHistoryRequest other = (app.rappeloids.protos.v1.BatchUpdateHistoryRequest) obj;
 
-    if (!getUpsertsList()
-        .equals(other.getUpsertsList())) return false;
-    if (!getDeleteIdsList()
-        .equals(other.getDeleteIdsList())) return false;
+    if (!getTripsList()
+        .equals(other.getTripsList())) return false;
+    if (!getDeleteNamesList()
+        .equals(other.getDeleteNamesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -195,13 +231,13 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getUpsertsCount() > 0) {
-      hash = (37 * hash) + UPSERTS_FIELD_NUMBER;
-      hash = (53 * hash) + getUpsertsList().hashCode();
+    if (getTripsCount() > 0) {
+      hash = (37 * hash) + TRIPS_FIELD_NUMBER;
+      hash = (53 * hash) + getTripsList().hashCode();
     }
-    if (getDeleteIdsCount() > 0) {
-      hash = (37 * hash) + DELETE_IDS_FIELD_NUMBER;
-      hash = (53 * hash) + getDeleteIdsList().hashCode();
+    if (getDeleteNamesCount() > 0) {
+      hash = (37 * hash) + DELETE_NAMES_FIELD_NUMBER;
+      hash = (53 * hash) + getDeleteNamesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -334,14 +370,14 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      if (upsertsBuilder_ == null) {
-        upserts_ = java.util.Collections.emptyList();
+      if (tripsBuilder_ == null) {
+        trips_ = java.util.Collections.emptyList();
       } else {
-        upserts_ = null;
-        upsertsBuilder_.clear();
+        trips_ = null;
+        tripsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      deleteIds_ =
+      deleteNames_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
@@ -376,22 +412,22 @@ private static final long serialVersionUID = 0L;
     }
 
     private void buildPartialRepeatedFields(app.rappeloids.protos.v1.BatchUpdateHistoryRequest result) {
-      if (upsertsBuilder_ == null) {
+      if (tripsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          upserts_ = java.util.Collections.unmodifiableList(upserts_);
+          trips_ = java.util.Collections.unmodifiableList(trips_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.upserts_ = upserts_;
+        result.trips_ = trips_;
       } else {
-        result.upserts_ = upsertsBuilder_.build();
+        result.trips_ = tripsBuilder_.build();
       }
     }
 
     private void buildPartial0(app.rappeloids.protos.v1.BatchUpdateHistoryRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        deleteIds_.makeImmutable();
-        result.deleteIds_ = deleteIds_;
+        deleteNames_.makeImmutable();
+        result.deleteNames_ = deleteNames_;
       }
     }
 
@@ -407,39 +443,39 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(app.rappeloids.protos.v1.BatchUpdateHistoryRequest other) {
       if (other == app.rappeloids.protos.v1.BatchUpdateHistoryRequest.getDefaultInstance()) return this;
-      if (upsertsBuilder_ == null) {
-        if (!other.upserts_.isEmpty()) {
-          if (upserts_.isEmpty()) {
-            upserts_ = other.upserts_;
+      if (tripsBuilder_ == null) {
+        if (!other.trips_.isEmpty()) {
+          if (trips_.isEmpty()) {
+            trips_ = other.trips_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureUpsertsIsMutable();
-            upserts_.addAll(other.upserts_);
+            ensureTripsIsMutable();
+            trips_.addAll(other.trips_);
           }
           onChanged();
         }
       } else {
-        if (!other.upserts_.isEmpty()) {
-          if (upsertsBuilder_.isEmpty()) {
-            upsertsBuilder_.dispose();
-            upsertsBuilder_ = null;
-            upserts_ = other.upserts_;
+        if (!other.trips_.isEmpty()) {
+          if (tripsBuilder_.isEmpty()) {
+            tripsBuilder_.dispose();
+            tripsBuilder_ = null;
+            trips_ = other.trips_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            upsertsBuilder_ = 
+            tripsBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                 internalGetUpsertsFieldBuilder() : null;
+                 internalGetTripsFieldBuilder() : null;
           } else {
-            upsertsBuilder_.addAllMessages(other.upserts_);
+            tripsBuilder_.addAllMessages(other.trips_);
           }
         }
       }
-      if (!other.deleteIds_.isEmpty()) {
-        if (deleteIds_.isEmpty()) {
-          deleteIds_ = other.deleteIds_;
+      if (!other.deleteNames_.isEmpty()) {
+        if (deleteNames_.isEmpty()) {
+          deleteNames_ = other.deleteNames_;
           bitField0_ |= 0x00000002;
         } else {
-          ensureDeleteIdsIsMutable();
-          deleteIds_.addAll(other.deleteIds_);
+          ensureDeleteNamesIsMutable();
+          deleteNames_.addAll(other.deleteNames_);
         }
         onChanged();
       }
@@ -470,22 +506,22 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              app.rappeloids.protos.v1.HistoryEntryUpdate m =
+              app.rappeloids.protos.v1.HistoryTripUpdate m =
                   input.readMessage(
-                      app.rappeloids.protos.v1.HistoryEntryUpdate.parser(),
+                      app.rappeloids.protos.v1.HistoryTripUpdate.parser(),
                       extensionRegistry);
-              if (upsertsBuilder_ == null) {
-                ensureUpsertsIsMutable();
-                upserts_.add(m);
+              if (tripsBuilder_ == null) {
+                ensureTripsIsMutable();
+                trips_.add(m);
               } else {
-                upsertsBuilder_.addMessage(m);
+                tripsBuilder_.addMessage(m);
               }
               break;
             } // case 10
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
-              ensureDeleteIdsIsMutable();
-              deleteIds_.add(s);
+              ensureDeleteNamesIsMutable();
+              deleteNames_.add(s);
               break;
             } // case 18
             default: {
@@ -505,352 +541,460 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<app.rappeloids.protos.v1.HistoryEntryUpdate> upserts_ =
+    private java.util.List<app.rappeloids.protos.v1.HistoryTripUpdate> trips_ =
       java.util.Collections.emptyList();
-    private void ensureUpsertsIsMutable() {
+    private void ensureTripsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        upserts_ = new java.util.ArrayList<app.rappeloids.protos.v1.HistoryEntryUpdate>(upserts_);
+        trips_ = new java.util.ArrayList<app.rappeloids.protos.v1.HistoryTripUpdate>(trips_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilder<
-        app.rappeloids.protos.v1.HistoryEntryUpdate, app.rappeloids.protos.v1.HistoryEntryUpdate.Builder, app.rappeloids.protos.v1.HistoryEntryUpdateOrBuilder> upsertsBuilder_;
+        app.rappeloids.protos.v1.HistoryTripUpdate, app.rappeloids.protos.v1.HistoryTripUpdate.Builder, app.rappeloids.protos.v1.HistoryTripUpdateOrBuilder> tripsBuilder_;
 
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+     * <pre>
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.util.List<app.rappeloids.protos.v1.HistoryEntryUpdate> getUpsertsList() {
-      if (upsertsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(upserts_);
+    public java.util.List<app.rappeloids.protos.v1.HistoryTripUpdate> getTripsList() {
+      if (tripsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(trips_);
       } else {
-        return upsertsBuilder_.getMessageList();
+        return tripsBuilder_.getMessageList();
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+     * <pre>
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public int getUpsertsCount() {
-      if (upsertsBuilder_ == null) {
-        return upserts_.size();
+    public int getTripsCount() {
+      if (tripsBuilder_ == null) {
+        return trips_.size();
       } else {
-        return upsertsBuilder_.getCount();
+        return tripsBuilder_.getCount();
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+     * <pre>
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.HistoryEntryUpdate getUpserts(int index) {
-      if (upsertsBuilder_ == null) {
-        return upserts_.get(index);
+    public app.rappeloids.protos.v1.HistoryTripUpdate getTrips(int index) {
+      if (tripsBuilder_ == null) {
+        return trips_.get(index);
       } else {
-        return upsertsBuilder_.getMessage(index);
+        return tripsBuilder_.getMessage(index);
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+     * <pre>
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder setUpserts(
-        int index, app.rappeloids.protos.v1.HistoryEntryUpdate value) {
-      if (upsertsBuilder_ == null) {
+    public Builder setTrips(
+        int index, app.rappeloids.protos.v1.HistoryTripUpdate value) {
+      if (tripsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureUpsertsIsMutable();
-        upserts_.set(index, value);
+        ensureTripsIsMutable();
+        trips_.set(index, value);
         onChanged();
       } else {
-        upsertsBuilder_.setMessage(index, value);
+        tripsBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+     * <pre>
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder setUpserts(
-        int index, app.rappeloids.protos.v1.HistoryEntryUpdate.Builder builderForValue) {
-      if (upsertsBuilder_ == null) {
-        ensureUpsertsIsMutable();
-        upserts_.set(index, builderForValue.build());
+    public Builder setTrips(
+        int index, app.rappeloids.protos.v1.HistoryTripUpdate.Builder builderForValue) {
+      if (tripsBuilder_ == null) {
+        ensureTripsIsMutable();
+        trips_.set(index, builderForValue.build());
         onChanged();
       } else {
-        upsertsBuilder_.setMessage(index, builderForValue.build());
+        tripsBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+     * <pre>
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder addUpserts(app.rappeloids.protos.v1.HistoryEntryUpdate value) {
-      if (upsertsBuilder_ == null) {
+    public Builder addTrips(app.rappeloids.protos.v1.HistoryTripUpdate value) {
+      if (tripsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureUpsertsIsMutable();
-        upserts_.add(value);
+        ensureTripsIsMutable();
+        trips_.add(value);
         onChanged();
       } else {
-        upsertsBuilder_.addMessage(value);
+        tripsBuilder_.addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+     * <pre>
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder addUpserts(
-        int index, app.rappeloids.protos.v1.HistoryEntryUpdate value) {
-      if (upsertsBuilder_ == null) {
+    public Builder addTrips(
+        int index, app.rappeloids.protos.v1.HistoryTripUpdate value) {
+      if (tripsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureUpsertsIsMutable();
-        upserts_.add(index, value);
+        ensureTripsIsMutable();
+        trips_.add(index, value);
         onChanged();
       } else {
-        upsertsBuilder_.addMessage(index, value);
+        tripsBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+     * <pre>
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder addUpserts(
-        app.rappeloids.protos.v1.HistoryEntryUpdate.Builder builderForValue) {
-      if (upsertsBuilder_ == null) {
-        ensureUpsertsIsMutable();
-        upserts_.add(builderForValue.build());
+    public Builder addTrips(
+        app.rappeloids.protos.v1.HistoryTripUpdate.Builder builderForValue) {
+      if (tripsBuilder_ == null) {
+        ensureTripsIsMutable();
+        trips_.add(builderForValue.build());
         onChanged();
       } else {
-        upsertsBuilder_.addMessage(builderForValue.build());
+        tripsBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+     * <pre>
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder addUpserts(
-        int index, app.rappeloids.protos.v1.HistoryEntryUpdate.Builder builderForValue) {
-      if (upsertsBuilder_ == null) {
-        ensureUpsertsIsMutable();
-        upserts_.add(index, builderForValue.build());
+    public Builder addTrips(
+        int index, app.rappeloids.protos.v1.HistoryTripUpdate.Builder builderForValue) {
+      if (tripsBuilder_ == null) {
+        ensureTripsIsMutable();
+        trips_.add(index, builderForValue.build());
         onChanged();
       } else {
-        upsertsBuilder_.addMessage(index, builderForValue.build());
+        tripsBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+     * <pre>
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder addAllUpserts(
-        java.lang.Iterable<? extends app.rappeloids.protos.v1.HistoryEntryUpdate> values) {
-      if (upsertsBuilder_ == null) {
-        ensureUpsertsIsMutable();
+    public Builder addAllTrips(
+        java.lang.Iterable<? extends app.rappeloids.protos.v1.HistoryTripUpdate> values) {
+      if (tripsBuilder_ == null) {
+        ensureTripsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, upserts_);
+            values, trips_);
         onChanged();
       } else {
-        upsertsBuilder_.addAllMessages(values);
+        tripsBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+     * <pre>
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder clearUpserts() {
-      if (upsertsBuilder_ == null) {
-        upserts_ = java.util.Collections.emptyList();
+    public Builder clearTrips() {
+      if (tripsBuilder_ == null) {
+        trips_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        upsertsBuilder_.clear();
+        tripsBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+     * <pre>
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder removeUpserts(int index) {
-      if (upsertsBuilder_ == null) {
-        ensureUpsertsIsMutable();
-        upserts_.remove(index);
+    public Builder removeTrips(int index) {
+      if (tripsBuilder_ == null) {
+        ensureTripsIsMutable();
+        trips_.remove(index);
         onChanged();
       } else {
-        upsertsBuilder_.remove(index);
+        tripsBuilder_.remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+     * <pre>
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.HistoryEntryUpdate.Builder getUpsertsBuilder(
+    public app.rappeloids.protos.v1.HistoryTripUpdate.Builder getTripsBuilder(
         int index) {
-      return internalGetUpsertsFieldBuilder().getBuilder(index);
+      return internalGetTripsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+     * <pre>
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.HistoryEntryUpdateOrBuilder getUpsertsOrBuilder(
+    public app.rappeloids.protos.v1.HistoryTripUpdateOrBuilder getTripsOrBuilder(
         int index) {
-      if (upsertsBuilder_ == null) {
-        return upserts_.get(index);  } else {
-        return upsertsBuilder_.getMessageOrBuilder(index);
+      if (tripsBuilder_ == null) {
+        return trips_.get(index);  } else {
+        return tripsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+     * <pre>
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.util.List<? extends app.rappeloids.protos.v1.HistoryEntryUpdateOrBuilder> 
-         getUpsertsOrBuilderList() {
-      if (upsertsBuilder_ != null) {
-        return upsertsBuilder_.getMessageOrBuilderList();
+    public java.util.List<? extends app.rappeloids.protos.v1.HistoryTripUpdateOrBuilder> 
+         getTripsOrBuilderList() {
+      if (tripsBuilder_ != null) {
+        return tripsBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(upserts_);
+        return java.util.Collections.unmodifiableList(trips_);
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+     * <pre>
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.HistoryEntryUpdate.Builder addUpsertsBuilder() {
-      return internalGetUpsertsFieldBuilder().addBuilder(
-          app.rappeloids.protos.v1.HistoryEntryUpdate.getDefaultInstance());
+    public app.rappeloids.protos.v1.HistoryTripUpdate.Builder addTripsBuilder() {
+      return internalGetTripsFieldBuilder().addBuilder(
+          app.rappeloids.protos.v1.HistoryTripUpdate.getDefaultInstance());
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+     * <pre>
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.HistoryEntryUpdate.Builder addUpsertsBuilder(
+    public app.rappeloids.protos.v1.HistoryTripUpdate.Builder addTripsBuilder(
         int index) {
-      return internalGetUpsertsFieldBuilder().addBuilder(
-          index, app.rappeloids.protos.v1.HistoryEntryUpdate.getDefaultInstance());
+      return internalGetTripsFieldBuilder().addBuilder(
+          index, app.rappeloids.protos.v1.HistoryTripUpdate.getDefaultInstance());
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+     * <pre>
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.util.List<app.rappeloids.protos.v1.HistoryEntryUpdate.Builder> 
-         getUpsertsBuilderList() {
-      return internalGetUpsertsFieldBuilder().getBuilderList();
+    public java.util.List<app.rappeloids.protos.v1.HistoryTripUpdate.Builder> 
+         getTripsBuilderList() {
+      return internalGetTripsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilder<
-        app.rappeloids.protos.v1.HistoryEntryUpdate, app.rappeloids.protos.v1.HistoryEntryUpdate.Builder, app.rappeloids.protos.v1.HistoryEntryUpdateOrBuilder> 
-        internalGetUpsertsFieldBuilder() {
-      if (upsertsBuilder_ == null) {
-        upsertsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-            app.rappeloids.protos.v1.HistoryEntryUpdate, app.rappeloids.protos.v1.HistoryEntryUpdate.Builder, app.rappeloids.protos.v1.HistoryEntryUpdateOrBuilder>(
-                upserts_,
+        app.rappeloids.protos.v1.HistoryTripUpdate, app.rappeloids.protos.v1.HistoryTripUpdate.Builder, app.rappeloids.protos.v1.HistoryTripUpdateOrBuilder> 
+        internalGetTripsFieldBuilder() {
+      if (tripsBuilder_ == null) {
+        tripsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+            app.rappeloids.protos.v1.HistoryTripUpdate, app.rappeloids.protos.v1.HistoryTripUpdate.Builder, app.rappeloids.protos.v1.HistoryTripUpdateOrBuilder>(
+                trips_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        upserts_ = null;
+        trips_ = null;
       }
-      return upsertsBuilder_;
+      return tripsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringArrayList deleteIds_ =
+    private com.google.protobuf.LazyStringArrayList deleteNames_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-    private void ensureDeleteIdsIsMutable() {
-      if (!deleteIds_.isModifiable()) {
-        deleteIds_ = new com.google.protobuf.LazyStringArrayList(deleteIds_);
+    private void ensureDeleteNamesIsMutable() {
+      if (!deleteNames_.isModifiable()) {
+        deleteNames_ = new com.google.protobuf.LazyStringArrayList(deleteNames_);
       }
       bitField0_ |= 0x00000002;
     }
     /**
-     * <code>repeated string delete_ids = 2;</code>
-     * @return A list containing the deleteIds.
+     * <pre>
+     * Resource names of history entries to delete (e.g. "history/{history_entry}").
+     * </pre>
+     *
+     * <code>repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @return A list containing the deleteNames.
      */
     public com.google.protobuf.ProtocolStringList
-        getDeleteIdsList() {
-      deleteIds_.makeImmutable();
-      return deleteIds_;
+        getDeleteNamesList() {
+      deleteNames_.makeImmutable();
+      return deleteNames_;
     }
     /**
-     * <code>repeated string delete_ids = 2;</code>
-     * @return The count of deleteIds.
+     * <pre>
+     * Resource names of history entries to delete (e.g. "history/{history_entry}").
+     * </pre>
+     *
+     * <code>repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @return The count of deleteNames.
      */
-    public int getDeleteIdsCount() {
-      return deleteIds_.size();
+    public int getDeleteNamesCount() {
+      return deleteNames_.size();
     }
     /**
-     * <code>repeated string delete_ids = 2;</code>
+     * <pre>
+     * Resource names of history entries to delete (e.g. "history/{history_entry}").
+     * </pre>
+     *
+     * <code>repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
      * @param index The index of the element to return.
-     * @return The deleteIds at the given index.
+     * @return The deleteNames at the given index.
      */
-    public java.lang.String getDeleteIds(int index) {
-      return deleteIds_.get(index);
+    public java.lang.String getDeleteNames(int index) {
+      return deleteNames_.get(index);
     }
     /**
-     * <code>repeated string delete_ids = 2;</code>
+     * <pre>
+     * Resource names of history entries to delete (e.g. "history/{history_entry}").
+     * </pre>
+     *
+     * <code>repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
      * @param index The index of the value to return.
-     * @return The bytes of the deleteIds at the given index.
+     * @return The bytes of the deleteNames at the given index.
      */
     public com.google.protobuf.ByteString
-        getDeleteIdsBytes(int index) {
-      return deleteIds_.getByteString(index);
+        getDeleteNamesBytes(int index) {
+      return deleteNames_.getByteString(index);
     }
     /**
-     * <code>repeated string delete_ids = 2;</code>
+     * <pre>
+     * Resource names of history entries to delete (e.g. "history/{history_entry}").
+     * </pre>
+     *
+     * <code>repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
      * @param index The index to set the value at.
-     * @param value The deleteIds to set.
+     * @param value The deleteNames to set.
      * @return This builder for chaining.
      */
-    public Builder setDeleteIds(
+    public Builder setDeleteNames(
         int index, java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      ensureDeleteIdsIsMutable();
-      deleteIds_.set(index, value);
+      ensureDeleteNamesIsMutable();
+      deleteNames_.set(index, value);
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string delete_ids = 2;</code>
-     * @param value The deleteIds to add.
+     * <pre>
+     * Resource names of history entries to delete (e.g. "history/{history_entry}").
+     * </pre>
+     *
+     * <code>repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @param value The deleteNames to add.
      * @return This builder for chaining.
      */
-    public Builder addDeleteIds(
+    public Builder addDeleteNames(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      ensureDeleteIdsIsMutable();
-      deleteIds_.add(value);
+      ensureDeleteNamesIsMutable();
+      deleteNames_.add(value);
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string delete_ids = 2;</code>
-     * @param values The deleteIds to add.
+     * <pre>
+     * Resource names of history entries to delete (e.g. "history/{history_entry}").
+     * </pre>
+     *
+     * <code>repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @param values The deleteNames to add.
      * @return This builder for chaining.
      */
-    public Builder addAllDeleteIds(
+    public Builder addAllDeleteNames(
         java.lang.Iterable<java.lang.String> values) {
-      ensureDeleteIdsIsMutable();
+      ensureDeleteNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, deleteIds_);
+          values, deleteNames_);
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string delete_ids = 2;</code>
+     * <pre>
+     * Resource names of history entries to delete (e.g. "history/{history_entry}").
+     * </pre>
+     *
+     * <code>repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearDeleteIds() {
-      deleteIds_ =
+    public Builder clearDeleteNames() {
+      deleteNames_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string delete_ids = 2;</code>
-     * @param value The bytes of the deleteIds to add.
+     * <pre>
+     * Resource names of history entries to delete (e.g. "history/{history_entry}").
+     * </pre>
+     *
+     * <code>repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes of the deleteNames to add.
      * @return This builder for chaining.
      */
-    public Builder addDeleteIdsBytes(
+    public Builder addDeleteNamesBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      ensureDeleteIdsIsMutable();
-      deleteIds_.add(value);
+      ensureDeleteNamesIsMutable();
+      deleteNames_.add(value);
       bitField0_ |= 0x00000002;
       onChanged();
       return this;

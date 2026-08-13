@@ -11,6 +11,10 @@ package app.rappeloids.protos.v1;
 public inline fun historyEntry(block: app.rappeloids.protos.v1.HistoryEntryKt.Dsl.() -> kotlin.Unit): app.rappeloids.protos.v1.HistoryEntry =
   app.rappeloids.protos.v1.HistoryEntryKt.Dsl._create(app.rappeloids.protos.v1.HistoryEntry.newBuilder()).apply { block() }._build()
 /**
+ * ```
+ * HistoryEntry resource following AIP-122.
+ * ```
+ *
  * Protobuf type `rappeloids.v1.HistoryEntry`
  */
 public object HistoryEntryKt {
@@ -30,23 +34,35 @@ public object HistoryEntryKt {
     internal fun _build(): app.rappeloids.protos.v1.HistoryEntry = _builder.build()
 
     /**
-     * `string id = 1 [(.google.api.field_behavior) = REQUIRED];`
+     * ```
+     * Resource name: "history/{history_entry}"
+     * ```
+     *
+     * `string name = 1 [(.google.api.field_behavior) = IDENTIFIER];`
      */
-    public var id: kotlin.String
-      @kotlin.jvm.JvmName("getId")
-        get() = _builder.id
-      @kotlin.jvm.JvmName("setId")
+    public var name: kotlin.String
+      @kotlin.jvm.JvmName("getName")
+        get() = _builder.name
+      @kotlin.jvm.JvmName("setName")
         set(value) {
-        _builder.id = value
+        _builder.name = value
       }
     /**
-     * `string id = 1 [(.google.api.field_behavior) = REQUIRED];`
+     * ```
+     * Resource name: "history/{history_entry}"
+     * ```
+     *
+     * `string name = 1 [(.google.api.field_behavior) = IDENTIFIER];`
      */
-    public fun clearId() {
-      _builder.clearId()
+    public fun clearName() {
+      _builder.clearName()
     }
 
     /**
+     * ```
+     * Associated trip ID if grouped.
+     * ```
+     *
      * `string trip_id = 2 [(.google.api.field_behavior) = OPTIONAL];`
      */
     public var tripId: kotlin.String
@@ -57,6 +73,10 @@ public object HistoryEntryKt {
         _builder.tripId = value
       }
     /**
+     * ```
+     * Associated trip ID if grouped.
+     * ```
+     *
      * `string trip_id = 2 [(.google.api.field_behavior) = OPTIONAL];`
      */
     public fun clearTripId() {
@@ -64,23 +84,35 @@ public object HistoryEntryKt {
     }
 
     /**
-     * `string canyon_id = 3 [(.google.api.field_behavior) = REQUIRED];`
+     * ```
+     * Canyon resource name: "canyons/{canyon}"
+     * ```
+     *
+     * `string canyon = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }`
      */
-    public var canyonId: kotlin.String
-      @kotlin.jvm.JvmName("getCanyonId")
-        get() = _builder.canyonId
-      @kotlin.jvm.JvmName("setCanyonId")
+    public var canyon: kotlin.String
+      @kotlin.jvm.JvmName("getCanyon")
+        get() = _builder.canyon
+      @kotlin.jvm.JvmName("setCanyon")
         set(value) {
-        _builder.canyonId = value
+        _builder.canyon = value
       }
     /**
-     * `string canyon_id = 3 [(.google.api.field_behavior) = REQUIRED];`
+     * ```
+     * Canyon resource name: "canyons/{canyon}"
+     * ```
+     *
+     * `string canyon = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }`
      */
-    public fun clearCanyonId() {
-      _builder.clearCanyonId()
+    public fun clearCanyon() {
+      _builder.clearCanyon()
     }
 
     /**
+     * ```
+     * Human-readable canyon name.
+     * ```
+     *
      * `string canyon_name = 4 [(.google.api.field_behavior) = OPTIONAL];`
      */
     public var canyonName: kotlin.String
@@ -91,6 +123,10 @@ public object HistoryEntryKt {
         _builder.canyonName = value
       }
     /**
+     * ```
+     * Human-readable canyon name.
+     * ```
+     *
      * `string canyon_name = 4 [(.google.api.field_behavior) = OPTIONAL];`
      */
     public fun clearCanyonName() {
@@ -98,9 +134,13 @@ public object HistoryEntryKt {
     }
 
     /**
-     * `string date = 5 [(.google.api.field_behavior) = OPTIONAL];`
+     * ```
+     * Date of descent.
+     * ```
+     *
+     * `.google.type.Date date = 5 [(.google.api.field_behavior) = OPTIONAL];`
      */
-    public var date: kotlin.String
+    public var date: com.google.type.Date
       @kotlin.jvm.JvmName("getDate")
         get() = _builder.date
       @kotlin.jvm.JvmName("setDate")
@@ -108,13 +148,35 @@ public object HistoryEntryKt {
         _builder.date = value
       }
     /**
-     * `string date = 5 [(.google.api.field_behavior) = OPTIONAL];`
+     * ```
+     * Date of descent.
+     * ```
+     *
+     * `.google.type.Date date = 5 [(.google.api.field_behavior) = OPTIONAL];`
      */
     public fun clearDate() {
       _builder.clearDate()
     }
+    /**
+     * ```
+     * Date of descent.
+     * ```
+     *
+     * `.google.type.Date date = 5 [(.google.api.field_behavior) = OPTIONAL];`
+     * @return Whether the date field is set.
+     */
+    public fun hasDate(): kotlin.Boolean {
+      return _builder.hasDate()
+    }
+
+    public val HistoryEntryKt.Dsl.dateOrNull: com.google.type.Date?
+      get() = _builder.dateOrNull
 
     /**
+     * ```
+     * Ordering of canyon within the trip.
+     * ```
+     *
      * `int32 order = 6 [(.google.api.field_behavior) = OPTIONAL];`
      */
     public var order: kotlin.Int
@@ -125,27 +187,14 @@ public object HistoryEntryKt {
         _builder.order = value
       }
     /**
+     * ```
+     * Ordering of canyon within the trip.
+     * ```
+     *
      * `int32 order = 6 [(.google.api.field_behavior) = OPTIONAL];`
      */
     public fun clearOrder() {
       _builder.clearOrder()
-    }
-
-    /**
-     * `string photos_link = 7 [(.google.api.field_behavior) = OPTIONAL];`
-     */
-    public var photosLink: kotlin.String
-      @kotlin.jvm.JvmName("getPhotosLink")
-        get() = _builder.photosLink
-      @kotlin.jvm.JvmName("setPhotosLink")
-        set(value) {
-        _builder.photosLink = value
-      }
-    /**
-     * `string photos_link = 7 [(.google.api.field_behavior) = OPTIONAL];`
-     */
-    public fun clearPhotosLink() {
-      _builder.clearPhotosLink()
     }
 
     /**
@@ -155,7 +204,11 @@ public object HistoryEntryKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class UserStatusesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `map<string, string> user_statuses = 8 [(.google.api.field_behavior) = OPTIONAL];`
+     * ```
+     * Map of participant user ID -> descent status.
+     * ```
+     *
+     * `map<string, string> user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];`
      */
      public val userStatuses: com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, UserStatusesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -164,7 +217,11 @@ public object HistoryEntryKt {
         _builder.userStatusesMap
       )
     /**
-     * `map<string, string> user_statuses = 8 [(.google.api.field_behavior) = OPTIONAL];`
+     * ```
+     * Map of participant user ID -> descent status.
+     * ```
+     *
+     * `map<string, string> user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];`
      */
     @kotlin.jvm.JvmName("putUserStatuses")
     public fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, UserStatusesProxy>
@@ -172,7 +229,11 @@ public object HistoryEntryKt {
          _builder.putUserStatuses(key, value)
        }
     /**
-     * `map<string, string> user_statuses = 8 [(.google.api.field_behavior) = OPTIONAL];`
+     * ```
+     * Map of participant user ID -> descent status.
+     * ```
+     *
+     * `map<string, string> user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setUserStatuses")
@@ -182,7 +243,11 @@ public object HistoryEntryKt {
          put(key, value)
        }
     /**
-     * `map<string, string> user_statuses = 8 [(.google.api.field_behavior) = OPTIONAL];`
+     * ```
+     * Map of participant user ID -> descent status.
+     * ```
+     *
+     * `map<string, string> user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("removeUserStatuses")
@@ -191,7 +256,11 @@ public object HistoryEntryKt {
          _builder.removeUserStatuses(key)
        }
     /**
-     * `map<string, string> user_statuses = 8 [(.google.api.field_behavior) = OPTIONAL];`
+     * ```
+     * Map of participant user ID -> descent status.
+     * ```
+     *
+     * `map<string, string> user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("putAllUserStatuses")
@@ -200,7 +269,11 @@ public object HistoryEntryKt {
          _builder.putAllUserStatuses(map)
        }
     /**
-     * `map<string, string> user_statuses = 8 [(.google.api.field_behavior) = OPTIONAL];`
+     * ```
+     * Map of participant user ID -> descent status.
+     * ```
+     *
+     * `map<string, string> user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearUserStatuses")
@@ -213,4 +286,7 @@ public object HistoryEntryKt {
 @kotlin.jvm.JvmSynthetic
 public inline fun app.rappeloids.protos.v1.HistoryEntry.copy(block: `app.rappeloids.protos.v1`.HistoryEntryKt.Dsl.() -> kotlin.Unit): app.rappeloids.protos.v1.HistoryEntry =
   `app.rappeloids.protos.v1`.HistoryEntryKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+
+public val app.rappeloids.protos.v1.HistoryEntryOrBuilder.dateOrNull: com.google.type.Date?
+  get() = if (hasDate()) getDate() else null
 

@@ -85,10 +85,19 @@ message ListHistoryResponse {
   int32 total_size = 3;
 }
 
+message HistoryYearSummary {
+  // The year (e.g. 2026).
+  int32 year = 1;
+
+  // Number of canyons (historical descents) in this year.
+  int32 canyon_count = 2;
+}
+
 message ListHistoryYearsRequest {}
 
 message ListHistoryYearsResponse {
   repeated int32 years = 1;
+  repeated HistoryYearSummary year_summaries = 2;
 }
 
 message HistoryEntryUpdate {

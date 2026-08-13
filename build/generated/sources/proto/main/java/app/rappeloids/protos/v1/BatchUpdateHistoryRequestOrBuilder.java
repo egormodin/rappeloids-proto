@@ -11,51 +11,87 @@ public interface BatchUpdateHistoryRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+   * <pre>
+   * Trips containing their canyon descent entries (including single-entry trips).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.util.List<app.rappeloids.protos.v1.HistoryEntryUpdate> 
-      getUpsertsList();
+  java.util.List<app.rappeloids.protos.v1.HistoryTripUpdate> 
+      getTripsList();
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+   * <pre>
+   * Trips containing their canyon descent entries (including single-entry trips).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  app.rappeloids.protos.v1.HistoryEntryUpdate getUpserts(int index);
+  app.rappeloids.protos.v1.HistoryTripUpdate getTrips(int index);
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+   * <pre>
+   * Trips containing their canyon descent entries (including single-entry trips).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  int getUpsertsCount();
+  int getTripsCount();
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+   * <pre>
+   * Trips containing their canyon descent entries (including single-entry trips).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.util.List<? extends app.rappeloids.protos.v1.HistoryEntryUpdateOrBuilder> 
-      getUpsertsOrBuilderList();
+  java.util.List<? extends app.rappeloids.protos.v1.HistoryTripUpdateOrBuilder> 
+      getTripsOrBuilderList();
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;</code>
+   * <pre>
+   * Trips containing their canyon descent entries (including single-entry trips).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  app.rappeloids.protos.v1.HistoryEntryUpdateOrBuilder getUpsertsOrBuilder(
+  app.rappeloids.protos.v1.HistoryTripUpdateOrBuilder getTripsOrBuilder(
       int index);
 
   /**
-   * <code>repeated string delete_ids = 2;</code>
-   * @return A list containing the deleteIds.
+   * <pre>
+   * Resource names of history entries to delete (e.g. "history/{history_entry}").
+   * </pre>
+   *
+   * <code>repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+   * @return A list containing the deleteNames.
    */
   java.util.List<java.lang.String>
-      getDeleteIdsList();
+      getDeleteNamesList();
   /**
-   * <code>repeated string delete_ids = 2;</code>
-   * @return The count of deleteIds.
+   * <pre>
+   * Resource names of history entries to delete (e.g. "history/{history_entry}").
+   * </pre>
+   *
+   * <code>repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+   * @return The count of deleteNames.
    */
-  int getDeleteIdsCount();
+  int getDeleteNamesCount();
   /**
-   * <code>repeated string delete_ids = 2;</code>
+   * <pre>
+   * Resource names of history entries to delete (e.g. "history/{history_entry}").
+   * </pre>
+   *
+   * <code>repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
    * @param index The index of the element to return.
-   * @return The deleteIds at the given index.
+   * @return The deleteNames at the given index.
    */
-  java.lang.String getDeleteIds(int index);
+  java.lang.String getDeleteNames(int index);
   /**
-   * <code>repeated string delete_ids = 2;</code>
+   * <pre>
+   * Resource names of history entries to delete (e.g. "history/{history_entry}").
+   * </pre>
+   *
+   * <code>repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
    * @param index The index of the value to return.
-   * @return The bytes of the deleteIds at the given index.
+   * @return The bytes of the deleteNames at the given index.
    */
   com.google.protobuf.ByteString
-      getDeleteIdsBytes(int index);
+      getDeleteNamesBytes(int index);
 }

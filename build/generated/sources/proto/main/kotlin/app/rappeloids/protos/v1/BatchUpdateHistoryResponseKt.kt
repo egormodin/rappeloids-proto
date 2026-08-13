@@ -30,30 +30,17 @@ public object BatchUpdateHistoryResponseKt {
     internal fun _build(): app.rappeloids.protos.v1.BatchUpdateHistoryResponse = _builder.build()
 
     /**
-     * `int32 updated_count = 1;`
-     */
-    public var updatedCount: kotlin.Int
-      @kotlin.jvm.JvmName("getUpdatedCount")
-        get() = _builder.updatedCount
-      @kotlin.jvm.JvmName("setUpdatedCount")
-        set(value) {
-        _builder.updatedCount = value
-      }
-    /**
-     * `int32 updated_count = 1;`
-     */
-    public fun clearUpdatedCount() {
-      _builder.clearUpdatedCount()
-    }
-
-    /**
      * An uninstantiable, behaviorless type to represent the field in
      * generics.
      */
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class EntriesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .rappeloids.v1.HistoryEntry entries = 2;`
+     * ```
+     * Resulting/updated history entries (AIP-234).
+     * ```
+     *
+     * `repeated .rappeloids.v1.HistoryEntry entries = 1;`
      */
      public val entries: com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.HistoryEntry, EntriesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -61,7 +48,11 @@ public object BatchUpdateHistoryResponseKt {
         _builder.entriesList
       )
     /**
-     * `repeated .rappeloids.v1.HistoryEntry entries = 2;`
+     * ```
+     * Resulting/updated history entries (AIP-234).
+     * ```
+     *
+     * `repeated .rappeloids.v1.HistoryEntry entries = 1;`
      * @param value The entries to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -70,7 +61,11 @@ public object BatchUpdateHistoryResponseKt {
       _builder.addEntries(value)
     }
     /**
-     * `repeated .rappeloids.v1.HistoryEntry entries = 2;`
+     * ```
+     * Resulting/updated history entries (AIP-234).
+     * ```
+     *
+     * `repeated .rappeloids.v1.HistoryEntry entries = 1;`
      * @param value The entries to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -80,7 +75,11 @@ public object BatchUpdateHistoryResponseKt {
       add(value)
     }
     /**
-     * `repeated .rappeloids.v1.HistoryEntry entries = 2;`
+     * ```
+     * Resulting/updated history entries (AIP-234).
+     * ```
+     *
+     * `repeated .rappeloids.v1.HistoryEntry entries = 1;`
      * @param values The entries to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -89,7 +88,11 @@ public object BatchUpdateHistoryResponseKt {
       _builder.addAllEntries(values)
     }
     /**
-     * `repeated .rappeloids.v1.HistoryEntry entries = 2;`
+     * ```
+     * Resulting/updated history entries (AIP-234).
+     * ```
+     *
+     * `repeated .rappeloids.v1.HistoryEntry entries = 1;`
      * @param values The entries to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -99,7 +102,11 @@ public object BatchUpdateHistoryResponseKt {
       addAll(values)
     }
     /**
-     * `repeated .rappeloids.v1.HistoryEntry entries = 2;`
+     * ```
+     * Resulting/updated history entries (AIP-234).
+     * ```
+     *
+     * `repeated .rappeloids.v1.HistoryEntry entries = 1;`
      * @param index The index to set the value at.
      * @param value The entries to set.
      */
@@ -109,7 +116,11 @@ public object BatchUpdateHistoryResponseKt {
       _builder.setEntries(index, value)
     }
     /**
-     * `repeated .rappeloids.v1.HistoryEntry entries = 2;`
+     * ```
+     * Resulting/updated history entries (AIP-234).
+     * ```
+     *
+     * `repeated .rappeloids.v1.HistoryEntry entries = 1;`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearEntries")

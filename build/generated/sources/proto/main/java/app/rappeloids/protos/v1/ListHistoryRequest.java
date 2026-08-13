@@ -29,7 +29,6 @@ private static final long serialVersionUID = 0L;
   }
   private ListHistoryRequest() {
     pageToken_ = "";
-    filter_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -45,6 +44,7 @@ private static final long serialVersionUID = 0L;
             app.rappeloids.protos.v1.ListHistoryRequest.class, app.rappeloids.protos.v1.ListHistoryRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PAGE_SIZE_FIELD_NUMBER = 1;
   private int pageSize_ = 0;
   /**
@@ -95,43 +95,31 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int FILTER_FIELD_NUMBER = 3;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object filter_ = "";
+  public static final int YEAR_FIELD_NUMBER = 3;
+  private int year_ = 0;
   /**
-   * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The filter.
+   * <pre>
+   * Optional year to filter historical descent records (e.g. 2026). If omitted, returns summary/all records.
+   * </pre>
+   *
+   * <code>optional int32 year = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the year field is set.
    */
   @java.lang.Override
-  public java.lang.String getFilter() {
-    java.lang.Object ref = filter_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      filter_ = s;
-      return s;
-    }
+  public boolean hasYear() {
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for filter.
+   * <pre>
+   * Optional year to filter historical descent records (e.g. 2026). If omitted, returns summary/all records.
+   * </pre>
+   *
+   * <code>optional int32 year = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The year.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getFilterBytes() {
-    java.lang.Object ref = filter_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      filter_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public int getYear() {
+    return year_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -154,8 +142,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, pageToken_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, filter_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(3, year_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -173,8 +161,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, pageToken_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, filter_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(3, year_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -195,8 +184,11 @@ private static final long serialVersionUID = 0L;
         != other.getPageSize()) return false;
     if (!getPageToken()
         .equals(other.getPageToken())) return false;
-    if (!getFilter()
-        .equals(other.getFilter())) return false;
+    if (hasYear() != other.hasYear()) return false;
+    if (hasYear()) {
+      if (getYear()
+          != other.getYear()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -212,8 +204,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
-    hash = (37 * hash) + FILTER_FIELD_NUMBER;
-    hash = (53 * hash) + getFilter().hashCode();
+    if (hasYear()) {
+      hash = (37 * hash) + YEAR_FIELD_NUMBER;
+      hash = (53 * hash) + getYear();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -347,7 +341,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       pageSize_ = 0;
       pageToken_ = "";
-      filter_ = "";
+      year_ = 0;
       return this;
     }
 
@@ -387,9 +381,12 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.pageToken_ = pageToken_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.filter_ = filter_;
+        result.year_ = year_;
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -412,10 +409,8 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (!other.getFilter().isEmpty()) {
-        filter_ = other.filter_;
-        bitField0_ |= 0x00000004;
-        onChanged();
+      if (other.hasYear()) {
+        setYear(other.getYear());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -453,11 +448,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 18
-            case 26: {
-              filter_ = input.readStringRequireUtf8();
+            case 24: {
+              year_ = input.readInt32();
               bitField0_ |= 0x00000004;
               break;
-            } // case 26
+            } // case 24
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -579,74 +574,58 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object filter_ = "";
+    private int year_ ;
     /**
-     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The filter.
+     * <pre>
+     * Optional year to filter historical descent records (e.g. 2026). If omitted, returns summary/all records.
+     * </pre>
+     *
+     * <code>optional int32 year = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the year field is set.
      */
-    public java.lang.String getFilter() {
-      java.lang.Object ref = filter_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        filter_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public boolean hasYear() {
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for filter.
+     * <pre>
+     * Optional year to filter historical descent records (e.g. 2026). If omitted, returns summary/all records.
+     * </pre>
+     *
+     * <code>optional int32 year = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The year.
      */
-    public com.google.protobuf.ByteString
-        getFilterBytes() {
-      java.lang.Object ref = filter_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        filter_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override
+    public int getYear() {
+      return year_;
     }
     /**
-     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The filter to set.
+     * <pre>
+     * Optional year to filter historical descent records (e.g. 2026). If omitted, returns summary/all records.
+     * </pre>
+     *
+     * <code>optional int32 year = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The year to set.
      * @return This builder for chaining.
      */
-    public Builder setFilter(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      filter_ = value;
+    public Builder setYear(int value) {
+
+      year_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <pre>
+     * Optional year to filter historical descent records (e.g. 2026). If omitted, returns summary/all records.
+     * </pre>
+     *
+     * <code>optional int32 year = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
-    public Builder clearFilter() {
-      filter_ = getDefaultInstance().getFilter();
+    public Builder clearYear() {
       bitField0_ = (bitField0_ & ~0x00000004);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for filter to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFilterBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      filter_ = value;
-      bitField0_ |= 0x00000004;
+      year_ = 0;
       onChanged();
       return this;
     }

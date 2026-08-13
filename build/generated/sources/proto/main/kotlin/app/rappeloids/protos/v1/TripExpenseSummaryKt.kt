@@ -30,20 +30,28 @@ public object TripExpenseSummaryKt {
     internal fun _build(): app.rappeloids.protos.v1.TripExpenseSummary = _builder.build()
 
     /**
-     * `string trip_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }`
+     * ```
+     * Parent trip resource name: "trips/{trip_id}"
+     * ```
+     *
+     * `string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }`
      */
-    public var tripId: kotlin.String
-      @kotlin.jvm.JvmName("getTripId")
-        get() = _builder.tripId
-      @kotlin.jvm.JvmName("setTripId")
+    public var name: kotlin.String
+      @kotlin.jvm.JvmName("getName")
+        get() = _builder.name
+      @kotlin.jvm.JvmName("setName")
         set(value) {
-        _builder.tripId = value
+        _builder.name = value
       }
     /**
-     * `string trip_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }`
+     * ```
+     * Parent trip resource name: "trips/{trip_id}"
+     * ```
+     *
+     * `string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }`
      */
-    public fun clearTripId() {
-      _builder.clearTripId()
+    public fun clearName() {
+      _builder.clearName()
     }
 
     /**
@@ -80,74 +88,173 @@ public object TripExpenseSummaryKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class BalancesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];`
      */
-     public val balances: com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.ExpenseBalance, BalancesProxy>
+     public val balances: com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.TripExpenseSummary.Balance, BalancesProxy>
       @kotlin.jvm.JvmSynthetic
   get() = com.google.protobuf.kotlin.DslList(
         _builder.balancesList
       )
     /**
-     * `repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];`
      * @param value The balances to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addBalances")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.ExpenseBalance, BalancesProxy>.add(value: app.rappeloids.protos.v1.ExpenseBalance) {
+    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.TripExpenseSummary.Balance, BalancesProxy>.add(value: app.rappeloids.protos.v1.TripExpenseSummary.Balance) {
       _builder.addBalances(value)
     }
     /**
-     * `repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];`
      * @param value The balances to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignBalances")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.ExpenseBalance, BalancesProxy>.plusAssign(value: app.rappeloids.protos.v1.ExpenseBalance) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.TripExpenseSummary.Balance, BalancesProxy>.plusAssign(value: app.rappeloids.protos.v1.TripExpenseSummary.Balance) {
       add(value)
     }
     /**
-     * `repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];`
      * @param values The balances to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addAllBalances")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.ExpenseBalance, BalancesProxy>.addAll(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.ExpenseBalance>) {
+    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.TripExpenseSummary.Balance, BalancesProxy>.addAll(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.TripExpenseSummary.Balance>) {
       _builder.addAllBalances(values)
     }
     /**
-     * `repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];`
      * @param values The balances to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignAllBalances")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.ExpenseBalance, BalancesProxy>.plusAssign(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.ExpenseBalance>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.TripExpenseSummary.Balance, BalancesProxy>.plusAssign(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.TripExpenseSummary.Balance>) {
       addAll(values)
     }
     /**
-     * `repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];`
      * @param index The index to set the value at.
      * @param value The balances to set.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setBalances")
-    public operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.ExpenseBalance, BalancesProxy>.set(index: kotlin.Int, value: app.rappeloids.protos.v1.ExpenseBalance) {
+    public operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.TripExpenseSummary.Balance, BalancesProxy>.set(index: kotlin.Int, value: app.rappeloids.protos.v1.TripExpenseSummary.Balance) {
       _builder.setBalances(index, value)
     }
     /**
-     * `repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearBalances")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.ExpenseBalance, BalancesProxy>.clear() {
+    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.TripExpenseSummary.Balance, BalancesProxy>.clear() {
       _builder.clearBalances()
+    }
+  }
+  @kotlin.jvm.JvmName("-initializebalance")
+  public inline fun balance(block: app.rappeloids.protos.v1.TripExpenseSummaryKt.BalanceKt.Dsl.() -> kotlin.Unit): app.rappeloids.protos.v1.TripExpenseSummary.Balance =
+    app.rappeloids.protos.v1.TripExpenseSummaryKt.BalanceKt.Dsl._create(app.rappeloids.protos.v1.TripExpenseSummary.Balance.newBuilder()).apply { block() }._build()
+  /**
+   * Protobuf type `rappeloids.v1.TripExpenseSummary.Balance`
+   */
+  public object BalanceKt {
+    @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+    @com.google.protobuf.kotlin.ProtoDslMarker
+    public class Dsl private constructor(
+      private val _builder: app.rappeloids.protos.v1.TripExpenseSummary.Balance.Builder
+    ) {
+      public companion object {
+        @kotlin.jvm.JvmSynthetic
+    @kotlin.PublishedApi
+        internal fun _create(builder: app.rappeloids.protos.v1.TripExpenseSummary.Balance.Builder): Dsl = Dsl(builder)
+      }
+
+      @kotlin.jvm.JvmSynthetic
+  @kotlin.PublishedApi
+      internal fun _build(): app.rappeloids.protos.v1.TripExpenseSummary.Balance = _builder.build()
+
+      /**
+       * ```
+       * User resource name: "users/{user_id}"
+       * ```
+       *
+       * `string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }`
+       */
+      public var user: kotlin.String
+        @kotlin.jvm.JvmName("getUser")
+          get() = _builder.user
+        @kotlin.jvm.JvmName("setUser")
+          set(value) {
+          _builder.user = value
+        }
+      /**
+       * ```
+       * User resource name: "users/{user_id}"
+       * ```
+       *
+       * `string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }`
+       */
+      public fun clearUser() {
+        _builder.clearUser()
+      }
+
+      /**
+       * `string user_name = 2 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public var userName: kotlin.String
+        @kotlin.jvm.JvmName("getUserName")
+          get() = _builder.userName
+        @kotlin.jvm.JvmName("setUserName")
+          set(value) {
+          _builder.userName = value
+        }
+      /**
+       * `string user_name = 2 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public fun clearUserName() {
+        _builder.clearUserName()
+      }
+
+      /**
+       * `.rappeloids.v1.Money net_balance = 3 [(.google.api.field_behavior) = REQUIRED];`
+       */
+      public var netBalance: app.rappeloids.protos.v1.Money
+        @kotlin.jvm.JvmName("getNetBalance")
+          get() = _builder.netBalance
+        @kotlin.jvm.JvmName("setNetBalance")
+          set(value) {
+          _builder.netBalance = value
+        }
+      /**
+       * `.rappeloids.v1.Money net_balance = 3 [(.google.api.field_behavior) = REQUIRED];`
+       */
+      public fun clearNetBalance() {
+        _builder.clearNetBalance()
+      }
+      /**
+       * `.rappeloids.v1.Money net_balance = 3 [(.google.api.field_behavior) = REQUIRED];`
+       * @return Whether the netBalance field is set.
+       */
+      public fun hasNetBalance(): kotlin.Boolean {
+        return _builder.hasNetBalance()
+      }
+
+      public val BalanceKt.Dsl.netBalanceOrNull: app.rappeloids.protos.v1.Money?
+        get() = _builder.netBalanceOrNull
     }
   }
 }
 @kotlin.jvm.JvmSynthetic
 public inline fun app.rappeloids.protos.v1.TripExpenseSummary.copy(block: `app.rappeloids.protos.v1`.TripExpenseSummaryKt.Dsl.() -> kotlin.Unit): app.rappeloids.protos.v1.TripExpenseSummary =
   `app.rappeloids.protos.v1`.TripExpenseSummaryKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+
+@kotlin.jvm.JvmSynthetic
+public inline fun app.rappeloids.protos.v1.TripExpenseSummary.Balance.copy(block: `app.rappeloids.protos.v1`.TripExpenseSummaryKt.BalanceKt.Dsl.() -> kotlin.Unit): app.rappeloids.protos.v1.TripExpenseSummary.Balance =
+  `app.rappeloids.protos.v1`.TripExpenseSummaryKt.BalanceKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+
+public val app.rappeloids.protos.v1.TripExpenseSummary.BalanceOrBuilder.netBalanceOrNull: app.rappeloids.protos.v1.Money?
+  get() = if (hasNetBalance()) getNetBalance() else null
 
 public val app.rappeloids.protos.v1.TripExpenseSummaryOrBuilder.totalSpentOrNull: app.rappeloids.protos.v1.Money?
   get() = if (hasTotalSpent()) getTotalSpent() else null

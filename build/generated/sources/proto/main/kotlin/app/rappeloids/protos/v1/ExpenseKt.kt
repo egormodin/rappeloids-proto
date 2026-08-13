@@ -60,60 +60,10 @@ public object ExpenseKt {
 
     /**
      * ```
-     * The unique identifier of the expense.
-     * ```
-     *
-     * `string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];`
-     */
-    public var id: kotlin.String
-      @kotlin.jvm.JvmName("getId")
-        get() = _builder.id
-      @kotlin.jvm.JvmName("setId")
-        set(value) {
-        _builder.id = value
-      }
-    /**
-     * ```
-     * The unique identifier of the expense.
-     * ```
-     *
-     * `string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];`
-     */
-    public fun clearId() {
-      _builder.clearId()
-    }
-
-    /**
-     * ```
-     * Parent trip ID.
-     * ```
-     *
-     * `string trip_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }`
-     */
-    public var tripId: kotlin.String
-      @kotlin.jvm.JvmName("getTripId")
-        get() = _builder.tripId
-      @kotlin.jvm.JvmName("setTripId")
-        set(value) {
-        _builder.tripId = value
-      }
-    /**
-     * ```
-     * Parent trip ID.
-     * ```
-     *
-     * `string trip_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }`
-     */
-    public fun clearTripId() {
-      _builder.clearTripId()
-    }
-
-    /**
-     * ```
      * Short title of the expense.
      * ```
      *
-     * `string title = 4 [(.google.api.field_behavior) = REQUIRED];`
+     * `string title = 2 [(.google.api.field_behavior) = REQUIRED];`
      */
     public var title: kotlin.String
       @kotlin.jvm.JvmName("getTitle")
@@ -127,7 +77,7 @@ public object ExpenseKt {
      * Short title of the expense.
      * ```
      *
-     * `string title = 4 [(.google.api.field_behavior) = REQUIRED];`
+     * `string title = 2 [(.google.api.field_behavior) = REQUIRED];`
      */
     public fun clearTitle() {
       _builder.clearTitle()
@@ -135,27 +85,27 @@ public object ExpenseKt {
 
     /**
      * ```
-     * User ID who paid for this expense.
+     * User resource name who paid for this expense. Format: "users/{user_id}"
      * ```
      *
-     * `string payer_id = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }`
+     * `string payer = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }`
      */
-    public var payerId: kotlin.String
-      @kotlin.jvm.JvmName("getPayerId")
-        get() = _builder.payerId
-      @kotlin.jvm.JvmName("setPayerId")
+    public var payer: kotlin.String
+      @kotlin.jvm.JvmName("getPayer")
+        get() = _builder.payer
+      @kotlin.jvm.JvmName("setPayer")
         set(value) {
-        _builder.payerId = value
+        _builder.payer = value
       }
     /**
      * ```
-     * User ID who paid for this expense.
+     * User resource name who paid for this expense. Format: "users/{user_id}"
      * ```
      *
-     * `string payer_id = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }`
+     * `string payer = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }`
      */
-    public fun clearPayerId() {
-      _builder.clearPayerId()
+    public fun clearPayer() {
+      _builder.clearPayer()
     }
 
     /**
@@ -163,7 +113,7 @@ public object ExpenseKt {
      * Monetary amount and currency (AIP-213).
      * ```
      *
-     * `.rappeloids.v1.Money amount = 6 [(.google.api.field_behavior) = REQUIRED];`
+     * `.rappeloids.v1.Money amount = 4 [(.google.api.field_behavior) = REQUIRED];`
      */
     public var amount: app.rappeloids.protos.v1.Money
       @kotlin.jvm.JvmName("getAmount")
@@ -177,7 +127,7 @@ public object ExpenseKt {
      * Monetary amount and currency (AIP-213).
      * ```
      *
-     * `.rappeloids.v1.Money amount = 6 [(.google.api.field_behavior) = REQUIRED];`
+     * `.rappeloids.v1.Money amount = 4 [(.google.api.field_behavior) = REQUIRED];`
      */
     public fun clearAmount() {
       _builder.clearAmount()
@@ -187,7 +137,7 @@ public object ExpenseKt {
      * Monetary amount and currency (AIP-213).
      * ```
      *
-     * `.rappeloids.v1.Money amount = 6 [(.google.api.field_behavior) = REQUIRED];`
+     * `.rappeloids.v1.Money amount = 4 [(.google.api.field_behavior) = REQUIRED];`
      * @return Whether the amount field is set.
      */
     public fun hasAmount(): kotlin.Boolean {
@@ -199,24 +149,31 @@ public object ExpenseKt {
 
     /**
      * ```
-     * Category label (e.g. "gas", "lodging", "food", "permits").
+     * Category of the expense.
      * ```
      *
-     * `string category = 7 [(.google.api.field_behavior) = OPTIONAL];`
+     * `.rappeloids.v1.Expense.Category category = 5 [(.google.api.field_behavior) = OPTIONAL];`
      */
-    public var category: kotlin.String
+    public var category: app.rappeloids.protos.v1.Expense.Category
       @kotlin.jvm.JvmName("getCategory")
         get() = _builder.category
       @kotlin.jvm.JvmName("setCategory")
         set(value) {
         _builder.category = value
       }
+    public var categoryValue: kotlin.Int
+      @kotlin.jvm.JvmName("getCategoryValue")
+        get() = _builder.categoryValue
+      @kotlin.jvm.JvmName("setCategoryValue")
+        set(value) {
+        _builder.categoryValue = value
+      }
     /**
      * ```
-     * Category label (e.g. "gas", "lodging", "food", "permits").
+     * Category of the expense.
      * ```
      *
-     * `string category = 7 [(.google.api.field_behavior) = OPTIONAL];`
+     * `.rappeloids.v1.Expense.Category category = 5 [(.google.api.field_behavior) = OPTIONAL];`
      */
     public fun clearCategory() {
       _builder.clearCategory()
@@ -227,7 +184,7 @@ public object ExpenseKt {
      * Optional notes and description.
      * ```
      *
-     * `string description = 8 [(.google.api.field_behavior) = OPTIONAL];`
+     * `string description = 6 [(.google.api.field_behavior) = OPTIONAL];`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -241,35 +198,10 @@ public object ExpenseKt {
      * Optional notes and description.
      * ```
      *
-     * `string description = 8 [(.google.api.field_behavior) = OPTIONAL];`
+     * `string description = 6 [(.google.api.field_behavior) = OPTIONAL];`
      */
     public fun clearDescription() {
       _builder.clearDescription()
-    }
-
-    /**
-     * ```
-     * Uploaded receipt photo URL.
-     * ```
-     *
-     * `string receipt_url = 9 [(.google.api.field_behavior) = OPTIONAL];`
-     */
-    public var receiptUrl: kotlin.String
-      @kotlin.jvm.JvmName("getReceiptUrl")
-        get() = _builder.receiptUrl
-      @kotlin.jvm.JvmName("setReceiptUrl")
-        set(value) {
-        _builder.receiptUrl = value
-      }
-    /**
-     * ```
-     * Uploaded receipt photo URL.
-     * ```
-     *
-     * `string receipt_url = 9 [(.google.api.field_behavior) = OPTIONAL];`
-     */
-    public fun clearReceiptUrl() {
-      _builder.clearReceiptUrl()
     }
 
     /**
@@ -283,9 +215,9 @@ public object ExpenseKt {
      * User splits and owed amounts.
      * ```
      *
-     * `repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];`
      */
-     public val splits: com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.ExpenseSplit, SplitsProxy>
+     public val splits: com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Expense.Split, SplitsProxy>
       @kotlin.jvm.JvmSynthetic
   get() = com.google.protobuf.kotlin.DslList(
         _builder.splitsList
@@ -295,12 +227,12 @@ public object ExpenseKt {
      * User splits and owed amounts.
      * ```
      *
-     * `repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];`
      * @param value The splits to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addSplits")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.ExpenseSplit, SplitsProxy>.add(value: app.rappeloids.protos.v1.ExpenseSplit) {
+    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Expense.Split, SplitsProxy>.add(value: app.rappeloids.protos.v1.Expense.Split) {
       _builder.addSplits(value)
     }
     /**
@@ -308,13 +240,13 @@ public object ExpenseKt {
      * User splits and owed amounts.
      * ```
      *
-     * `repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];`
      * @param value The splits to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignSplits")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.ExpenseSplit, SplitsProxy>.plusAssign(value: app.rappeloids.protos.v1.ExpenseSplit) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Expense.Split, SplitsProxy>.plusAssign(value: app.rappeloids.protos.v1.Expense.Split) {
       add(value)
     }
     /**
@@ -322,12 +254,12 @@ public object ExpenseKt {
      * User splits and owed amounts.
      * ```
      *
-     * `repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];`
      * @param values The splits to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addAllSplits")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.ExpenseSplit, SplitsProxy>.addAll(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.ExpenseSplit>) {
+    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Expense.Split, SplitsProxy>.addAll(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.Expense.Split>) {
       _builder.addAllSplits(values)
     }
     /**
@@ -335,13 +267,13 @@ public object ExpenseKt {
      * User splits and owed amounts.
      * ```
      *
-     * `repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];`
      * @param values The splits to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignAllSplits")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.ExpenseSplit, SplitsProxy>.plusAssign(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.ExpenseSplit>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Expense.Split, SplitsProxy>.plusAssign(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.Expense.Split>) {
       addAll(values)
     }
     /**
@@ -349,13 +281,13 @@ public object ExpenseKt {
      * User splits and owed amounts.
      * ```
      *
-     * `repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];`
      * @param index The index to set the value at.
      * @param value The splits to set.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setSplits")
-    public operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.ExpenseSplit, SplitsProxy>.set(index: kotlin.Int, value: app.rappeloids.protos.v1.ExpenseSplit) {
+    public operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Expense.Split, SplitsProxy>.set(index: kotlin.Int, value: app.rappeloids.protos.v1.Expense.Split) {
       _builder.setSplits(index, value)
     }
     /**
@@ -363,11 +295,11 @@ public object ExpenseKt {
      * User splits and owed amounts.
      * ```
      *
-     * `repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];`
+     * `repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearSplits")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.ExpenseSplit, SplitsProxy>.clear() {
+    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.Expense.Split, SplitsProxy>.clear() {
       _builder.clearSplits()
     }
 
@@ -376,7 +308,7 @@ public object ExpenseKt {
      * Timestamp when the expense was created (AIP-142).
      * ```
      *
-     * `.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];`
+     * `.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];`
      */
     public var createTime: com.google.protobuf.Timestamp
       @kotlin.jvm.JvmName("getCreateTime")
@@ -390,7 +322,7 @@ public object ExpenseKt {
      * Timestamp when the expense was created (AIP-142).
      * ```
      *
-     * `.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];`
+     * `.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];`
      */
     public fun clearCreateTime() {
       _builder.clearCreateTime()
@@ -400,7 +332,7 @@ public object ExpenseKt {
      * Timestamp when the expense was created (AIP-142).
      * ```
      *
-     * `.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];`
+     * `.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];`
      * @return Whether the createTime field is set.
      */
     public fun hasCreateTime(): kotlin.Boolean {
@@ -415,7 +347,7 @@ public object ExpenseKt {
      * Timestamp when the expense was last updated (AIP-142).
      * ```
      *
-     * `.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];`
+     * `.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];`
      */
     public var updateTime: com.google.protobuf.Timestamp
       @kotlin.jvm.JvmName("getUpdateTime")
@@ -429,7 +361,7 @@ public object ExpenseKt {
      * Timestamp when the expense was last updated (AIP-142).
      * ```
      *
-     * `.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];`
+     * `.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];`
      */
     public fun clearUpdateTime() {
       _builder.clearUpdateTime()
@@ -439,7 +371,7 @@ public object ExpenseKt {
      * Timestamp when the expense was last updated (AIP-142).
      * ```
      *
-     * `.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];`
+     * `.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];`
      * @return Whether the updateTime field is set.
      */
     public fun hasUpdateTime(): kotlin.Boolean {
@@ -449,10 +381,109 @@ public object ExpenseKt {
     public val ExpenseKt.Dsl.updateTimeOrNull: com.google.protobuf.Timestamp?
       get() = _builder.updateTimeOrNull
   }
+  @kotlin.jvm.JvmName("-initializesplit")
+  public inline fun split(block: app.rappeloids.protos.v1.ExpenseKt.SplitKt.Dsl.() -> kotlin.Unit): app.rappeloids.protos.v1.Expense.Split =
+    app.rappeloids.protos.v1.ExpenseKt.SplitKt.Dsl._create(app.rappeloids.protos.v1.Expense.Split.newBuilder()).apply { block() }._build()
+  /**
+   * Protobuf type `rappeloids.v1.Expense.Split`
+   */
+  public object SplitKt {
+    @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+    @com.google.protobuf.kotlin.ProtoDslMarker
+    public class Dsl private constructor(
+      private val _builder: app.rappeloids.protos.v1.Expense.Split.Builder
+    ) {
+      public companion object {
+        @kotlin.jvm.JvmSynthetic
+    @kotlin.PublishedApi
+        internal fun _create(builder: app.rappeloids.protos.v1.Expense.Split.Builder): Dsl = Dsl(builder)
+      }
+
+      @kotlin.jvm.JvmSynthetic
+  @kotlin.PublishedApi
+      internal fun _build(): app.rappeloids.protos.v1.Expense.Split = _builder.build()
+
+      /**
+       * ```
+       * User resource name: "users/{user_id}"
+       * ```
+       *
+       * `string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }`
+       */
+      public var user: kotlin.String
+        @kotlin.jvm.JvmName("getUser")
+          get() = _builder.user
+        @kotlin.jvm.JvmName("setUser")
+          set(value) {
+          _builder.user = value
+        }
+      /**
+       * ```
+       * User resource name: "users/{user_id}"
+       * ```
+       *
+       * `string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }`
+       */
+      public fun clearUser() {
+        _builder.clearUser()
+      }
+
+      /**
+       * `.rappeloids.v1.Money amount = 2 [(.google.api.field_behavior) = REQUIRED];`
+       */
+      public var amount: app.rappeloids.protos.v1.Money
+        @kotlin.jvm.JvmName("getAmount")
+          get() = _builder.amount
+        @kotlin.jvm.JvmName("setAmount")
+          set(value) {
+          _builder.amount = value
+        }
+      /**
+       * `.rappeloids.v1.Money amount = 2 [(.google.api.field_behavior) = REQUIRED];`
+       */
+      public fun clearAmount() {
+        _builder.clearAmount()
+      }
+      /**
+       * `.rappeloids.v1.Money amount = 2 [(.google.api.field_behavior) = REQUIRED];`
+       * @return Whether the amount field is set.
+       */
+      public fun hasAmount(): kotlin.Boolean {
+        return _builder.hasAmount()
+      }
+
+      public val SplitKt.Dsl.amountOrNull: app.rappeloids.protos.v1.Money?
+        get() = _builder.amountOrNull
+
+      /**
+       * `bool is_settled = 3 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public var isSettled: kotlin.Boolean
+        @kotlin.jvm.JvmName("getIsSettled")
+          get() = _builder.isSettled
+        @kotlin.jvm.JvmName("setIsSettled")
+          set(value) {
+          _builder.isSettled = value
+        }
+      /**
+       * `bool is_settled = 3 [(.google.api.field_behavior) = OPTIONAL];`
+       */
+      public fun clearIsSettled() {
+        _builder.clearIsSettled()
+      }
+    }
+  }
 }
 @kotlin.jvm.JvmSynthetic
 public inline fun app.rappeloids.protos.v1.Expense.copy(block: `app.rappeloids.protos.v1`.ExpenseKt.Dsl.() -> kotlin.Unit): app.rappeloids.protos.v1.Expense =
   `app.rappeloids.protos.v1`.ExpenseKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+
+@kotlin.jvm.JvmSynthetic
+public inline fun app.rappeloids.protos.v1.Expense.Split.copy(block: `app.rappeloids.protos.v1`.ExpenseKt.SplitKt.Dsl.() -> kotlin.Unit): app.rappeloids.protos.v1.Expense.Split =
+  `app.rappeloids.protos.v1`.ExpenseKt.SplitKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+
+public val app.rappeloids.protos.v1.Expense.SplitOrBuilder.amountOrNull: app.rappeloids.protos.v1.Money?
+  get() = if (hasAmount()) getAmount() else null
 
 public val app.rappeloids.protos.v1.ExpenseOrBuilder.amountOrNull: app.rappeloids.protos.v1.Money?
   get() = if (hasAmount()) getAmount() else null

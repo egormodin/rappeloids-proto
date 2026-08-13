@@ -64,20 +64,39 @@ public object ListHistoryRequestKt {
     }
 
     /**
-     * `string filter = 3 [(.google.api.field_behavior) = OPTIONAL];`
+     * ```
+     * Optional year to filter historical descent records (e.g. 2026). If omitted, returns summary/all records.
+     * ```
+     *
+     * `optional int32 year = 3 [(.google.api.field_behavior) = OPTIONAL];`
      */
-    public var filter: kotlin.String
-      @kotlin.jvm.JvmName("getFilter")
-        get() = _builder.filter
-      @kotlin.jvm.JvmName("setFilter")
+    public var year: kotlin.Int
+      @kotlin.jvm.JvmName("getYear")
+        get() = _builder.year
+      @kotlin.jvm.JvmName("setYear")
         set(value) {
-        _builder.filter = value
+        _builder.year = value
       }
     /**
-     * `string filter = 3 [(.google.api.field_behavior) = OPTIONAL];`
+     * ```
+     * Optional year to filter historical descent records (e.g. 2026). If omitted, returns summary/all records.
+     * ```
+     *
+     * `optional int32 year = 3 [(.google.api.field_behavior) = OPTIONAL];`
      */
-    public fun clearFilter() {
-      _builder.clearFilter()
+    public fun clearYear() {
+      _builder.clearYear()
+    }
+    /**
+     * ```
+     * Optional year to filter historical descent records (e.g. 2026). If omitted, returns summary/all records.
+     * ```
+     *
+     * `optional int32 year = 3 [(.google.api.field_behavior) = OPTIONAL];`
+     * @return Whether the year field is set.
+     */
+    public fun hasYear(): kotlin.Boolean {
+      return _builder.hasYear()
     }
   }
 }

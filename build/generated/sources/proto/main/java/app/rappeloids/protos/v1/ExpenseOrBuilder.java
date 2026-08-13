@@ -32,50 +32,10 @@ public interface ExpenseOrBuilder extends
 
   /**
    * <pre>
-   * The unique identifier of the expense.
-   * </pre>
-   *
-   * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The id.
-   */
-  java.lang.String getId();
-  /**
-   * <pre>
-   * The unique identifier of the expense.
-   * </pre>
-   *
-   * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString
-      getIdBytes();
-
-  /**
-   * <pre>
-   * Parent trip ID.
-   * </pre>
-   *
-   * <code>string trip_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
-   * @return The tripId.
-   */
-  java.lang.String getTripId();
-  /**
-   * <pre>
-   * Parent trip ID.
-   * </pre>
-   *
-   * <code>string trip_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for tripId.
-   */
-  com.google.protobuf.ByteString
-      getTripIdBytes();
-
-  /**
-   * <pre>
    * Short title of the expense.
    * </pre>
    *
-   * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The title.
    */
   java.lang.String getTitle();
@@ -84,7 +44,7 @@ public interface ExpenseOrBuilder extends
    * Short title of the expense.
    * </pre>
    *
-   * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for title.
    */
   com.google.protobuf.ByteString
@@ -92,30 +52,30 @@ public interface ExpenseOrBuilder extends
 
   /**
    * <pre>
-   * User ID who paid for this expense.
+   * User resource name who paid for this expense. Format: "users/{user_id}"
    * </pre>
    *
-   * <code>string payer_id = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The payerId.
+   * <code>string payer = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The payer.
    */
-  java.lang.String getPayerId();
+  java.lang.String getPayer();
   /**
    * <pre>
-   * User ID who paid for this expense.
+   * User resource name who paid for this expense. Format: "users/{user_id}"
    * </pre>
    *
-   * <code>string payer_id = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for payerId.
+   * <code>string payer = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for payer.
    */
   com.google.protobuf.ByteString
-      getPayerIdBytes();
+      getPayerBytes();
 
   /**
    * <pre>
    * Monetary amount and currency (AIP-213).
    * </pre>
    *
-   * <code>.rappeloids.v1.Money amount = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.rappeloids.v1.Money amount = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the amount field is set.
    */
   boolean hasAmount();
@@ -124,7 +84,7 @@ public interface ExpenseOrBuilder extends
    * Monetary amount and currency (AIP-213).
    * </pre>
    *
-   * <code>.rappeloids.v1.Money amount = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.rappeloids.v1.Money amount = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The amount.
    */
   app.rappeloids.protos.v1.Money getAmount();
@@ -133,36 +93,35 @@ public interface ExpenseOrBuilder extends
    * Monetary amount and currency (AIP-213).
    * </pre>
    *
-   * <code>.rappeloids.v1.Money amount = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.rappeloids.v1.Money amount = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   app.rappeloids.protos.v1.MoneyOrBuilder getAmountOrBuilder();
 
   /**
    * <pre>
-   * Category label (e.g. "gas", "lodging", "food", "permits").
+   * Category of the expense.
    * </pre>
    *
-   * <code>string category = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The category.
+   * <code>.rappeloids.v1.Expense.Category category = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The enum numeric value on the wire for category.
    */
-  java.lang.String getCategory();
+  int getCategoryValue();
   /**
    * <pre>
-   * Category label (e.g. "gas", "lodging", "food", "permits").
+   * Category of the expense.
    * </pre>
    *
-   * <code>string category = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for category.
+   * <code>.rappeloids.v1.Expense.Category category = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The category.
    */
-  com.google.protobuf.ByteString
-      getCategoryBytes();
+  app.rappeloids.protos.v1.Expense.Category getCategory();
 
   /**
    * <pre>
    * Optional notes and description.
    * </pre>
    *
-   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The description.
    */
   java.lang.String getDescription();
@@ -171,7 +130,7 @@ public interface ExpenseOrBuilder extends
    * Optional notes and description.
    * </pre>
    *
-   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString
@@ -179,47 +138,27 @@ public interface ExpenseOrBuilder extends
 
   /**
    * <pre>
-   * Uploaded receipt photo URL.
-   * </pre>
-   *
-   * <code>string receipt_url = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The receiptUrl.
-   */
-  java.lang.String getReceiptUrl();
-  /**
-   * <pre>
-   * Uploaded receipt photo URL.
-   * </pre>
-   *
-   * <code>string receipt_url = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for receiptUrl.
-   */
-  com.google.protobuf.ByteString
-      getReceiptUrlBytes();
-
-  /**
-   * <pre>
    * User splits and owed amounts.
    * </pre>
    *
-   * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.util.List<app.rappeloids.protos.v1.ExpenseSplit> 
+  java.util.List<app.rappeloids.protos.v1.Expense.Split> 
       getSplitsList();
   /**
    * <pre>
    * User splits and owed amounts.
    * </pre>
    *
-   * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  app.rappeloids.protos.v1.ExpenseSplit getSplits(int index);
+  app.rappeloids.protos.v1.Expense.Split getSplits(int index);
   /**
    * <pre>
    * User splits and owed amounts.
    * </pre>
    *
-   * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getSplitsCount();
   /**
@@ -227,18 +166,18 @@ public interface ExpenseOrBuilder extends
    * User splits and owed amounts.
    * </pre>
    *
-   * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.util.List<? extends app.rappeloids.protos.v1.ExpenseSplitOrBuilder> 
+  java.util.List<? extends app.rappeloids.protos.v1.Expense.SplitOrBuilder> 
       getSplitsOrBuilderList();
   /**
    * <pre>
    * User splits and owed amounts.
    * </pre>
    *
-   * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  app.rappeloids.protos.v1.ExpenseSplitOrBuilder getSplitsOrBuilder(
+  app.rappeloids.protos.v1.Expense.SplitOrBuilder getSplitsOrBuilder(
       int index);
 
   /**
@@ -246,7 +185,7 @@ public interface ExpenseOrBuilder extends
    * Timestamp when the expense was created (AIP-142).
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
@@ -255,7 +194,7 @@ public interface ExpenseOrBuilder extends
    * Timestamp when the expense was created (AIP-142).
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
@@ -264,7 +203,7 @@ public interface ExpenseOrBuilder extends
    * Timestamp when the expense was created (AIP-142).
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -273,7 +212,7 @@ public interface ExpenseOrBuilder extends
    * Timestamp when the expense was last updated (AIP-142).
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
@@ -282,7 +221,7 @@ public interface ExpenseOrBuilder extends
    * Timestamp when the expense was last updated (AIP-142).
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
@@ -291,7 +230,7 @@ public interface ExpenseOrBuilder extends
    * Timestamp when the expense was last updated (AIP-142).
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 }

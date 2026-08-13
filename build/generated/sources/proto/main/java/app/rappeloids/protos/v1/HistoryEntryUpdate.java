@@ -28,11 +28,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private HistoryEntryUpdate() {
-    id_ = "";
-    tripId_ = "";
-    canyonId_ = "";
-    date_ = "";
-    photosLink_ = "";
+    name_ = "";
+    canyon_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -45,7 +42,7 @@ private static final long serialVersionUID = 0L;
   protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
       int number) {
     switch (number) {
-      case 7:
+      case 5:
         return internalGetUserStatuses();
       default:
         throw new RuntimeException(
@@ -60,166 +57,147 @@ private static final long serialVersionUID = 0L;
             app.rappeloids.protos.v1.HistoryEntryUpdate.class, app.rappeloids.protos.v1.HistoryEntryUpdate.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
+  private int bitField0_;
+  public static final int NAME_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object id_ = "";
+  private volatile java.lang.Object name_ = "";
   /**
-   * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The id.
+   * <pre>
+   * Resource name: "history/{history_entry}". Leave empty when creating a new descent entry.
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      id_ = s;
+      name_ = s;
       return s;
     }
   }
   /**
-   * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for id.
+   * <pre>
+   * Resource name: "history/{history_entry}". Leave empty when creating a new descent entry.
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getIdBytes() {
-    java.lang.Object ref = id_;
+      getNameBytes() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      id_ = b;
+      name_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int TRIP_ID_FIELD_NUMBER = 2;
+  public static final int CANYON_FIELD_NUMBER = 2;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object tripId_ = "";
+  private volatile java.lang.Object canyon_ = "";
   /**
-   * <code>string trip_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The tripId.
+   * <pre>
+   * Canyon resource name: "canyons/{canyon}"
+   * </pre>
+   *
+   * <code>string canyon = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The canyon.
    */
   @java.lang.Override
-  public java.lang.String getTripId() {
-    java.lang.Object ref = tripId_;
+  public java.lang.String getCanyon() {
+    java.lang.Object ref = canyon_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      tripId_ = s;
+      canyon_ = s;
       return s;
     }
   }
   /**
-   * <code>string trip_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for tripId.
+   * <pre>
+   * Canyon resource name: "canyons/{canyon}"
+   * </pre>
+   *
+   * <code>string canyon = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for canyon.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getTripIdBytes() {
-    java.lang.Object ref = tripId_;
+      getCanyonBytes() {
+    java.lang.Object ref = canyon_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      tripId_ = b;
+      canyon_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int CANYON_ID_FIELD_NUMBER = 3;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object canyonId_ = "";
+  public static final int DATE_FIELD_NUMBER = 3;
+  private com.google.type.Date date_;
   /**
-   * <code>string canyon_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The canyonId.
+   * <pre>
+   * Date of descent.
+   * </pre>
+   *
+   * <code>.google.type.Date date = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the date field is set.
    */
   @java.lang.Override
-  public java.lang.String getCanyonId() {
-    java.lang.Object ref = canyonId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      canyonId_ = s;
-      return s;
-    }
+  public boolean hasDate() {
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>string canyon_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for canyonId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getCanyonIdBytes() {
-    java.lang.Object ref = canyonId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      canyonId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DATE_FIELD_NUMBER = 4;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object date_ = "";
-  /**
-   * <code>string date = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <pre>
+   * Date of descent.
+   * </pre>
+   *
+   * <code>.google.type.Date date = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The date.
    */
   @java.lang.Override
-  public java.lang.String getDate() {
-    java.lang.Object ref = date_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      date_ = s;
-      return s;
-    }
+  public com.google.type.Date getDate() {
+    return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
   }
   /**
-   * <code>string date = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for date.
+   * <pre>
+   * Date of descent.
+   * </pre>
+   *
+   * <code>.google.type.Date date = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getDateBytes() {
-    java.lang.Object ref = date_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      date_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.type.DateOrBuilder getDateOrBuilder() {
+    return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
   }
 
-  public static final int ORDER_FIELD_NUMBER = 5;
+  public static final int ORDER_FIELD_NUMBER = 4;
   private int order_ = 0;
   /**
-   * <code>int32 order = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <pre>
+   * Ordering of canyon within the trip.
+   * </pre>
+   *
+   * <code>int32 order = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The order.
    */
   @java.lang.Override
@@ -227,46 +205,7 @@ private static final long serialVersionUID = 0L;
     return order_;
   }
 
-  public static final int PHOTOS_LINK_FIELD_NUMBER = 6;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object photosLink_ = "";
-  /**
-   * <code>string photos_link = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The photosLink.
-   */
-  @java.lang.Override
-  public java.lang.String getPhotosLink() {
-    java.lang.Object ref = photosLink_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      photosLink_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string photos_link = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for photosLink.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getPhotosLinkBytes() {
-    java.lang.Object ref = photosLink_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      photosLink_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int USER_STATUSES_FIELD_NUMBER = 7;
+  public static final int USER_STATUSES_FIELD_NUMBER = 5;
   private static final class UserStatusesDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
         java.lang.String, java.lang.String> defaultEntry =
@@ -293,7 +232,11 @@ private static final long serialVersionUID = 0L;
     return internalGetUserStatuses().getMap().size();
   }
   /**
-   * <code>map&lt;string, string&gt; user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <pre>
+   * Map of participant user ID -&gt; descent status ("passed", "planned", etc.).
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_statuses = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsUserStatuses(
@@ -310,14 +253,22 @@ private static final long serialVersionUID = 0L;
     return getUserStatusesMap();
   }
   /**
-   * <code>map&lt;string, string&gt; user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <pre>
+   * Map of participant user ID -&gt; descent status ("passed", "planned", etc.).
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_statuses = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getUserStatusesMap() {
     return internalGetUserStatuses().getMap();
   }
   /**
-   * <code>map&lt;string, string&gt; user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <pre>
+   * Map of participant user ID -&gt; descent status ("passed", "planned", etc.).
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_statuses = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */
@@ -331,7 +282,11 @@ java.lang.String defaultValue) {
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, string&gt; user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <pre>
+   * Map of participant user ID -&gt; descent status ("passed", "planned", etc.).
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_statuses = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getUserStatusesOrThrow(
@@ -359,30 +314,24 @@ java.lang.String defaultValue) {
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(tripId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, tripId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(canyon_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, canyon_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(canyonId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, canyonId_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(date_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, date_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getDate());
     }
     if (order_ != 0) {
-      output.writeInt32(5, order_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(photosLink_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 6, photosLink_);
+      output.writeInt32(4, order_);
     }
     com.google.protobuf.GeneratedMessage
       .serializeStringMapTo(
         output,
         internalGetUserStatuses(),
         UserStatusesDefaultEntryHolder.defaultEntry,
-        7);
+        5);
     getUnknownFields().writeTo(output);
   }
 
@@ -392,24 +341,19 @@ java.lang.String defaultValue) {
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(tripId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, tripId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(canyon_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, canyon_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(canyonId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, canyonId_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(date_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, date_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getDate());
     }
     if (order_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, order_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(photosLink_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, photosLink_);
+        .computeInt32Size(4, order_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
          : internalGetUserStatuses().getMap().entrySet()) {
@@ -419,7 +363,7 @@ java.lang.String defaultValue) {
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, userStatuses__);
+          .computeMessageSize(5, userStatuses__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -436,18 +380,17 @@ java.lang.String defaultValue) {
     }
     app.rappeloids.protos.v1.HistoryEntryUpdate other = (app.rappeloids.protos.v1.HistoryEntryUpdate) obj;
 
-    if (!getId()
-        .equals(other.getId())) return false;
-    if (!getTripId()
-        .equals(other.getTripId())) return false;
-    if (!getCanyonId()
-        .equals(other.getCanyonId())) return false;
-    if (!getDate()
-        .equals(other.getDate())) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (!getCanyon()
+        .equals(other.getCanyon())) return false;
+    if (hasDate() != other.hasDate()) return false;
+    if (hasDate()) {
+      if (!getDate()
+          .equals(other.getDate())) return false;
+    }
     if (getOrder()
         != other.getOrder()) return false;
-    if (!getPhotosLink()
-        .equals(other.getPhotosLink())) return false;
     if (!internalGetUserStatuses().equals(
         other.internalGetUserStatuses())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -461,18 +404,16 @@ java.lang.String defaultValue) {
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + TRIP_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getTripId().hashCode();
-    hash = (37 * hash) + CANYON_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getCanyonId().hashCode();
-    hash = (37 * hash) + DATE_FIELD_NUMBER;
-    hash = (53 * hash) + getDate().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + CANYON_FIELD_NUMBER;
+    hash = (53 * hash) + getCanyon().hashCode();
+    if (hasDate()) {
+      hash = (37 * hash) + DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getDate().hashCode();
+    }
     hash = (37 * hash) + ORDER_FIELD_NUMBER;
     hash = (53 * hash) + getOrder();
-    hash = (37 * hash) + PHOTOS_LINK_FIELD_NUMBER;
-    hash = (53 * hash) + getPhotosLink().hashCode();
     if (!internalGetUserStatuses().getMap().isEmpty()) {
       hash = (37 * hash) + USER_STATUSES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetUserStatuses().hashCode();
@@ -590,7 +531,7 @@ java.lang.String defaultValue) {
     protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
         int number) {
       switch (number) {
-        case 7:
+        case 5:
           return internalGetUserStatuses();
         default:
           throw new RuntimeException(
@@ -601,7 +542,7 @@ java.lang.String defaultValue) {
     protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
         int number) {
       switch (number) {
-        case 7:
+        case 5:
           return internalGetMutableUserStatuses();
         default:
           throw new RuntimeException(
@@ -618,24 +559,32 @@ java.lang.String defaultValue) {
 
     // Construct using app.rappeloids.protos.v1.HistoryEntryUpdate.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage
+              .alwaysUseFieldBuilders) {
+        internalGetDateFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      id_ = "";
-      tripId_ = "";
-      canyonId_ = "";
-      date_ = "";
+      name_ = "";
+      canyon_ = "";
+      date_ = null;
+      if (dateBuilder_ != null) {
+        dateBuilder_.dispose();
+        dateBuilder_ = null;
+      }
       order_ = 0;
-      photosLink_ = "";
       internalGetMutableUserStatuses().clear();
       return this;
     }
@@ -671,27 +620,26 @@ java.lang.String defaultValue) {
     private void buildPartial0(app.rappeloids.protos.v1.HistoryEntryUpdate result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.id_ = id_;
+        result.name_ = name_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.tripId_ = tripId_;
+        result.canyon_ = canyon_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.canyonId_ = canyonId_;
+        result.date_ = dateBuilder_ == null
+            ? date_
+            : dateBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.date_ = date_;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.order_ = order_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.photosLink_ = photosLink_;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.userStatuses_ = internalGetUserStatuses();
         result.userStatuses_.makeImmutable();
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -706,37 +654,25 @@ java.lang.String defaultValue) {
 
     public Builder mergeFrom(app.rappeloids.protos.v1.HistoryEntryUpdate other) {
       if (other == app.rappeloids.protos.v1.HistoryEntryUpdate.getDefaultInstance()) return this;
-      if (!other.getId().isEmpty()) {
-        id_ = other.id_;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.getTripId().isEmpty()) {
-        tripId_ = other.tripId_;
+      if (!other.getCanyon().isEmpty()) {
+        canyon_ = other.canyon_;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (!other.getCanyonId().isEmpty()) {
-        canyonId_ = other.canyonId_;
-        bitField0_ |= 0x00000004;
-        onChanged();
-      }
-      if (!other.getDate().isEmpty()) {
-        date_ = other.date_;
-        bitField0_ |= 0x00000008;
-        onChanged();
+      if (other.hasDate()) {
+        mergeDate(other.getDate());
       }
       if (other.getOrder() != 0) {
         setOrder(other.getOrder());
       }
-      if (!other.getPhotosLink().isEmpty()) {
-        photosLink_ = other.photosLink_;
-        bitField0_ |= 0x00000020;
-        onChanged();
-      }
       internalGetMutableUserStatuses().mergeFrom(
           other.internalGetUserStatuses());
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000010;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -764,44 +700,36 @@ java.lang.String defaultValue) {
               done = true;
               break;
             case 10: {
-              id_ = input.readStringRequireUtf8();
+              name_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
-              tripId_ = input.readStringRequireUtf8();
+              canyon_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 26: {
-              canyonId_ = input.readStringRequireUtf8();
+              input.readMessage(
+                  internalGetDateFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00000004;
               break;
             } // case 26
-            case 34: {
-              date_ = input.readStringRequireUtf8();
+            case 32: {
+              order_ = input.readInt32();
               bitField0_ |= 0x00000008;
               break;
-            } // case 34
-            case 40: {
-              order_ = input.readInt32();
-              bitField0_ |= 0x00000010;
-              break;
-            } // case 40
-            case 50: {
-              photosLink_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
-              break;
-            } // case 50
-            case 58: {
+            } // case 32
+            case 42: {
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
               userStatuses__ = input.readMessage(
                   UserStatusesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               internalGetMutableUserStatuses().getMutableMap().put(
                   userStatuses__.getKey(), userStatuses__.getValue());
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000010;
               break;
-            } // case 58
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -819,297 +747,354 @@ java.lang.String defaultValue) {
     }
     private int bitField0_;
 
-    private java.lang.Object id_ = "";
+    private java.lang.Object name_ = "";
     /**
-     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The id.
+     * <pre>
+     * Resource name: "history/{history_entry}". Leave empty when creating a new descent entry.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @return The name.
      */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        id_ = s;
+        name_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The bytes for id.
+     * <pre>
+     * Resource name: "history/{history_entry}". Leave empty when creating a new descent entry.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
+        getNameBytes() {
+      java.lang.Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        id_ = b;
+        name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The id to set.
+     * <pre>
+     * Resource name: "history/{history_entry}". Leave empty when creating a new descent entry.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setId(
+    public Builder setName(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      id_ = value;
+      name_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <pre>
+     * Resource name: "history/{history_entry}". Leave empty when creating a new descent entry.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearId() {
-      id_ = getDefaultInstance().getId();
+    public Builder clearName() {
+      name_ = getDefaultInstance().getName();
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
-     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The bytes for id to set.
+     * <pre>
+     * Resource name: "history/{history_entry}". Leave empty when creating a new descent entry.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder setIdBytes(
+    public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      id_ = value;
+      name_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private java.lang.Object tripId_ = "";
+    private java.lang.Object canyon_ = "";
     /**
-     * <code>string trip_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The tripId.
+     * <pre>
+     * Canyon resource name: "canyons/{canyon}"
+     * </pre>
+     *
+     * <code>string canyon = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The canyon.
      */
-    public java.lang.String getTripId() {
-      java.lang.Object ref = tripId_;
+    public java.lang.String getCanyon() {
+      java.lang.Object ref = canyon_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        tripId_ = s;
+        canyon_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string trip_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for tripId.
+     * <pre>
+     * Canyon resource name: "canyons/{canyon}"
+     * </pre>
+     *
+     * <code>string canyon = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for canyon.
      */
     public com.google.protobuf.ByteString
-        getTripIdBytes() {
-      java.lang.Object ref = tripId_;
+        getCanyonBytes() {
+      java.lang.Object ref = canyon_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        tripId_ = b;
+        canyon_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string trip_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The tripId to set.
+     * <pre>
+     * Canyon resource name: "canyons/{canyon}"
+     * </pre>
+     *
+     * <code>string canyon = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The canyon to set.
      * @return This builder for chaining.
      */
-    public Builder setTripId(
+    public Builder setCanyon(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      tripId_ = value;
+      canyon_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>string trip_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <pre>
+     * Canyon resource name: "canyons/{canyon}"
+     * </pre>
+     *
+     * <code>string canyon = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearTripId() {
-      tripId_ = getDefaultInstance().getTripId();
+    public Builder clearCanyon() {
+      canyon_ = getDefaultInstance().getCanyon();
       bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
     /**
-     * <code>string trip_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for tripId to set.
+     * <pre>
+     * Canyon resource name: "canyons/{canyon}"
+     * </pre>
+     *
+     * <code>string canyon = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for canyon to set.
      * @return This builder for chaining.
      */
-    public Builder setTripIdBytes(
+    public Builder setCanyonBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      tripId_ = value;
+      canyon_ = value;
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private java.lang.Object canyonId_ = "";
+    private com.google.type.Date date_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder> dateBuilder_;
     /**
-     * <code>string canyon_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The canyonId.
+     * <pre>
+     * Date of descent.
+     * </pre>
+     *
+     * <code>.google.type.Date date = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the date field is set.
      */
-    public java.lang.String getCanyonId() {
-      java.lang.Object ref = canyonId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        canyonId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    public boolean hasDate() {
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>string canyon_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The bytes for canyonId.
-     */
-    public com.google.protobuf.ByteString
-        getCanyonIdBytes() {
-      java.lang.Object ref = canyonId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        canyonId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string canyon_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The canyonId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCanyonId(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      canyonId_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string canyon_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCanyonId() {
-      canyonId_ = getDefaultInstance().getCanyonId();
-      bitField0_ = (bitField0_ & ~0x00000004);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string canyon_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The bytes for canyonId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCanyonIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      canyonId_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object date_ = "";
-    /**
-     * <code>string date = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <pre>
+     * Date of descent.
+     * </pre>
+     *
+     * <code>.google.type.Date date = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The date.
      */
-    public java.lang.String getDate() {
-      java.lang.Object ref = date_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        date_ = s;
-        return s;
+    public com.google.type.Date getDate() {
+      if (dateBuilder_ == null) {
+        return date_ == null ? com.google.type.Date.getDefaultInstance() : date_;
       } else {
-        return (java.lang.String) ref;
+        return dateBuilder_.getMessage();
       }
     }
     /**
-     * <code>string date = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for date.
+     * <pre>
+     * Date of descent.
+     * </pre>
+     *
+     * <code>.google.type.Date date = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public com.google.protobuf.ByteString
-        getDateBytes() {
-      java.lang.Object ref = date_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        date_ = b;
-        return b;
+    public Builder setDate(com.google.type.Date value) {
+      if (dateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        date_ = value;
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        dateBuilder_.setMessage(value);
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
     }
     /**
-     * <code>string date = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The date to set.
-     * @return This builder for chaining.
+     * <pre>
+     * Date of descent.
+     * </pre>
+     *
+     * <code>.google.type.Date date = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setDate(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      date_ = value;
-      bitField0_ |= 0x00000008;
+        com.google.type.Date.Builder builderForValue) {
+      if (dateBuilder_ == null) {
+        date_ = builderForValue.build();
+      } else {
+        dateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>string date = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
+     * <pre>
+     * Date of descent.
+     * </pre>
+     *
+     * <code>.google.type.Date date = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeDate(com.google.type.Date value) {
+      if (dateBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0) &&
+          date_ != null &&
+          date_ != com.google.type.Date.getDefaultInstance()) {
+          getDateBuilder().mergeFrom(value);
+        } else {
+          date_ = value;
+        }
+      } else {
+        dateBuilder_.mergeFrom(value);
+      }
+      if (date_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Date of descent.
+     * </pre>
+     *
+     * <code>.google.type.Date date = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearDate() {
-      date_ = getDefaultInstance().getDate();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
+      date_ = null;
+      if (dateBuilder_ != null) {
+        dateBuilder_.dispose();
+        dateBuilder_ = null;
+      }
       onChanged();
       return this;
     }
     /**
-     * <code>string date = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for date to set.
-     * @return This builder for chaining.
+     * <pre>
+     * Date of descent.
+     * </pre>
+     *
+     * <code>.google.type.Date date = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder setDateBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      date_ = value;
-      bitField0_ |= 0x00000008;
+    public com.google.type.Date.Builder getDateBuilder() {
+      bitField0_ |= 0x00000004;
       onChanged();
-      return this;
+      return internalGetDateFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Date of descent.
+     * </pre>
+     *
+     * <code>.google.type.Date date = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.type.DateOrBuilder getDateOrBuilder() {
+      if (dateBuilder_ != null) {
+        return dateBuilder_.getMessageOrBuilder();
+      } else {
+        return date_ == null ?
+            com.google.type.Date.getDefaultInstance() : date_;
+      }
+    }
+    /**
+     * <pre>
+     * Date of descent.
+     * </pre>
+     *
+     * <code>.google.type.Date date = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder> 
+        internalGetDateFieldBuilder() {
+      if (dateBuilder_ == null) {
+        dateBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
+                getDate(),
+                getParentForChildren(),
+                isClean());
+        date_ = null;
+      }
+      return dateBuilder_;
     }
 
     private int order_ ;
     /**
-     * <code>int32 order = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <pre>
+     * Ordering of canyon within the trip.
+     * </pre>
+     *
+     * <code>int32 order = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The order.
      */
     @java.lang.Override
@@ -1117,96 +1102,32 @@ java.lang.String defaultValue) {
       return order_;
     }
     /**
-     * <code>int32 order = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <pre>
+     * Ordering of canyon within the trip.
+     * </pre>
+     *
+     * <code>int32 order = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The order to set.
      * @return This builder for chaining.
      */
     public Builder setOrder(int value) {
 
       order_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 order = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <pre>
+     * Ordering of canyon within the trip.
+     * </pre>
+     *
+     * <code>int32 order = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearOrder() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       order_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object photosLink_ = "";
-    /**
-     * <code>string photos_link = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The photosLink.
-     */
-    public java.lang.String getPhotosLink() {
-      java.lang.Object ref = photosLink_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        photosLink_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string photos_link = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for photosLink.
-     */
-    public com.google.protobuf.ByteString
-        getPhotosLinkBytes() {
-      java.lang.Object ref = photosLink_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        photosLink_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string photos_link = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The photosLink to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPhotosLink(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      photosLink_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string photos_link = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPhotosLink() {
-      photosLink_ = getDefaultInstance().getPhotosLink();
-      bitField0_ = (bitField0_ & ~0x00000020);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string photos_link = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for photosLink to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPhotosLinkBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      photosLink_ = value;
-      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1230,7 +1151,7 @@ java.lang.String defaultValue) {
       if (!userStatuses_.isMutable()) {
         userStatuses_ = userStatuses_.copy();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000010;
       onChanged();
       return userStatuses_;
     }
@@ -1238,7 +1159,11 @@ java.lang.String defaultValue) {
       return internalGetUserStatuses().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <pre>
+     * Map of participant user ID -&gt; descent status ("passed", "planned", etc.).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_statuses = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsUserStatuses(
@@ -1255,14 +1180,22 @@ java.lang.String defaultValue) {
       return getUserStatusesMap();
     }
     /**
-     * <code>map&lt;string, string&gt; user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <pre>
+     * Map of participant user ID -&gt; descent status ("passed", "planned", etc.).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_statuses = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getUserStatusesMap() {
       return internalGetUserStatuses().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <pre>
+     * Map of participant user ID -&gt; descent status ("passed", "planned", etc.).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_statuses = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */
@@ -1276,7 +1209,11 @@ java.lang.String defaultValue) {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <pre>
+     * Map of participant user ID -&gt; descent status ("passed", "planned", etc.).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_statuses = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getUserStatusesOrThrow(
@@ -1290,13 +1227,17 @@ java.lang.String defaultValue) {
       return map.get(key);
     }
     public Builder clearUserStatuses() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableUserStatuses().getMutableMap()
           .clear();
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <pre>
+     * Map of participant user ID -&gt; descent status ("passed", "planned", etc.).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_statuses = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeUserStatuses(
         java.lang.String key) {
@@ -1311,11 +1252,15 @@ java.lang.String defaultValue) {
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
         getMutableUserStatuses() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000010;
       return internalGetMutableUserStatuses().getMutableMap();
     }
     /**
-     * <code>map&lt;string, string&gt; user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <pre>
+     * Map of participant user ID -&gt; descent status ("passed", "planned", etc.).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_statuses = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putUserStatuses(
         java.lang.String key,
@@ -1324,17 +1269,21 @@ java.lang.String defaultValue) {
       if (value == null) { throw new NullPointerException("map value"); }
       internalGetMutableUserStatuses().getMutableMap()
           .put(key, value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
-     * <code>map&lt;string, string&gt; user_statuses = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <pre>
+     * Map of participant user ID -&gt; descent status ("passed", "planned", etc.).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_statuses = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllUserStatuses(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableUserStatuses().getMutableMap()
           .putAll(values);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000010;
       return this;
     }
 

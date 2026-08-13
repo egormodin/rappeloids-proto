@@ -44,29 +44,26 @@ private static final long serialVersionUID = 0L;
             app.rappeloids.protos.v1.BatchUpdateHistoryResponse.class, app.rappeloids.protos.v1.BatchUpdateHistoryResponse.Builder.class);
   }
 
-  public static final int UPDATED_COUNT_FIELD_NUMBER = 1;
-  private int updatedCount_ = 0;
-  /**
-   * <code>int32 updated_count = 1;</code>
-   * @return The updatedCount.
-   */
-  @java.lang.Override
-  public int getUpdatedCount() {
-    return updatedCount_;
-  }
-
-  public static final int ENTRIES_FIELD_NUMBER = 2;
+  public static final int ENTRIES_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private java.util.List<app.rappeloids.protos.v1.HistoryEntry> entries_;
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+   * <pre>
+   * Resulting/updated history entries (AIP-234).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
    */
   @java.lang.Override
   public java.util.List<app.rappeloids.protos.v1.HistoryEntry> getEntriesList() {
     return entries_;
   }
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+   * <pre>
+   * Resulting/updated history entries (AIP-234).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
    */
   @java.lang.Override
   public java.util.List<? extends app.rappeloids.protos.v1.HistoryEntryOrBuilder> 
@@ -74,21 +71,33 @@ private static final long serialVersionUID = 0L;
     return entries_;
   }
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+   * <pre>
+   * Resulting/updated history entries (AIP-234).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
    */
   @java.lang.Override
   public int getEntriesCount() {
     return entries_.size();
   }
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+   * <pre>
+   * Resulting/updated history entries (AIP-234).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
    */
   @java.lang.Override
   public app.rappeloids.protos.v1.HistoryEntry getEntries(int index) {
     return entries_.get(index);
   }
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+   * <pre>
+   * Resulting/updated history entries (AIP-234).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
    */
   @java.lang.Override
   public app.rappeloids.protos.v1.HistoryEntryOrBuilder getEntriesOrBuilder(
@@ -110,11 +119,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (updatedCount_ != 0) {
-      output.writeInt32(1, updatedCount_);
-    }
     for (int i = 0; i < entries_.size(); i++) {
-      output.writeMessage(2, entries_.get(i));
+      output.writeMessage(1, entries_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -125,13 +131,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (updatedCount_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, updatedCount_);
-    }
     for (int i = 0; i < entries_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, entries_.get(i));
+        .computeMessageSize(1, entries_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -148,8 +150,6 @@ private static final long serialVersionUID = 0L;
     }
     app.rappeloids.protos.v1.BatchUpdateHistoryResponse other = (app.rappeloids.protos.v1.BatchUpdateHistoryResponse) obj;
 
-    if (getUpdatedCount()
-        != other.getUpdatedCount()) return false;
     if (!getEntriesList()
         .equals(other.getEntriesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -163,8 +163,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + UPDATED_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getUpdatedCount();
     if (getEntriesCount() > 0) {
       hash = (37 * hash) + ENTRIES_FIELD_NUMBER;
       hash = (53 * hash) + getEntriesList().hashCode();
@@ -300,14 +298,13 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      updatedCount_ = 0;
       if (entriesBuilder_ == null) {
         entries_ = java.util.Collections.emptyList();
       } else {
         entries_ = null;
         entriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -342,9 +339,9 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartialRepeatedFields(app.rappeloids.protos.v1.BatchUpdateHistoryResponse result) {
       if (entriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.entries_ = entries_;
       } else {
@@ -354,9 +351,6 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartial0(app.rappeloids.protos.v1.BatchUpdateHistoryResponse result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.updatedCount_ = updatedCount_;
-      }
     }
 
     @java.lang.Override
@@ -371,14 +365,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(app.rappeloids.protos.v1.BatchUpdateHistoryResponse other) {
       if (other == app.rappeloids.protos.v1.BatchUpdateHistoryResponse.getDefaultInstance()) return this;
-      if (other.getUpdatedCount() != 0) {
-        setUpdatedCount(other.getUpdatedCount());
-      }
       if (entriesBuilder_ == null) {
         if (!other.entries_.isEmpty()) {
           if (entries_.isEmpty()) {
             entries_ = other.entries_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureEntriesIsMutable();
             entries_.addAll(other.entries_);
@@ -391,7 +382,7 @@ private static final long serialVersionUID = 0L;
             entriesBuilder_.dispose();
             entriesBuilder_ = null;
             entries_ = other.entries_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             entriesBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  internalGetEntriesFieldBuilder() : null;
@@ -426,12 +417,7 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-              updatedCount_ = input.readInt32();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 8
-            case 18: {
+            case 10: {
               app.rappeloids.protos.v1.HistoryEntry m =
                   input.readMessage(
                       app.rappeloids.protos.v1.HistoryEntry.parser(),
@@ -443,7 +429,7 @@ private static final long serialVersionUID = 0L;
                 entriesBuilder_.addMessage(m);
               }
               break;
-            } // case 18
+            } // case 10
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -461,44 +447,12 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int updatedCount_ ;
-    /**
-     * <code>int32 updated_count = 1;</code>
-     * @return The updatedCount.
-     */
-    @java.lang.Override
-    public int getUpdatedCount() {
-      return updatedCount_;
-    }
-    /**
-     * <code>int32 updated_count = 1;</code>
-     * @param value The updatedCount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUpdatedCount(int value) {
-
-      updatedCount_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int32 updated_count = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearUpdatedCount() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      updatedCount_ = 0;
-      onChanged();
-      return this;
-    }
-
     private java.util.List<app.rappeloids.protos.v1.HistoryEntry> entries_ =
       java.util.Collections.emptyList();
     private void ensureEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         entries_ = new java.util.ArrayList<app.rappeloids.protos.v1.HistoryEntry>(entries_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -506,7 +460,11 @@ private static final long serialVersionUID = 0L;
         app.rappeloids.protos.v1.HistoryEntry, app.rappeloids.protos.v1.HistoryEntry.Builder, app.rappeloids.protos.v1.HistoryEntryOrBuilder> entriesBuilder_;
 
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+     * <pre>
+     * Resulting/updated history entries (AIP-234).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
      */
     public java.util.List<app.rappeloids.protos.v1.HistoryEntry> getEntriesList() {
       if (entriesBuilder_ == null) {
@@ -516,7 +474,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+     * <pre>
+     * Resulting/updated history entries (AIP-234).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
      */
     public int getEntriesCount() {
       if (entriesBuilder_ == null) {
@@ -526,7 +488,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+     * <pre>
+     * Resulting/updated history entries (AIP-234).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
      */
     public app.rappeloids.protos.v1.HistoryEntry getEntries(int index) {
       if (entriesBuilder_ == null) {
@@ -536,7 +502,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+     * <pre>
+     * Resulting/updated history entries (AIP-234).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
      */
     public Builder setEntries(
         int index, app.rappeloids.protos.v1.HistoryEntry value) {
@@ -553,7 +523,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+     * <pre>
+     * Resulting/updated history entries (AIP-234).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
      */
     public Builder setEntries(
         int index, app.rappeloids.protos.v1.HistoryEntry.Builder builderForValue) {
@@ -567,7 +541,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+     * <pre>
+     * Resulting/updated history entries (AIP-234).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
      */
     public Builder addEntries(app.rappeloids.protos.v1.HistoryEntry value) {
       if (entriesBuilder_ == null) {
@@ -583,7 +561,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+     * <pre>
+     * Resulting/updated history entries (AIP-234).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
      */
     public Builder addEntries(
         int index, app.rappeloids.protos.v1.HistoryEntry value) {
@@ -600,7 +582,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+     * <pre>
+     * Resulting/updated history entries (AIP-234).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
      */
     public Builder addEntries(
         app.rappeloids.protos.v1.HistoryEntry.Builder builderForValue) {
@@ -614,7 +600,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+     * <pre>
+     * Resulting/updated history entries (AIP-234).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
      */
     public Builder addEntries(
         int index, app.rappeloids.protos.v1.HistoryEntry.Builder builderForValue) {
@@ -628,7 +618,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+     * <pre>
+     * Resulting/updated history entries (AIP-234).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
      */
     public Builder addAllEntries(
         java.lang.Iterable<? extends app.rappeloids.protos.v1.HistoryEntry> values) {
@@ -643,12 +637,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+     * <pre>
+     * Resulting/updated history entries (AIP-234).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
      */
     public Builder clearEntries() {
       if (entriesBuilder_ == null) {
         entries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         entriesBuilder_.clear();
@@ -656,7 +654,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+     * <pre>
+     * Resulting/updated history entries (AIP-234).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
      */
     public Builder removeEntries(int index) {
       if (entriesBuilder_ == null) {
@@ -669,14 +671,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+     * <pre>
+     * Resulting/updated history entries (AIP-234).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
      */
     public app.rappeloids.protos.v1.HistoryEntry.Builder getEntriesBuilder(
         int index) {
       return internalGetEntriesFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+     * <pre>
+     * Resulting/updated history entries (AIP-234).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
      */
     public app.rappeloids.protos.v1.HistoryEntryOrBuilder getEntriesOrBuilder(
         int index) {
@@ -686,7 +696,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+     * <pre>
+     * Resulting/updated history entries (AIP-234).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
      */
     public java.util.List<? extends app.rappeloids.protos.v1.HistoryEntryOrBuilder> 
          getEntriesOrBuilderList() {
@@ -697,14 +711,22 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+     * <pre>
+     * Resulting/updated history entries (AIP-234).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
      */
     public app.rappeloids.protos.v1.HistoryEntry.Builder addEntriesBuilder() {
       return internalGetEntriesFieldBuilder().addBuilder(
           app.rappeloids.protos.v1.HistoryEntry.getDefaultInstance());
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+     * <pre>
+     * Resulting/updated history entries (AIP-234).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
      */
     public app.rappeloids.protos.v1.HistoryEntry.Builder addEntriesBuilder(
         int index) {
@@ -712,7 +734,11 @@ private static final long serialVersionUID = 0L;
           index, app.rappeloids.protos.v1.HistoryEntry.getDefaultInstance());
     }
     /**
-     * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+     * <pre>
+     * Resulting/updated history entries (AIP-234).
+     * </pre>
+     *
+     * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
      */
     public java.util.List<app.rappeloids.protos.v1.HistoryEntry.Builder> 
          getEntriesBuilderList() {
@@ -725,7 +751,7 @@ private static final long serialVersionUID = 0L;
         entriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
             app.rappeloids.protos.v1.HistoryEntry, app.rappeloids.protos.v1.HistoryEntry.Builder, app.rappeloids.protos.v1.HistoryEntryOrBuilder>(
                 entries_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         entries_ = null;

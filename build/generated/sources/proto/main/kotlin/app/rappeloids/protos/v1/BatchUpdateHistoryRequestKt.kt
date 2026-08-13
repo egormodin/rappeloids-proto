@@ -34,70 +34,98 @@ public object BatchUpdateHistoryRequestKt {
      * generics.
      */
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
-    public class UpsertsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
+    public class TripsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;`
+     * ```
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * ```
+     *
+     * `repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];`
      */
-     public val upserts: com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.HistoryEntryUpdate, UpsertsProxy>
+     public val trips: com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.HistoryTripUpdate, TripsProxy>
       @kotlin.jvm.JvmSynthetic
   get() = com.google.protobuf.kotlin.DslList(
-        _builder.upsertsList
+        _builder.tripsList
       )
     /**
-     * `repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;`
-     * @param value The upserts to add.
+     * ```
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * ```
+     *
+     * `repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];`
+     * @param value The trips to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addUpserts")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.HistoryEntryUpdate, UpsertsProxy>.add(value: app.rappeloids.protos.v1.HistoryEntryUpdate) {
-      _builder.addUpserts(value)
+@kotlin.jvm.JvmName("addTrips")
+    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.HistoryTripUpdate, TripsProxy>.add(value: app.rappeloids.protos.v1.HistoryTripUpdate) {
+      _builder.addTrips(value)
     }
     /**
-     * `repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;`
-     * @param value The upserts to add.
+     * ```
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * ```
+     *
+     * `repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];`
+     * @param value The trips to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignUpserts")
+@kotlin.jvm.JvmName("plusAssignTrips")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.HistoryEntryUpdate, UpsertsProxy>.plusAssign(value: app.rappeloids.protos.v1.HistoryEntryUpdate) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.HistoryTripUpdate, TripsProxy>.plusAssign(value: app.rappeloids.protos.v1.HistoryTripUpdate) {
       add(value)
     }
     /**
-     * `repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;`
-     * @param values The upserts to add.
+     * ```
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * ```
+     *
+     * `repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];`
+     * @param values The trips to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAllUpserts")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.HistoryEntryUpdate, UpsertsProxy>.addAll(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.HistoryEntryUpdate>) {
-      _builder.addAllUpserts(values)
+@kotlin.jvm.JvmName("addAllTrips")
+    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.HistoryTripUpdate, TripsProxy>.addAll(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.HistoryTripUpdate>) {
+      _builder.addAllTrips(values)
     }
     /**
-     * `repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;`
-     * @param values The upserts to add.
+     * ```
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * ```
+     *
+     * `repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];`
+     * @param values The trips to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAllUpserts")
+@kotlin.jvm.JvmName("plusAssignAllTrips")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.HistoryEntryUpdate, UpsertsProxy>.plusAssign(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.HistoryEntryUpdate>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.HistoryTripUpdate, TripsProxy>.plusAssign(values: kotlin.collections.Iterable<app.rappeloids.protos.v1.HistoryTripUpdate>) {
       addAll(values)
     }
     /**
-     * `repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;`
+     * ```
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * ```
+     *
+     * `repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];`
      * @param index The index to set the value at.
-     * @param value The upserts to set.
+     * @param value The trips to set.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setUpserts")
-    public operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.HistoryEntryUpdate, UpsertsProxy>.set(index: kotlin.Int, value: app.rappeloids.protos.v1.HistoryEntryUpdate) {
-      _builder.setUpserts(index, value)
+@kotlin.jvm.JvmName("setTrips")
+    public operator fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.HistoryTripUpdate, TripsProxy>.set(index: kotlin.Int, value: app.rappeloids.protos.v1.HistoryTripUpdate) {
+      _builder.setTrips(index, value)
     }
     /**
-     * `repeated .rappeloids.v1.HistoryEntryUpdate upserts = 1;`
+     * ```
+     * Trips containing their canyon descent entries (including single-entry trips).
+     * ```
+     *
+     * `repeated .rappeloids.v1.HistoryTripUpdate trips = 1 [(.google.api.field_behavior) = OPTIONAL];`
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("clearUpserts")
-    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.HistoryEntryUpdate, UpsertsProxy>.clear() {
-      _builder.clearUpserts()
+@kotlin.jvm.JvmName("clearTrips")
+    public fun com.google.protobuf.kotlin.DslList<app.rappeloids.protos.v1.HistoryTripUpdate, TripsProxy>.clear() {
+      _builder.clearTrips()
     }
 
     /**
@@ -105,70 +133,98 @@ public object BatchUpdateHistoryRequestKt {
      * generics.
      */
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
-    public class DeleteIdsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
+    public class DeleteNamesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string delete_ids = 2;`
-     * @return A list containing the deleteIds.
+     * ```
+     * Resource names of history entries to delete (e.g. "history/{history_entry}").
+     * ```
+     *
+     * `repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }`
+     * @return A list containing the deleteNames.
      */
-    public val deleteIds: com.google.protobuf.kotlin.DslList<kotlin.String, DeleteIdsProxy>
+    public val deleteNames: com.google.protobuf.kotlin.DslList<kotlin.String, DeleteNamesProxy>
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
       get() = com.google.protobuf.kotlin.DslList(
-        _builder.deleteIdsList
+        _builder.deleteNamesList
       )
     /**
-     * `repeated string delete_ids = 2;`
-     * @param value The deleteIds to add.
+     * ```
+     * Resource names of history entries to delete (e.g. "history/{history_entry}").
+     * ```
+     *
+     * `repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }`
+     * @param value The deleteNames to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addDeleteIds")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, DeleteIdsProxy>.add(value: kotlin.String) {
-      _builder.addDeleteIds(value)
+@kotlin.jvm.JvmName("addDeleteNames")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, DeleteNamesProxy>.add(value: kotlin.String) {
+      _builder.addDeleteNames(value)
     }
     /**
-     * `repeated string delete_ids = 2;`
-     * @param value The deleteIds to add.
+     * ```
+     * Resource names of history entries to delete (e.g. "history/{history_entry}").
+     * ```
+     *
+     * `repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }`
+     * @param value The deleteNames to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignDeleteIds")
+@kotlin.jvm.JvmName("plusAssignDeleteNames")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, DeleteIdsProxy>.plusAssign(value: kotlin.String) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, DeleteNamesProxy>.plusAssign(value: kotlin.String) {
       add(value)
     }
     /**
-     * `repeated string delete_ids = 2;`
-     * @param values The deleteIds to add.
+     * ```
+     * Resource names of history entries to delete (e.g. "history/{history_entry}").
+     * ```
+     *
+     * `repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }`
+     * @param values The deleteNames to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAllDeleteIds")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, DeleteIdsProxy>.addAll(values: kotlin.collections.Iterable<kotlin.String>) {
-      _builder.addAllDeleteIds(values)
+@kotlin.jvm.JvmName("addAllDeleteNames")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, DeleteNamesProxy>.addAll(values: kotlin.collections.Iterable<kotlin.String>) {
+      _builder.addAllDeleteNames(values)
     }
     /**
-     * `repeated string delete_ids = 2;`
-     * @param values The deleteIds to add.
+     * ```
+     * Resource names of history entries to delete (e.g. "history/{history_entry}").
+     * ```
+     *
+     * `repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }`
+     * @param values The deleteNames to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAllDeleteIds")
+@kotlin.jvm.JvmName("plusAssignAllDeleteNames")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, DeleteIdsProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.String>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, DeleteNamesProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.String>) {
       addAll(values)
     }
     /**
-     * `repeated string delete_ids = 2;`
+     * ```
+     * Resource names of history entries to delete (e.g. "history/{history_entry}").
+     * ```
+     *
+     * `repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }`
      * @param index The index to set the value at.
-     * @param value The deleteIds to set.
+     * @param value The deleteNames to set.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setDeleteIds")
-    public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, DeleteIdsProxy>.set(index: kotlin.Int, value: kotlin.String) {
-      _builder.setDeleteIds(index, value)
+@kotlin.jvm.JvmName("setDeleteNames")
+    public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, DeleteNamesProxy>.set(index: kotlin.Int, value: kotlin.String) {
+      _builder.setDeleteNames(index, value)
     }/**
-     * `repeated string delete_ids = 2;`
+     * ```
+     * Resource names of history entries to delete (e.g. "history/{history_entry}").
+     * ```
+     *
+     * `repeated string delete_names = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setDeleteIds")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, DeleteIdsProxy>.clear() {
-      _builder.clearDeleteIds()
+@kotlin.jvm.JvmName("setDeleteNames")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, DeleteNamesProxy>.clear() {
+      _builder.clearDeleteNames()
     }}
 }
 @kotlin.jvm.JvmSynthetic

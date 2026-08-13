@@ -29,14 +29,21 @@ public interface ListHistoryRequestOrBuilder extends
       getPageTokenBytes();
 
   /**
-   * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The filter.
+   * <pre>
+   * Optional year to filter historical descent records (e.g. 2026). If omitted, returns summary/all records.
+   * </pre>
+   *
+   * <code>optional int32 year = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the year field is set.
    */
-  java.lang.String getFilter();
+  boolean hasYear();
   /**
-   * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for filter.
+   * <pre>
+   * Optional year to filter historical descent records (e.g. 2026). If omitted, returns summary/all records.
+   * </pre>
+   *
+   * <code>optional int32 year = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The year.
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  int getYear();
 }

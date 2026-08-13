@@ -4,7 +4,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * Service managing historical canyon descent logs and expedition history.
+ * Service managing historical canyon descent logs and expedition history (AIP-121).
  * </pre>
  */
 @io.grpc.stub.annotations.GrpcGenerated
@@ -44,6 +44,37 @@ public final class HistoryServiceGrpc {
       }
     }
     return getListHistoryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<app.rappeloids.protos.v1.ListHistoryYearsRequest,
+      app.rappeloids.protos.v1.ListHistoryYearsResponse> getListHistoryYearsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListHistoryYears",
+      requestType = app.rappeloids.protos.v1.ListHistoryYearsRequest.class,
+      responseType = app.rappeloids.protos.v1.ListHistoryYearsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<app.rappeloids.protos.v1.ListHistoryYearsRequest,
+      app.rappeloids.protos.v1.ListHistoryYearsResponse> getListHistoryYearsMethod() {
+    io.grpc.MethodDescriptor<app.rappeloids.protos.v1.ListHistoryYearsRequest, app.rappeloids.protos.v1.ListHistoryYearsResponse> getListHistoryYearsMethod;
+    if ((getListHistoryYearsMethod = HistoryServiceGrpc.getListHistoryYearsMethod) == null) {
+      synchronized (HistoryServiceGrpc.class) {
+        if ((getListHistoryYearsMethod = HistoryServiceGrpc.getListHistoryYearsMethod) == null) {
+          HistoryServiceGrpc.getListHistoryYearsMethod = getListHistoryYearsMethod =
+              io.grpc.MethodDescriptor.<app.rappeloids.protos.v1.ListHistoryYearsRequest, app.rappeloids.protos.v1.ListHistoryYearsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListHistoryYears"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  app.rappeloids.protos.v1.ListHistoryYearsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  app.rappeloids.protos.v1.ListHistoryYearsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new HistoryServiceMethodDescriptorSupplier("ListHistoryYears"))
+              .build();
+        }
+      }
+    }
+    return getListHistoryYearsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<app.rappeloids.protos.v1.BatchUpdateHistoryRequest,
@@ -138,19 +169,29 @@ public final class HistoryServiceGrpc {
 
   /**
    * <pre>
-   * Service managing historical canyon descent logs and expedition history.
+   * Service managing historical canyon descent logs and expedition history (AIP-121).
    * </pre>
    */
   public interface AsyncService {
 
     /**
      * <pre>
-     * Lists all historical canyon descent records with user participation.
+     * Lists historical canyon descent records with user participation, optionally filtered by year (AIP-132).
      * </pre>
      */
     default void listHistory(app.rappeloids.protos.v1.ListHistoryRequest request,
         io.grpc.stub.StreamObserver<app.rappeloids.protos.v1.ListHistoryResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListHistoryMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lists available years that have historical descent records for UI navigation (AIP-136).
+     * </pre>
+     */
+    default void listHistoryYears(app.rappeloids.protos.v1.ListHistoryYearsRequest request,
+        io.grpc.stub.StreamObserver<app.rappeloids.protos.v1.ListHistoryYearsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListHistoryYearsMethod(), responseObserver);
     }
 
     /**
@@ -167,7 +208,7 @@ public final class HistoryServiceGrpc {
   /**
    * Base class for the server implementation of the service HistoryService.
    * <pre>
-   * Service managing historical canyon descent logs and expedition history.
+   * Service managing historical canyon descent logs and expedition history (AIP-121).
    * </pre>
    */
   public static abstract class HistoryServiceImplBase
@@ -181,7 +222,7 @@ public final class HistoryServiceGrpc {
   /**
    * A stub to allow clients to do asynchronous rpc calls to service HistoryService.
    * <pre>
-   * Service managing historical canyon descent logs and expedition history.
+   * Service managing historical canyon descent logs and expedition history (AIP-121).
    * </pre>
    */
   public static final class HistoryServiceStub
@@ -199,13 +240,24 @@ public final class HistoryServiceGrpc {
 
     /**
      * <pre>
-     * Lists all historical canyon descent records with user participation.
+     * Lists historical canyon descent records with user participation, optionally filtered by year (AIP-132).
      * </pre>
      */
     public void listHistory(app.rappeloids.protos.v1.ListHistoryRequest request,
         io.grpc.stub.StreamObserver<app.rappeloids.protos.v1.ListHistoryResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListHistoryMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Lists available years that have historical descent records for UI navigation (AIP-136).
+     * </pre>
+     */
+    public void listHistoryYears(app.rappeloids.protos.v1.ListHistoryYearsRequest request,
+        io.grpc.stub.StreamObserver<app.rappeloids.protos.v1.ListHistoryYearsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListHistoryYearsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -223,7 +275,7 @@ public final class HistoryServiceGrpc {
   /**
    * A stub to allow clients to do synchronous rpc calls to service HistoryService.
    * <pre>
-   * Service managing historical canyon descent logs and expedition history.
+   * Service managing historical canyon descent logs and expedition history (AIP-121).
    * </pre>
    */
   public static final class HistoryServiceBlockingV2Stub
@@ -241,12 +293,22 @@ public final class HistoryServiceGrpc {
 
     /**
      * <pre>
-     * Lists all historical canyon descent records with user participation.
+     * Lists historical canyon descent records with user participation, optionally filtered by year (AIP-132).
      * </pre>
      */
     public app.rappeloids.protos.v1.ListHistoryResponse listHistory(app.rappeloids.protos.v1.ListHistoryRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListHistoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Lists available years that have historical descent records for UI navigation (AIP-136).
+     * </pre>
+     */
+    public app.rappeloids.protos.v1.ListHistoryYearsResponse listHistoryYears(app.rappeloids.protos.v1.ListHistoryYearsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListHistoryYearsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -263,7 +325,7 @@ public final class HistoryServiceGrpc {
   /**
    * A stub to allow clients to do limited synchronous rpc calls to service HistoryService.
    * <pre>
-   * Service managing historical canyon descent logs and expedition history.
+   * Service managing historical canyon descent logs and expedition history (AIP-121).
    * </pre>
    */
   public static final class HistoryServiceBlockingStub
@@ -281,12 +343,22 @@ public final class HistoryServiceGrpc {
 
     /**
      * <pre>
-     * Lists all historical canyon descent records with user participation.
+     * Lists historical canyon descent records with user participation, optionally filtered by year (AIP-132).
      * </pre>
      */
     public app.rappeloids.protos.v1.ListHistoryResponse listHistory(app.rappeloids.protos.v1.ListHistoryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListHistoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Lists available years that have historical descent records for UI navigation (AIP-136).
+     * </pre>
+     */
+    public app.rappeloids.protos.v1.ListHistoryYearsResponse listHistoryYears(app.rappeloids.protos.v1.ListHistoryYearsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListHistoryYearsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -303,7 +375,7 @@ public final class HistoryServiceGrpc {
   /**
    * A stub to allow clients to do ListenableFuture-style rpc calls to service HistoryService.
    * <pre>
-   * Service managing historical canyon descent logs and expedition history.
+   * Service managing historical canyon descent logs and expedition history (AIP-121).
    * </pre>
    */
   public static final class HistoryServiceFutureStub
@@ -321,13 +393,24 @@ public final class HistoryServiceGrpc {
 
     /**
      * <pre>
-     * Lists all historical canyon descent records with user participation.
+     * Lists historical canyon descent records with user participation, optionally filtered by year (AIP-132).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<app.rappeloids.protos.v1.ListHistoryResponse> listHistory(
         app.rappeloids.protos.v1.ListHistoryRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListHistoryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Lists available years that have historical descent records for UI navigation (AIP-136).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<app.rappeloids.protos.v1.ListHistoryYearsResponse> listHistoryYears(
+        app.rappeloids.protos.v1.ListHistoryYearsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListHistoryYearsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -343,7 +426,8 @@ public final class HistoryServiceGrpc {
   }
 
   private static final int METHODID_LIST_HISTORY = 0;
-  private static final int METHODID_BATCH_UPDATE_HISTORY = 1;
+  private static final int METHODID_LIST_HISTORY_YEARS = 1;
+  private static final int METHODID_BATCH_UPDATE_HISTORY = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -365,6 +449,10 @@ public final class HistoryServiceGrpc {
         case METHODID_LIST_HISTORY:
           serviceImpl.listHistory((app.rappeloids.protos.v1.ListHistoryRequest) request,
               (io.grpc.stub.StreamObserver<app.rappeloids.protos.v1.ListHistoryResponse>) responseObserver);
+          break;
+        case METHODID_LIST_HISTORY_YEARS:
+          serviceImpl.listHistoryYears((app.rappeloids.protos.v1.ListHistoryYearsRequest) request,
+              (io.grpc.stub.StreamObserver<app.rappeloids.protos.v1.ListHistoryYearsResponse>) responseObserver);
           break;
         case METHODID_BATCH_UPDATE_HISTORY:
           serviceImpl.batchUpdateHistory((app.rappeloids.protos.v1.BatchUpdateHistoryRequest) request,
@@ -395,6 +483,13 @@ public final class HistoryServiceGrpc {
               app.rappeloids.protos.v1.ListHistoryRequest,
               app.rappeloids.protos.v1.ListHistoryResponse>(
                 service, METHODID_LIST_HISTORY)))
+        .addMethod(
+          getListHistoryYearsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              app.rappeloids.protos.v1.ListHistoryYearsRequest,
+              app.rappeloids.protos.v1.ListHistoryYearsResponse>(
+                service, METHODID_LIST_HISTORY_YEARS)))
         .addMethod(
           getBatchUpdateHistoryMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -451,6 +546,7 @@ public final class HistoryServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new HistoryServiceFileDescriptorSupplier())
               .addMethod(getListHistoryMethod())
+              .addMethod(getListHistoryYearsMethod())
               .addMethod(getBatchUpdateHistoryMethod())
               .build();
         }

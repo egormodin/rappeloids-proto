@@ -33,13 +33,10 @@ private static final long serialVersionUID = 0L;
   }
   private Expense() {
     name_ = "";
-    id_ = "";
-    tripId_ = "";
     title_ = "";
-    payerId_ = "";
-    category_ = "";
+    payer_ = "";
+    category_ = 0;
     description_ = "";
-    receiptUrl_ = "";
     splits_ = java.util.Collections.emptyList();
   }
 
@@ -54,6 +51,1040 @@ private static final long serialVersionUID = 0L;
     return app.rappeloids.protos.v1.Expenses.internal_static_rappeloids_v1_Expense_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             app.rappeloids.protos.v1.Expense.class, app.rappeloids.protos.v1.Expense.Builder.class);
+  }
+
+  /**
+   * Protobuf enum {@code rappeloids.v1.Expense.Category}
+   */
+  public enum Category
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>CATEGORY_UNSPECIFIED = 0;</code>
+     */
+    CATEGORY_UNSPECIFIED(0),
+    /**
+     * <code>GROCERIES = 1;</code>
+     */
+    GROCERIES(1),
+    /**
+     * <code>RESTAURANT = 2;</code>
+     */
+    RESTAURANT(2),
+    /**
+     * <code>CAR_RENTAL = 3;</code>
+     */
+    CAR_RENTAL(3),
+    /**
+     * <code>GAS = 4;</code>
+     */
+    GAS(4),
+    /**
+     * <code>LODGING = 5;</code>
+     */
+    LODGING(5),
+    /**
+     * <code>PERMIT = 6;</code>
+     */
+    PERMIT(6),
+    /**
+     * <code>FLIGHT = 7;</code>
+     */
+    FLIGHT(7),
+    /**
+     * <code>GEAR = 8;</code>
+     */
+    GEAR(8),
+    /**
+     * <code>REIMBURSE = 9;</code>
+     */
+    REIMBURSE(9),
+    /**
+     * <code>GENERAL = 10;</code>
+     */
+    GENERAL(10),
+    /**
+     * <code>OTHER = 11;</code>
+     */
+    OTHER(11),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 33,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        "Category");
+    }
+    /**
+     * <code>CATEGORY_UNSPECIFIED = 0;</code>
+     */
+    public static final int CATEGORY_UNSPECIFIED_VALUE = 0;
+    /**
+     * <code>GROCERIES = 1;</code>
+     */
+    public static final int GROCERIES_VALUE = 1;
+    /**
+     * <code>RESTAURANT = 2;</code>
+     */
+    public static final int RESTAURANT_VALUE = 2;
+    /**
+     * <code>CAR_RENTAL = 3;</code>
+     */
+    public static final int CAR_RENTAL_VALUE = 3;
+    /**
+     * <code>GAS = 4;</code>
+     */
+    public static final int GAS_VALUE = 4;
+    /**
+     * <code>LODGING = 5;</code>
+     */
+    public static final int LODGING_VALUE = 5;
+    /**
+     * <code>PERMIT = 6;</code>
+     */
+    public static final int PERMIT_VALUE = 6;
+    /**
+     * <code>FLIGHT = 7;</code>
+     */
+    public static final int FLIGHT_VALUE = 7;
+    /**
+     * <code>GEAR = 8;</code>
+     */
+    public static final int GEAR_VALUE = 8;
+    /**
+     * <code>REIMBURSE = 9;</code>
+     */
+    public static final int REIMBURSE_VALUE = 9;
+    /**
+     * <code>GENERAL = 10;</code>
+     */
+    public static final int GENERAL_VALUE = 10;
+    /**
+     * <code>OTHER = 11;</code>
+     */
+    public static final int OTHER_VALUE = 11;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Category valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Category forNumber(int value) {
+      switch (value) {
+        case 0: return CATEGORY_UNSPECIFIED;
+        case 1: return GROCERIES;
+        case 2: return RESTAURANT;
+        case 3: return CAR_RENTAL;
+        case 4: return GAS;
+        case 5: return LODGING;
+        case 6: return PERMIT;
+        case 7: return FLIGHT;
+        case 8: return GEAR;
+        case 9: return REIMBURSE;
+        case 10: return GENERAL;
+        case 11: return OTHER;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Category>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Category> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Category>() {
+            public Category findValueByNumber(int number) {
+              return Category.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return app.rappeloids.protos.v1.Expense.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Category[] VALUES = values();
+
+    public static Category valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Category(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:rappeloids.v1.Expense.Category)
+  }
+
+  public interface SplitOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:rappeloids.v1.Expense.Split)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * User resource name: "users/{user_id}"
+     * </pre>
+     *
+     * <code>string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The user.
+     */
+    java.lang.String getUser();
+    /**
+     * <pre>
+     * User resource name: "users/{user_id}"
+     * </pre>
+     *
+     * <code>string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for user.
+     */
+    com.google.protobuf.ByteString
+        getUserBytes();
+
+    /**
+     * <code>.rappeloids.v1.Money amount = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the amount field is set.
+     */
+    boolean hasAmount();
+    /**
+     * <code>.rappeloids.v1.Money amount = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The amount.
+     */
+    app.rappeloids.protos.v1.Money getAmount();
+    /**
+     * <code>.rappeloids.v1.Money amount = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    app.rappeloids.protos.v1.MoneyOrBuilder getAmountOrBuilder();
+
+    /**
+     * <code>bool is_settled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The isSettled.
+     */
+    boolean getIsSettled();
+  }
+  /**
+   * Protobuf type {@code rappeloids.v1.Expense.Split}
+   */
+  public static final class Split extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:rappeloids.v1.Expense.Split)
+      SplitOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 33,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        "Split");
+    }
+    // Use Split.newBuilder() to construct.
+    private Split(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private Split() {
+      user_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return app.rappeloids.protos.v1.Expenses.internal_static_rappeloids_v1_Expense_Split_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return app.rappeloids.protos.v1.Expenses.internal_static_rappeloids_v1_Expense_Split_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              app.rappeloids.protos.v1.Expense.Split.class, app.rappeloids.protos.v1.Expense.Split.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int USER_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object user_ = "";
+    /**
+     * <pre>
+     * User resource name: "users/{user_id}"
+     * </pre>
+     *
+     * <code>string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The user.
+     */
+    @java.lang.Override
+    public java.lang.String getUser() {
+      java.lang.Object ref = user_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        user_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * User resource name: "users/{user_id}"
+     * </pre>
+     *
+     * <code>string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for user.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserBytes() {
+      java.lang.Object ref = user_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        user_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AMOUNT_FIELD_NUMBER = 2;
+    private app.rappeloids.protos.v1.Money amount_;
+    /**
+     * <code>.rappeloids.v1.Money amount = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the amount field is set.
+     */
+    @java.lang.Override
+    public boolean hasAmount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.rappeloids.v1.Money amount = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The amount.
+     */
+    @java.lang.Override
+    public app.rappeloids.protos.v1.Money getAmount() {
+      return amount_ == null ? app.rappeloids.protos.v1.Money.getDefaultInstance() : amount_;
+    }
+    /**
+     * <code>.rappeloids.v1.Money amount = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    @java.lang.Override
+    public app.rappeloids.protos.v1.MoneyOrBuilder getAmountOrBuilder() {
+      return amount_ == null ? app.rappeloids.protos.v1.Money.getDefaultInstance() : amount_;
+    }
+
+    public static final int IS_SETTLED_FIELD_NUMBER = 3;
+    private boolean isSettled_ = false;
+    /**
+     * <code>bool is_settled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The isSettled.
+     */
+    @java.lang.Override
+    public boolean getIsSettled() {
+      return isSettled_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(user_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, user_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getAmount());
+      }
+      if (isSettled_ != false) {
+        output.writeBool(3, isSettled_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(user_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, user_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getAmount());
+      }
+      if (isSettled_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, isSettled_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof app.rappeloids.protos.v1.Expense.Split)) {
+        return super.equals(obj);
+      }
+      app.rappeloids.protos.v1.Expense.Split other = (app.rappeloids.protos.v1.Expense.Split) obj;
+
+      if (!getUser()
+          .equals(other.getUser())) return false;
+      if (hasAmount() != other.hasAmount()) return false;
+      if (hasAmount()) {
+        if (!getAmount()
+            .equals(other.getAmount())) return false;
+      }
+      if (getIsSettled()
+          != other.getIsSettled()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USER_FIELD_NUMBER;
+      hash = (53 * hash) + getUser().hashCode();
+      if (hasAmount()) {
+        hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getAmount().hashCode();
+      }
+      hash = (37 * hash) + IS_SETTLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsSettled());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static app.rappeloids.protos.v1.Expense.Split parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static app.rappeloids.protos.v1.Expense.Split parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.Expense.Split parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static app.rappeloids.protos.v1.Expense.Split parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.Expense.Split parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static app.rappeloids.protos.v1.Expense.Split parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.Expense.Split parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static app.rappeloids.protos.v1.Expense.Split parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static app.rappeloids.protos.v1.Expense.Split parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static app.rappeloids.protos.v1.Expense.Split parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.Expense.Split parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static app.rappeloids.protos.v1.Expense.Split parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(app.rappeloids.protos.v1.Expense.Split prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code rappeloids.v1.Expense.Split}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:rappeloids.v1.Expense.Split)
+        app.rappeloids.protos.v1.Expense.SplitOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return app.rappeloids.protos.v1.Expenses.internal_static_rappeloids_v1_Expense_Split_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return app.rappeloids.protos.v1.Expenses.internal_static_rappeloids_v1_Expense_Split_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                app.rappeloids.protos.v1.Expense.Split.class, app.rappeloids.protos.v1.Expense.Split.Builder.class);
+      }
+
+      // Construct using app.rappeloids.protos.v1.Expense.Split.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          internalGetAmountFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        user_ = "";
+        amount_ = null;
+        if (amountBuilder_ != null) {
+          amountBuilder_.dispose();
+          amountBuilder_ = null;
+        }
+        isSettled_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return app.rappeloids.protos.v1.Expenses.internal_static_rappeloids_v1_Expense_Split_descriptor;
+      }
+
+      @java.lang.Override
+      public app.rappeloids.protos.v1.Expense.Split getDefaultInstanceForType() {
+        return app.rappeloids.protos.v1.Expense.Split.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public app.rappeloids.protos.v1.Expense.Split build() {
+        app.rappeloids.protos.v1.Expense.Split result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public app.rappeloids.protos.v1.Expense.Split buildPartial() {
+        app.rappeloids.protos.v1.Expense.Split result = new app.rappeloids.protos.v1.Expense.Split(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(app.rappeloids.protos.v1.Expense.Split result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.user_ = user_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.amount_ = amountBuilder_ == null
+              ? amount_
+              : amountBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isSettled_ = isSettled_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof app.rappeloids.protos.v1.Expense.Split) {
+          return mergeFrom((app.rappeloids.protos.v1.Expense.Split)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(app.rappeloids.protos.v1.Expense.Split other) {
+        if (other == app.rappeloids.protos.v1.Expense.Split.getDefaultInstance()) return this;
+        if (!other.getUser().isEmpty()) {
+          user_ = other.user_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasAmount()) {
+          mergeAmount(other.getAmount());
+        }
+        if (other.getIsSettled() != false) {
+          setIsSettled(other.getIsSettled());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                user_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    internalGetAmountFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                isSettled_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object user_ = "";
+      /**
+       * <pre>
+       * User resource name: "users/{user_id}"
+       * </pre>
+       *
+       * <code>string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+       * @return The user.
+       */
+      public java.lang.String getUser() {
+        java.lang.Object ref = user_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          user_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * User resource name: "users/{user_id}"
+       * </pre>
+       *
+       * <code>string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+       * @return The bytes for user.
+       */
+      public com.google.protobuf.ByteString
+          getUserBytes() {
+        java.lang.Object ref = user_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          user_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * User resource name: "users/{user_id}"
+       * </pre>
+       *
+       * <code>string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+       * @param value The user to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUser(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        user_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User resource name: "users/{user_id}"
+       * </pre>
+       *
+       * <code>string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUser() {
+        user_ = getDefaultInstance().getUser();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User resource name: "users/{user_id}"
+       * </pre>
+       *
+       * <code>string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+       * @param value The bytes for user to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        user_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private app.rappeloids.protos.v1.Money amount_;
+      private com.google.protobuf.SingleFieldBuilder<
+          app.rappeloids.protos.v1.Money, app.rappeloids.protos.v1.Money.Builder, app.rappeloids.protos.v1.MoneyOrBuilder> amountBuilder_;
+      /**
+       * <code>.rappeloids.v1.Money amount = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return Whether the amount field is set.
+       */
+      public boolean hasAmount() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>.rappeloids.v1.Money amount = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The amount.
+       */
+      public app.rappeloids.protos.v1.Money getAmount() {
+        if (amountBuilder_ == null) {
+          return amount_ == null ? app.rappeloids.protos.v1.Money.getDefaultInstance() : amount_;
+        } else {
+          return amountBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.rappeloids.v1.Money amount = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder setAmount(app.rappeloids.protos.v1.Money value) {
+        if (amountBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          amount_ = value;
+        } else {
+          amountBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.rappeloids.v1.Money amount = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder setAmount(
+          app.rappeloids.protos.v1.Money.Builder builderForValue) {
+        if (amountBuilder_ == null) {
+          amount_ = builderForValue.build();
+        } else {
+          amountBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.rappeloids.v1.Money amount = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder mergeAmount(app.rappeloids.protos.v1.Money value) {
+        if (amountBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0) &&
+            amount_ != null &&
+            amount_ != app.rappeloids.protos.v1.Money.getDefaultInstance()) {
+            getAmountBuilder().mergeFrom(value);
+          } else {
+            amount_ = value;
+          }
+        } else {
+          amountBuilder_.mergeFrom(value);
+        }
+        if (amount_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.rappeloids.v1.Money amount = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder clearAmount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        amount_ = null;
+        if (amountBuilder_ != null) {
+          amountBuilder_.dispose();
+          amountBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.rappeloids.v1.Money amount = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public app.rappeloids.protos.v1.Money.Builder getAmountBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetAmountFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.rappeloids.v1.Money amount = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public app.rappeloids.protos.v1.MoneyOrBuilder getAmountOrBuilder() {
+        if (amountBuilder_ != null) {
+          return amountBuilder_.getMessageOrBuilder();
+        } else {
+          return amount_ == null ?
+              app.rappeloids.protos.v1.Money.getDefaultInstance() : amount_;
+        }
+      }
+      /**
+       * <code>.rappeloids.v1.Money amount = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          app.rappeloids.protos.v1.Money, app.rappeloids.protos.v1.Money.Builder, app.rappeloids.protos.v1.MoneyOrBuilder> 
+          internalGetAmountFieldBuilder() {
+        if (amountBuilder_ == null) {
+          amountBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              app.rappeloids.protos.v1.Money, app.rappeloids.protos.v1.Money.Builder, app.rappeloids.protos.v1.MoneyOrBuilder>(
+                  getAmount(),
+                  getParentForChildren(),
+                  isClean());
+          amount_ = null;
+        }
+        return amountBuilder_;
+      }
+
+      private boolean isSettled_ ;
+      /**
+       * <code>bool is_settled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The isSettled.
+       */
+      @java.lang.Override
+      public boolean getIsSettled() {
+        return isSettled_;
+      }
+      /**
+       * <code>bool is_settled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The isSettled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsSettled(boolean value) {
+
+        isSettled_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_settled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsSettled() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        isSettled_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:rappeloids.v1.Expense.Split)
+    }
+
+    // @@protoc_insertion_point(class_scope:rappeloids.v1.Expense.Split)
+    private static final app.rappeloids.protos.v1.Expense.Split DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new app.rappeloids.protos.v1.Expense.Split();
+    }
+
+    public static app.rappeloids.protos.v1.Expense.Split getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Split>
+        PARSER = new com.google.protobuf.AbstractParser<Split>() {
+      @java.lang.Override
+      public Split parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<Split> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Split> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public app.rappeloids.protos.v1.Expense.Split getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   private int bitField0_;
@@ -104,101 +1135,7 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ID_FIELD_NUMBER = 2;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object id_ = "";
-  /**
-   * <pre>
-   * The unique identifier of the expense.
-   * </pre>
-   *
-   * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The id.
-   */
-  @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      id_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * The unique identifier of the expense.
-   * </pre>
-   *
-   * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The bytes for id.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getIdBytes() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      id_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TRIP_ID_FIELD_NUMBER = 3;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object tripId_ = "";
-  /**
-   * <pre>
-   * Parent trip ID.
-   * </pre>
-   *
-   * <code>string trip_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
-   * @return The tripId.
-   */
-  @java.lang.Override
-  public java.lang.String getTripId() {
-    java.lang.Object ref = tripId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      tripId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Parent trip ID.
-   * </pre>
-   *
-   * <code>string trip_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for tripId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTripIdBytes() {
-    java.lang.Object ref = tripId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      tripId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TITLE_FIELD_NUMBER = 4;
+  public static final int TITLE_FIELD_NUMBER = 2;
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
   /**
@@ -206,7 +1143,7 @@ private static final long serialVersionUID = 0L;
    * Short title of the expense.
    * </pre>
    *
-   * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The title.
    */
   @java.lang.Override
@@ -227,7 +1164,7 @@ private static final long serialVersionUID = 0L;
    * Short title of the expense.
    * </pre>
    *
-   * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for title.
    */
   @java.lang.Override
@@ -245,61 +1182,61 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PAYER_ID_FIELD_NUMBER = 5;
+  public static final int PAYER_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object payerId_ = "";
+  private volatile java.lang.Object payer_ = "";
   /**
    * <pre>
-   * User ID who paid for this expense.
+   * User resource name who paid for this expense. Format: "users/{user_id}"
    * </pre>
    *
-   * <code>string payer_id = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The payerId.
+   * <code>string payer = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The payer.
    */
   @java.lang.Override
-  public java.lang.String getPayerId() {
-    java.lang.Object ref = payerId_;
+  public java.lang.String getPayer() {
+    java.lang.Object ref = payer_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      payerId_ = s;
+      payer_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * User ID who paid for this expense.
+   * User resource name who paid for this expense. Format: "users/{user_id}"
    * </pre>
    *
-   * <code>string payer_id = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for payerId.
+   * <code>string payer = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for payer.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getPayerIdBytes() {
-    java.lang.Object ref = payerId_;
+      getPayerBytes() {
+    java.lang.Object ref = payer_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      payerId_ = b;
+      payer_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int AMOUNT_FIELD_NUMBER = 6;
+  public static final int AMOUNT_FIELD_NUMBER = 4;
   private app.rappeloids.protos.v1.Money amount_;
   /**
    * <pre>
    * Monetary amount and currency (AIP-213).
    * </pre>
    *
-   * <code>.rappeloids.v1.Money amount = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.rappeloids.v1.Money amount = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the amount field is set.
    */
   @java.lang.Override
@@ -311,7 +1248,7 @@ private static final long serialVersionUID = 0L;
    * Monetary amount and currency (AIP-213).
    * </pre>
    *
-   * <code>.rappeloids.v1.Money amount = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.rappeloids.v1.Money amount = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The amount.
    */
   @java.lang.Override
@@ -323,61 +1260,40 @@ private static final long serialVersionUID = 0L;
    * Monetary amount and currency (AIP-213).
    * </pre>
    *
-   * <code>.rappeloids.v1.Money amount = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.rappeloids.v1.Money amount = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public app.rappeloids.protos.v1.MoneyOrBuilder getAmountOrBuilder() {
     return amount_ == null ? app.rappeloids.protos.v1.Money.getDefaultInstance() : amount_;
   }
 
-  public static final int CATEGORY_FIELD_NUMBER = 7;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object category_ = "";
+  public static final int CATEGORY_FIELD_NUMBER = 5;
+  private int category_ = 0;
   /**
    * <pre>
-   * Category label (e.g. "gas", "lodging", "food", "permits").
+   * Category of the expense.
    * </pre>
    *
-   * <code>string category = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.rappeloids.v1.Expense.Category category = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The enum numeric value on the wire for category.
+   */
+  @java.lang.Override public int getCategoryValue() {
+    return category_;
+  }
+  /**
+   * <pre>
+   * Category of the expense.
+   * </pre>
+   *
+   * <code>.rappeloids.v1.Expense.Category category = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The category.
    */
-  @java.lang.Override
-  public java.lang.String getCategory() {
-    java.lang.Object ref = category_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      category_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Category label (e.g. "gas", "lodging", "food", "permits").
-   * </pre>
-   *
-   * <code>string category = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for category.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getCategoryBytes() {
-    java.lang.Object ref = category_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      category_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  @java.lang.Override public app.rappeloids.protos.v1.Expense.Category getCategory() {
+    app.rappeloids.protos.v1.Expense.Category result = app.rappeloids.protos.v1.Expense.Category.forNumber(category_);
+    return result == null ? app.rappeloids.protos.v1.Expense.Category.UNRECOGNIZED : result;
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 8;
+  public static final int DESCRIPTION_FIELD_NUMBER = 6;
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
   /**
@@ -385,7 +1301,7 @@ private static final long serialVersionUID = 0L;
    * Optional notes and description.
    * </pre>
    *
-   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The description.
    */
   @java.lang.Override
@@ -406,7 +1322,7 @@ private static final long serialVersionUID = 0L;
    * Optional notes and description.
    * </pre>
    *
-   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for description.
    */
   @java.lang.Override
@@ -424,65 +1340,18 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int RECEIPT_URL_FIELD_NUMBER = 9;
+  public static final int SPLITS_FIELD_NUMBER = 7;
   @SuppressWarnings("serial")
-  private volatile java.lang.Object receiptUrl_ = "";
-  /**
-   * <pre>
-   * Uploaded receipt photo URL.
-   * </pre>
-   *
-   * <code>string receipt_url = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The receiptUrl.
-   */
-  @java.lang.Override
-  public java.lang.String getReceiptUrl() {
-    java.lang.Object ref = receiptUrl_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      receiptUrl_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Uploaded receipt photo URL.
-   * </pre>
-   *
-   * <code>string receipt_url = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-   * @return The bytes for receiptUrl.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getReceiptUrlBytes() {
-    java.lang.Object ref = receiptUrl_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      receiptUrl_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int SPLITS_FIELD_NUMBER = 10;
-  @SuppressWarnings("serial")
-  private java.util.List<app.rappeloids.protos.v1.ExpenseSplit> splits_;
+  private java.util.List<app.rappeloids.protos.v1.Expense.Split> splits_;
   /**
    * <pre>
    * User splits and owed amounts.
    * </pre>
    *
-   * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.util.List<app.rappeloids.protos.v1.ExpenseSplit> getSplitsList() {
+  public java.util.List<app.rappeloids.protos.v1.Expense.Split> getSplitsList() {
     return splits_;
   }
   /**
@@ -490,10 +1359,10 @@ private static final long serialVersionUID = 0L;
    * User splits and owed amounts.
    * </pre>
    *
-   * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.util.List<? extends app.rappeloids.protos.v1.ExpenseSplitOrBuilder> 
+  public java.util.List<? extends app.rappeloids.protos.v1.Expense.SplitOrBuilder> 
       getSplitsOrBuilderList() {
     return splits_;
   }
@@ -502,7 +1371,7 @@ private static final long serialVersionUID = 0L;
    * User splits and owed amounts.
    * </pre>
    *
-   * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public int getSplitsCount() {
@@ -513,10 +1382,10 @@ private static final long serialVersionUID = 0L;
    * User splits and owed amounts.
    * </pre>
    *
-   * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public app.rappeloids.protos.v1.ExpenseSplit getSplits(int index) {
+  public app.rappeloids.protos.v1.Expense.Split getSplits(int index) {
     return splits_.get(index);
   }
   /**
@@ -524,22 +1393,22 @@ private static final long serialVersionUID = 0L;
    * User splits and owed amounts.
    * </pre>
    *
-   * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public app.rappeloids.protos.v1.ExpenseSplitOrBuilder getSplitsOrBuilder(
+  public app.rappeloids.protos.v1.Expense.SplitOrBuilder getSplitsOrBuilder(
       int index) {
     return splits_.get(index);
   }
 
-  public static final int CREATE_TIME_FIELD_NUMBER = 11;
+  public static final int CREATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp createTime_;
   /**
    * <pre>
    * Timestamp when the expense was created (AIP-142).
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the createTime field is set.
    */
   @java.lang.Override
@@ -551,7 +1420,7 @@ private static final long serialVersionUID = 0L;
    * Timestamp when the expense was created (AIP-142).
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The createTime.
    */
   @java.lang.Override
@@ -563,21 +1432,21 @@ private static final long serialVersionUID = 0L;
    * Timestamp when the expense was created (AIP-142).
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
-  public static final int UPDATE_TIME_FIELD_NUMBER = 12;
+  public static final int UPDATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp updateTime_;
   /**
    * <pre>
    * Timestamp when the expense was last updated (AIP-142).
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the updateTime field is set.
    */
   @java.lang.Override
@@ -589,7 +1458,7 @@ private static final long serialVersionUID = 0L;
    * Timestamp when the expense was last updated (AIP-142).
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The updateTime.
    */
   @java.lang.Override
@@ -601,7 +1470,7 @@ private static final long serialVersionUID = 0L;
    * Timestamp when the expense was last updated (AIP-142).
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
@@ -625,38 +1494,29 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, id_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(tripId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, tripId_);
-    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(title_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, title_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, title_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(payerId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 5, payerId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(payer_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, payer_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(6, getAmount());
+      output.writeMessage(4, getAmount());
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(category_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 7, category_);
+    if (category_ != app.rappeloids.protos.v1.Expense.Category.CATEGORY_UNSPECIFIED.getNumber()) {
+      output.writeEnum(5, category_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 8, description_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(receiptUrl_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 9, receiptUrl_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, description_);
     }
     for (int i = 0; i < splits_.size(); i++) {
-      output.writeMessage(10, splits_.get(i));
+      output.writeMessage(7, splits_.get(i));
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(11, getCreateTime());
+      output.writeMessage(8, getCreateTime());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeMessage(12, getUpdateTime());
+      output.writeMessage(9, getUpdateTime());
     }
     getUnknownFields().writeTo(output);
   }
@@ -670,42 +1530,34 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, id_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(tripId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, tripId_);
-    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(title_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, title_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, title_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(payerId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, payerId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(payer_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, payer_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getAmount());
+        .computeMessageSize(4, getAmount());
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(category_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, category_);
+    if (category_ != app.rappeloids.protos.v1.Expense.Category.CATEGORY_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(5, category_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, description_);
-    }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(receiptUrl_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, receiptUrl_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, description_);
     }
     for (int i = 0; i < splits_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, splits_.get(i));
+        .computeMessageSize(7, splits_.get(i));
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getCreateTime());
+        .computeMessageSize(8, getCreateTime());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, getUpdateTime());
+        .computeMessageSize(9, getUpdateTime());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -724,25 +1576,18 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
-    if (!getId()
-        .equals(other.getId())) return false;
-    if (!getTripId()
-        .equals(other.getTripId())) return false;
     if (!getTitle()
         .equals(other.getTitle())) return false;
-    if (!getPayerId()
-        .equals(other.getPayerId())) return false;
+    if (!getPayer()
+        .equals(other.getPayer())) return false;
     if (hasAmount() != other.hasAmount()) return false;
     if (hasAmount()) {
       if (!getAmount()
           .equals(other.getAmount())) return false;
     }
-    if (!getCategory()
-        .equals(other.getCategory())) return false;
+    if (category_ != other.category_) return false;
     if (!getDescription()
         .equals(other.getDescription())) return false;
-    if (!getReceiptUrl()
-        .equals(other.getReceiptUrl())) return false;
     if (!getSplitsList()
         .equals(other.getSplitsList())) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
@@ -768,24 +1613,18 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + TRIP_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getTripId().hashCode();
     hash = (37 * hash) + TITLE_FIELD_NUMBER;
     hash = (53 * hash) + getTitle().hashCode();
-    hash = (37 * hash) + PAYER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getPayerId().hashCode();
+    hash = (37 * hash) + PAYER_FIELD_NUMBER;
+    hash = (53 * hash) + getPayer().hashCode();
     if (hasAmount()) {
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getAmount().hashCode();
     }
     hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
-    hash = (53 * hash) + getCategory().hashCode();
+    hash = (53 * hash) + category_;
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + RECEIPT_URL_FIELD_NUMBER;
-    hash = (53 * hash) + getReceiptUrl().hashCode();
     if (getSplitsCount() > 0) {
       hash = (37 * hash) + SPLITS_FIELD_NUMBER;
       hash = (53 * hash) + getSplitsList().hashCode();
@@ -943,25 +1782,22 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      id_ = "";
-      tripId_ = "";
       title_ = "";
-      payerId_ = "";
+      payer_ = "";
       amount_ = null;
       if (amountBuilder_ != null) {
         amountBuilder_.dispose();
         amountBuilder_ = null;
       }
-      category_ = "";
+      category_ = 0;
       description_ = "";
-      receiptUrl_ = "";
       if (splitsBuilder_ == null) {
         splits_ = java.util.Collections.emptyList();
       } else {
         splits_ = null;
         splitsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000040);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1006,9 +1842,9 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartialRepeatedFields(app.rappeloids.protos.v1.Expense result) {
       if (splitsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           splits_ = java.util.Collections.unmodifiableList(splits_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.splits_ = splits_;
       } else {
@@ -1022,40 +1858,31 @@ private static final long serialVersionUID = 0L;
         result.name_ = name_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.id_ = id_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.tripId_ = tripId_;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.title_ = title_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.payerId_ = payerId_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.payer_ = payer_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.amount_ = amountBuilder_ == null
             ? amount_
             : amountBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.category_ = category_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.description_ = description_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.receiptUrl_ = receiptUrl_;
-      }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.createTime_ = createTimeBuilder_ == null
             ? createTime_
             : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null
             ? updateTime_
             : updateTimeBuilder_.build();
@@ -1081,49 +1908,32 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.getId().isEmpty()) {
-        id_ = other.id_;
+      if (!other.getTitle().isEmpty()) {
+        title_ = other.title_;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (!other.getTripId().isEmpty()) {
-        tripId_ = other.tripId_;
+      if (!other.getPayer().isEmpty()) {
+        payer_ = other.payer_;
         bitField0_ |= 0x00000004;
-        onChanged();
-      }
-      if (!other.getTitle().isEmpty()) {
-        title_ = other.title_;
-        bitField0_ |= 0x00000008;
-        onChanged();
-      }
-      if (!other.getPayerId().isEmpty()) {
-        payerId_ = other.payerId_;
-        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasAmount()) {
         mergeAmount(other.getAmount());
       }
-      if (!other.getCategory().isEmpty()) {
-        category_ = other.category_;
-        bitField0_ |= 0x00000040;
-        onChanged();
+      if (other.category_ != 0) {
+        setCategoryValue(other.getCategoryValue());
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000080;
-        onChanged();
-      }
-      if (!other.getReceiptUrl().isEmpty()) {
-        receiptUrl_ = other.receiptUrl_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (splitsBuilder_ == null) {
         if (!other.splits_.isEmpty()) {
           if (splits_.isEmpty()) {
             splits_ = other.splits_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureSplitsIsMutable();
             splits_.addAll(other.splits_);
@@ -1136,7 +1946,7 @@ private static final long serialVersionUID = 0L;
             splitsBuilder_.dispose();
             splitsBuilder_ = null;
             splits_ = other.splits_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000040);
             splitsBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  internalGetSplitsFieldBuilder() : null;
@@ -1183,51 +1993,36 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 10
             case 18: {
-              id_ = input.readStringRequireUtf8();
+              title_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 26: {
-              tripId_ = input.readStringRequireUtf8();
+              payer_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
-              title_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
-              break;
-            } // case 34
-            case 42: {
-              payerId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
-              break;
-            } // case 42
-            case 50: {
               input.readMessage(
                   internalGetAmountFieldBuilder().getBuilder(),
                   extensionRegistry);
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
+            case 40: {
+              category_ = input.readEnum();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 40
+            case 50: {
+              description_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000020;
               break;
             } // case 50
             case 58: {
-              category_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
-              break;
-            } // case 58
-            case 66: {
-              description_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
-              break;
-            } // case 66
-            case 74: {
-              receiptUrl_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
-              break;
-            } // case 74
-            case 82: {
-              app.rappeloids.protos.v1.ExpenseSplit m =
+              app.rappeloids.protos.v1.Expense.Split m =
                   input.readMessage(
-                      app.rappeloids.protos.v1.ExpenseSplit.parser(),
+                      app.rappeloids.protos.v1.Expense.Split.parser(),
                       extensionRegistry);
               if (splitsBuilder_ == null) {
                 ensureSplitsIsMutable();
@@ -1236,21 +2031,21 @@ private static final long serialVersionUID = 0L;
                 splitsBuilder_.addMessage(m);
               }
               break;
-            } // case 82
-            case 90: {
+            } // case 58
+            case 66: {
               input.readMessage(
                   internalGetCreateTimeFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000080;
               break;
-            } // case 90
-            case 98: {
+            } // case 66
+            case 74: {
               input.readMessage(
                   internalGetUpdateTimeFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00000100;
               break;
-            } // case 98
+            } // case 74
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1360,197 +2155,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object id_ = "";
-    /**
-     * <pre>
-     * The unique identifier of the expense.
-     * </pre>
-     *
-     * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The id.
-     */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The unique identifier of the expense.
-     * </pre>
-     *
-     * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The bytes for id.
-     */
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The unique identifier of the expense.
-     * </pre>
-     *
-     * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param value The id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setId(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      id_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The unique identifier of the expense.
-     * </pre>
-     *
-     * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearId() {
-      id_ = getDefaultInstance().getId();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The unique identifier of the expense.
-     * </pre>
-     *
-     * <code>string id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param value The bytes for id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      id_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object tripId_ = "";
-    /**
-     * <pre>
-     * Parent trip ID.
-     * </pre>
-     *
-     * <code>string trip_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
-     * @return The tripId.
-     */
-    public java.lang.String getTripId() {
-      java.lang.Object ref = tripId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tripId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Parent trip ID.
-     * </pre>
-     *
-     * <code>string trip_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
-     * @return The bytes for tripId.
-     */
-    public com.google.protobuf.ByteString
-        getTripIdBytes() {
-      java.lang.Object ref = tripId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tripId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Parent trip ID.
-     * </pre>
-     *
-     * <code>string trip_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
-     * @param value The tripId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTripId(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      tripId_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Parent trip ID.
-     * </pre>
-     *
-     * <code>string trip_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTripId() {
-      tripId_ = getDefaultInstance().getTripId();
-      bitField0_ = (bitField0_ & ~0x00000004);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Parent trip ID.
-     * </pre>
-     *
-     * <code>string trip_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
-     * @param value The bytes for tripId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTripIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      tripId_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object title_ = "";
     /**
      * <pre>
      * Short title of the expense.
      * </pre>
      *
-     * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The title.
      */
     public java.lang.String getTitle() {
@@ -1570,7 +2181,7 @@ private static final long serialVersionUID = 0L;
      * Short title of the expense.
      * </pre>
      *
-     * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for title.
      */
     public com.google.protobuf.ByteString
@@ -1591,7 +2202,7 @@ private static final long serialVersionUID = 0L;
      * Short title of the expense.
      * </pre>
      *
-     * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The title to set.
      * @return This builder for chaining.
      */
@@ -1599,7 +2210,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       title_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1608,12 +2219,12 @@ private static final long serialVersionUID = 0L;
      * Short title of the expense.
      * </pre>
      *
-     * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
       title_ = getDefaultInstance().getTitle();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1622,7 +2233,7 @@ private static final long serialVersionUID = 0L;
      * Short title of the expense.
      * </pre>
      *
-     * <code>string title = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string title = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for title to set.
      * @return This builder for chaining.
      */
@@ -1631,27 +2242,27 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       title_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private java.lang.Object payerId_ = "";
+    private java.lang.Object payer_ = "";
     /**
      * <pre>
-     * User ID who paid for this expense.
+     * User resource name who paid for this expense. Format: "users/{user_id}"
      * </pre>
      *
-     * <code>string payer_id = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The payerId.
+     * <code>string payer = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The payer.
      */
-    public java.lang.String getPayerId() {
-      java.lang.Object ref = payerId_;
+    public java.lang.String getPayer() {
+      java.lang.Object ref = payer_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        payerId_ = s;
+        payer_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1659,20 +2270,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User ID who paid for this expense.
+     * User resource name who paid for this expense. Format: "users/{user_id}"
      * </pre>
      *
-     * <code>string payer_id = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The bytes for payerId.
+     * <code>string payer = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for payer.
      */
     public com.google.protobuf.ByteString
-        getPayerIdBytes() {
-      java.lang.Object ref = payerId_;
+        getPayerBytes() {
+      java.lang.Object ref = payer_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        payerId_ = b;
+        payer_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1680,50 +2291,50 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * User ID who paid for this expense.
+     * User resource name who paid for this expense. Format: "users/{user_id}"
      * </pre>
      *
-     * <code>string payer_id = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The payerId to set.
+     * <code>string payer = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The payer to set.
      * @return This builder for chaining.
      */
-    public Builder setPayerId(
+    public Builder setPayer(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      payerId_ = value;
-      bitField0_ |= 0x00000010;
+      payer_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * User ID who paid for this expense.
+     * User resource name who paid for this expense. Format: "users/{user_id}"
      * </pre>
      *
-     * <code>string payer_id = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string payer = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearPayerId() {
-      payerId_ = getDefaultInstance().getPayerId();
-      bitField0_ = (bitField0_ & ~0x00000010);
+    public Builder clearPayer() {
+      payer_ = getDefaultInstance().getPayer();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * User ID who paid for this expense.
+     * User resource name who paid for this expense. Format: "users/{user_id}"
      * </pre>
      *
-     * <code>string payer_id = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The bytes for payerId to set.
+     * <code>string payer = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for payer to set.
      * @return This builder for chaining.
      */
-    public Builder setPayerIdBytes(
+    public Builder setPayerBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      payerId_ = value;
-      bitField0_ |= 0x00000010;
+      payer_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1736,18 +2347,18 @@ private static final long serialVersionUID = 0L;
      * Monetary amount and currency (AIP-213).
      * </pre>
      *
-     * <code>.rappeloids.v1.Money amount = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.rappeloids.v1.Money amount = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the amount field is set.
      */
     public boolean hasAmount() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <pre>
      * Monetary amount and currency (AIP-213).
      * </pre>
      *
-     * <code>.rappeloids.v1.Money amount = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.rappeloids.v1.Money amount = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The amount.
      */
     public app.rappeloids.protos.v1.Money getAmount() {
@@ -1762,7 +2373,7 @@ private static final long serialVersionUID = 0L;
      * Monetary amount and currency (AIP-213).
      * </pre>
      *
-     * <code>.rappeloids.v1.Money amount = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.rappeloids.v1.Money amount = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setAmount(app.rappeloids.protos.v1.Money value) {
       if (amountBuilder_ == null) {
@@ -1773,7 +2384,7 @@ private static final long serialVersionUID = 0L;
       } else {
         amountBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1782,7 +2393,7 @@ private static final long serialVersionUID = 0L;
      * Monetary amount and currency (AIP-213).
      * </pre>
      *
-     * <code>.rappeloids.v1.Money amount = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.rappeloids.v1.Money amount = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setAmount(
         app.rappeloids.protos.v1.Money.Builder builderForValue) {
@@ -1791,7 +2402,7 @@ private static final long serialVersionUID = 0L;
       } else {
         amountBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1800,11 +2411,11 @@ private static final long serialVersionUID = 0L;
      * Monetary amount and currency (AIP-213).
      * </pre>
      *
-     * <code>.rappeloids.v1.Money amount = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.rappeloids.v1.Money amount = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeAmount(app.rappeloids.protos.v1.Money value) {
       if (amountBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0) &&
+        if (((bitField0_ & 0x00000008) != 0) &&
           amount_ != null &&
           amount_ != app.rappeloids.protos.v1.Money.getDefaultInstance()) {
           getAmountBuilder().mergeFrom(value);
@@ -1815,7 +2426,7 @@ private static final long serialVersionUID = 0L;
         amountBuilder_.mergeFrom(value);
       }
       if (amount_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1825,10 +2436,10 @@ private static final long serialVersionUID = 0L;
      * Monetary amount and currency (AIP-213).
      * </pre>
      *
-     * <code>.rappeloids.v1.Money amount = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.rappeloids.v1.Money amount = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearAmount() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000008);
       amount_ = null;
       if (amountBuilder_ != null) {
         amountBuilder_.dispose();
@@ -1842,10 +2453,10 @@ private static final long serialVersionUID = 0L;
      * Monetary amount and currency (AIP-213).
      * </pre>
      *
-     * <code>.rappeloids.v1.Money amount = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.rappeloids.v1.Money amount = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public app.rappeloids.protos.v1.Money.Builder getAmountBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000008;
       onChanged();
       return internalGetAmountFieldBuilder().getBuilder();
     }
@@ -1854,7 +2465,7 @@ private static final long serialVersionUID = 0L;
      * Monetary amount and currency (AIP-213).
      * </pre>
      *
-     * <code>.rappeloids.v1.Money amount = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.rappeloids.v1.Money amount = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public app.rappeloids.protos.v1.MoneyOrBuilder getAmountOrBuilder() {
       if (amountBuilder_ != null) {
@@ -1869,7 +2480,7 @@ private static final long serialVersionUID = 0L;
      * Monetary amount and currency (AIP-213).
      * </pre>
      *
-     * <code>.rappeloids.v1.Money amount = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.rappeloids.v1.Money amount = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         app.rappeloids.protos.v1.Money, app.rappeloids.protos.v1.Money.Builder, app.rappeloids.protos.v1.MoneyOrBuilder> 
@@ -1885,94 +2496,73 @@ private static final long serialVersionUID = 0L;
       return amountBuilder_;
     }
 
-    private java.lang.Object category_ = "";
+    private int category_ = 0;
     /**
      * <pre>
-     * Category label (e.g. "gas", "lodging", "food", "permits").
+     * Category of the expense.
      * </pre>
      *
-     * <code>string category = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.rappeloids.v1.Expense.Category category = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The enum numeric value on the wire for category.
+     */
+    @java.lang.Override public int getCategoryValue() {
+      return category_;
+    }
+    /**
+     * <pre>
+     * Category of the expense.
+     * </pre>
+     *
+     * <code>.rappeloids.v1.Expense.Category category = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The enum numeric value on the wire for category to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCategoryValue(int value) {
+      category_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Category of the expense.
+     * </pre>
+     *
+     * <code>.rappeloids.v1.Expense.Category category = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The category.
      */
-    public java.lang.String getCategory() {
-      java.lang.Object ref = category_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        category_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public app.rappeloids.protos.v1.Expense.Category getCategory() {
+      app.rappeloids.protos.v1.Expense.Category result = app.rappeloids.protos.v1.Expense.Category.forNumber(category_);
+      return result == null ? app.rappeloids.protos.v1.Expense.Category.UNRECOGNIZED : result;
     }
     /**
      * <pre>
-     * Category label (e.g. "gas", "lodging", "food", "permits").
+     * Category of the expense.
      * </pre>
      *
-     * <code>string category = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for category.
-     */
-    public com.google.protobuf.ByteString
-        getCategoryBytes() {
-      java.lang.Object ref = category_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        category_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Category label (e.g. "gas", "lodging", "food", "permits").
-     * </pre>
-     *
-     * <code>string category = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.rappeloids.v1.Expense.Category category = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The category to set.
      * @return This builder for chaining.
      */
-    public Builder setCategory(
-        java.lang.String value) {
+    public Builder setCategory(app.rappeloids.protos.v1.Expense.Category value) {
       if (value == null) { throw new NullPointerException(); }
-      category_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000010;
+      category_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Category label (e.g. "gas", "lodging", "food", "permits").
+     * Category of the expense.
      * </pre>
      *
-     * <code>string category = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.rappeloids.v1.Expense.Category category = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearCategory() {
-      category_ = getDefaultInstance().getCategory();
-      bitField0_ = (bitField0_ & ~0x00000040);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Category label (e.g. "gas", "lodging", "food", "permits").
-     * </pre>
-     *
-     * <code>string category = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for category to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCategoryBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      category_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      category_ = 0;
       onChanged();
       return this;
     }
@@ -1983,7 +2573,7 @@ private static final long serialVersionUID = 0L;
      * Optional notes and description.
      * </pre>
      *
-     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -2003,7 +2593,7 @@ private static final long serialVersionUID = 0L;
      * Optional notes and description.
      * </pre>
      *
-     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -2024,7 +2614,7 @@ private static final long serialVersionUID = 0L;
      * Optional notes and description.
      * </pre>
      *
-     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The description to set.
      * @return This builder for chaining.
      */
@@ -2032,7 +2622,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       description_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2041,12 +2631,12 @@ private static final long serialVersionUID = 0L;
      * Optional notes and description.
      * </pre>
      *
-     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2055,7 +2645,7 @@ private static final long serialVersionUID = 0L;
      * Optional notes and description.
      * </pre>
      *
-     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */
@@ -2064,123 +2654,31 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
 
-    private java.lang.Object receiptUrl_ = "";
-    /**
-     * <pre>
-     * Uploaded receipt photo URL.
-     * </pre>
-     *
-     * <code>string receipt_url = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The receiptUrl.
-     */
-    public java.lang.String getReceiptUrl() {
-      java.lang.Object ref = receiptUrl_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        receiptUrl_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Uploaded receipt photo URL.
-     * </pre>
-     *
-     * <code>string receipt_url = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return The bytes for receiptUrl.
-     */
-    public com.google.protobuf.ByteString
-        getReceiptUrlBytes() {
-      java.lang.Object ref = receiptUrl_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        receiptUrl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Uploaded receipt photo URL.
-     * </pre>
-     *
-     * <code>string receipt_url = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The receiptUrl to set.
-     * @return This builder for chaining.
-     */
-    public Builder setReceiptUrl(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      receiptUrl_ = value;
-      bitField0_ |= 0x00000100;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Uploaded receipt photo URL.
-     * </pre>
-     *
-     * <code>string receipt_url = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearReceiptUrl() {
-      receiptUrl_ = getDefaultInstance().getReceiptUrl();
-      bitField0_ = (bitField0_ & ~0x00000100);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Uploaded receipt photo URL.
-     * </pre>
-     *
-     * <code>string receipt_url = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
-     * @param value The bytes for receiptUrl to set.
-     * @return This builder for chaining.
-     */
-    public Builder setReceiptUrlBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      receiptUrl_ = value;
-      bitField0_ |= 0x00000100;
-      onChanged();
-      return this;
-    }
-
-    private java.util.List<app.rappeloids.protos.v1.ExpenseSplit> splits_ =
+    private java.util.List<app.rappeloids.protos.v1.Expense.Split> splits_ =
       java.util.Collections.emptyList();
     private void ensureSplitsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
-        splits_ = new java.util.ArrayList<app.rappeloids.protos.v1.ExpenseSplit>(splits_);
-        bitField0_ |= 0x00000200;
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        splits_ = new java.util.ArrayList<app.rappeloids.protos.v1.Expense.Split>(splits_);
+        bitField0_ |= 0x00000040;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilder<
-        app.rappeloids.protos.v1.ExpenseSplit, app.rappeloids.protos.v1.ExpenseSplit.Builder, app.rappeloids.protos.v1.ExpenseSplitOrBuilder> splitsBuilder_;
+        app.rappeloids.protos.v1.Expense.Split, app.rappeloids.protos.v1.Expense.Split.Builder, app.rappeloids.protos.v1.Expense.SplitOrBuilder> splitsBuilder_;
 
     /**
      * <pre>
      * User splits and owed amounts.
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.util.List<app.rappeloids.protos.v1.ExpenseSplit> getSplitsList() {
+    public java.util.List<app.rappeloids.protos.v1.Expense.Split> getSplitsList() {
       if (splitsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(splits_);
       } else {
@@ -2192,7 +2690,7 @@ private static final long serialVersionUID = 0L;
      * User splits and owed amounts.
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getSplitsCount() {
       if (splitsBuilder_ == null) {
@@ -2206,9 +2704,9 @@ private static final long serialVersionUID = 0L;
      * User splits and owed amounts.
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.ExpenseSplit getSplits(int index) {
+    public app.rappeloids.protos.v1.Expense.Split getSplits(int index) {
       if (splitsBuilder_ == null) {
         return splits_.get(index);
       } else {
@@ -2220,10 +2718,10 @@ private static final long serialVersionUID = 0L;
      * User splits and owed amounts.
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setSplits(
-        int index, app.rappeloids.protos.v1.ExpenseSplit value) {
+        int index, app.rappeloids.protos.v1.Expense.Split value) {
       if (splitsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2241,10 +2739,10 @@ private static final long serialVersionUID = 0L;
      * User splits and owed amounts.
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setSplits(
-        int index, app.rappeloids.protos.v1.ExpenseSplit.Builder builderForValue) {
+        int index, app.rappeloids.protos.v1.Expense.Split.Builder builderForValue) {
       if (splitsBuilder_ == null) {
         ensureSplitsIsMutable();
         splits_.set(index, builderForValue.build());
@@ -2259,9 +2757,9 @@ private static final long serialVersionUID = 0L;
      * User splits and owed amounts.
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder addSplits(app.rappeloids.protos.v1.ExpenseSplit value) {
+    public Builder addSplits(app.rappeloids.protos.v1.Expense.Split value) {
       if (splitsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2279,10 +2777,10 @@ private static final long serialVersionUID = 0L;
      * User splits and owed amounts.
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addSplits(
-        int index, app.rappeloids.protos.v1.ExpenseSplit value) {
+        int index, app.rappeloids.protos.v1.Expense.Split value) {
       if (splitsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2300,10 +2798,10 @@ private static final long serialVersionUID = 0L;
      * User splits and owed amounts.
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addSplits(
-        app.rappeloids.protos.v1.ExpenseSplit.Builder builderForValue) {
+        app.rappeloids.protos.v1.Expense.Split.Builder builderForValue) {
       if (splitsBuilder_ == null) {
         ensureSplitsIsMutable();
         splits_.add(builderForValue.build());
@@ -2318,10 +2816,10 @@ private static final long serialVersionUID = 0L;
      * User splits and owed amounts.
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addSplits(
-        int index, app.rappeloids.protos.v1.ExpenseSplit.Builder builderForValue) {
+        int index, app.rappeloids.protos.v1.Expense.Split.Builder builderForValue) {
       if (splitsBuilder_ == null) {
         ensureSplitsIsMutable();
         splits_.add(index, builderForValue.build());
@@ -2336,10 +2834,10 @@ private static final long serialVersionUID = 0L;
      * User splits and owed amounts.
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addAllSplits(
-        java.lang.Iterable<? extends app.rappeloids.protos.v1.ExpenseSplit> values) {
+        java.lang.Iterable<? extends app.rappeloids.protos.v1.Expense.Split> values) {
       if (splitsBuilder_ == null) {
         ensureSplitsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2355,12 +2853,12 @@ private static final long serialVersionUID = 0L;
      * User splits and owed amounts.
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearSplits() {
       if (splitsBuilder_ == null) {
         splits_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         splitsBuilder_.clear();
@@ -2372,7 +2870,7 @@ private static final long serialVersionUID = 0L;
      * User splits and owed amounts.
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeSplits(int index) {
       if (splitsBuilder_ == null) {
@@ -2389,9 +2887,9 @@ private static final long serialVersionUID = 0L;
      * User splits and owed amounts.
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.ExpenseSplit.Builder getSplitsBuilder(
+    public app.rappeloids.protos.v1.Expense.Split.Builder getSplitsBuilder(
         int index) {
       return internalGetSplitsFieldBuilder().getBuilder(index);
     }
@@ -2400,9 +2898,9 @@ private static final long serialVersionUID = 0L;
      * User splits and owed amounts.
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.ExpenseSplitOrBuilder getSplitsOrBuilder(
+    public app.rappeloids.protos.v1.Expense.SplitOrBuilder getSplitsOrBuilder(
         int index) {
       if (splitsBuilder_ == null) {
         return splits_.get(index);  } else {
@@ -2414,9 +2912,9 @@ private static final long serialVersionUID = 0L;
      * User splits and owed amounts.
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.util.List<? extends app.rappeloids.protos.v1.ExpenseSplitOrBuilder> 
+    public java.util.List<? extends app.rappeloids.protos.v1.Expense.SplitOrBuilder> 
          getSplitsOrBuilderList() {
       if (splitsBuilder_ != null) {
         return splitsBuilder_.getMessageOrBuilderList();
@@ -2429,43 +2927,43 @@ private static final long serialVersionUID = 0L;
      * User splits and owed amounts.
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.ExpenseSplit.Builder addSplitsBuilder() {
+    public app.rappeloids.protos.v1.Expense.Split.Builder addSplitsBuilder() {
       return internalGetSplitsFieldBuilder().addBuilder(
-          app.rappeloids.protos.v1.ExpenseSplit.getDefaultInstance());
+          app.rappeloids.protos.v1.Expense.Split.getDefaultInstance());
     }
     /**
      * <pre>
      * User splits and owed amounts.
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.ExpenseSplit.Builder addSplitsBuilder(
+    public app.rappeloids.protos.v1.Expense.Split.Builder addSplitsBuilder(
         int index) {
       return internalGetSplitsFieldBuilder().addBuilder(
-          index, app.rappeloids.protos.v1.ExpenseSplit.getDefaultInstance());
+          index, app.rappeloids.protos.v1.Expense.Split.getDefaultInstance());
     }
     /**
      * <pre>
      * User splits and owed amounts.
      * </pre>
      *
-     * <code>repeated .rappeloids.v1.ExpenseSplit splits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.Expense.Split splits = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.util.List<app.rappeloids.protos.v1.ExpenseSplit.Builder> 
+    public java.util.List<app.rappeloids.protos.v1.Expense.Split.Builder> 
          getSplitsBuilderList() {
       return internalGetSplitsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilder<
-        app.rappeloids.protos.v1.ExpenseSplit, app.rappeloids.protos.v1.ExpenseSplit.Builder, app.rappeloids.protos.v1.ExpenseSplitOrBuilder> 
+        app.rappeloids.protos.v1.Expense.Split, app.rappeloids.protos.v1.Expense.Split.Builder, app.rappeloids.protos.v1.Expense.SplitOrBuilder> 
         internalGetSplitsFieldBuilder() {
       if (splitsBuilder_ == null) {
         splitsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-            app.rappeloids.protos.v1.ExpenseSplit, app.rappeloids.protos.v1.ExpenseSplit.Builder, app.rappeloids.protos.v1.ExpenseSplitOrBuilder>(
+            app.rappeloids.protos.v1.Expense.Split, app.rappeloids.protos.v1.Expense.Split.Builder, app.rappeloids.protos.v1.Expense.SplitOrBuilder>(
                 splits_,
-                ((bitField0_ & 0x00000200) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         splits_ = null;
@@ -2481,18 +2979,18 @@ private static final long serialVersionUID = 0L;
      * Timestamp when the expense was created (AIP-142).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <pre>
      * Timestamp when the expense was created (AIP-142).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
@@ -2507,7 +3005,7 @@ private static final long serialVersionUID = 0L;
      * Timestamp when the expense was created (AIP-142).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2518,7 +3016,7 @@ private static final long serialVersionUID = 0L;
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2527,7 +3025,7 @@ private static final long serialVersionUID = 0L;
      * Timestamp when the expense was created (AIP-142).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCreateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2536,7 +3034,7 @@ private static final long serialVersionUID = 0L;
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2545,11 +3043,11 @@ private static final long serialVersionUID = 0L;
      * Timestamp when the expense was created (AIP-142).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0) &&
+        if (((bitField0_ & 0x00000080) != 0) &&
           createTime_ != null &&
           createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2560,7 +3058,7 @@ private static final long serialVersionUID = 0L;
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2570,10 +3068,10 @@ private static final long serialVersionUID = 0L;
      * Timestamp when the expense was created (AIP-142).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000080);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2587,10 +3085,10 @@ private static final long serialVersionUID = 0L;
      * Timestamp when the expense was created (AIP-142).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -2599,7 +3097,7 @@ private static final long serialVersionUID = 0L;
      * Timestamp when the expense was created (AIP-142).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -2614,7 +3112,7 @@ private static final long serialVersionUID = 0L;
      * Timestamp when the expense was created (AIP-142).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2638,18 +3136,18 @@ private static final long serialVersionUID = 0L;
      * Timestamp when the expense was last updated (AIP-142).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <pre>
      * Timestamp when the expense was last updated (AIP-142).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
@@ -2664,7 +3162,7 @@ private static final long serialVersionUID = 0L;
      * Timestamp when the expense was last updated (AIP-142).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -2675,7 +3173,7 @@ private static final long serialVersionUID = 0L;
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2684,7 +3182,7 @@ private static final long serialVersionUID = 0L;
      * Timestamp when the expense was last updated (AIP-142).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setUpdateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2693,7 +3191,7 @@ private static final long serialVersionUID = 0L;
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2702,11 +3200,11 @@ private static final long serialVersionUID = 0L;
      * Timestamp when the expense was last updated (AIP-142).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0) &&
+        if (((bitField0_ & 0x00000100) != 0) &&
           updateTime_ != null &&
           updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -2717,7 +3215,7 @@ private static final long serialVersionUID = 0L;
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2727,10 +3225,10 @@ private static final long serialVersionUID = 0L;
      * Timestamp when the expense was last updated (AIP-142).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000100);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -2744,10 +3242,10 @@ private static final long serialVersionUID = 0L;
      * Timestamp when the expense was last updated (AIP-142).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2756,7 +3254,7 @@ private static final long serialVersionUID = 0L;
      * Timestamp when the expense was last updated (AIP-142).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -2771,7 +3269,7 @@ private static final long serialVersionUID = 0L;
      * Timestamp when the expense was last updated (AIP-142).
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 

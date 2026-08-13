@@ -11,31 +11,45 @@ public interface BatchUpdateHistoryResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 updated_count = 1;</code>
-   * @return The updatedCount.
-   */
-  int getUpdatedCount();
-
-  /**
-   * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+   * <pre>
+   * Resulting/updated history entries (AIP-234).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
    */
   java.util.List<app.rappeloids.protos.v1.HistoryEntry> 
       getEntriesList();
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+   * <pre>
+   * Resulting/updated history entries (AIP-234).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
    */
   app.rappeloids.protos.v1.HistoryEntry getEntries(int index);
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+   * <pre>
+   * Resulting/updated history entries (AIP-234).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
    */
   int getEntriesCount();
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+   * <pre>
+   * Resulting/updated history entries (AIP-234).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
    */
   java.util.List<? extends app.rappeloids.protos.v1.HistoryEntryOrBuilder> 
       getEntriesOrBuilderList();
   /**
-   * <code>repeated .rappeloids.v1.HistoryEntry entries = 2;</code>
+   * <pre>
+   * Resulting/updated history entries (AIP-234).
+   * </pre>
+   *
+   * <code>repeated .rappeloids.v1.HistoryEntry entries = 1;</code>
    */
   app.rappeloids.protos.v1.HistoryEntryOrBuilder getEntriesOrBuilder(
       int index);

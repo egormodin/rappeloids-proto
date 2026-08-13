@@ -28,7 +28,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TripExpenseSummary() {
-    tripId_ = "";
+    name_ = "";
     balances_ = java.util.Collections.emptyList();
   }
 
@@ -45,40 +45,950 @@ private static final long serialVersionUID = 0L;
             app.rappeloids.protos.v1.TripExpenseSummary.class, app.rappeloids.protos.v1.TripExpenseSummary.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int TRIP_ID_FIELD_NUMBER = 1;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object tripId_ = "";
+  public interface BalanceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:rappeloids.v1.TripExpenseSummary.Balance)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * User resource name: "users/{user_id}"
+     * </pre>
+     *
+     * <code>string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The user.
+     */
+    java.lang.String getUser();
+    /**
+     * <pre>
+     * User resource name: "users/{user_id}"
+     * </pre>
+     *
+     * <code>string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for user.
+     */
+    com.google.protobuf.ByteString
+        getUserBytes();
+
+    /**
+     * <code>string user_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The userName.
+     */
+    java.lang.String getUserName();
+    /**
+     * <code>string user_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for userName.
+     */
+    com.google.protobuf.ByteString
+        getUserNameBytes();
+
+    /**
+     * <code>.rappeloids.v1.Money net_balance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the netBalance field is set.
+     */
+    boolean hasNetBalance();
+    /**
+     * <code>.rappeloids.v1.Money net_balance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The netBalance.
+     */
+    app.rappeloids.protos.v1.Money getNetBalance();
+    /**
+     * <code>.rappeloids.v1.Money net_balance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    app.rappeloids.protos.v1.MoneyOrBuilder getNetBalanceOrBuilder();
+  }
   /**
-   * <code>string trip_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The tripId.
+   * Protobuf type {@code rappeloids.v1.TripExpenseSummary.Balance}
+   */
+  public static final class Balance extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:rappeloids.v1.TripExpenseSummary.Balance)
+      BalanceOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 33,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        "Balance");
+    }
+    // Use Balance.newBuilder() to construct.
+    private Balance(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private Balance() {
+      user_ = "";
+      userName_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return app.rappeloids.protos.v1.Expenses.internal_static_rappeloids_v1_TripExpenseSummary_Balance_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return app.rappeloids.protos.v1.Expenses.internal_static_rappeloids_v1_TripExpenseSummary_Balance_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              app.rappeloids.protos.v1.TripExpenseSummary.Balance.class, app.rappeloids.protos.v1.TripExpenseSummary.Balance.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int USER_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object user_ = "";
+    /**
+     * <pre>
+     * User resource name: "users/{user_id}"
+     * </pre>
+     *
+     * <code>string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The user.
+     */
+    @java.lang.Override
+    public java.lang.String getUser() {
+      java.lang.Object ref = user_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        user_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * User resource name: "users/{user_id}"
+     * </pre>
+     *
+     * <code>string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for user.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserBytes() {
+      java.lang.Object ref = user_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        user_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_NAME_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object userName_ = "";
+    /**
+     * <code>string user_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The userName.
+     */
+    @java.lang.Override
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for userName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserNameBytes() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NET_BALANCE_FIELD_NUMBER = 3;
+    private app.rappeloids.protos.v1.Money netBalance_;
+    /**
+     * <code>.rappeloids.v1.Money net_balance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return Whether the netBalance field is set.
+     */
+    @java.lang.Override
+    public boolean hasNetBalance() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.rappeloids.v1.Money net_balance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * @return The netBalance.
+     */
+    @java.lang.Override
+    public app.rappeloids.protos.v1.Money getNetBalance() {
+      return netBalance_ == null ? app.rappeloids.protos.v1.Money.getDefaultInstance() : netBalance_;
+    }
+    /**
+     * <code>.rappeloids.v1.Money net_balance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    @java.lang.Override
+    public app.rappeloids.protos.v1.MoneyOrBuilder getNetBalanceOrBuilder() {
+      return netBalance_ == null ? app.rappeloids.protos.v1.Money.getDefaultInstance() : netBalance_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(user_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, user_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, userName_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getNetBalance());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(user_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, user_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, userName_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getNetBalance());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof app.rappeloids.protos.v1.TripExpenseSummary.Balance)) {
+        return super.equals(obj);
+      }
+      app.rappeloids.protos.v1.TripExpenseSummary.Balance other = (app.rappeloids.protos.v1.TripExpenseSummary.Balance) obj;
+
+      if (!getUser()
+          .equals(other.getUser())) return false;
+      if (!getUserName()
+          .equals(other.getUserName())) return false;
+      if (hasNetBalance() != other.hasNetBalance()) return false;
+      if (hasNetBalance()) {
+        if (!getNetBalance()
+            .equals(other.getNetBalance())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USER_FIELD_NUMBER;
+      hash = (53 * hash) + getUser().hashCode();
+      hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
+      if (hasNetBalance()) {
+        hash = (37 * hash) + NET_BALANCE_FIELD_NUMBER;
+        hash = (53 * hash) + getNetBalance().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static app.rappeloids.protos.v1.TripExpenseSummary.Balance parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static app.rappeloids.protos.v1.TripExpenseSummary.Balance parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.TripExpenseSummary.Balance parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static app.rappeloids.protos.v1.TripExpenseSummary.Balance parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.TripExpenseSummary.Balance parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static app.rappeloids.protos.v1.TripExpenseSummary.Balance parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.TripExpenseSummary.Balance parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static app.rappeloids.protos.v1.TripExpenseSummary.Balance parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static app.rappeloids.protos.v1.TripExpenseSummary.Balance parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static app.rappeloids.protos.v1.TripExpenseSummary.Balance parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static app.rappeloids.protos.v1.TripExpenseSummary.Balance parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static app.rappeloids.protos.v1.TripExpenseSummary.Balance parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(app.rappeloids.protos.v1.TripExpenseSummary.Balance prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code rappeloids.v1.TripExpenseSummary.Balance}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:rappeloids.v1.TripExpenseSummary.Balance)
+        app.rappeloids.protos.v1.TripExpenseSummary.BalanceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return app.rappeloids.protos.v1.Expenses.internal_static_rappeloids_v1_TripExpenseSummary_Balance_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return app.rappeloids.protos.v1.Expenses.internal_static_rappeloids_v1_TripExpenseSummary_Balance_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                app.rappeloids.protos.v1.TripExpenseSummary.Balance.class, app.rappeloids.protos.v1.TripExpenseSummary.Balance.Builder.class);
+      }
+
+      // Construct using app.rappeloids.protos.v1.TripExpenseSummary.Balance.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          internalGetNetBalanceFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        user_ = "";
+        userName_ = "";
+        netBalance_ = null;
+        if (netBalanceBuilder_ != null) {
+          netBalanceBuilder_.dispose();
+          netBalanceBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return app.rappeloids.protos.v1.Expenses.internal_static_rappeloids_v1_TripExpenseSummary_Balance_descriptor;
+      }
+
+      @java.lang.Override
+      public app.rappeloids.protos.v1.TripExpenseSummary.Balance getDefaultInstanceForType() {
+        return app.rappeloids.protos.v1.TripExpenseSummary.Balance.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public app.rappeloids.protos.v1.TripExpenseSummary.Balance build() {
+        app.rappeloids.protos.v1.TripExpenseSummary.Balance result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public app.rappeloids.protos.v1.TripExpenseSummary.Balance buildPartial() {
+        app.rappeloids.protos.v1.TripExpenseSummary.Balance result = new app.rappeloids.protos.v1.TripExpenseSummary.Balance(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(app.rappeloids.protos.v1.TripExpenseSummary.Balance result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.user_ = user_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.userName_ = userName_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.netBalance_ = netBalanceBuilder_ == null
+              ? netBalance_
+              : netBalanceBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof app.rappeloids.protos.v1.TripExpenseSummary.Balance) {
+          return mergeFrom((app.rappeloids.protos.v1.TripExpenseSummary.Balance)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(app.rappeloids.protos.v1.TripExpenseSummary.Balance other) {
+        if (other == app.rappeloids.protos.v1.TripExpenseSummary.Balance.getDefaultInstance()) return this;
+        if (!other.getUser().isEmpty()) {
+          user_ = other.user_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getUserName().isEmpty()) {
+          userName_ = other.userName_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.hasNetBalance()) {
+          mergeNetBalance(other.getNetBalance());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                user_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                userName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    internalGetNetBalanceFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object user_ = "";
+      /**
+       * <pre>
+       * User resource name: "users/{user_id}"
+       * </pre>
+       *
+       * <code>string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+       * @return The user.
+       */
+      public java.lang.String getUser() {
+        java.lang.Object ref = user_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          user_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * User resource name: "users/{user_id}"
+       * </pre>
+       *
+       * <code>string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+       * @return The bytes for user.
+       */
+      public com.google.protobuf.ByteString
+          getUserBytes() {
+        java.lang.Object ref = user_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          user_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * User resource name: "users/{user_id}"
+       * </pre>
+       *
+       * <code>string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+       * @param value The user to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUser(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        user_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User resource name: "users/{user_id}"
+       * </pre>
+       *
+       * <code>string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUser() {
+        user_ = getDefaultInstance().getUser();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User resource name: "users/{user_id}"
+       * </pre>
+       *
+       * <code>string user = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+       * @param value The bytes for user to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        user_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userName_ = "";
+      /**
+       * <code>string user_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The userName.
+       */
+      public java.lang.String getUserName() {
+        java.lang.Object ref = userName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return The bytes for userName.
+       */
+      public com.google.protobuf.ByteString
+          getUserNameBytes() {
+        java.lang.Object ref = userName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        userName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserName() {
+        userName_ = getDefaultInstance().getUserName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * @param value The bytes for userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        userName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private app.rappeloids.protos.v1.Money netBalance_;
+      private com.google.protobuf.SingleFieldBuilder<
+          app.rappeloids.protos.v1.Money, app.rappeloids.protos.v1.Money.Builder, app.rappeloids.protos.v1.MoneyOrBuilder> netBalanceBuilder_;
+      /**
+       * <code>.rappeloids.v1.Money net_balance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return Whether the netBalance field is set.
+       */
+      public boolean hasNetBalance() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>.rappeloids.v1.Money net_balance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       * @return The netBalance.
+       */
+      public app.rappeloids.protos.v1.Money getNetBalance() {
+        if (netBalanceBuilder_ == null) {
+          return netBalance_ == null ? app.rappeloids.protos.v1.Money.getDefaultInstance() : netBalance_;
+        } else {
+          return netBalanceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.rappeloids.v1.Money net_balance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder setNetBalance(app.rappeloids.protos.v1.Money value) {
+        if (netBalanceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          netBalance_ = value;
+        } else {
+          netBalanceBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.rappeloids.v1.Money net_balance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder setNetBalance(
+          app.rappeloids.protos.v1.Money.Builder builderForValue) {
+        if (netBalanceBuilder_ == null) {
+          netBalance_ = builderForValue.build();
+        } else {
+          netBalanceBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.rappeloids.v1.Money net_balance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder mergeNetBalance(app.rappeloids.protos.v1.Money value) {
+        if (netBalanceBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0) &&
+            netBalance_ != null &&
+            netBalance_ != app.rappeloids.protos.v1.Money.getDefaultInstance()) {
+            getNetBalanceBuilder().mergeFrom(value);
+          } else {
+            netBalance_ = value;
+          }
+        } else {
+          netBalanceBuilder_.mergeFrom(value);
+        }
+        if (netBalance_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.rappeloids.v1.Money net_balance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder clearNetBalance() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        netBalance_ = null;
+        if (netBalanceBuilder_ != null) {
+          netBalanceBuilder_.dispose();
+          netBalanceBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.rappeloids.v1.Money net_balance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public app.rappeloids.protos.v1.Money.Builder getNetBalanceBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return internalGetNetBalanceFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.rappeloids.v1.Money net_balance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public app.rappeloids.protos.v1.MoneyOrBuilder getNetBalanceOrBuilder() {
+        if (netBalanceBuilder_ != null) {
+          return netBalanceBuilder_.getMessageOrBuilder();
+        } else {
+          return netBalance_ == null ?
+              app.rappeloids.protos.v1.Money.getDefaultInstance() : netBalance_;
+        }
+      }
+      /**
+       * <code>.rappeloids.v1.Money net_balance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          app.rappeloids.protos.v1.Money, app.rappeloids.protos.v1.Money.Builder, app.rappeloids.protos.v1.MoneyOrBuilder> 
+          internalGetNetBalanceFieldBuilder() {
+        if (netBalanceBuilder_ == null) {
+          netBalanceBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              app.rappeloids.protos.v1.Money, app.rappeloids.protos.v1.Money.Builder, app.rappeloids.protos.v1.MoneyOrBuilder>(
+                  getNetBalance(),
+                  getParentForChildren(),
+                  isClean());
+          netBalance_ = null;
+        }
+        return netBalanceBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:rappeloids.v1.TripExpenseSummary.Balance)
+    }
+
+    // @@protoc_insertion_point(class_scope:rappeloids.v1.TripExpenseSummary.Balance)
+    private static final app.rappeloids.protos.v1.TripExpenseSummary.Balance DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new app.rappeloids.protos.v1.TripExpenseSummary.Balance();
+    }
+
+    public static app.rappeloids.protos.v1.TripExpenseSummary.Balance getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Balance>
+        PARSER = new com.google.protobuf.AbstractParser<Balance>() {
+      @java.lang.Override
+      public Balance parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<Balance> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Balance> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public app.rappeloids.protos.v1.TripExpenseSummary.Balance getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private int bitField0_;
+  public static final int NAME_FIELD_NUMBER = 1;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
+  /**
+   * <pre>
+   * Parent trip resource name: "trips/{trip_id}"
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
   @java.lang.Override
-  public java.lang.String getTripId() {
-    java.lang.Object ref = tripId_;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      tripId_ = s;
+      name_ = s;
       return s;
     }
   }
   /**
-   * <code>string trip_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for tripId.
+   * <pre>
+   * Parent trip resource name: "trips/{trip_id}"
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getTripIdBytes() {
-    java.lang.Object ref = tripId_;
+      getNameBytes() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      tripId_ = b;
+      name_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -113,41 +1023,41 @@ private static final long serialVersionUID = 0L;
 
   public static final int BALANCES_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
-  private java.util.List<app.rappeloids.protos.v1.ExpenseBalance> balances_;
+  private java.util.List<app.rappeloids.protos.v1.TripExpenseSummary.Balance> balances_;
   /**
-   * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.util.List<app.rappeloids.protos.v1.ExpenseBalance> getBalancesList() {
+  public java.util.List<app.rappeloids.protos.v1.TripExpenseSummary.Balance> getBalancesList() {
     return balances_;
   }
   /**
-   * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.util.List<? extends app.rappeloids.protos.v1.ExpenseBalanceOrBuilder> 
+  public java.util.List<? extends app.rappeloids.protos.v1.TripExpenseSummary.BalanceOrBuilder> 
       getBalancesOrBuilderList() {
     return balances_;
   }
   /**
-   * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public int getBalancesCount() {
     return balances_.size();
   }
   /**
-   * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public app.rappeloids.protos.v1.ExpenseBalance getBalances(int index) {
+  public app.rappeloids.protos.v1.TripExpenseSummary.Balance getBalances(int index) {
     return balances_.get(index);
   }
   /**
-   * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public app.rappeloids.protos.v1.ExpenseBalanceOrBuilder getBalancesOrBuilder(
+  public app.rappeloids.protos.v1.TripExpenseSummary.BalanceOrBuilder getBalancesOrBuilder(
       int index) {
     return balances_.get(index);
   }
@@ -166,8 +1076,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(tripId_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 1, tripId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getTotalSpent());
@@ -184,8 +1094,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(tripId_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, tripId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -210,8 +1120,8 @@ private static final long serialVersionUID = 0L;
     }
     app.rappeloids.protos.v1.TripExpenseSummary other = (app.rappeloids.protos.v1.TripExpenseSummary) obj;
 
-    if (!getTripId()
-        .equals(other.getTripId())) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
     if (hasTotalSpent() != other.hasTotalSpent()) return false;
     if (hasTotalSpent()) {
       if (!getTotalSpent()
@@ -230,8 +1140,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TRIP_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getTripId().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     if (hasTotalSpent()) {
       hash = (37 * hash) + TOTAL_SPENT_FIELD_NUMBER;
       hash = (53 * hash) + getTotalSpent().hashCode();
@@ -378,7 +1288,7 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      tripId_ = "";
+      name_ = "";
       totalSpent_ = null;
       if (totalSpentBuilder_ != null) {
         totalSpentBuilder_.dispose();
@@ -438,7 +1348,7 @@ private static final long serialVersionUID = 0L;
     private void buildPartial0(app.rappeloids.protos.v1.TripExpenseSummary result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.tripId_ = tripId_;
+        result.name_ = name_;
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
@@ -462,8 +1372,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(app.rappeloids.protos.v1.TripExpenseSummary other) {
       if (other == app.rappeloids.protos.v1.TripExpenseSummary.getDefaultInstance()) return this;
-      if (!other.getTripId().isEmpty()) {
-        tripId_ = other.tripId_;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
@@ -523,7 +1433,7 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              tripId_ = input.readStringRequireUtf8();
+              name_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
             } // case 10
@@ -535,9 +1445,9 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 18
             case 26: {
-              app.rappeloids.protos.v1.ExpenseBalance m =
+              app.rappeloids.protos.v1.TripExpenseSummary.Balance m =
                   input.readMessage(
-                      app.rappeloids.protos.v1.ExpenseBalance.parser(),
+                      app.rappeloids.protos.v1.TripExpenseSummary.Balance.parser(),
                       extensionRegistry);
               if (balancesBuilder_ == null) {
                 ensureBalancesIsMutable();
@@ -564,73 +1474,93 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object tripId_ = "";
+    private java.lang.Object name_ = "";
     /**
-     * <code>string trip_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The tripId.
+     * <pre>
+     * Parent trip resource name: "trips/{trip_id}"
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The name.
      */
-    public java.lang.String getTripId() {
-      java.lang.Object ref = tripId_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        tripId_ = s;
+        name_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string trip_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @return The bytes for tripId.
+     * <pre>
+     * Parent trip resource name: "trips/{trip_id}"
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
-        getTripIdBytes() {
-      java.lang.Object ref = tripId_;
+        getNameBytes() {
+      java.lang.Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        tripId_ = b;
+        name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string trip_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The tripId to set.
+     * <pre>
+     * Parent trip resource name: "trips/{trip_id}"
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setTripId(
+    public Builder setName(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      tripId_ = value;
+      name_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>string trip_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <pre>
+     * Parent trip resource name: "trips/{trip_id}"
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearTripId() {
-      tripId_ = getDefaultInstance().getTripId();
+    public Builder clearName() {
+      name_ = getDefaultInstance().getName();
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
-     * <code>string trip_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-     * @param value The bytes for tripId to set.
+     * <pre>
+     * Parent trip resource name: "trips/{trip_id}"
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder setTripIdBytes(
+    public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      tripId_ = value;
+      name_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -757,22 +1687,22 @@ private static final long serialVersionUID = 0L;
       return totalSpentBuilder_;
     }
 
-    private java.util.List<app.rappeloids.protos.v1.ExpenseBalance> balances_ =
+    private java.util.List<app.rappeloids.protos.v1.TripExpenseSummary.Balance> balances_ =
       java.util.Collections.emptyList();
     private void ensureBalancesIsMutable() {
       if (!((bitField0_ & 0x00000004) != 0)) {
-        balances_ = new java.util.ArrayList<app.rappeloids.protos.v1.ExpenseBalance>(balances_);
+        balances_ = new java.util.ArrayList<app.rappeloids.protos.v1.TripExpenseSummary.Balance>(balances_);
         bitField0_ |= 0x00000004;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilder<
-        app.rappeloids.protos.v1.ExpenseBalance, app.rappeloids.protos.v1.ExpenseBalance.Builder, app.rappeloids.protos.v1.ExpenseBalanceOrBuilder> balancesBuilder_;
+        app.rappeloids.protos.v1.TripExpenseSummary.Balance, app.rappeloids.protos.v1.TripExpenseSummary.Balance.Builder, app.rappeloids.protos.v1.TripExpenseSummary.BalanceOrBuilder> balancesBuilder_;
 
     /**
-     * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.util.List<app.rappeloids.protos.v1.ExpenseBalance> getBalancesList() {
+    public java.util.List<app.rappeloids.protos.v1.TripExpenseSummary.Balance> getBalancesList() {
       if (balancesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(balances_);
       } else {
@@ -780,7 +1710,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public int getBalancesCount() {
       if (balancesBuilder_ == null) {
@@ -790,9 +1720,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.ExpenseBalance getBalances(int index) {
+    public app.rappeloids.protos.v1.TripExpenseSummary.Balance getBalances(int index) {
       if (balancesBuilder_ == null) {
         return balances_.get(index);
       } else {
@@ -800,10 +1730,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setBalances(
-        int index, app.rappeloids.protos.v1.ExpenseBalance value) {
+        int index, app.rappeloids.protos.v1.TripExpenseSummary.Balance value) {
       if (balancesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -817,10 +1747,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setBalances(
-        int index, app.rappeloids.protos.v1.ExpenseBalance.Builder builderForValue) {
+        int index, app.rappeloids.protos.v1.TripExpenseSummary.Balance.Builder builderForValue) {
       if (balancesBuilder_ == null) {
         ensureBalancesIsMutable();
         balances_.set(index, builderForValue.build());
@@ -831,9 +1761,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public Builder addBalances(app.rappeloids.protos.v1.ExpenseBalance value) {
+    public Builder addBalances(app.rappeloids.protos.v1.TripExpenseSummary.Balance value) {
       if (balancesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -847,10 +1777,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addBalances(
-        int index, app.rappeloids.protos.v1.ExpenseBalance value) {
+        int index, app.rappeloids.protos.v1.TripExpenseSummary.Balance value) {
       if (balancesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -864,10 +1794,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addBalances(
-        app.rappeloids.protos.v1.ExpenseBalance.Builder builderForValue) {
+        app.rappeloids.protos.v1.TripExpenseSummary.Balance.Builder builderForValue) {
       if (balancesBuilder_ == null) {
         ensureBalancesIsMutable();
         balances_.add(builderForValue.build());
@@ -878,10 +1808,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addBalances(
-        int index, app.rappeloids.protos.v1.ExpenseBalance.Builder builderForValue) {
+        int index, app.rappeloids.protos.v1.TripExpenseSummary.Balance.Builder builderForValue) {
       if (balancesBuilder_ == null) {
         ensureBalancesIsMutable();
         balances_.add(index, builderForValue.build());
@@ -892,10 +1822,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder addAllBalances(
-        java.lang.Iterable<? extends app.rappeloids.protos.v1.ExpenseBalance> values) {
+        java.lang.Iterable<? extends app.rappeloids.protos.v1.TripExpenseSummary.Balance> values) {
       if (balancesBuilder_ == null) {
         ensureBalancesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -907,7 +1837,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearBalances() {
       if (balancesBuilder_ == null) {
@@ -920,7 +1850,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeBalances(int index) {
       if (balancesBuilder_ == null) {
@@ -933,16 +1863,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.ExpenseBalance.Builder getBalancesBuilder(
+    public app.rappeloids.protos.v1.TripExpenseSummary.Balance.Builder getBalancesBuilder(
         int index) {
       return internalGetBalancesFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.ExpenseBalanceOrBuilder getBalancesOrBuilder(
+    public app.rappeloids.protos.v1.TripExpenseSummary.BalanceOrBuilder getBalancesOrBuilder(
         int index) {
       if (balancesBuilder_ == null) {
         return balances_.get(index);  } else {
@@ -950,9 +1880,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.util.List<? extends app.rappeloids.protos.v1.ExpenseBalanceOrBuilder> 
+    public java.util.List<? extends app.rappeloids.protos.v1.TripExpenseSummary.BalanceOrBuilder> 
          getBalancesOrBuilderList() {
       if (balancesBuilder_ != null) {
         return balancesBuilder_.getMessageOrBuilderList();
@@ -961,33 +1891,33 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.ExpenseBalance.Builder addBalancesBuilder() {
+    public app.rappeloids.protos.v1.TripExpenseSummary.Balance.Builder addBalancesBuilder() {
       return internalGetBalancesFieldBuilder().addBuilder(
-          app.rappeloids.protos.v1.ExpenseBalance.getDefaultInstance());
+          app.rappeloids.protos.v1.TripExpenseSummary.Balance.getDefaultInstance());
     }
     /**
-     * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public app.rappeloids.protos.v1.ExpenseBalance.Builder addBalancesBuilder(
+    public app.rappeloids.protos.v1.TripExpenseSummary.Balance.Builder addBalancesBuilder(
         int index) {
       return internalGetBalancesFieldBuilder().addBuilder(
-          index, app.rappeloids.protos.v1.ExpenseBalance.getDefaultInstance());
+          index, app.rappeloids.protos.v1.TripExpenseSummary.Balance.getDefaultInstance());
     }
     /**
-     * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
-    public java.util.List<app.rappeloids.protos.v1.ExpenseBalance.Builder> 
+    public java.util.List<app.rappeloids.protos.v1.TripExpenseSummary.Balance.Builder> 
          getBalancesBuilderList() {
       return internalGetBalancesFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilder<
-        app.rappeloids.protos.v1.ExpenseBalance, app.rappeloids.protos.v1.ExpenseBalance.Builder, app.rappeloids.protos.v1.ExpenseBalanceOrBuilder> 
+        app.rappeloids.protos.v1.TripExpenseSummary.Balance, app.rappeloids.protos.v1.TripExpenseSummary.Balance.Builder, app.rappeloids.protos.v1.TripExpenseSummary.BalanceOrBuilder> 
         internalGetBalancesFieldBuilder() {
       if (balancesBuilder_ == null) {
         balancesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-            app.rappeloids.protos.v1.ExpenseBalance, app.rappeloids.protos.v1.ExpenseBalance.Builder, app.rappeloids.protos.v1.ExpenseBalanceOrBuilder>(
+            app.rappeloids.protos.v1.TripExpenseSummary.Balance, app.rappeloids.protos.v1.TripExpenseSummary.Balance.Builder, app.rappeloids.protos.v1.TripExpenseSummary.BalanceOrBuilder>(
                 balances_,
                 ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),

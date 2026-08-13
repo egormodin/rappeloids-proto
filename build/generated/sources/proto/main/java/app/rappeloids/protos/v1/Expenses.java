@@ -32,20 +32,20 @@ public final class Expenses extends com.google.protobuf.GeneratedFile {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_rappeloids_v1_Expense_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_rappeloids_v1_ExpenseSplit_descriptor;
+    internal_static_rappeloids_v1_Expense_Split_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_rappeloids_v1_ExpenseSplit_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_rappeloids_v1_ExpenseBalance_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_rappeloids_v1_ExpenseBalance_fieldAccessorTable;
+      internal_static_rappeloids_v1_Expense_Split_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_rappeloids_v1_TripExpenseSummary_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_rappeloids_v1_TripExpenseSummary_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_rappeloids_v1_TripExpenseSummary_Balance_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_rappeloids_v1_TripExpenseSummary_Balance_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_rappeloids_v1_ListExpensesRequest_descriptor;
   static final 
@@ -97,72 +97,75 @@ public final class Expenses extends com.google.protobuf.GeneratedFile {
       "\032\033google/protobuf/empty.proto\032 google/pr" +
       "otobuf/field_mask.proto\032\037google/protobuf" +
       "/timestamp.proto\032\032rappeloids/v1/common.p" +
-      "roto\"\203\004\n\007Expense\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\017\n\002i" +
-      "d\030\002 \001(\tB\003\340A\003\022,\n\007trip_id\030\003 \001(\tB\033\340A\003\372A\025\n\023r" +
-      "appeloids.app/Trip\022\022\n\005title\030\004 \001(\tB\003\340A\002\022-" +
-      "\n\010payer_id\030\005 \001(\tB\033\340A\002\372A\025\n\023rappeloids.app" +
-      "/User\022)\n\006amount\030\006 \001(\0132\024.rappeloids.v1.Mo" +
-      "neyB\003\340A\002\022\025\n\010category\030\007 \001(\tB\003\340A\001\022\030\n\013descr" +
-      "iption\030\010 \001(\tB\003\340A\001\022\030\n\013receipt_url\030\t \001(\tB\003" +
-      "\340A\001\0220\n\006splits\030\n \003(\0132\033.rappeloids.v1.Expe" +
-      "nseSplitB\003\340A\001\0224\n\013create_time\030\013 \001(\0132\032.goo" +
-      "gle.protobuf.TimestampB\003\340A\003\0224\n\013update_ti" +
-      "me\030\014 \001(\0132\032.google.protobuf.TimestampB\003\340A" +
-      "\003:O\352AL\n\026rappeloids.app/Expense\022\037trips/{t" +
-      "rip}/expenses/{expense}*\010expenses2\007expen" +
-      "se\"\200\001\n\014ExpenseSplit\022,\n\007user_id\030\001 \001(\tB\033\340A" +
-      "\002\372A\025\n\023rappeloids.app/User\022)\n\006amount\030\002 \001(" +
-      "\0132\024.rappeloids.v1.MoneyB\003\340A\002\022\027\n\nis_settl" +
-      "ed\030\003 \001(\010B\003\340A\001\"\206\001\n\016ExpenseBalance\022,\n\007user" +
-      "_id\030\001 \001(\tB\033\340A\002\372A\025\n\023rappeloids.app/User\022\026" +
-      "\n\tuser_name\030\002 \001(\tB\003\340A\001\022.\n\013net_balance\030\003 " +
-      "\001(\0132\024.rappeloids.v1.MoneyB\003\340A\002\"\250\001\n\022TripE" +
-      "xpenseSummary\022,\n\007trip_id\030\001 \001(\tB\033\340A\002\372A\025\n\023" +
-      "rappeloids.app/Trip\022.\n\013total_spent\030\002 \001(\013" +
-      "2\024.rappeloids.v1.MoneyB\003\340A\002\0224\n\010balances\030" +
-      "\003 \003(\0132\035.rappeloids.v1.ExpenseBalanceB\003\340A" +
-      "\001\"\237\001\n\023ListExpensesRequest\022+\n\006parent\030\001 \001(" +
-      "\tB\033\340A\002\372A\025\n\023rappeloids.app/Trip\022\026\n\tpage_s" +
-      "ize\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022" +
-      "\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003" +
-      "\340A\001\"m\n\024ListExpensesResponse\022(\n\010expenses\030" +
-      "\001 \003(\0132\026.rappeloids.v1.Expense\022\027\n\017next_pa" +
-      "ge_token\030\002 \001(\t\022\022\n\ntotal_size\030\003 \001(\005\"A\n\021Ge" +
-      "tExpenseRequest\022,\n\004name\030\001 \001(\tB\036\340A\002\372A\030\n\026r" +
-      "appeloids.app/Expense\"\212\001\n\024CreateExpenseR" +
-      "equest\022+\n\006parent\030\001 \001(\tB\033\340A\002\372A\025\n\023rappeloi" +
-      "ds.app/Trip\022\027\n\nexpense_id\030\002 \001(\tB\003\340A\001\022,\n\007" +
-      "expense\030\003 \001(\0132\026.rappeloids.v1.ExpenseB\003\340" +
-      "A\002\"z\n\024UpdateExpenseRequest\022,\n\007expense\030\001 " +
-      "\001(\0132\026.rappeloids.v1.ExpenseB\003\340A\002\0224\n\013upda" +
-      "te_mask\030\002 \001(\0132\032.google.protobuf.FieldMas" +
-      "kB\003\340A\001\"D\n\024DeleteExpenseRequest\022,\n\004name\030\001" +
-      " \001(\tB\036\340A\002\372A\030\n\026rappeloids.app/Expense\"I\n\034" +
-      "GetTripExpenseSummaryRequest\022)\n\004name\030\001 \001" +
-      "(\tB\033\340A\002\372A\025\n\023rappeloids.app/Trip2\370\006\n\017Expe" +
-      "nsesService\022\207\001\n\014ListExpenses\022\".rappeloid" +
-      "s.v1.ListExpensesRequest\032#.rappeloids.v1" +
-      ".ListExpensesResponse\".\332A\006parent\202\323\344\223\002\037\022\035" +
-      "/v1/{parent=trips/*}/expenses\022t\n\nGetExpe" +
-      "nse\022 .rappeloids.v1.GetExpenseRequest\032\026." +
-      "rappeloids.v1.Expense\",\332A\004name\202\323\344\223\002\037\022\035/v" +
-      "1/{name=trips/*/expenses/*}\022\230\001\n\rCreateEx" +
-      "pense\022#.rappeloids.v1.CreateExpenseReque" +
-      "st\032\026.rappeloids.v1.Expense\"J\332A\031parent,ex" +
-      "pense,expense_id\202\323\344\223\002(\"\035/v1/{parent=trip" +
-      "s/*}/expenses:\007expense\022\232\001\n\rUpdateExpense" +
-      "\022#.rappeloids.v1.UpdateExpenseRequest\032\026." +
-      "rappeloids.v1.Expense\"L\332A\023expense,update" +
-      "_mask\202\323\344\223\00202%/v1/{expense.name=trips/*/e" +
-      "xpenses/*}:\007expense\022z\n\rDeleteExpense\022#.r" +
-      "appeloids.v1.DeleteExpenseRequest\032\026.goog" +
-      "le.protobuf.Empty\",\332A\004name\202\323\344\223\002\037*\035/v1/{n" +
-      "ame=trips/*/expenses/*}\022\231\001\n\025GetTripExpen" +
-      "seSummary\022+.rappeloids.v1.GetTripExpense" +
-      "SummaryRequest\032!.rappeloids.v1.TripExpen" +
-      "seSummary\"0\332A\004name\202\323\344\223\002#\022!/v1/{name=trip" +
-      "s/*}/expenseSummary\032\025\312A\022api.rappeloids.a" +
-      "ppB\034\n\030app.rappeloids.protos.v1P\001b\006proto3"
+      "roto\"\366\005\n\007Expense\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\022\n\005t" +
+      "itle\030\002 \001(\tB\003\340A\002\022*\n\005payer\030\003 \001(\tB\033\340A\002\372A\025\n\023" +
+      "rappeloids.app/User\022)\n\006amount\030\004 \001(\0132\024.ra" +
+      "ppeloids.v1.MoneyB\003\340A\002\0226\n\010category\030\005 \001(\016" +
+      "2\037.rappeloids.v1.Expense.CategoryB\003\340A\001\022\030" +
+      "\n\013description\030\006 \001(\tB\003\340A\001\0221\n\006splits\030\007 \003(\013" +
+      "2\034.rappeloids.v1.Expense.SplitB\003\340A\001\0224\n\013c" +
+      "reate_time\030\010 \001(\0132\032.google.protobuf.Times" +
+      "tampB\003\340A\003\0224\n\013update_time\030\t \001(\0132\032.google." +
+      "protobuf.TimestampB\003\340A\003\032v\n\005Split\022)\n\004user" +
+      "\030\001 \001(\tB\033\340A\002\372A\025\n\023rappeloids.app/User\022)\n\006a" +
+      "mount\030\002 \001(\0132\024.rappeloids.v1.MoneyB\003\340A\002\022\027" +
+      "\n\nis_settled\030\003 \001(\010B\003\340A\001\"\262\001\n\010Category\022\030\n\024" +
+      "CATEGORY_UNSPECIFIED\020\000\022\r\n\tGROCERIES\020\001\022\016\n" +
+      "\nRESTAURANT\020\002\022\016\n\nCAR_RENTAL\020\003\022\007\n\003GAS\020\004\022\013" +
+      "\n\007LODGING\020\005\022\n\n\006PERMIT\020\006\022\n\n\006FLIGHT\020\007\022\010\n\004G" +
+      "EAR\020\010\022\r\n\tREIMBURSE\020\t\022\013\n\007GENERAL\020\n\022\t\n\005OTH" +
+      "ER\020\013:O\352AL\n\026rappeloids.app/Expense\022\037trips" +
+      "/{trip}/expenses/{expense}*\010expenses2\007ex" +
+      "pense\"\257\002\n\022TripExpenseSummary\022)\n\004name\030\001 \001" +
+      "(\tB\033\340A\002\372A\025\n\023rappeloids.app/Trip\022.\n\013total" +
+      "_spent\030\002 \001(\0132\024.rappeloids.v1.MoneyB\003\340A\002\022" +
+      "@\n\010balances\030\003 \003(\0132).rappeloids.v1.TripEx" +
+      "penseSummary.BalanceB\003\340A\001\032|\n\007Balance\022)\n\004" +
+      "user\030\001 \001(\tB\033\340A\002\372A\025\n\023rappeloids.app/User\022" +
+      "\026\n\tuser_name\030\002 \001(\tB\003\340A\001\022.\n\013net_balance\030\003" +
+      " \001(\0132\024.rappeloids.v1.MoneyB\003\340A\002\"\237\001\n\023List" +
+      "ExpensesRequest\022+\n\006parent\030\001 \001(\tB\033\340A\002\372A\025\n" +
+      "\023rappeloids.app/Trip\022\026\n\tpage_size\030\002 \001(\005B" +
+      "\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030" +
+      "\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"m\n\024Lis" +
+      "tExpensesResponse\022(\n\010expenses\030\001 \003(\0132\026.ra" +
+      "ppeloids.v1.Expense\022\027\n\017next_page_token\030\002" +
+      " \001(\t\022\022\n\ntotal_size\030\003 \001(\005\"A\n\021GetExpenseRe" +
+      "quest\022,\n\004name\030\001 \001(\tB\036\340A\002\372A\030\n\026rappeloids." +
+      "app/Expense\"\212\001\n\024CreateExpenseRequest\022+\n\006" +
+      "parent\030\001 \001(\tB\033\340A\002\372A\025\n\023rappeloids.app/Tri" +
+      "p\022\027\n\nexpense_id\030\002 \001(\tB\003\340A\001\022,\n\007expense\030\003 " +
+      "\001(\0132\026.rappeloids.v1.ExpenseB\003\340A\002\"z\n\024Upda" +
+      "teExpenseRequest\022,\n\007expense\030\001 \001(\0132\026.rapp" +
+      "eloids.v1.ExpenseB\003\340A\002\0224\n\013update_mask\030\002 " +
+      "\001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"D\n\024" +
+      "DeleteExpenseRequest\022,\n\004name\030\001 \001(\tB\036\340A\002\372" +
+      "A\030\n\026rappeloids.app/Expense\"I\n\034GetTripExp" +
+      "enseSummaryRequest\022)\n\004name\030\001 \001(\tB\033\340A\002\372A\025" +
+      "\n\023rappeloids.app/Trip2\370\006\n\017ExpensesServic" +
+      "e\022\207\001\n\014ListExpenses\022\".rappeloids.v1.ListE" +
+      "xpensesRequest\032#.rappeloids.v1.ListExpen" +
+      "sesResponse\".\332A\006parent\202\323\344\223\002\037\022\035/v1/{paren" +
+      "t=trips/*}/expenses\022t\n\nGetExpense\022 .rapp" +
+      "eloids.v1.GetExpenseRequest\032\026.rappeloids" +
+      ".v1.Expense\",\332A\004name\202\323\344\223\002\037\022\035/v1/{name=tr" +
+      "ips/*/expenses/*}\022\230\001\n\rCreateExpense\022#.ra" +
+      "ppeloids.v1.CreateExpenseRequest\032\026.rappe" +
+      "loids.v1.Expense\"J\332A\031parent,expense,expe" +
+      "nse_id\202\323\344\223\002(\"\035/v1/{parent=trips/*}/expen" +
+      "ses:\007expense\022\232\001\n\rUpdateExpense\022#.rappelo" +
+      "ids.v1.UpdateExpenseRequest\032\026.rappeloids" +
+      ".v1.Expense\"L\332A\023expense,update_mask\202\323\344\223\002" +
+      "02%/v1/{expense.name=trips/*/expenses/*}" +
+      ":\007expense\022z\n\rDeleteExpense\022#.rappeloids." +
+      "v1.DeleteExpenseRequest\032\026.google.protobu" +
+      "f.Empty\",\332A\004name\202\323\344\223\002\037*\035/v1/{name=trips/" +
+      "*/expenses/*}\022\231\001\n\025GetTripExpenseSummary\022" +
+      "+.rappeloids.v1.GetTripExpenseSummaryReq" +
+      "uest\032!.rappeloids.v1.TripExpenseSummary\"" +
+      "0\332A\004name\202\323\344\223\002#\022!/v1/{name=trips/*}/expen" +
+      "seSummary\032\025\312A\022api.rappeloids.appB\034\n\030app." +
+      "rappeloids.protos.v1P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -181,63 +184,63 @@ public final class Expenses extends com.google.protobuf.GeneratedFile {
     internal_static_rappeloids_v1_Expense_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_rappeloids_v1_Expense_descriptor,
-        new java.lang.String[] { "Name", "Id", "TripId", "Title", "PayerId", "Amount", "Category", "Description", "ReceiptUrl", "Splits", "CreateTime", "UpdateTime", });
-    internal_static_rappeloids_v1_ExpenseSplit_descriptor =
-      getDescriptor().getMessageType(1);
-    internal_static_rappeloids_v1_ExpenseSplit_fieldAccessorTable = new
+        new java.lang.String[] { "Name", "Title", "Payer", "Amount", "Category", "Description", "Splits", "CreateTime", "UpdateTime", });
+    internal_static_rappeloids_v1_Expense_Split_descriptor =
+      internal_static_rappeloids_v1_Expense_descriptor.getNestedType(0);
+    internal_static_rappeloids_v1_Expense_Split_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_rappeloids_v1_ExpenseSplit_descriptor,
-        new java.lang.String[] { "UserId", "Amount", "IsSettled", });
-    internal_static_rappeloids_v1_ExpenseBalance_descriptor =
-      getDescriptor().getMessageType(2);
-    internal_static_rappeloids_v1_ExpenseBalance_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_rappeloids_v1_ExpenseBalance_descriptor,
-        new java.lang.String[] { "UserId", "UserName", "NetBalance", });
+        internal_static_rappeloids_v1_Expense_Split_descriptor,
+        new java.lang.String[] { "User", "Amount", "IsSettled", });
     internal_static_rappeloids_v1_TripExpenseSummary_descriptor =
-      getDescriptor().getMessageType(3);
+      getDescriptor().getMessageType(1);
     internal_static_rappeloids_v1_TripExpenseSummary_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_rappeloids_v1_TripExpenseSummary_descriptor,
-        new java.lang.String[] { "TripId", "TotalSpent", "Balances", });
+        new java.lang.String[] { "Name", "TotalSpent", "Balances", });
+    internal_static_rappeloids_v1_TripExpenseSummary_Balance_descriptor =
+      internal_static_rappeloids_v1_TripExpenseSummary_descriptor.getNestedType(0);
+    internal_static_rappeloids_v1_TripExpenseSummary_Balance_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_rappeloids_v1_TripExpenseSummary_Balance_descriptor,
+        new java.lang.String[] { "User", "UserName", "NetBalance", });
     internal_static_rappeloids_v1_ListExpensesRequest_descriptor =
-      getDescriptor().getMessageType(4);
+      getDescriptor().getMessageType(2);
     internal_static_rappeloids_v1_ListExpensesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_rappeloids_v1_ListExpensesRequest_descriptor,
         new java.lang.String[] { "Parent", "PageSize", "PageToken", "Filter", "OrderBy", });
     internal_static_rappeloids_v1_ListExpensesResponse_descriptor =
-      getDescriptor().getMessageType(5);
+      getDescriptor().getMessageType(3);
     internal_static_rappeloids_v1_ListExpensesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_rappeloids_v1_ListExpensesResponse_descriptor,
         new java.lang.String[] { "Expenses", "NextPageToken", "TotalSize", });
     internal_static_rappeloids_v1_GetExpenseRequest_descriptor =
-      getDescriptor().getMessageType(6);
+      getDescriptor().getMessageType(4);
     internal_static_rappeloids_v1_GetExpenseRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_rappeloids_v1_GetExpenseRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_rappeloids_v1_CreateExpenseRequest_descriptor =
-      getDescriptor().getMessageType(7);
+      getDescriptor().getMessageType(5);
     internal_static_rappeloids_v1_CreateExpenseRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_rappeloids_v1_CreateExpenseRequest_descriptor,
         new java.lang.String[] { "Parent", "ExpenseId", "Expense", });
     internal_static_rappeloids_v1_UpdateExpenseRequest_descriptor =
-      getDescriptor().getMessageType(8);
+      getDescriptor().getMessageType(6);
     internal_static_rappeloids_v1_UpdateExpenseRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_rappeloids_v1_UpdateExpenseRequest_descriptor,
         new java.lang.String[] { "Expense", "UpdateMask", });
     internal_static_rappeloids_v1_DeleteExpenseRequest_descriptor =
-      getDescriptor().getMessageType(9);
+      getDescriptor().getMessageType(7);
     internal_static_rappeloids_v1_DeleteExpenseRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_rappeloids_v1_DeleteExpenseRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_rappeloids_v1_GetTripExpenseSummaryRequest_descriptor =
-      getDescriptor().getMessageType(10);
+      getDescriptor().getMessageType(8);
     internal_static_rappeloids_v1_GetTripExpenseSummaryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_rappeloids_v1_GetTripExpenseSummaryRequest_descriptor,

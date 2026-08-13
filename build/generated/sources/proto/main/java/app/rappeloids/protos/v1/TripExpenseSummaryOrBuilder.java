@@ -11,16 +11,24 @@ public interface TripExpenseSummaryOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string trip_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The tripId.
+   * <pre>
+   * Parent trip resource name: "trips/{trip_id}"
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The name.
    */
-  java.lang.String getTripId();
+  java.lang.String getName();
   /**
-   * <code>string trip_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
-   * @return The bytes for tripId.
+   * <pre>
+   * Parent trip resource name: "trips/{trip_id}"
+   * </pre>
+   *
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
-      getTripIdBytes();
+      getNameBytes();
 
   /**
    * <code>.rappeloids.v1.Money total_spent = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -38,26 +46,26 @@ public interface TripExpenseSummaryOrBuilder extends
   app.rappeloids.protos.v1.MoneyOrBuilder getTotalSpentOrBuilder();
 
   /**
-   * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.util.List<app.rappeloids.protos.v1.ExpenseBalance> 
+  java.util.List<app.rappeloids.protos.v1.TripExpenseSummary.Balance> 
       getBalancesList();
   /**
-   * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  app.rappeloids.protos.v1.ExpenseBalance getBalances(int index);
+  app.rappeloids.protos.v1.TripExpenseSummary.Balance getBalances(int index);
   /**
-   * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getBalancesCount();
   /**
-   * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  java.util.List<? extends app.rappeloids.protos.v1.ExpenseBalanceOrBuilder> 
+  java.util.List<? extends app.rappeloids.protos.v1.TripExpenseSummary.BalanceOrBuilder> 
       getBalancesOrBuilderList();
   /**
-   * <code>repeated .rappeloids.v1.ExpenseBalance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>repeated .rappeloids.v1.TripExpenseSummary.Balance balances = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-  app.rappeloids.protos.v1.ExpenseBalanceOrBuilder getBalancesOrBuilder(
+  app.rappeloids.protos.v1.TripExpenseSummary.BalanceOrBuilder getBalancesOrBuilder(
       int index);
 }
