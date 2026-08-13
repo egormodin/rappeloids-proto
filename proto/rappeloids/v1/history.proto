@@ -96,8 +96,7 @@ message HistoryYearSummary {
 message ListHistoryYearsRequest {}
 
 message ListHistoryYearsResponse {
-  repeated int32 years = 1;
-  repeated HistoryYearSummary year_summaries = 2;
+  repeated HistoryYearSummary year_summaries = 1;
 }
 
 message HistoryEntryUpdate {
