@@ -61,9 +61,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          VERSION="${{ github.ref_name }}"
+          VERSION_NO_V="${VERSION#v}"
+          cp build/publications/gpr/pom-default.xml "build/libs/rappeloids-proto-${VERSION_NO_V}.pom" 2>/dev/null || true
           gh release create "${{ github.ref_name }}" \
             build/libs/*.jar \
+            build/libs/*.pom \
             *.tgz \
             --title "Release ${{ github.ref_name }}" \
-            --generate-notes
+            --generate-notes || gh release upload "${{ github.ref_name }}" build/libs/*.jar build/libs/*.pom *.tgz --clobber
 
