@@ -92,24 +92,45 @@ message ListHistoryYearsResponse {
 }
 
 message HistoryEntryUpdate {
-  // Resource name: "history/{history_entry}"
+  // Resource name: "history/{history_entry}". Leave empty when creating a new descent entry.
   string name = 1 [
-    (google.api.field_behavior) = REQUIRED,
+    (google.api.field_behavior) = OPTIONAL,
     (google.api.resource_reference).type = "rappeloids.app/HistoryEntry"
   ];
-  string trip_id = 2 [(google.api.field_behavior) = OPTIONAL];
-  string canyon_id = 3 [
+
+  // Canyon ID (slug or uuid).
+  string canyon_id = 2 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Canyon"
   ];
-  google.type.Date date = 4 [(google.api.field_behavior) = OPTIONAL];
-  int32 order = 5 [(google.api.field_behavior) = OPTIONAL];
-  map<string, string> user_statuses = 6 [(google.api.field_behavior) = OPTIONAL];
+
+  // Date of descent.
+  google.type.Date date = 3 [(google.api.field_behavior) = OPTIONAL];
+
+  // Ordering of canyon within the trip.
+  int32 order = 4 [(google.api.field_behavior) = OPTIONAL];
+
+  // Map of participant user ID -> descent status ("passed", "planned", etc.).
+  map<string, string> user_statuses = 5 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Group of canyon descents belonging to the same trip/outing.
+message HistoryTripUpdate {
+  // Existing trip ID. If creating a new trip, leave empty and the server will assign a new trip ID for this group.
+  string trip_id = 1 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional photo album link for the trip.
+  string photos_link = 2 [(google.api.field_behavior) = OPTIONAL];
+
+  // The canyon descents belonging to this trip.
+  repeated HistoryEntryUpdate entries = 3 [(google.api.field_behavior) = REQUIRED];
 }
 
 message BatchUpdateHistoryRequest {
-  repeated HistoryEntryUpdate upserts = 1;
-  // Resource names of history entries to delete (e.g. "history/{history_entry}")
+  // Trips containing their canyon descent entries (including single-entry trips).
+  repeated HistoryTripUpdate trips = 1 [(google.api.field_behavior) = OPTIONAL];
+
+  // Resource names of history entries to delete (e.g. "history/{history_entry}").
   repeated string delete_names = 2 [
     (google.api.field_behavior) = OPTIONAL,
     (google.api.resource_reference).type = "rappeloids.app/HistoryEntry"
@@ -117,6 +138,6 @@ message BatchUpdateHistoryRequest {
 }
 
 message BatchUpdateHistoryResponse {
-  int32 updated_count = 1;
-  repeated HistoryEntry entries = 2;
+  // Resulting/updated history entries (AIP-234).
+  repeated HistoryEntry entries = 1;
 }
