@@ -163,12 +163,6 @@ message Canyon {
   string shuttle = 26 [(google.api.field_behavior) = OPTIONAL];
   string vehicle = 27 [(google.api.field_behavior) = OPTIONAL];
 
-  // User ID of the creator/author (AIP-122).
-  string author_id = 31 [
-    (google.api.field_behavior) = OUTPUT_ONLY,
-    (google.api.resource_reference).type = "rappeloids.app/User"
-  ];
-
   message TotalTime {
     google.type.DateTime total_time = 1 [(google.api.field_behavior) = OPTIONAL];
     google.type.DateTime min_time = 2 [(google.api.field_behavior) = OPTIONAL];
@@ -227,8 +221,8 @@ message ListCanyonsRequest {
     (google.api.resource_reference).type = "rappeloids.app/Region"
   ];
 
-  // Sort order (AIP-132).
-  string order_by = 5 [(google.api.field_behavior) = OPTIONAL];
+  // Field mask to control which fields are returned (AIP-157).
+  google.protobuf.FieldMask read_mask = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListCanyonsResponse {
