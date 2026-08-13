@@ -86,6 +86,9 @@ message Region {
 
   // Whether region is visible in history views.
   bool history_visible = 5 [(google.api.field_behavior) = OPTIONAL];
+
+  // Whether region is hidden (admin-only in tree, hidden elsewhere in app).
+  bool hidden = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListRegionsRequest {}
