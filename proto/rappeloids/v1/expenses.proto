@@ -81,44 +81,35 @@ message Expense {
   // Resource name: "trips/{trip_id}/expenses/{expense_id}"
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-  // The unique identifier of the expense.
-  string id = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
-
-  // Parent trip ID.
-  string trip_id = 3 [
-    (google.api.field_behavior) = OUTPUT_ONLY,
-    (google.api.resource_reference).type = "rappeloids.app/Trip"
-  ];
-
   // Short title of the expense.
-  string title = 4 [(google.api.field_behavior) = REQUIRED];
+  string title = 2 [(google.api.field_behavior) = REQUIRED];
 
   // User ID who paid for this expense.
-  string payer_id = 5 [
+  string payer_id = 3 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/User"
   ];
 
   // Monetary amount and currency (AIP-213).
-  Money amount = 6 [(google.api.field_behavior) = REQUIRED];
+  Money amount = 4 [(google.api.field_behavior) = REQUIRED];
 
   // Category label (e.g. "gas", "lodging", "food", "permits").
-  string category = 7 [(google.api.field_behavior) = OPTIONAL];
+  string category = 5 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional notes and description.
-  string description = 8 [(google.api.field_behavior) = OPTIONAL];
+  string description = 6 [(google.api.field_behavior) = OPTIONAL];
 
   // Uploaded receipt photo URL.
-  string receipt_url = 9 [(google.api.field_behavior) = OPTIONAL];
+  string receipt_url = 7 [(google.api.field_behavior) = OPTIONAL];
 
   // User splits and owed amounts.
-  repeated ExpenseSplit splits = 10 [(google.api.field_behavior) = OPTIONAL];
+  repeated ExpenseSplit splits = 8 [(google.api.field_behavior) = OPTIONAL];
 
   // Timestamp when the expense was created (AIP-142).
-  google.protobuf.Timestamp create_time = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
+  google.protobuf.Timestamp create_time = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Timestamp when the expense was last updated (AIP-142).
-  google.protobuf.Timestamp update_time = 12 [(google.api.field_behavior) = OUTPUT_ONLY];
+  google.protobuf.Timestamp update_time = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 message ExpenseSplit {
