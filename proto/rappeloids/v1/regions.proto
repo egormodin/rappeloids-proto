@@ -71,8 +71,8 @@ message Region {
   // Visibility state of a region.
   enum State {
     STATE_UNSPECIFIED = 0;
-    // Standard active state (visible in tree and app, not in history views).
-    ACTIVE = 1;
+    // Standard default state (visible in tree and app, not in history views).
+    DEFAULT = 1;
     // Visible in history views.
     HISTORY_VISIBLE = 2;
     // Hidden state (admin-only in tree roots, hidden elsewhere in app).
