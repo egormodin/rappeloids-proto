@@ -15,7 +15,7 @@ import "google/type/date.proto";
 service HistoryService {
   option (google.api.default_host) = "api.rappeloids.app";
 
-  // Lists historical canyon descent records with user participation, optionally filtered by year (AIP-132).
+  // Lists historical canyon descent records grouped into trips with user participation, optionally filtered by year (AIP-132).
   rpc ListHistory(ListHistoryRequest) returns (ListHistoryResponse) {
     option (google.api.http) = {
       get: "/v1/history"
@@ -38,7 +38,29 @@ service HistoryService {
   }
 }
 
-// HistoryEntry resource following AIP-122.
+// HistoryTrip resource representing an outing/expedition containing one or more historical canyon descents.
+message HistoryTrip {
+  option (google.api.resource) = {
+    type: "rappeloids.app/HistoryTrip"
+    pattern: "historyTrips/{history_trip}"
+    plural: "historyTrips"
+    singular: "historyTrip"
+  };
+
+  // Resource name: "historyTrips/{history_trip}"
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
+
+  // Raw trip ID.
+  string id = 2 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional photo album link for the trip.
+  string photos_link = 3 [(google.api.field_behavior) = OPTIONAL];
+
+  // The canyon descent entries belonging to this trip.
+  repeated HistoryEntry entries = 4 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// HistoryEntry resource representing a single canyon descent within a trip.
 message HistoryEntry {
   option (google.api.resource) = {
     type: "rappeloids.app/HistoryEntry"
@@ -50,8 +72,8 @@ message HistoryEntry {
   // Resource name: "history/{history_entry}"
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-  // Associated trip ID if grouped.
-  string trip_id = 2 [(google.api.field_behavior) = OPTIONAL];
+  // Raw history entry ID.
+  string id = 2 [(google.api.field_behavior) = OPTIONAL];
 
   // Canyon resource name: "canyons/{canyon}"
   string canyon = 3 [
@@ -80,7 +102,8 @@ message ListHistoryRequest {
 }
 
 message ListHistoryResponse {
-  repeated HistoryEntry entries = 1;
+  // Historical trips with their nested canyon descent entries.
+  repeated HistoryTrip trips = 1;
   string next_page_token = 2;
   int32 total_size = 3;
 }
@@ -99,44 +122,9 @@ message ListHistoryYearsResponse {
   repeated HistoryYearSummary year_summaries = 1;
 }
 
-message HistoryEntryUpdate {
-  // Resource name: "history/{history_entry}". Leave empty when creating a new descent entry.
-  string name = 1 [
-    (google.api.field_behavior) = OPTIONAL,
-    (google.api.resource_reference).type = "rappeloids.app/HistoryEntry"
-  ];
-
-  // Canyon resource name: "canyons/{canyon}"
-  string canyon = 2 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).type = "rappeloids.app/Canyon"
-  ];
-
-  // Date of descent.
-  google.type.Date date = 3 [(google.api.field_behavior) = OPTIONAL];
-
-  // Ordering of canyon within the trip.
-  int32 order = 4 [(google.api.field_behavior) = OPTIONAL];
-
-  // Map of participant user ID -> descent status ("passed", "planned", etc.).
-  map<string, string> user_statuses = 5 [(google.api.field_behavior) = OPTIONAL];
-}
-
-// Group of canyon descents belonging to the same trip/outing.
-message HistoryTripUpdate {
-  // Existing trip ID. If creating a new trip, leave empty and the server will assign a new trip ID for this group.
-  string trip_id = 1 [(google.api.field_behavior) = OPTIONAL];
-
-  // Optional photo album link for the trip.
-  string photos_link = 2 [(google.api.field_behavior) = OPTIONAL];
-
-  // The canyon descents belonging to this trip.
-  repeated HistoryEntryUpdate entries = 3 [(google.api.field_behavior) = REQUIRED];
-}
-
 message BatchUpdateHistoryRequest {
   // Trips containing their canyon descent entries (including single-entry trips).
-  repeated HistoryTripUpdate trips = 1 [(google.api.field_behavior) = OPTIONAL];
+  repeated HistoryTrip trips = 1 [(google.api.field_behavior) = OPTIONAL];
 
   // Resource names of history entries to delete (e.g. "history/{history_entry}").
   repeated string delete_names = 2 [
@@ -146,6 +134,6 @@ message BatchUpdateHistoryRequest {
 }
 
 message BatchUpdateHistoryResponse {
-  // Resulting/updated history entries (AIP-234).
-  repeated HistoryEntry entries = 1;
+  // Resulting/updated history trips with their entries (AIP-234).
+  repeated HistoryTrip trips = 1;
 }
