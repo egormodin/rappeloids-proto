@@ -175,8 +175,17 @@ message LodgingStep {
   string confirmation_code = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// TripNote resource representing a note/comment on a trip.
 message TripNote {
-  string id = 1 [(google.api.field_behavior) = OPTIONAL];
+  option (google.api.resource) = {
+    type: "rappeloids.app/TripNote"
+    pattern: "trips/{trip}/notes/{note}"
+    plural: "tripNotes"
+    singular: "tripNote"
+  };
+
+  // Resource name: "trips/{trip}/notes/{note}"
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
   string author_id = 2 [
     (google.api.field_behavior) = OUTPUT_ONLY,
     (google.api.resource_reference).type = "rappeloids.app/User"
@@ -186,17 +195,10 @@ message TripNote {
   google.protobuf.Timestamp create_time = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-message ListTripsRequest {
-  int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
-  string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
-  string filter = 3 [(google.api.field_behavior) = OPTIONAL];
-  string order_by = 4 [(google.api.field_behavior) = OPTIONAL];
-}
+message ListTripsRequest {}
 
 message ListTripsResponse {
   repeated Trip trips = 1;
-  string next_page_token = 2;
-  int32 total_size = 3;
 }
 
 message GetTripRequest {
