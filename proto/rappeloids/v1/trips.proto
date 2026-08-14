@@ -12,6 +12,8 @@ import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
+import "google/type/datetime.proto";
+import "google/type/interval.proto";
 
 // Service managing canyoneering expeditions, itineraries, and participant tracking (AIP-121).
 service TripsService {
@@ -95,23 +97,20 @@ message Trip {
   // Status of the trip expedition.
   Status status = 5 [(google.api.field_behavior) = OPTIONAL];
 
-  // Shared album link (e.g. Google Photos).
-  string photos_link = 6 [(google.api.field_behavior) = OPTIONAL];
-
-  // Creator / owner user of the trip. Format: "users/{user_id}" or user identifier.
-  string creator = 7 [
-    (google.api.field_behavior) = OPTIONAL,
+  // Creator / owner user of the trip. Format: "users/{user_id}".
+  string creator = 6 [
+    (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/User"
   ];
 
   // Trip participants and their roles.
-  repeated TripParticipant participants = 8 [(google.api.field_behavior) = OPTIONAL];
+  repeated TripParticipant participants = 7 [(google.api.field_behavior) = OPTIONAL];
 
   // Multi-day itinerary schedule.
-  repeated TripStep itinerary_steps = 9 [(google.api.field_behavior) = OPTIONAL];
+  repeated TripStep itinerary_steps = 8 [(google.api.field_behavior) = OPTIONAL];
 
   // Trip discussion and log notes.
-  repeated TripNote notes = 10 [(google.api.field_behavior) = OPTIONAL];
+  repeated TripNote notes = 9 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message TripParticipant {
@@ -119,20 +118,16 @@ message TripParticipant {
   enum Status {
     STATUS_UNSPECIFIED = 0;
     PENDING = 1;
-    WAITING = 2;
-    APPROVED = 3;
-    REJECTED = 4;
-    DISCOURAGED = 5;
+    APPROVED = 2;
+    REJECTED = 3;
   }
 
-  string user_id = 1 [
+  // User resource name ("users/{user_id}").
+  string user = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/User"
   ];
-  string display_name = 2 [(google.api.field_behavior) = OPTIONAL];
-  string email = 3 [(google.api.field_behavior) = OPTIONAL];
-  Status status = 4 [(google.api.field_behavior) = OPTIONAL];
-  string role = 5 [(google.api.field_behavior) = OPTIONAL]; // "organizer", "member"
+  Status status = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message TripStep {
@@ -148,31 +143,48 @@ message TripStep {
 }
 
 message CanyonStep {
-  string canyon_id = 1 [
+  string canyon = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Canyon"
   ];
-  google.protobuf.Timestamp scheduled_date = 2 [(google.api.field_behavior) = OPTIONAL];
-  string planned_duration = 3 [(google.api.field_behavior) = OPTIONAL];
-  string notes = 4 [(google.api.field_behavior) = OPTIONAL];
+  google.type.DateTime scheduled_date = 2 [(google.api.field_behavior) = OPTIONAL];
+  google.type.Interval planned_duration = 3 [(google.api.field_behavior) = OPTIONAL];
+  google.type.Interval drive_duration = 4 [(google.api.field_behavior) = OPTIONAL];
+  google.type.Interval shuttle_duration = 5 [(google.api.field_behavior) = OPTIONAL];
+  string notes = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message TravelStep {
-  string mode = 1 [(google.api.field_behavior) = REQUIRED]; // "flight", "car"
+  enum Type {
+    TYPE_UNSPECIFIED = 0;
+    FLIGHT = 1;
+    CAR = 2;
+    TRAIN = 3;
+    OTHER = 4;
+  }
+
+  Type type = 1 [(google.api.field_behavior) = REQUIRED];
   string departure_location = 2 [(google.api.field_behavior) = OPTIONAL];
   string arrival_location = 3 [(google.api.field_behavior) = OPTIONAL];
-  google.protobuf.Timestamp departure_time = 4 [(google.api.field_behavior) = OPTIONAL];
-  google.protobuf.Timestamp arrival_time = 5 [(google.api.field_behavior) = OPTIONAL];
-  string confirmation_code = 6 [(google.api.field_behavior) = OPTIONAL];
-  string notes = 7 [(google.api.field_behavior) = OPTIONAL];
+  google.type.DateTime departure_time = 4 [(google.api.field_behavior) = OPTIONAL];
+  google.type.DateTime arrival_time = 5 [(google.api.field_behavior) = OPTIONAL];
+  string notes = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message LodgingStep {
-  string name = 1 [(google.api.field_behavior) = REQUIRED];
-  string address = 2 [(google.api.field_behavior) = OPTIONAL];
-  google.protobuf.Timestamp check_in = 3 [(google.api.field_behavior) = OPTIONAL];
-  google.protobuf.Timestamp check_out = 4 [(google.api.field_behavior) = OPTIONAL];
-  string confirmation_code = 5 [(google.api.field_behavior) = OPTIONAL];
+  enum Type {
+    TYPE_UNSPECIFIED = 0;
+    CAMPING = 1;
+    HOTEL = 2;
+    AIRBNB = 3;
+    OTHER = 4;
+  }
+
+  Type type = 1 [(google.api.field_behavior) = REQUIRED];
+  string name = 2 [(google.api.field_behavior) = REQUIRED];
+  string location = 3 [(google.api.field_behavior) = OPTIONAL];
+  google.type.DateTime start_time = 4 [(google.api.field_behavior) = OPTIONAL];
+  google.type.DateTime end_time = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // TripNote resource representing a note/comment on a trip.
@@ -186,13 +198,12 @@ message TripNote {
 
   // Resource name: "trips/{trip}/notes/{note}"
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
-  string author_id = 2 [
+  string author = 2 [
     (google.api.field_behavior) = OUTPUT_ONLY,
     (google.api.resource_reference).type = "rappeloids.app/User"
   ];
-  string author_name = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
-  string text = 4 [(google.api.field_behavior) = REQUIRED];
-  google.protobuf.Timestamp create_time = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
+  string text = 3 [(google.api.field_behavior) = REQUIRED];
+  google.protobuf.Timestamp create_time = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 message ListTripsRequest {}
