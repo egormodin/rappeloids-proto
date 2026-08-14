@@ -34,6 +34,23 @@ service GpxService {
     };
   }
 
+  // Uploads and parses a raw track file (GPX, KML, or KMZ) to create a new track (AIP-136).
+  rpc UploadGpxTrack(UploadGpxTrackRequest) returns (GpxTrack) {
+    option (google.api.http) = {
+      post: "/v1/{parent=canyons/*}/gpxTracks:upload"
+      body: "*"
+    };
+    option (google.api.method_signature) = "parent,file_content,file_name";
+  }
+
+  // Downloads a GPX track in raw GPX, KML, or KMZ format (AIP-136).
+  rpc DownloadGpxTrack(DownloadGpxTrackRequest) returns (DownloadGpxTrackResponse) {
+    option (google.api.http) = {
+      get: "/v1/{name=canyons/*/gpxTracks/*}:download"
+    };
+    option (google.api.method_signature) = "name";
+  }
+
   // Updates an existing GPX track (AIP-134).
   rpc UpdateGpxTrack(UpdateGpxTrackRequest) returns (GpxTrack) {
     option (google.api.http) = {
@@ -148,6 +165,21 @@ message GeoBounds {
   google.type.LatLng north_east = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
+// Track creation source or origin (AIP-126).
+enum GpxTrackOrigin {
+  // Unspecified track origin.
+  GPX_TRACK_ORIGIN_UNSPECIFIED = 0;
+
+  // Synthesized or constructed algorithmically / AI.
+  GPX_TRACK_ORIGIN_AI_CONSTRUCTED = 1;
+
+  // Imported or uploaded from external GPX, KML, or KMZ file.
+  GPX_TRACK_ORIGIN_UPLOADED = 2;
+
+  // Created or modified by manual user edit.
+  GPX_TRACK_ORIGIN_MANUAL_EDIT = 3;
+}
+
 // GPX track resource following AIP-122.
 message GpxTrack {
   option (google.api.resource) = {
@@ -156,14 +188,6 @@ message GpxTrack {
     plural: "gpxTracks"
     singular: "gpxTrack"
   };
-
-  // Track creation origin / source.
-  enum Origin {
-    ORIGIN_UNSPECIFIED = 0;
-    AI_CONSTRUCTED = 1; // Synthesized or constructed algorithmically / AI
-    UPLOADED = 2;       // Imported or uploaded from external GPX source
-    MANUAL_EDIT = 3;    // Created or modified by manual user edit
-  }
 
   // The resource name of the GPX track (e.g. "canyons/{canyon}/gpxTracks/{gpx_track}").
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
@@ -178,7 +202,7 @@ message GpxTrack {
   bool is_default = 4 [(google.api.field_behavior) = OPTIONAL];
 
   // How this track was constructed / created.
-  Origin origin = 5 [(google.api.field_behavior) = OPTIONAL];
+  GpxTrackOrigin origin = 5 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional description or note for the track.
   string description = 6 [(google.api.field_behavior) = OPTIONAL];
@@ -214,6 +238,79 @@ message QueryGpxTracksRequest {
 
 message QueryGpxTracksResponse {
   repeated GpxTrack tracks = 1;
+}
+
+// Request message for UploadGpxTrack (AIP-136).
+message UploadGpxTrackRequest {
+  // Supported file formats for raw upload.
+  enum Format {
+    FORMAT_UNSPECIFIED = 0;
+    GPX = 1; // Standard GPX (.gpx) XML format
+    KML = 2; // Google Earth Keyhole Markup Language (.kml) XML format
+    KMZ = 3; // Zipped KML (.kmz) binary archive
+  }
+
+  // The parent canyon resource name (e.g. "canyons/{canyon}").
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "rappeloids.app/Canyon"
+  ];
+
+  // The raw file content (bytes for GPX, KML, or compressed KMZ).
+  bytes file_content = 2 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional original filename (e.g. "approach_route.gpx", "canyon.kml", "track.kmz").
+  string file_name = 3 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional format hint (if omitted, format is inferred from file_name or content).
+  Format format = 4 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional display name override for the track.
+  string display_name = 5 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional description or beta for the track.
+  string description = 6 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional author attribution.
+  string author = 7 [(google.api.field_behavior) = OPTIONAL];
+
+  // Whether this track should be set as the default track for the canyon.
+  bool is_default = 8 [(google.api.field_behavior) = OPTIONAL];
+
+  // How this track was constructed / created (defaults to GPX_TRACK_ORIGIN_UPLOADED if unspecified).
+  GpxTrackOrigin origin = 9 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Request message for DownloadGpxTrack (AIP-136).
+message DownloadGpxTrackRequest {
+  // Format for export / download.
+  enum Format {
+    FORMAT_UNSPECIFIED = 0;
+    GPX = 1; // Standard GPX (.gpx) XML format
+    KML = 2; // Google Earth Keyhole Markup Language (.kml) XML format
+    KMZ = 3; // Zipped KML (.kmz) binary archive
+  }
+
+  // The resource name of the GPX track to download (e.g. "canyons/{canyon}/gpxTracks/{gpx_track}").
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "rappeloids.app/GpxTrack"
+  ];
+
+  // Desired export format. Defaults to GPX if unspecified.
+  Format format = 2 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Response message for DownloadGpxTrack (AIP-136).
+message DownloadGpxTrackResponse {
+  // Filename suitable for download (e.g. "canyon_name_main_track.gpx").
+  string file_name = 1;
+
+  // MIME type (e.g. "application/gpx+xml", "application/vnd.google-earth.kml+xml", "application/vnd.google-earth.kmz").
+  string mime_type = 2;
+
+  // Raw file bytes.
+  bytes file_content = 3;
 }
 
 message UpdateGpxTrackRequest {
