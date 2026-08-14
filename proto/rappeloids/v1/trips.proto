@@ -59,23 +59,6 @@ service TripsService {
   }
 }
 
-enum TripStatus {
-  TRIP_STATUS_UNSPECIFIED = 0;
-  PLANNED = 1;
-  IN_PROGRESS = 2;
-  FINISHED = 3;
-  CANCELLED = 4;
-}
-
-enum ParticipantStatus {
-  PARTICIPANT_STATUS_UNSPECIFIED = 0;
-  PENDING = 1;
-  WAITING = 2;
-  APPROVED = 3;
-  REJECTED = 4;
-  DISCOURAGED = 5;
-}
-
 // Trip resource following AIP-122.
 message Trip {
   option (google.api.resource) = {
@@ -85,60 +68,70 @@ message Trip {
     singular: "trip"
   };
 
+  // Status of the trip expedition.
+  enum Status {
+    STATUS_UNSPECIFIED = 0;
+    PLANNED = 1;
+    IN_PROGRESS = 2;
+    FINISHED = 3;
+    CANCELLED = 4;
+  }
+
   // Resource name: "trips/{trip_id}"
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-  // The unique identifier of the trip.
-  string id = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
-
   // Title of the trip.
-  string title = 3 [(google.api.field_behavior) = REQUIRED];
+  string title = 2 [(google.api.field_behavior) = REQUIRED];
 
   // Detailed description and trip plan notes.
-  string description = 4 [(google.api.field_behavior) = OPTIONAL];
+  string description = 3 [(google.api.field_behavior) = OPTIONAL];
 
   // Primary region of the trip.
-  string region_id = 5 [
+  string region_id = 4 [
     (google.api.field_behavior) = OPTIONAL,
     (google.api.resource_reference).type = "rappeloids.app/Region"
   ];
 
   // Status of the trip expedition.
-  TripStatus status = 6 [(google.api.field_behavior) = OPTIONAL];
-
-  // Expedition start date.
-  google.protobuf.Timestamp start_date = 7 [(google.api.field_behavior) = OPTIONAL];
-
-  // Expedition end date.
-  google.protobuf.Timestamp end_date = 8 [(google.api.field_behavior) = OPTIONAL];
+  Status status = 5 [(google.api.field_behavior) = OPTIONAL];
 
   // Shared album link (e.g. Google Photos).
-  string photos_link = 9 [(google.api.field_behavior) = OPTIONAL];
+  string photos_link = 6 [(google.api.field_behavior) = OPTIONAL];
+
+  // Creator / owner user of the trip. Format: "users/{user_id}" or user identifier.
+  string creator = 7 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.resource_reference).type = "rappeloids.app/User"
+  ];
 
   // Trip participants and their roles.
-  repeated TripParticipant participants = 10 [(google.api.field_behavior) = OPTIONAL];
+  repeated TripParticipant participants = 8 [(google.api.field_behavior) = OPTIONAL];
 
   // Multi-day itinerary schedule.
-  repeated TripStep itinerary_steps = 11 [(google.api.field_behavior) = OPTIONAL];
+  repeated TripStep itinerary_steps = 9 [(google.api.field_behavior) = OPTIONAL];
 
   // Trip discussion and log notes.
-  repeated TripNote notes = 12 [(google.api.field_behavior) = OPTIONAL];
-
-  // Timestamp when the trip was created (AIP-142).
-  google.protobuf.Timestamp create_time = 13 [(google.api.field_behavior) = OUTPUT_ONLY];
-
-  // Timestamp when the trip was last updated (AIP-142).
-  google.protobuf.Timestamp update_time = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
+  repeated TripNote notes = 10 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message TripParticipant {
+  // Participation status in the trip.
+  enum Status {
+    STATUS_UNSPECIFIED = 0;
+    PENDING = 1;
+    WAITING = 2;
+    APPROVED = 3;
+    REJECTED = 4;
+    DISCOURAGED = 5;
+  }
+
   string user_id = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/User"
   ];
   string display_name = 2 [(google.api.field_behavior) = OPTIONAL];
   string email = 3 [(google.api.field_behavior) = OPTIONAL];
-  ParticipantStatus status = 4 [(google.api.field_behavior) = OPTIONAL];
+  Status status = 4 [(google.api.field_behavior) = OPTIONAL];
   string role = 5 [(google.api.field_behavior) = OPTIONAL]; // "organizer", "member"
 }
 
