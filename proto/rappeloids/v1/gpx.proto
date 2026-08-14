@@ -9,87 +9,225 @@ import "google/api/annotations.proto";
 import "google/api/client.proto";
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/field_mask.proto";
+import "google/type/latlng.proto";
+import "rappeloids/v1/common.proto";
 
 // Service managing GPX tracks and routes.
 service GpxService {
   option (google.api.default_host) = "api.rappeloids.app";
 
-  // Gets a single GPX track by resource name or ID (AIP-131).
-  rpc GetGpxTrack(GetGpxTrackRequest) returns (GpxTrack) {
+  // Queries GPX tracks for a canyon, region, or specific track (AIP-136).
+  rpc QueryGpxTracks(QueryGpxTracksRequest) returns (QueryGpxTracksResponse) {
     option (google.api.http) = {
-      get: "/v1/{name=gpxTracks/*}"
+      get: "/v1/gpxTracks:query"
       additional_bindings {
-        get: "/v1/gpxTracks/{name}"
+        get: "/v1/{canyon=canyons/*}/gpxTracks:query"
       }
+      additional_bindings {
+        get: "/v1/{region=regions/*}/gpxTracks:query"
+      }
+      additional_bindings {
+        get: "/v1/{name=canyons/*/gpxTracks/*}:query"
+      }
+    };
+  }
+
+  // Updates an existing GPX track (AIP-134).
+  rpc UpdateGpxTrack(UpdateGpxTrackRequest) returns (GpxTrack) {
+    option (google.api.http) = {
+      patch: "/v1/{gpx_track.name=canyons/*/gpxTracks/*}"
+      body: "gpx_track"
+    };
+    option (google.api.method_signature) = "gpx_track,update_mask";
+  }
+
+  // Deletes a GPX track (AIP-135).
+  rpc DeleteGpxTrack(DeleteGpxTrackRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete: "/v1/{name=canyons/*/gpxTracks/*}"
     };
     option (google.api.method_signature) = "name";
   }
+}
 
-  // Queries default GPX tracks for all canyons in a specified region (AIP-136).
-  rpc QueryRegionGpxTracks(QueryRegionGpxTracksRequest) returns (QueryRegionGpxTracksResponse) {
-    option (google.api.http) = {
-      get: "/v1/regions/{region}:queryGpxTracks"
-      additional_bindings {
-        get: "/v1/{parent=regions/*}:queryGpxTracks"
-      }
-      additional_bindings {
-        get: "/v1/gpxTracks:query"
-      }
-    };
+// A continuous track segment or discrete path (e.g., Approach, Descent, Exit).
+message Segment {
+  // Classification of the segment.
+  enum Type {
+    TYPE_UNSPECIFIED = 0;
+    APPROACH = 1;    // Hike to the start of the canyon
+    DESCENT = 2;     // Technical section (rappels, narrows, swims)
+    EXIT = 3;        // Hike/climb out from the bottom
+    SHUTTLE = 4;     // Vehicle shuttle or drive route
+    ESCAPE = 5;      // Emergency escape / bailout route
+    ALTERNATIVE = 6; // Alternate route / bypass
+    OTHER = 7;
   }
+
+  // Name or label of the segment (e.g., "Approach Trail", "Main Descent", "Sneak Exit").
+  string name = 1 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional description or notes for this segment.
+  string description = 2 [(google.api.field_behavior) = OPTIONAL];
+
+  // Semantic segment type.
+  Type type = 3 [(google.api.field_behavior) = OPTIONAL];
+
+  // Custom type string if not covered by enum.
+  string custom_type = 4 [(google.api.field_behavior) = OPTIONAL];
+
+  // Display color preference (e.g., hex "#FF0000" or named color "Red").
+  string display_color = 5 [(google.api.field_behavior) = OPTIONAL];
+
+  // Ordered points forming this segment line.
+  repeated GeoPoint points = 6 [(google.api.field_behavior) = REQUIRED];
+
+  // Pre-calculated stats for this segment.
+  optional TrackStats stats = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Waypoints / POIs associated with this segment.
+  repeated Waypoint waypoints = 8 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// A standalone point of interest / POI (e.g., Trailhead, R1, Anchor, Spring, Car Drop).
+message Waypoint {
+  // Classification of the waypoint.
+  enum Type {
+    TYPE_UNSPECIFIED = 0;
+    TRAILHEAD = 1;      // Parking / Trailhead
+    RAPPEL = 2;         // Rappel anchor / drop
+    WATER = 3;          // Spring, pool, water source
+    JUNCTION = 4;       // Trail fork / canyon confluence
+    OBSTACLE = 5;       // Downclimb, keeper pothole, boulder choke
+    EXIT_POINT = 6;     // Start of exit hike / scramble
+    VEHICLE_DROP = 7;   // Shuttle drop / exit vehicle
+    DANGER = 8;         // Siphon, flash flood refuge, rockfall hazard
+    CAMP = 9;           // Campsite / bivouac
+    OTHER = 10;
+  }
+
+  // 3D geographic point and elevation.
+  GeoPoint point = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Name/label (e.g. "R1 (25m)", "Trailhead Parking", "Exit Couloir").
+  string name = 2 [(google.api.field_behavior) = REQUIRED];
+
+  // Detailed description (e.g. "Bolted anchor on canyon right, 25m drop into pool").
+  string description = 3 [(google.api.field_behavior) = OPTIONAL];
+
+  // Waypoint category/type.
+  Type type = 4 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Pre-computed geographic summary & elevation profile stats.
+message TrackStats {
+  // Total 2D / 3D distance in meters.
+  double total_distance_meters = 1;
+
+  // Cumulative elevation gain in meters.
+  double elevation_gain_meters = 2;
+
+  // Cumulative elevation loss in meters.
+  double elevation_loss_meters = 3;
+
+  // Minimum elevation recorded in meters.
+  double min_elevation_meters = 4;
+
+  // Maximum elevation recorded in meters.
+  double max_elevation_meters = 5;
+}
+
+// Geographic bounding box enclosing all points in the dataset.
+message GeoBounds {
+  // Southwest corner (minimum latitude and minimum longitude).
+  google.type.LatLng south_west = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Northeast corner (maximum latitude and maximum longitude).
+  google.type.LatLng north_east = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // GPX track resource following AIP-122.
 message GpxTrack {
   option (google.api.resource) = {
     type: "rappeloids.app/GpxTrack"
-    pattern: "gpxTracks/{gpx_track}"
     pattern: "canyons/{canyon}/gpxTracks/{gpx_track}"
     plural: "gpxTracks"
     singular: "gpxTrack"
   };
 
-  // The resource name of the GPX track (e.g. "gpxTracks/{gpx_track}").
+  // Track creation origin / source.
+  enum Origin {
+    ORIGIN_UNSPECIFIED = 0;
+    AI_CONSTRUCTED = 1; // Synthesized or constructed algorithmically / AI
+    UPLOADED = 2;       // Imported or uploaded from external GPX source
+    MANUAL_EDIT = 3;    // Created or modified by manual user edit
+  }
+
+  // The resource name of the GPX track (e.g. "canyons/{canyon}/gpxTracks/{gpx_track}").
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-  // Canyon resource name: "canyons/{canyon}"
-  string canyon = 2 [
-    (google.api.field_behavior) = OPTIONAL,
-    (google.api.resource_reference).type = "rappeloids.app/Canyon"
-  ];
-
   // Name or title of the track (e.g. "Main Route", "Approach").
-  string display_name = 3 [(google.api.field_behavior) = REQUIRED];
+  string display_name = 2 [(google.api.field_behavior) = REQUIRED];
 
-  // Raw GPX XML string content.
-  string gpx_content = 4 [(google.api.field_behavior) = REQUIRED];
+  // Raw GPX XML string content (kept for backward compatibility during migration).
+  string gpx_content = 3 [(google.api.field_behavior) = OPTIONAL];
 
   // Whether this is the default track for the canyon.
-  bool is_default = 5 [(google.api.field_behavior) = OPTIONAL];
+  bool is_default = 4 [(google.api.field_behavior) = OPTIONAL];
 
-  // Indicates if the track was constructed/generated algorithmically.
-  bool is_constructed = 6 [(google.api.field_behavior) = OPTIONAL];
+  // How this track was constructed / created.
+  Origin origin = 5 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional description or note for the track.
-  string description = 7 [(google.api.field_behavior) = OPTIONAL];
+  string description = 6 [(google.api.field_behavior) = OPTIONAL];
+
+  // Author or contributor of the GPX track.
+  string author = 7 [(google.api.field_behavior) = OPTIONAL];
+
+  // Waypoints / POIs extracted from the GPX.
+  repeated Waypoint waypoints = 8 [(google.api.field_behavior) = OPTIONAL];
+
+  // Path segments extracted from the GPX.
+  repeated Segment segments = 9 [(google.api.field_behavior) = OPTIONAL];
+
+  // Aggregate summary stats calculated across all segments.
+  optional TrackStats summary_stats = 10 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Geographic bounding box for instant map fitting.
+  optional GeoBounds bounds = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-message GetGpxTrackRequest {
-  // Format: "gpxTracks/{id}" or "{id}"
+message QueryGpxTracksRequest {
+  oneof target {
+    // Canyon resource name: "canyons/{canyon_id}"
+    string canyon = 1 [(google.api.resource_reference).type = "rappeloids.app/Canyon"];
+
+    // Region resource name: "regions/{region_id}" (queries default tracks for canyons in region)
+    string region = 2 [(google.api.resource_reference).type = "rappeloids.app/Region"];
+
+    // GPX Track resource name: "canyons/{canyon_id}/gpxTracks/{gpx_track_id}"
+    string name = 3 [(google.api.resource_reference).type = "rappeloids.app/GpxTrack"];
+  }
+}
+
+message QueryGpxTracksResponse {
+  repeated GpxTrack tracks = 1;
+}
+
+message UpdateGpxTrackRequest {
+  // The GPX track resource with updated fields.
+  GpxTrack gpx_track = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Field mask indicating which fields are to be updated (AIP-134).
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+}
+
+message DeleteGpxTrackRequest {
+  // Format: "canyons/{canyon_id}/gpxTracks/{gpx_track_id}"
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/GpxTrack"
   ];
-}
-
-message QueryRegionGpxTracksRequest {
-  // Region ID or parent: "regions/{region_id}" or "{region_id}"
-  string region = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).type = "rappeloids.app/Region"
-  ];
-}
-
-message QueryRegionGpxTracksResponse {
-  repeated GpxTrack tracks = 1;
 }
