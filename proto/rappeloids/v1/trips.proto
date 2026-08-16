@@ -111,6 +111,9 @@ message Trip {
 
   // Trip discussion and log notes.
   repeated TripNote notes = 9 [(google.api.field_behavior) = OPTIONAL];
+
+  // Dates description for the trip (e.g. "Jun 15 - Jun 22, 2026").
+  string dates = 10 [(google.api.field_behavior) = REQUIRED];
 }
 
 message TripParticipant {
@@ -120,6 +123,7 @@ message TripParticipant {
     PENDING = 1;
     APPROVED = 2;
     REJECTED = 3;
+    TWICE_REJECTED = 4;
   }
 
   // User resource name ("users/{user_id}").
