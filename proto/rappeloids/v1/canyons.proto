@@ -83,6 +83,14 @@ service CanyonsService {
       get: "/v1/canyons:batchGet"
     };
   }
+
+  // Parses canyon metadata, beta, pitches, and links from one or more source URLs (e.g. RopeWiki, KiwiCanyons).
+  rpc ParseCanyon(ParseCanyonRequest) returns (ParseCanyonResponse) {
+    option (google.api.http) = {
+      post: "/v1/canyons:parse"
+      body: "*"
+    };
+  }
 }
 
 // Canyon resource following AIP-122.
@@ -276,4 +284,29 @@ message BatchGetCanyonsRequest {
 
 message BatchGetCanyonsResponse {
   repeated Canyon canyons = 1;
+}
+
+message ParseCanyonRequest {
+  // URLs to parse canyon data from (e.g. RopeWiki, KiwiCanyons, etc.).
+  repeated string urls = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional target parent region: "regions/{region_id}"
+  string parent = 2 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.resource_reference).type = "rappeloids.app/Region"
+  ];
+}
+
+message ParseCanyonResponse {
+  // The parsed canyon entity with populated metadata and pitches.
+  Canyon canyon = 1;
+
+  // Raw parsed metadata key-values (e.g. "timeBreakdown.approach": "2.5-3.5h").
+  map<string, string> extracted_metadata = 2;
+
+  // External links discovered and parsed from the sources.
+  repeated Canyon.CanyonLink external_links = 3;
+
+  // Discovered GPX track content if available.
+  string gpx_content = 4;
 }
