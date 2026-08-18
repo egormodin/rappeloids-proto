@@ -64,6 +64,50 @@ message User {
     ROLE_ADMIN = 2;
   }
 
+  // Theme preference.
+  enum Theme {
+    THEME_UNSPECIFIED = 0;
+    DARK = 1;
+    LIGHT = 2;
+  }
+
+  // UI Accent Color Scheme.
+  enum ColorScheme {
+    COLOR_SCHEME_UNSPECIFIED = 0;
+    OCEAN = 1;
+    SEDONA = 2;
+    ALPINE = 3;
+    GLACIER = 4;
+    SUNSET = 5;
+    CYBER = 6;
+    MONOCHROME = 7;
+    NORDIC = 8;
+    SAHARA = 9;
+    AMAZON = 10;
+    LAVENDER = 11;
+    VOLCANO = 12;
+    CHERRY = 13;
+    SAPPHIRE = 14;
+    EMERALD = 15;
+    COFFEE = 16;
+    AUTUMN = 17;
+    MIDNIGHT = 18;
+    CORAL = 19;
+    NORTHERN_AURORA = 20;
+    INDIGO = 21;
+    CANYON_AMBER = 22;
+    SLATE_BLUE = 23;
+    DESERT_SAGE = 24;
+    PLUM_VELVET = 25;
+  }
+
+  // Unit measurement system.
+  enum UnitSystem {
+    UNIT_SYSTEM_UNSPECIFIED = 0;
+    IMPERIAL = 1;
+    METRIC = 2;
+  }
+
   // Resource name: "users/{user_id}"
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
@@ -79,8 +123,20 @@ message User {
   // Assigned security role.
   Role role = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // User preferences map.
-  map<string, string> preferences = 7 [(google.api.field_behavior) = OPTIONAL];
+  // Secondary email address for authentication and profile resolution.
+  string secondary_email = 8 [(google.api.field_behavior) = OPTIONAL];
+
+  // Dark or Light theme.
+  Theme theme = 9 [(google.api.field_behavior) = OPTIONAL];
+
+  // Accent color scheme.
+  ColorScheme color_scheme = 10 [(google.api.field_behavior) = OPTIONAL];
+
+  // Whether user is hidden in history views.
+  bool is_hidden_in_history = 11 [(google.api.field_behavior) = OPTIONAL];
+
+  // Unit measurement system.
+  UnitSystem unit_system = 12 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message GetUserRequest {
