@@ -46,6 +46,14 @@ service UsersService {
       get: "/v1/users"
     };
   }
+
+  // Deletes a user profile (AIP-135). Requires self or admin.
+  rpc DeleteUser(DeleteUserRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete: "/v1/{name=users/*}"
+    };
+    option (google.api.method_signature) = "name";
+  }
 }
 
 // User profile resource following AIP-122.
@@ -159,4 +167,12 @@ message ListUsersRequest {}
 
 message ListUsersResponse {
   repeated User users = 1;
+}
+
+message DeleteUserRequest {
+  // Format: "users/{user_id}"
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "rappeloids.app/User"
+  ];
 }
