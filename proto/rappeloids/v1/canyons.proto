@@ -119,8 +119,8 @@ message Canyon {
   // User-facing display title.
   string display_name = 4 [(google.api.field_behavior) = REQUIRED];
 
-  // External reference or wiki link (e.g. Ropewiki).
-  string link = 5 [(google.api.field_behavior) = OPTIONAL];
+  reserved 5, 11;
+  reserved "link", "difficulty";
 
   // High-level description and beta summary.
   string description = 6 [(google.api.field_behavior) = OPTIONAL];
@@ -136,9 +136,6 @@ message Canyon {
 
   // ACA risk rating (e.g. "R", "X", "PG-13").
   string risk_rating = 10 [(google.api.field_behavior) = OPTIONAL];
-
-  reserved 11;
-  reserved "difficulty";
 
   // Total count of rappels in the standard route.
   int32 rappels_count = 12 [(google.api.field_behavior) = OPTIONAL];
