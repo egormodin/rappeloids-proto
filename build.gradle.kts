@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "app.rappeloids"
-version = "1.4.7"
+version = "1.4.8"
 
 dependencies {
     api(libs.kotlin.stdlib)

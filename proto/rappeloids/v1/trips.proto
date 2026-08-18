@@ -9,11 +9,14 @@ import "google/api/annotations.proto";
 import "google/api/client.proto";
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
+import "google/protobuf/duration.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
+import "google/type/date.proto";
 import "google/type/datetime.proto";
 import "google/type/interval.proto";
+import "google/type/timeofday.proto";
 
 // Service managing canyoneering expeditions, itineraries, and participant tracking (AIP-121).
 service TripsService {
@@ -88,8 +91,8 @@ message Trip {
   // Detailed description and trip plan notes.
   string description = 3 [(google.api.field_behavior) = OPTIONAL];
 
-  // Primary region of the trip.
-  string region_id = 4 [
+  // Primary region of the trip. Format: "regions/{region_id}"
+  string region = 4 [
     (google.api.field_behavior) = OPTIONAL,
     (google.api.resource_reference).type = "rappeloids.app/Region"
   ];
@@ -114,6 +117,12 @@ message Trip {
 
   // Dates description for the trip (e.g. "Jun 15 - Jun 22, 2026").
   string dates = 10 [(google.api.field_behavior) = REQUIRED];
+
+  // Locked boundary region of the trip. Format: "regions/{region_id}"
+  string locked_region = 11 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.resource_reference).type = "rappeloids.app/Region"
+  ];
 }
 
 message TripParticipant {
@@ -138,57 +147,134 @@ message TripStep {
   string id = 1 [(google.api.field_behavior) = OPTIONAL];
   string title = 2 [(google.api.field_behavior) = REQUIRED];
   int32 sort_order = 3 [(google.api.field_behavior) = OPTIONAL];
+  string parent_step_id = 4 [(google.api.field_behavior) = OPTIONAL];
 
-  oneof step_type {
-    CanyonStep canyon = 4;
-    TravelStep travel = 5;
-    LodgingStep lodging = 6;
+  oneof step {
+    DayStep day = 5;
+    FlightStep flight = 6;
+    DriveStep drive = 7;
+    HousingStep housing = 8;
+    RestStep rest = 9;
+    RegionChangeStep region_change = 10;
   }
 }
 
-message CanyonStep {
+// 1. Day Step (Canyoneering / Activity Day)
+message DayStep {
+  string day = 1 [(google.api.field_behavior) = OPTIONAL];
+  google.type.Date date = 2 [(google.api.field_behavior) = OPTIONAL];
+  // Region resource name: "regions/{region_id}"
+  string region = 3 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.resource_reference).type = "rappeloids.app/Region"
+  ];
+  repeated TripCanyonItem canyons = 4 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Canyon item scheduled within a day step.
+message TripCanyonItem {
+  // Canyon resource name: "canyons/{canyon_id}"
   string canyon = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Canyon"
   ];
-  google.type.DateTime scheduled_date = 2 [(google.api.field_behavior) = OPTIONAL];
-  google.type.Interval planned_duration = 3 [(google.api.field_behavior) = OPTIONAL];
-  google.type.Interval drive_duration = 4 [(google.api.field_behavior) = OPTIONAL];
-  google.type.Interval shuttle_duration = 5 [(google.api.field_behavior) = OPTIONAL];
-  string notes = 6 [(google.api.field_behavior) = OPTIONAL];
+  google.type.Date date = 2 [(google.api.field_behavior) = OPTIONAL];
+  string day = 3 [(google.api.field_behavior) = OPTIONAL];
+  google.type.TimeOfDay start_time = 4 [(google.api.field_behavior) = OPTIONAL];
+  google.protobuf.Duration drive_duration = 5 [(google.api.field_behavior) = OPTIONAL];
+  google.protobuf.Duration shuttle_duration = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
-message TravelStep {
-  enum Type {
-    TYPE_UNSPECIFIED = 0;
-    FLIGHT = 1;
-    CAR = 2;
-    TRAIN = 3;
-    OTHER = 4;
+// 2. Flight Step (Air Travel)
+message FlightStep {
+  message FlightStop {
+    string airport = 1 [(google.api.field_behavior) = OPTIONAL];
+    google.protobuf.Duration layover_duration = 2 [(google.api.field_behavior) = OPTIONAL];
   }
 
-  Type type = 1 [(google.api.field_behavior) = REQUIRED];
-  string departure_location = 2 [(google.api.field_behavior) = OPTIONAL];
-  string arrival_location = 3 [(google.api.field_behavior) = OPTIONAL];
-  google.type.DateTime departure_time = 4 [(google.api.field_behavior) = OPTIONAL];
-  google.type.DateTime arrival_time = 5 [(google.api.field_behavior) = OPTIONAL];
-  string notes = 6 [(google.api.field_behavior) = OPTIONAL];
+  message FlightRoute {
+    string departure_airport = 1 [(google.api.field_behavior) = OPTIONAL];
+    string arrival_airport = 2 [(google.api.field_behavior) = OPTIONAL];
+    google.type.DateTime departure_time = 3 [(google.api.field_behavior) = OPTIONAL];
+    google.type.DateTime arrival_time = 4 [(google.api.field_behavior) = OPTIONAL];
+    google.protobuf.Duration duration = 5 [(google.api.field_behavior) = OPTIONAL];
+    int32 days = 6 [(google.api.field_behavior) = OPTIONAL];
+    repeated FlightStop stops = 7 [(google.api.field_behavior) = OPTIONAL];
+  }
+
+  bool is_round_trip = 1 [(google.api.field_behavior) = OPTIONAL];
+  bool custom_return = 2 [(google.api.field_behavior) = OPTIONAL];
+  bool next_step_same_day = 3 [(google.api.field_behavior) = OPTIONAL];
+  google.type.Date start_date = 4 [(google.api.field_behavior) = OPTIONAL];
+  google.type.Date end_date = 5 [(google.api.field_behavior) = OPTIONAL];
+  google.protobuf.Duration duration = 6 [(google.api.field_behavior) = OPTIONAL];
+  string price = 7 [(google.api.field_behavior) = OPTIONAL];
+
+  FlightRoute outbound_flight = 8 [(google.api.field_behavior) = OPTIONAL];
+  FlightRoute return_flight = 9 [(google.api.field_behavior) = OPTIONAL];
 }
 
-message LodgingStep {
-  enum Type {
-    TYPE_UNSPECIFIED = 0;
-    CAMPING = 1;
-    HOTEL = 2;
-    AIRBNB = 3;
-    OTHER = 4;
+// 3. Drive Step (Road Travel / Car Rental)
+message DriveStep {
+  message DriveWaypoint {
+    string location = 1 [(google.api.field_behavior) = OPTIONAL];
+    google.protobuf.Duration stop_duration = 2 [(google.api.field_behavior) = OPTIONAL];
   }
 
-  Type type = 1 [(google.api.field_behavior) = REQUIRED];
-  string name = 2 [(google.api.field_behavior) = REQUIRED];
+  message DriveRoute {
+    string start_location = 1 [(google.api.field_behavior) = OPTIONAL];
+    string end_location = 2 [(google.api.field_behavior) = OPTIONAL];
+    google.type.DateTime departure_time = 3 [(google.api.field_behavior) = OPTIONAL];
+    google.type.DateTime arrival_time = 4 [(google.api.field_behavior) = OPTIONAL];
+    google.protobuf.Duration drive_duration = 5 [(google.api.field_behavior) = OPTIONAL];
+    repeated DriveWaypoint stops = 6 [(google.api.field_behavior) = OPTIONAL];
+  }
+
+  string transport_type = 1 [(google.api.field_behavior) = OPTIONAL];
+  bool is_round_trip = 2 [(google.api.field_behavior) = OPTIONAL];
+  bool custom_return = 3 [(google.api.field_behavior) = OPTIONAL];
+  bool next_step_same_day = 4 [(google.api.field_behavior) = OPTIONAL];
+  google.type.Date start_date = 5 [(google.api.field_behavior) = OPTIONAL];
+  google.type.Date end_date = 6 [(google.api.field_behavior) = OPTIONAL];
+  google.protobuf.Duration duration = 7 [(google.api.field_behavior) = OPTIONAL];
+  string price = 8 [(google.api.field_behavior) = OPTIONAL];
+
+  DriveRoute way_there = 9 [(google.api.field_behavior) = OPTIONAL];
+  DriveRoute way_back = 10 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// 4. Housing Step (Lodging / Camping)
+message HousingStep {
+  enum Type {
+    TYPE_UNSPECIFIED = 0;
+    RENTAL = 1;
+    CAMPING = 2;
+  }
+
+  Type type = 1 [(google.api.field_behavior) = OPTIONAL];
+  string name = 2 [(google.api.field_behavior) = OPTIONAL];
   string location = 3 [(google.api.field_behavior) = OPTIONAL];
-  google.type.DateTime start_time = 4 [(google.api.field_behavior) = OPTIONAL];
-  google.type.DateTime end_time = 5 [(google.api.field_behavior) = OPTIONAL];
+  google.type.Date start_date = 4 [(google.api.field_behavior) = OPTIONAL];
+  google.type.Date end_date = 5 [(google.api.field_behavior) = OPTIONAL];
+  google.protobuf.Duration duration = 6 [(google.api.field_behavior) = OPTIONAL];
+  string price = 7 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// 5. Rest Step (Rest / Recovery Day)
+message RestStep {
+  string day = 1 [(google.api.field_behavior) = OPTIONAL];
+  google.type.Date date = 2 [(google.api.field_behavior) = OPTIONAL];
+  google.protobuf.Duration duration = 3 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// 6. Region Change Step (Region Transition)
+message RegionChangeStep {
+  // Target region resource name: "regions/{region_id}"
+  string target_region = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "rappeloids.app/Region"
+  ];
+  google.type.Date date = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // TripNote resource representing a note/comment on a trip.
@@ -210,7 +296,10 @@ message TripNote {
   google.protobuf.Timestamp create_time = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-message ListTripsRequest {}
+message ListTripsRequest {
+  // Field mask to control which fields are returned (AIP-157).
+  google.protobuf.FieldMask read_mask = 1 [(google.api.field_behavior) = OPTIONAL];
+}
 
 message ListTripsResponse {
   repeated Trip trips = 1;
