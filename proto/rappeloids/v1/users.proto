@@ -126,6 +126,17 @@ message User {
     METRIC = 2;
   }
 
+  // Map layer or style preference.
+  enum MapOption {
+    MAP_OPTION_UNSPECIFIED = 0;
+    OPEN_TOPO = 1;
+    LOCUS_OUTDOORS = 2;
+    GOOGLE_STREETS = 3;
+    GOOGLE_HYBRID = 4;
+    GOOGLE_TERRAIN = 5;
+    USGS_7_5_QUADS = 6;
+  }
+
   // Resource name: "users/{user_id}"
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
@@ -158,6 +169,9 @@ message User {
 
   // Unit measurement system.
   UnitSystem unit_system = 12 [(google.api.field_behavior) = OPTIONAL];
+
+  // Map layer or style preference.
+  MapOption map_option = 13 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message GetUserRequest {
