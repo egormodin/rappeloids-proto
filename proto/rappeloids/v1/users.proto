@@ -123,6 +123,9 @@ message User {
   // Assigned security role.
   Role role = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
 
+  // Whether user is approved by an administrator.
+  bool approved = 7 [(google.api.field_behavior) = OPTIONAL];
+
   // Secondary email address for authentication and profile resolution.
   string secondary_email = 8 [(google.api.field_behavior) = OPTIONAL];
 
