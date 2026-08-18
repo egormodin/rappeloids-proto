@@ -137,8 +137,8 @@ message Canyon {
   // ACA risk rating (e.g. "R", "X", "PG-13").
   string risk_rating = 10 [(google.api.field_behavior) = OPTIONAL];
 
-  // General difficulty label (e.g. "Intermediate", "Advanced").
-  string difficulty = 11 [(google.api.field_behavior) = OPTIONAL];
+  reserved 11;
+  reserved "difficulty";
 
   // Total count of rappels in the standard route.
   int32 rappels_count = 12 [(google.api.field_behavior) = OPTIONAL];
