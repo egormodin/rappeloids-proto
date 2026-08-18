@@ -65,11 +65,21 @@ message User {
     singular: "user"
   };
 
+  // User account status.
+  enum Status {
+    STATUS_UNSPECIFIED = 0;
+    PENDING = 1;
+    APPROVED = 2;
+    REJECTED = 3;
+  }
+
   // Assigned security role.
   enum Role {
     ROLE_UNSPECIFIED = 0;
-    ROLE_USER = 1;
-    ROLE_ADMIN = 2;
+    USER = 1;
+    ADMIN = 2;
+    BOSS = 3;
+    EDITOR = 4;
   }
 
   // Theme preference.
@@ -131,8 +141,8 @@ message User {
   // Assigned security role.
   Role role = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Whether user is approved by an administrator.
-  bool approved = 7 [(google.api.field_behavior) = OPTIONAL];
+  // User account status.
+  Status status = 7 [(google.api.field_behavior) = OPTIONAL];
 
   // Secondary email address for authentication and profile resolution.
   string secondary_email = 8 [(google.api.field_behavior) = OPTIONAL];
@@ -163,7 +173,10 @@ message UpdateUserRequest {
   google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
-message ListUsersRequest {}
+message ListUsersRequest {
+  // Field mask to control which fields are returned (AIP-157).
+  google.protobuf.FieldMask field_mask = 1 [(google.api.field_behavior) = OPTIONAL];
+}
 
 message ListUsersResponse {
   repeated User users = 1;
