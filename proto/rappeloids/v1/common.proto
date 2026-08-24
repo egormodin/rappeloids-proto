@@ -6,6 +6,8 @@ option java_multiple_files = true;
 option java_package = "app.rappeloids.protos.v1";
 
 import "google/api/field_behavior.proto";
+import "google/protobuf/duration.proto";
+import "google/type/date.proto";
 
 // Geographic point representing latitude, longitude, and optional elevation.
 message GeoPoint {
@@ -29,4 +31,34 @@ message Money {
 
   // Number of nano (10^-9) units of the amount.
   int32 nanos = 3 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Duration specification supporting exact calendar dates or flexible text with duration.
+message Duration {
+  // Exact start and end calendar dates.
+  message ExactDates {
+    // Start calendar date.
+    google.type.Date start_date = 1 [(google.api.field_behavior) = REQUIRED];
+
+    // End calendar date.
+    google.type.Date end_date = 2 [(google.api.field_behavior) = REQUIRED];
+  }
+
+  // Flexible date text with duration.
+  message TextDuration {
+    // Text description of dates (e.g. "Jun 15 - Jun 22, 2026", "Late August").
+    string dates = 1 [(google.api.field_behavior) = REQUIRED];
+
+    // Duration of the trip or trips group.
+    google.protobuf.Duration duration = 2 [(google.api.field_behavior) = OPTIONAL];
+  }
+
+  // Duration specification choice.
+  oneof duration {
+    // Specific calendar start and end dates.
+    ExactDates exact_dates = 1;
+
+    // Flexible date text with optional duration.
+    TextDuration text_duration = 2;
+  }
 }
