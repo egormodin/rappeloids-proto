@@ -84,8 +84,26 @@ message HistoryEntry {
   // Ordering of canyon within the same trip and on the same date.
   int32 order = 5 [(google.api.field_behavior) = OPTIONAL];
 
-  // Map of participant user ID -> descent status.
-  map<string, string> user_statuses = 6 [(google.api.field_behavior) = OPTIONAL];
+  // Expected participant descent status.
+  enum DescentStatus {
+    DESCENT_STATUS_UNSPECIFIED = 0;
+    PASSED = 1;
+    EVACUATED = 2;
+    LEAVED = 3;
+  }
+
+  // A participant in a historical canyon descent.
+  message UserDescent {
+    // User resource name: "users/{user}"
+    string user_id = 1 [
+      (google.api.field_behavior) = REQUIRED,
+      (google.api.resource_reference).type = "rappeloids.app/User"
+    ];
+    DescentStatus status = 2 [(google.api.field_behavior) = REQUIRED];
+  }
+
+  // Participants and their descent statuses.
+  repeated UserDescent user_statuses = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListHistoryTripsRequest {
