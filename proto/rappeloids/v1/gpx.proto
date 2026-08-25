@@ -123,6 +123,7 @@ message Waypoint {
     DANGER = 8;         // Siphon, flash flood refuge, rockfall hazard
     CAMP = 9;           // Campsite / bivouac
     OTHER = 10;
+    CANYON_START = 11;  // Canyon entrance / start / suit up point
   }
 
   // 3D geographic point and elevation.
