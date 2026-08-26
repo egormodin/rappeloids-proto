@@ -201,13 +201,16 @@ message Canyon {
     string value = 2 [(google.api.field_behavior) = REQUIRED];
   }
 
-  // Historical descent summary documenting date and group size.
+  // Historical descent summary documenting date, group size, and photo link.
   message Descent {
     // Calendar date when the descent took place.
     google.type.Date date = 1 [(google.api.field_behavior) = OPTIONAL];
 
     // Number of people who participated in the descent.
     int32 number_of_people = 2 [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional photo album or trip report link.
+    string photos_link = 3 [(google.api.field_behavior) = OPTIONAL];
   }
 
   // Collections
