@@ -19,68 +19,38 @@ import "google/type/interval.proto";
 import "google/type/timeofday.proto";
 import "rappeloids/v1/common.proto";
 
-// Service managing canyoneering expeditions, trip groups, itineraries, and participant tracking (AIP-121).
+// Service managing canyoneering expeditions, trip relations, itineraries, and participant tracking (AIP-121).
 service TripsService {
   option (google.api.default_host) = "api.rappeloids.app";
 
-  // --- Trips Groups & Combined Listing ---
-
-  // Lists trips groups containing their nested trips (AIP-132).
-  rpc ListTripsGroups(ListTripsGroupsRequest) returns (ListTripsGroupsResponse) {
+  // Lists trips (AIP-132).
+  rpc ListTrips(ListTripsRequest) returns (ListTripsResponse) {
     option (google.api.http) = {
-      get: "/v1/tripsGroups"
+      get: "/v1/trips"
     };
   }
-
-  // Creates a new trips group (AIP-133).
-  rpc CreateTripsGroup(CreateTripsGroupRequest) returns (TripsGroup) {
-    option (google.api.http) = {
-      post: "/v1/tripsGroups"
-      body: "trips_group"
-    };
-    option (google.api.method_signature) = "trips_group";
-  }
-
-  // Updates an existing trips group (AIP-134).
-  rpc UpdateTripsGroup(UpdateTripsGroupRequest) returns (TripsGroup) {
-    option (google.api.http) = {
-      patch: "/v1/{trips_group.name=tripsGroups/*}"
-      body: "trips_group"
-    };
-    option (google.api.method_signature) = "trips_group,update_mask";
-  }
-
-  // Deletes a trips group (AIP-135).
-  rpc DeleteTripsGroup(DeleteTripsGroupRequest) returns (google.protobuf.Empty) {
-    option (google.api.http) = {
-      delete: "/v1/{name=tripsGroups/*}"
-    };
-    option (google.api.method_signature) = "name";
-  }
-
-  // --- Individual Trip Management ---
 
   // Gets a single trip by resource name (AIP-131).
   rpc GetTrip(GetTripRequest) returns (Trip) {
     option (google.api.http) = {
-      get: "/v1/{name=tripsGroups/*/trips/*}"
+      get: "/v1/{name=trips/*}"
     };
     option (google.api.method_signature) = "name";
   }
 
-  // Creates a new trip under a trips group (AIP-133). Creator becomes organizer.
+  // Creates a new trip (AIP-133). Creator becomes organizer.
   rpc CreateTrip(CreateTripRequest) returns (Trip) {
     option (google.api.http) = {
-      post: "/v1/{parent=tripsGroups/*}/trips"
+      post: "/v1/trips"
       body: "trip"
     };
-    option (google.api.method_signature) = "parent,trip";
+    option (google.api.method_signature) = "trip";
   }
 
   // Updates an existing trip (AIP-134). Requires organizer or admin.
   rpc UpdateTrip(UpdateTripRequest) returns (Trip) {
     option (google.api.http) = {
-      patch: "/v1/{trip.name=tripsGroups/*/trips/*}"
+      patch: "/v1/{trip.name=trips/*}"
       body: "trip"
     };
     option (google.api.method_signature) = "trip,update_mask";
@@ -89,57 +59,17 @@ service TripsService {
   // Deletes a trip (AIP-135). Requires organizer or admin.
   rpc DeleteTrip(DeleteTripRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
-      delete: "/v1/{name=tripsGroups/*/trips/*}"
+      delete: "/v1/{name=trips/*}"
     };
     option (google.api.method_signature) = "name";
   }
-}
-
-// TripsGroup resource representing a container for organized trips (AIP-122).
-message TripsGroup {
-  option (google.api.resource) = {
-    type: "rappeloids.app/TripsGroup"
-    pattern: "tripsGroups/{trips_group}"
-    plural: "tripsGroups"
-    singular: "tripsGroup"
-  };
-
-  // Type / organizational model of the trips group.
-  enum Type {
-    // Unspecified type.
-    TYPE_UNSPECIFIED = 0;
-    // Default group for ungrouped trips. Single instance per user, not displayed on UI.
-    DEFAULT = 1;
-    // Alternative versions or options of the same trip (e.g. Plan A vs Plan B).
-    ALTERNATIVES = 2;
-    // Multi-part extended plan where trips form sequential stages with continuous day ordering across them.
-    EXTENDED = 3;
-  }
-
-  // Resource name: "tripsGroups/{trips_group_id}"
-  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
-
-  // Title / display name of the group.
-  string title = 2 [(google.api.field_behavior) = REQUIRED];
-
-  // Type of the group (DEFAULT, ALTERNATIVES, EXTENDED).
-  Type type = 3 [(google.api.field_behavior) = REQUIRED];
-
-  // Date/duration details for ALTERNATIVES and EXTENDED groups.
-  Duration duration = 4 [(google.api.field_behavior) = OPTIONAL];
-
-  // Sort order index for UI display.
-  int32 sort_order = 5 [(google.api.field_behavior) = OPTIONAL];
-
-  // The trips contained within this group.
-  repeated Trip trips = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Trip resource following AIP-122.
 message Trip {
   option (google.api.resource) = {
     type: "rappeloids.app/Trip"
-    pattern: "tripsGroups/{trips_group}/trips/{trip}"
+    pattern: "trips/{trip}"
     plural: "trips"
     singular: "trip"
   };
@@ -153,7 +83,7 @@ message Trip {
     CANCELLED = 4;
   }
 
-  // Resource name: "tripsGroups/{trips_group}/trips/{trip_id}"
+  // Resource name: "trips/{trip_id}"
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // Title of the trip.
@@ -195,11 +125,20 @@ message Trip {
     (google.api.resource_reference).type = "rappeloids.app/Region"
   ];
 
-  // Sort order of the trip within its parent trips group.
-  int32 group_sort_order = 12 [(google.api.field_behavior) = OPTIONAL];
+  // Relation link in a linked chain. If neither is set, the trip is standalone (default).
+  oneof relation {
+    // Resource name of the trip this trip is an alternative to: "trips/{trip_id}".
+    string alternative_to = 12 [
+      (google.api.field_behavior) = OPTIONAL,
+      (google.api.resource_reference).type = "rappeloids.app/Trip"
+    ];
 
-  // Day offset for day numbering in an EXTENDED trips group (e.g. 0 for Day 1, 3 for Day 4).
-  int32 day_offset = 13 [(google.api.field_behavior) = OPTIONAL];
+    // Resource name of the trip this trip extends from: "trips/{trip_id}".
+    string extended_from = 13 [
+      (google.api.field_behavior) = OPTIONAL,
+      (google.api.resource_reference).type = "rappeloids.app/Trip"
+    ];
+  }
 }
 
 message TripParticipant {
@@ -354,12 +293,12 @@ message RegionChangeStep {
 message TripNote {
   option (google.api.resource) = {
     type: "rappeloids.app/TripNote"
-    pattern: "tripsGroups/{trips_group}/trips/{trip}/notes/{note}"
+    pattern: "trips/{trip}/notes/{note}"
     plural: "tripNotes"
     singular: "tripNote"
   };
 
-  // Resource name: "tripsGroups/{trips_group}/trips/{trip}/notes/{note}"
+  // Resource name: "trips/{trip}/notes/{note}"
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
   string author = 2 [
     (google.api.field_behavior) = OUTPUT_ONLY,
@@ -371,44 +310,18 @@ message TripNote {
 
 // --- Request / Response Messages for TripsService ---
 
-message ListTripsGroupsRequest {
+message ListTripsRequest {
   // Field mask to control which fields are returned (AIP-157).
   google.protobuf.FieldMask read_mask = 1 [(google.api.field_behavior) = OPTIONAL];
 }
 
-message ListTripsGroupsResponse {
-  // Trips groups containing their nested trips.
-  repeated TripsGroup trips_groups = 1;
-}
-
-message CreateTripsGroupRequest {
-  // The trips group to create.
-  TripsGroup trips_group = 1 [(google.api.field_behavior) = REQUIRED];
-}
-
-message UpdateTripsGroupRequest {
-  // The trips group to update.
-  TripsGroup trips_group = 1 [(google.api.field_behavior) = REQUIRED];
-
-  // Field mask indicating which fields are to be updated (AIP-134).
-  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
-}
-
-message DeleteTripsGroupRequest {
-  // Format: "tripsGroups/{trips_group_id}"
-  string name = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).type = "rappeloids.app/TripsGroup"
-  ];
-
-  // Strategy for remaining trips in this group:
-  // - false (default): Ungroup contained trips (move them to default group).
-  // - true: Cascade delete all contained trips.
-  bool cascade = 2 [(google.api.field_behavior) = OPTIONAL];
+message ListTripsResponse {
+  // The trips.
+  repeated Trip trips = 1;
 }
 
 message GetTripRequest {
-  // Format: "tripsGroups/{trips_group}/trips/{trip}"
+  // Format: "trips/{trip}"
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Trip"
@@ -416,12 +329,7 @@ message GetTripRequest {
 }
 
 message CreateTripRequest {
-  // Parent trips group: "tripsGroups/{trips_group}"
-  string parent = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).type = "rappeloids.app/TripsGroup"
-  ];
-  Trip trip = 2 [(google.api.field_behavior) = REQUIRED];
+  Trip trip = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
 message UpdateTripRequest {
@@ -430,7 +338,7 @@ message UpdateTripRequest {
 }
 
 message DeleteTripRequest {
-  // Format: "tripsGroups/{trips_group}/trips/{trip}"
+  // Format: "trips/{trip}"
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Trip"

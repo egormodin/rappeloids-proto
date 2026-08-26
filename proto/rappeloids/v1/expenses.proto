@@ -21,7 +21,7 @@ service ExpensesService {
   // Lists expenses for a trip with pagination (AIP-132).
   rpc ListExpenses(ListExpensesRequest) returns (ListExpensesResponse) {
     option (google.api.http) = {
-      get: "/v1/{parent=tripsGroups/*/trips/*}/expenses"
+      get: "/v1/{parent=trips/*}/expenses"
     };
     option (google.api.method_signature) = "parent";
   }
@@ -29,7 +29,7 @@ service ExpensesService {
   // Gets a single expense by resource name (AIP-131).
   rpc GetExpense(GetExpenseRequest) returns (Expense) {
     option (google.api.http) = {
-      get: "/v1/{name=tripsGroups/*/trips/*/expenses/*}"
+      get: "/v1/{name=trips/*/expenses/*}"
     };
     option (google.api.method_signature) = "name";
   }
@@ -37,7 +37,7 @@ service ExpensesService {
   // Creates a new trip expense (AIP-133). Requires participant.
   rpc CreateExpense(CreateExpenseRequest) returns (Expense) {
     option (google.api.http) = {
-      post: "/v1/{parent=tripsGroups/*/trips/*}/expenses"
+      post: "/v1/{parent=trips/*}/expenses"
       body: "expense"
     };
     option (google.api.method_signature) = "parent,expense";
@@ -46,7 +46,7 @@ service ExpensesService {
   // Updates an expense (AIP-134). Requires payer or organizer.
   rpc UpdateExpense(UpdateExpenseRequest) returns (Expense) {
     option (google.api.http) = {
-      patch: "/v1/{expense.name=tripsGroups/*/trips/*/expenses/*}"
+      patch: "/v1/{expense.name=trips/*/expenses/*}"
       body: "expense"
     };
     option (google.api.method_signature) = "expense,update_mask";
@@ -55,7 +55,7 @@ service ExpensesService {
   // Deletes an expense (AIP-135). Requires payer or organizer.
   rpc DeleteExpense(DeleteExpenseRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
-      delete: "/v1/{name=tripsGroups/*/trips/*/expenses/*}"
+      delete: "/v1/{name=trips/*/expenses/*}"
     };
     option (google.api.method_signature) = "name";
   }
@@ -63,7 +63,7 @@ service ExpensesService {
   // Gets calculated debt and spending summary for a trip (AIP-136).
   rpc GetTripExpenseSummary(GetTripExpenseSummaryRequest) returns (TripExpenseSummary) {
     option (google.api.http) = {
-      get: "/v1/{name=tripsGroups/*/trips/*}/expenseSummary"
+      get: "/v1/{name=trips/*}/expenseSummary"
     };
     option (google.api.method_signature) = "name";
   }
@@ -73,7 +73,7 @@ service ExpensesService {
 message Expense {
   option (google.api.resource) = {
     type: "rappeloids.app/Expense"
-    pattern: "tripsGroups/{trips_group}/trips/{trip}/expenses/{expense}"
+    pattern: "trips/{trip}/expenses/{expense}"
     plural: "expenses"
     singular: "expense"
   };
@@ -103,7 +103,7 @@ message Expense {
     bool is_settled = 3 [(google.api.field_behavior) = OPTIONAL];
   }
 
-  // Resource name: "tripsGroups/{trips_group}/trips/{trip_id}/expenses/{expense_id}"
+  // Resource name: "trips/{trip_id}/expenses/{expense_id}"
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // Short title of the expense.
@@ -145,7 +145,7 @@ message TripExpenseSummary {
     Money net_balance = 3 [(google.api.field_behavior) = REQUIRED];
   }
 
-  // Parent trip resource name: "tripsGroups/{trips_group}/trips/{trip_id}"
+  // Parent trip resource name: "trips/{trip_id}"
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Trip"
@@ -155,7 +155,7 @@ message TripExpenseSummary {
 }
 
 message ListExpensesRequest {
-  // Parent trip resource name: "tripsGroups/{trips_group}/trips/{trip_id}"
+  // Parent trip resource name: "trips/{trip_id}"
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Trip"
@@ -173,7 +173,7 @@ message ListExpensesResponse {
 }
 
 message GetExpenseRequest {
-  // Format: "tripsGroups/{trips_group}/trips/{trip_id}/expenses/{expense_id}"
+  // Format: "trips/{trip_id}/expenses/{expense_id}"
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Expense"
@@ -181,7 +181,7 @@ message GetExpenseRequest {
 }
 
 message CreateExpenseRequest {
-  // Parent trip resource name: "tripsGroups/{trips_group}/trips/{trip_id}"
+  // Parent trip resource name: "trips/{trip_id}"
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Trip"
@@ -195,7 +195,7 @@ message UpdateExpenseRequest {
 }
 
 message DeleteExpenseRequest {
-  // Format: "tripsGroups/{trips_group}/trips/{trip_id}/expenses/{expense_id}"
+  // Format: "trips/{trip_id}/expenses/{expense_id}"
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Expense"
@@ -203,7 +203,7 @@ message DeleteExpenseRequest {
 }
 
 message GetTripExpenseSummaryRequest {
-  // Parent trip resource name: "tripsGroups/{trips_group}/trips/{trip_id}"
+  // Parent trip resource name: "trips/{trip_id}"
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Trip"
