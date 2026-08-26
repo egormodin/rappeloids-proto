@@ -12,6 +12,7 @@ import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
+import "google/type/date.proto";
 import "google/type/datetime.proto";
 import "rappeloids/v1/common.proto";
 
@@ -200,11 +201,21 @@ message Canyon {
     string value = 2 [(google.api.field_behavior) = REQUIRED];
   }
 
+  // Historical descent summary documenting date and group size.
+  message Descent {
+    // Calendar date when the descent took place.
+    google.type.Date date = 1 [(google.api.field_behavior) = OPTIONAL];
+
+    // Number of people who participated in the descent.
+    int32 number_of_people = 2 [(google.api.field_behavior) = OPTIONAL];
+  }
+
   // Collections
   repeated string gpx_track_ids = 32 [(google.api.field_behavior) = OPTIONAL];
   repeated RappelPitch pitches = 33 [(google.api.field_behavior) = OPTIONAL];
   repeated CanyonLink links = 34 [(google.api.field_behavior) = OPTIONAL];
   repeated QualityRating quality_ratings = 35 [(google.api.field_behavior) = OPTIONAL];
+  repeated Descent descents = 36 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListCanyonsRequest {
