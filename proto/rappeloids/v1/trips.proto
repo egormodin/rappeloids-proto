@@ -209,6 +209,7 @@ message FlightStep {
     google.protobuf.Duration duration = 5 [(google.api.field_behavior) = OPTIONAL];
     int32 days = 6 [(google.api.field_behavior) = OPTIONAL];
     repeated FlightStop stops = 7 [(google.api.field_behavior) = OPTIONAL];
+    bool same_day = 8 [(google.api.field_behavior) = OPTIONAL];
   }
 
   bool is_round_trip = 1 [(google.api.field_behavior) = OPTIONAL];
@@ -221,6 +222,7 @@ message FlightStep {
 
   FlightRoute outbound_flight = 8 [(google.api.field_behavior) = OPTIONAL];
   FlightRoute return_flight = 9 [(google.api.field_behavior) = OPTIONAL];
+  bool return_same_day = 10 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // 3. Drive Step (Road Travel / Car Rental)
@@ -237,6 +239,7 @@ message DriveStep {
     google.type.DateTime arrival_time = 4 [(google.api.field_behavior) = OPTIONAL];
     google.protobuf.Duration drive_duration = 5 [(google.api.field_behavior) = OPTIONAL];
     repeated DriveWaypoint stops = 6 [(google.api.field_behavior) = OPTIONAL];
+    bool same_day = 7 [(google.api.field_behavior) = OPTIONAL];
   }
 
   string transport_type = 1 [(google.api.field_behavior) = OPTIONAL];
@@ -250,6 +253,7 @@ message DriveStep {
 
   DriveRoute way_there = 9 [(google.api.field_behavior) = OPTIONAL];
   DriveRoute way_back = 10 [(google.api.field_behavior) = OPTIONAL];
+  bool return_same_day = 11 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // 4. Housing Step (Lodging / Camping)
