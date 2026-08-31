@@ -164,9 +164,10 @@ message TripStep {
   string title = 2 [(google.api.field_behavior) = REQUIRED];
   int32 sort_order = 3 [(google.api.field_behavior) = OPTIONAL];
   string parent_step_id = 4 [(google.api.field_behavior) = OPTIONAL];
+  bool same_day = 11 [(google.api.field_behavior) = OPTIONAL];
 
   oneof step {
-    DayStep day = 5;
+    CanyonStep canyon = 5;
     FlightStep flight = 6;
     DriveStep drive = 7;
     HousingStep housing = 8;
@@ -175,28 +176,22 @@ message TripStep {
   }
 }
 
-// 1. Day Step (Canyoneering / Activity Day)
-message DayStep {
-  string day = 1 [(google.api.field_behavior) = OPTIONAL];
-  // Region resource name: "regions/{region_id}"
-  string region = 2 [
-    (google.api.field_behavior) = OPTIONAL,
-    (google.api.resource_reference).type = "rappeloids.app/Region"
-  ];
-  repeated TripCanyonItem canyons = 3 [(google.api.field_behavior) = OPTIONAL];
-}
-
-// Canyon item scheduled within a day step.
-message TripCanyonItem {
+// 1. Canyon Step (Canyoneering / Activity)
+message CanyonStep {
   // Canyon resource name: "canyons/{canyon_id}"
   string canyon = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Canyon"
   ];
-  string day = 2 [(google.api.field_behavior) = OPTIONAL];
-  google.type.TimeOfDay start_time = 3 [(google.api.field_behavior) = OPTIONAL];
-  google.protobuf.Duration drive_duration = 4 [(google.api.field_behavior) = OPTIONAL];
-  google.protobuf.Duration shuttle_duration = 5 [(google.api.field_behavior) = OPTIONAL];
+  // Region resource name: "regions/{region_id}"
+  string region = 2 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.resource_reference).type = "rappeloids.app/Region"
+  ];
+  string day = 3 [(google.api.field_behavior) = OPTIONAL];
+  google.type.TimeOfDay start_time = 4 [(google.api.field_behavior) = OPTIONAL];
+  google.protobuf.Duration drive_duration = 5 [(google.api.field_behavior) = OPTIONAL];
+  google.protobuf.Duration shuttle_duration = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // 2. Flight Step (Air Travel)
