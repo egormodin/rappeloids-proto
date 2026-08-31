@@ -8,6 +8,7 @@ option java_package = "app.rappeloids.protos.v1";
 import "google/api/field_behavior.proto";
 import "google/protobuf/duration.proto";
 import "google/type/date.proto";
+import "google/type/datetime.proto";
 
 // Geographic point representing latitude, longitude, and optional elevation.
 message GeoPoint {
@@ -21,6 +22,15 @@ message GeoPoint {
   double elevation_meters = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Price specification with amount and currency code.
+message Price {
+  // Monetary amount.
+  double amount = 1 [(google.api.field_behavior) = OPTIONAL];
+
+  // The 3-letter currency code defined in ISO 4217 (e.g. "USD", "EUR"). Defaults to "USD".
+  string currency_code = 2 [(google.api.field_behavior) = OPTIONAL];
+}
+
 // Monetary value with standard 3-letter currency code and units/nanos split (AIP-213).
 message Money {
   // The 3-letter currency code defined in ISO 4217 (e.g. "USD", "EUR").
@@ -31,6 +41,27 @@ message Money {
 
   // Number of nano (10^-9) units of the amount.
   int32 nanos = 3 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Schedule or duration specification for a travel route.
+message RouteSchedule {
+  // Specific departure and arrival date and time.
+  message ExactTimes {
+    // Exact departure date and time.
+    google.type.DateTime departure_time = 1 [(google.api.field_behavior) = OPTIONAL];
+
+    // Exact arrival date and time.
+    google.type.DateTime arrival_time = 2 [(google.api.field_behavior) = OPTIONAL];
+  }
+
+  // Schedule specification choice.
+  oneof schedule {
+    // Specific departure and arrival date and time.
+    ExactTimes exact_times = 1;
+
+    // Estimated travel duration.
+    google.protobuf.Duration duration = 2;
+  }
 }
 
 // Duration specification supporting exact calendar dates or flexible text with duration.

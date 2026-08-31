@@ -16,6 +16,7 @@ import "google/protobuf/timestamp.proto";
 import "google/type/date.proto";
 import "google/type/datetime.proto";
 import "google/type/interval.proto";
+import "google/type/latlng.proto";
 import "google/type/timeofday.proto";
 import "rappeloids/v1/common.proto";
 
@@ -164,7 +165,6 @@ message TripStep {
   string title = 2 [(google.api.field_behavior) = REQUIRED];
   int32 sort_order = 3 [(google.api.field_behavior) = OPTIONAL];
   string parent_step_id = 4 [(google.api.field_behavior) = OPTIONAL];
-  bool same_day = 11 [(google.api.field_behavior) = OPTIONAL];
 
   oneof step {
     CanyonStep canyon = 5;
@@ -189,9 +189,10 @@ message CanyonStep {
     (google.api.resource_reference).type = "rappeloids.app/Region"
   ];
   string day = 3 [(google.api.field_behavior) = OPTIONAL];
-  google.type.TimeOfDay start_time = 4 [(google.api.field_behavior) = OPTIONAL];
-  google.protobuf.Duration drive_duration = 5 [(google.api.field_behavior) = OPTIONAL];
-  google.protobuf.Duration shuttle_duration = 6 [(google.api.field_behavior) = OPTIONAL];
+  google.protobuf.Duration drive_duration = 4 [(google.api.field_behavior) = OPTIONAL];
+  google.protobuf.Duration shuttle_duration = 5 [(google.api.field_behavior) = OPTIONAL];
+  bool same_day = 6 [(google.api.field_behavior) = OPTIONAL];
+  google.type.LatLng location = 7 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // 2. Flight Step (Air Travel)
@@ -204,29 +205,30 @@ message FlightStep {
   message FlightRoute {
     string departure_airport = 1 [(google.api.field_behavior) = OPTIONAL];
     string arrival_airport = 2 [(google.api.field_behavior) = OPTIONAL];
-    google.type.DateTime departure_time = 3 [(google.api.field_behavior) = OPTIONAL];
-    google.type.DateTime arrival_time = 4 [(google.api.field_behavior) = OPTIONAL];
-    google.protobuf.Duration duration = 5 [(google.api.field_behavior) = OPTIONAL];
-    int32 days = 6 [(google.api.field_behavior) = OPTIONAL];
-    repeated FlightStop stops = 7 [(google.api.field_behavior) = OPTIONAL];
-    bool same_day = 8 [(google.api.field_behavior) = OPTIONAL];
+    RouteSchedule schedule = 3 [(google.api.field_behavior) = OPTIONAL];
+    int32 days = 4 [(google.api.field_behavior) = OPTIONAL];
+    repeated FlightStop stops = 5 [(google.api.field_behavior) = OPTIONAL];
+    bool same_day = 6 [(google.api.field_behavior) = OPTIONAL];
+    google.type.LatLng departure_location = 7 [(google.api.field_behavior) = OPTIONAL];
+    google.type.LatLng arrival_location = 8 [(google.api.field_behavior) = OPTIONAL];
   }
 
   bool is_round_trip = 1 [(google.api.field_behavior) = OPTIONAL];
   bool custom_return = 2 [(google.api.field_behavior) = OPTIONAL];
-  bool next_step_same_day = 3 [(google.api.field_behavior) = OPTIONAL];
-  google.type.Date start_date = 4 [(google.api.field_behavior) = OPTIONAL];
-  google.type.Date end_date = 5 [(google.api.field_behavior) = OPTIONAL];
-  google.protobuf.Duration duration = 6 [(google.api.field_behavior) = OPTIONAL];
-  string price = 7 [(google.api.field_behavior) = OPTIONAL];
+  Price price = 3 [(google.api.field_behavior) = OPTIONAL];
 
-  FlightRoute outbound_flight = 8 [(google.api.field_behavior) = OPTIONAL];
-  FlightRoute return_flight = 9 [(google.api.field_behavior) = OPTIONAL];
-  bool return_same_day = 10 [(google.api.field_behavior) = OPTIONAL];
+  FlightRoute outbound_flight = 4 [(google.api.field_behavior) = OPTIONAL];
+  FlightRoute return_flight = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // 3. Drive Step (Road Travel / Car Rental)
 message DriveStep {
+  enum TransportType {
+    TRANSPORT_TYPE_UNSPECIFIED = 0;
+    PERSONAL = 1;
+    RENTAL = 2;
+  }
+
   message DriveWaypoint {
     string location = 1 [(google.api.field_behavior) = OPTIONAL];
     google.protobuf.Duration stop_duration = 2 [(google.api.field_behavior) = OPTIONAL];
@@ -235,25 +237,20 @@ message DriveStep {
   message DriveRoute {
     string start_location = 1 [(google.api.field_behavior) = OPTIONAL];
     string end_location = 2 [(google.api.field_behavior) = OPTIONAL];
-    google.type.DateTime departure_time = 3 [(google.api.field_behavior) = OPTIONAL];
-    google.type.DateTime arrival_time = 4 [(google.api.field_behavior) = OPTIONAL];
-    google.protobuf.Duration drive_duration = 5 [(google.api.field_behavior) = OPTIONAL];
-    repeated DriveWaypoint stops = 6 [(google.api.field_behavior) = OPTIONAL];
-    bool same_day = 7 [(google.api.field_behavior) = OPTIONAL];
+    RouteSchedule schedule = 3 [(google.api.field_behavior) = OPTIONAL];
+    repeated DriveWaypoint stops = 4 [(google.api.field_behavior) = OPTIONAL];
+    bool same_day = 5 [(google.api.field_behavior) = OPTIONAL];
+    google.type.LatLng departure_location = 6 [(google.api.field_behavior) = OPTIONAL];
+    google.type.LatLng arrival_location = 7 [(google.api.field_behavior) = OPTIONAL];
   }
 
-  string transport_type = 1 [(google.api.field_behavior) = OPTIONAL];
+  TransportType transport_type = 1 [(google.api.field_behavior) = OPTIONAL];
   bool is_round_trip = 2 [(google.api.field_behavior) = OPTIONAL];
   bool custom_return = 3 [(google.api.field_behavior) = OPTIONAL];
-  bool next_step_same_day = 4 [(google.api.field_behavior) = OPTIONAL];
-  google.type.Date start_date = 5 [(google.api.field_behavior) = OPTIONAL];
-  google.type.Date end_date = 6 [(google.api.field_behavior) = OPTIONAL];
-  google.protobuf.Duration duration = 7 [(google.api.field_behavior) = OPTIONAL];
-  string price = 8 [(google.api.field_behavior) = OPTIONAL];
+  Price price = 4 [(google.api.field_behavior) = OPTIONAL];
 
-  DriveRoute way_there = 9 [(google.api.field_behavior) = OPTIONAL];
-  DriveRoute way_back = 10 [(google.api.field_behavior) = OPTIONAL];
-  bool return_same_day = 11 [(google.api.field_behavior) = OPTIONAL];
+  DriveRoute way_there = 5 [(google.api.field_behavior) = OPTIONAL];
+  DriveRoute way_back = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // 4. Housing Step (Lodging / Camping)
@@ -266,17 +263,15 @@ message HousingStep {
 
   Type type = 1 [(google.api.field_behavior) = OPTIONAL];
   string name = 2 [(google.api.field_behavior) = OPTIONAL];
-  string location = 3 [(google.api.field_behavior) = OPTIONAL];
-  google.type.Date start_date = 4 [(google.api.field_behavior) = OPTIONAL];
-  google.type.Date end_date = 5 [(google.api.field_behavior) = OPTIONAL];
-  google.protobuf.Duration duration = 6 [(google.api.field_behavior) = OPTIONAL];
-  string price = 7 [(google.api.field_behavior) = OPTIONAL];
+  google.type.LatLng location = 3 [(google.api.field_behavior) = OPTIONAL];
+  Duration duration = 4 [(google.api.field_behavior) = OPTIONAL];
+  Price price = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // 5. Rest Step (Rest / Recovery Day)
 message RestStep {
   string day = 1 [(google.api.field_behavior) = OPTIONAL];
-  google.protobuf.Duration duration = 2 [(google.api.field_behavior) = OPTIONAL];
+  bool same_day = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // 6. Region Change Step (Region Transition)
