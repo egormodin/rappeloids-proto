@@ -140,6 +140,9 @@ message Trip {
       (google.api.resource_reference).type = "rappeloids.app/Trip"
     ];
   }
+
+  // Free text risk blocks for the trip expedition.
+  repeated string risks = 14 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message TripParticipant {
