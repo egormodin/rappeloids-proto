@@ -196,6 +196,8 @@ message CanyonStep {
   google.protobuf.Duration shuttle_duration = 5 [(google.api.field_behavior) = OPTIONAL];
   bool same_day = 6 [(google.api.field_behavior) = OPTIONAL];
   google.type.LatLng location = 7 [(google.api.field_behavior) = OPTIONAL];
+  google.protobuf.Duration canyon_duration = 8 [(google.api.field_behavior) = OPTIONAL];
+  optional bool drive_back = 9 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // 2. Flight Step (Air Travel)
