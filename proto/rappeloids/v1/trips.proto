@@ -271,6 +271,7 @@ message HousingStep {
   google.type.LatLng location = 3 [(google.api.field_behavior) = OPTIONAL];
   Duration duration = 4 [(google.api.field_behavior) = OPTIONAL];
   Price price = 5 [(google.api.field_behavior) = OPTIONAL];
+  optional bool move_out_next_day = 6 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // 5. Rest Step (Rest / Recovery Day)
