@@ -73,10 +73,12 @@ message Region {
     STATE_UNSPECIFIED = 0;
     // Standard default state (visible in tree and app, not in history views).
     DEFAULT = 1;
-    // Visible in history views.
+    // Visible in history views and shows region map when GPX tracks exist.
     HISTORY_VISIBLE = 2;
     // Hidden state (admin-only in tree roots, hidden elsewhere in app).
     HIDDEN = 3;
+    // Visible in history views, but does not show a region map on the Canyons page.
+    HISTORY_VISIBLE_NO_MAP = 4;
   }
 
   // The resource name of the region.
