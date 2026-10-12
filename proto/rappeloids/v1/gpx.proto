@@ -67,6 +67,15 @@ service GpxService {
     };
     option (google.api.method_signature) = "name";
   }
+
+  // Promotes a user's private recorded track to a public canyon track.
+  rpc ShareGpxTrack(ShareGpxTrackRequest) returns (GpxTrack) {
+    option (google.api.http) = {
+      post: "/v1/{name=canyons/*/gpxTracks/*}:share"
+      body: "*"
+    };
+    option (google.api.method_signature) = "name";
+  }
 }
 
 // A continuous track segment or discrete path (e.g., Approach, Descent, Exit).
@@ -166,21 +175,6 @@ message GeoBounds {
   google.type.LatLng north_east = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
-// Track creation source or origin (AIP-126).
-enum GpxTrackOrigin {
-  // Unspecified track origin.
-  GPX_TRACK_ORIGIN_UNSPECIFIED = 0;
-
-  // Synthesized or constructed algorithmically / AI.
-  GPX_TRACK_ORIGIN_AI_CONSTRUCTED = 1;
-
-  // Imported or uploaded from external GPX, KML, or KMZ file.
-  GPX_TRACK_ORIGIN_UPLOADED = 2;
-
-  // Created or modified by manual user edit.
-  GPX_TRACK_ORIGIN_MANUAL_EDIT = 3;
-}
-
 // GPX track resource following AIP-122.
 message GpxTrack {
   option (google.api.resource) = {
@@ -189,6 +183,9 @@ message GpxTrack {
     plural: "gpxTracks"
     singular: "gpxTrack"
   };
+
+  reserved 5;
+  reserved "origin";
 
   // The resource name of the GPX track (e.g. "canyons/{canyon}/gpxTracks/{gpx_track}").
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
@@ -201,9 +198,6 @@ message GpxTrack {
 
   // Whether this is the default track for the canyon.
   bool is_default = 4 [(google.api.field_behavior) = OPTIONAL];
-
-  // How this track was constructed / created.
-  GpxTrackOrigin origin = 5 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional description or note for the track.
   string description = 6 [(google.api.field_behavior) = OPTIONAL];
@@ -222,6 +216,15 @@ message GpxTrack {
 
   // Geographic bounding box for instant map fitting.
   optional GeoBounds bounds = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // User ID of the user who recorded/uploaded this track.
+  string owner_user_id = 12 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // True if this track is private to owner_user_id; false if shared as a public canyon track.
+  bool is_private = 13 [(google.api.field_behavior) = OPTIONAL];
+
+  // Epoch milliseconds when the track was recorded (used for 1-month retention of private tracks).
+  int64 recorded_at_epoch_ms = 14 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message QueryGpxTracksRequest {
@@ -251,6 +254,9 @@ message UploadGpxTrackRequest {
     KMZ = 3; // Zipped KML (.kmz) binary archive
   }
 
+  reserved 9;
+  reserved "origin";
+
   // The parent canyon resource name (e.g. "canyons/{canyon}").
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
@@ -278,8 +284,11 @@ message UploadGpxTrackRequest {
   // Whether this track should be set as the default track for the canyon.
   bool is_default = 8 [(google.api.field_behavior) = OPTIONAL];
 
-  // How this track was constructed / created (defaults to GPX_TRACK_ORIGIN_UPLOADED if unspecified).
-  GpxTrackOrigin origin = 9 [(google.api.field_behavior) = OPTIONAL];
+  // Whether the uploaded track is private to the authenticated user.
+  bool is_private = 10 [(google.api.field_behavior) = OPTIONAL];
+
+  // Epoch milliseconds when the track was originally recorded (supports offline recording sync).
+  int64 recorded_at_epoch_ms = 11 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Request message for DownloadGpxTrack (AIP-136).
@@ -323,6 +332,14 @@ message UpdateGpxTrackRequest {
 }
 
 message DeleteGpxTrackRequest {
+  // Format: "canyons/{canyon_id}/gpxTracks/{gpx_track_id}"
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "rappeloids.app/GpxTrack"
+  ];
+}
+
+message ShareGpxTrackRequest {
   // Format: "canyons/{canyon_id}/gpxTracks/{gpx_track_id}"
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
