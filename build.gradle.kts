@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "app.rappeloids"
-version = "1.5.14"
+version = "1.6.0"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17

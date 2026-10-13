@@ -14,14 +14,55 @@ import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
 import "rappeloids/v1/common.proto";
 
-// Service managing shared group expenses and debt settlements for trips (AIP-121).
+// Service managing standalone expense trips, shared group expenses, and debt settlements (AIP-121).
 service ExpensesService {
   option (google.api.default_host) = "api.rappeloids.app";
 
-  // Lists expenses for a trip with pagination (AIP-132).
+  // Lists standalone expense trips with pagination (AIP-132).
+  rpc ListExpenseTrips(ListExpenseTripsRequest) returns (ListExpenseTripsResponse) {
+    option (google.api.http) = {
+      get: "/v1/expenseTrips"
+    };
+  }
+
+  // Gets a single expense trip by resource name (AIP-131).
+  rpc GetExpenseTrip(GetExpenseTripRequest) returns (ExpenseTrip) {
+    option (google.api.http) = {
+      get: "/v1/{name=expenseTrips/*}"
+    };
+    option (google.api.method_signature) = "name";
+  }
+
+  // Creates a new standalone expense trip (AIP-133).
+  rpc CreateExpenseTrip(CreateExpenseTripRequest) returns (ExpenseTrip) {
+    option (google.api.http) = {
+      post: "/v1/expenseTrips"
+      body: "expense_trip"
+    };
+    option (google.api.method_signature) = "expense_trip";
+  }
+
+  // Updates an expense trip (AIP-134). Requires organizer or admin.
+  rpc UpdateExpenseTrip(UpdateExpenseTripRequest) returns (ExpenseTrip) {
+    option (google.api.http) = {
+      patch: "/v1/{expense_trip.name=expenseTrips/*}"
+      body: "expense_trip"
+    };
+    option (google.api.method_signature) = "expense_trip,update_mask";
+  }
+
+  // Deletes an expense trip (AIP-135). Requires organizer or admin.
+  rpc DeleteExpenseTrip(DeleteExpenseTripRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete: "/v1/{name=expenseTrips/*}"
+    };
+    option (google.api.method_signature) = "name";
+  }
+
+  // Lists expenses for an expense trip with pagination (AIP-132).
   rpc ListExpenses(ListExpensesRequest) returns (ListExpensesResponse) {
     option (google.api.http) = {
-      get: "/v1/{parent=trips/*}/expenses"
+      get: "/v1/{parent=expenseTrips/*}/expenses"
     };
     option (google.api.method_signature) = "parent";
   }
@@ -29,51 +70,94 @@ service ExpensesService {
   // Gets a single expense by resource name (AIP-131).
   rpc GetExpense(GetExpenseRequest) returns (Expense) {
     option (google.api.http) = {
-      get: "/v1/{name=trips/*/expenses/*}"
+      get: "/v1/{name=expenseTrips/*/expenses/*}"
     };
     option (google.api.method_signature) = "name";
   }
 
-  // Creates a new trip expense (AIP-133). Requires participant.
+  // Creates a new expense in an expense trip (AIP-133). Requires participant.
   rpc CreateExpense(CreateExpenseRequest) returns (Expense) {
     option (google.api.http) = {
-      post: "/v1/{parent=trips/*}/expenses"
+      post: "/v1/{parent=expenseTrips/*}/expenses"
       body: "expense"
     };
     option (google.api.method_signature) = "parent,expense";
   }
 
-  // Updates an expense (AIP-134). Requires payer or organizer.
+  // Updates an expense (AIP-134). Requires payer, organizer, or admin.
   rpc UpdateExpense(UpdateExpenseRequest) returns (Expense) {
     option (google.api.http) = {
-      patch: "/v1/{expense.name=trips/*/expenses/*}"
+      patch: "/v1/{expense.name=expenseTrips/*/expenses/*}"
       body: "expense"
     };
     option (google.api.method_signature) = "expense,update_mask";
   }
 
-  // Deletes an expense (AIP-135). Requires payer or organizer.
+  // Deletes an expense (AIP-135). Requires payer, organizer, or admin.
   rpc DeleteExpense(DeleteExpenseRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
-      delete: "/v1/{name=trips/*/expenses/*}"
+      delete: "/v1/{name=expenseTrips/*/expenses/*}"
     };
     option (google.api.method_signature) = "name";
   }
 
-  // Gets calculated debt and spending summary for a trip (AIP-136).
+  // Gets calculated debt and spending summary for an expense trip (AIP-136).
   rpc GetTripExpenseSummary(GetTripExpenseSummaryRequest) returns (TripExpenseSummary) {
     option (google.api.http) = {
-      get: "/v1/{name=trips/*}/expenseSummary"
+      get: "/v1/{name=expenseTrips/*}/expenseSummary"
     };
     option (google.api.method_signature) = "name";
   }
+}
+
+// Standalone ExpenseTrip resource following AIP-122.
+message ExpenseTrip {
+  option (google.api.resource) = {
+    type: "rappeloids.app/ExpenseTrip"
+    pattern: "expenseTrips/{expense_trip}"
+    plural: "expenseTrips"
+    singular: "expenseTrip"
+  };
+
+  // Resource name: "expenseTrips/{expense_trip_id}"
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
+
+  // Display title of the expense trip.
+  string title = 2 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional description or notes.
+  string description = 3 [(google.api.field_behavior) = OPTIONAL];
+
+  // Default ISO 4217 currency code (e.g. "USD", "EUR").
+  string currency_code = 4 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional start date in ISO-8601 format (YYYY-MM-DD).
+  string start_date = 5 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional end date in ISO-8601 format (YYYY-MM-DD).
+  string end_date = 6 [(google.api.field_behavior) = OPTIONAL];
+
+  // Organizer user resource name: "users/{user_id}"
+  string organizer = 7 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.resource_reference).type = "rappeloids.app/User"
+  ];
+
+  // Participant user resource names: "users/{user_id}"
+  repeated string participants = 8 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.resource_reference).type = "rappeloids.app/User"
+  ];
+
+  // Timestamp when the expense trip was created (AIP-142).
+  google.protobuf.Timestamp create_time = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Expense resource following AIP-122.
 message Expense {
   option (google.api.resource) = {
     type: "rappeloids.app/Expense"
-    pattern: "trips/{trip}/expenses/{expense}"
+    pattern: "expenseTrips/{expense_trip}/expenses/{expense}"
     plural: "expenses"
     singular: "expense"
   };
@@ -93,6 +177,13 @@ message Expense {
     OTHER = 11;
   }
 
+  enum SplitType {
+    SPLIT_TYPE_UNSPECIFIED = 0;
+    EQUAL = 1;
+    PARTS = 2;
+    AMOUNT = 3;
+  }
+
   message Split {
     // User resource name: "users/{user_id}"
     string user = 1 [
@@ -101,9 +192,10 @@ message Expense {
     ];
     Money amount = 2 [(google.api.field_behavior) = REQUIRED];
     bool is_settled = 3 [(google.api.field_behavior) = OPTIONAL];
+    double parts = 4 [(google.api.field_behavior) = OPTIONAL];
   }
 
-  // Resource name: "trips/{trip_id}/expenses/{expense_id}"
+  // Resource name: "expenseTrips/{expense_trip_id}/expenses/{expense_id}"
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // Short title of the expense.
@@ -132,6 +224,12 @@ message Expense {
 
   // Timestamp when the expense was last updated (AIP-142).
   google.protobuf.Timestamp update_time = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // How the expense is split among participants.
+  SplitType split_type = 10 [(google.api.field_behavior) = OPTIONAL];
+
+  // Date of the expense in ISO-8601 format (YYYY-MM-DD).
+  string date = 11 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message TripExpenseSummary {
@@ -145,20 +243,58 @@ message TripExpenseSummary {
     Money net_balance = 3 [(google.api.field_behavior) = REQUIRED];
   }
 
-  // Parent trip resource name: "trips/{trip_id}"
+  // Parent expense trip resource name: "expenseTrips/{expense_trip_id}"
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).type = "rappeloids.app/Trip"
+    (google.api.resource_reference).type = "rappeloids.app/ExpenseTrip"
   ];
   Money total_spent = 2 [(google.api.field_behavior) = REQUIRED];
   repeated Balance balances = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
+message ListExpenseTripsRequest {
+  int32 page_size = 1 [(google.api.field_behavior) = OPTIONAL];
+  string page_token = 2 [(google.api.field_behavior) = OPTIONAL];
+  string filter = 3 [(google.api.field_behavior) = OPTIONAL];
+  string order_by = 4 [(google.api.field_behavior) = OPTIONAL];
+}
+
+message ListExpenseTripsResponse {
+  repeated ExpenseTrip expense_trips = 1;
+  string next_page_token = 2;
+  int32 total_size = 3;
+}
+
+message GetExpenseTripRequest {
+  // Format: "expenseTrips/{expense_trip_id}"
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "rappeloids.app/ExpenseTrip"
+  ];
+}
+
+message CreateExpenseTripRequest {
+  ExpenseTrip expense_trip = 1 [(google.api.field_behavior) = REQUIRED];
+}
+
+message UpdateExpenseTripRequest {
+  ExpenseTrip expense_trip = 1 [(google.api.field_behavior) = REQUIRED];
+  google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+}
+
+message DeleteExpenseTripRequest {
+  // Format: "expenseTrips/{expense_trip_id}"
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference).type = "rappeloids.app/ExpenseTrip"
+  ];
+}
+
 message ListExpensesRequest {
-  // Parent trip resource name: "trips/{trip_id}"
+  // Parent expense trip resource name: "expenseTrips/{expense_trip_id}"
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).type = "rappeloids.app/Trip"
+    (google.api.resource_reference).type = "rappeloids.app/ExpenseTrip"
   ];
   int32 page_size = 2 [(google.api.field_behavior) = OPTIONAL];
   string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
@@ -173,7 +309,7 @@ message ListExpensesResponse {
 }
 
 message GetExpenseRequest {
-  // Format: "trips/{trip_id}/expenses/{expense_id}"
+  // Format: "expenseTrips/{expense_trip_id}/expenses/{expense_id}"
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Expense"
@@ -181,10 +317,10 @@ message GetExpenseRequest {
 }
 
 message CreateExpenseRequest {
-  // Parent trip resource name: "trips/{trip_id}"
+  // Parent expense trip resource name: "expenseTrips/{expense_trip_id}"
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).type = "rappeloids.app/Trip"
+    (google.api.resource_reference).type = "rappeloids.app/ExpenseTrip"
   ];
   Expense expense = 2 [(google.api.field_behavior) = REQUIRED];
 }
@@ -195,7 +331,7 @@ message UpdateExpenseRequest {
 }
 
 message DeleteExpenseRequest {
-  // Format: "trips/{trip_id}/expenses/{expense_id}"
+  // Format: "expenseTrips/{expense_trip_id}/expenses/{expense_id}"
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/Expense"
@@ -203,9 +339,9 @@ message DeleteExpenseRequest {
 }
 
 message GetTripExpenseSummaryRequest {
-  // Parent trip resource name: "trips/{trip_id}"
+  // Parent expense trip resource name: "expenseTrips/{expense_trip_id}"
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference).type = "rappeloids.app/Trip"
+    (google.api.resource_reference).type = "rappeloids.app/ExpenseTrip"
   ];
 }
