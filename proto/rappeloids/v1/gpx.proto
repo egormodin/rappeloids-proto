@@ -55,7 +55,7 @@ service GpxService {
   rpc UpdateGpxTrack(UpdateGpxTrackRequest) returns (GpxTrack) {
     option (google.api.http) = {
       patch: "/v1/{gpx_track.name=canyons/*/gpxTracks/*}"
-      body: "gpx_track"
+      body: "*"
     };
     option (google.api.method_signature) = "gpx_track,update_mask";
   }
@@ -115,6 +115,9 @@ message Segment {
 
   // Waypoints / POIs associated with this segment.
   repeated Waypoint waypoints = 8 [(google.api.field_behavior) = OPTIONAL];
+
+  // Unique identifier of the segment (client-generated or server-assigned UUID).
+  string id = 9 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // A standalone point of interest / POI (e.g., Trailhead, R1, Anchor, Spring, Car Drop).
@@ -146,6 +149,9 @@ message Waypoint {
 
   // Waypoint category/type.
   Type type = 4 [(google.api.field_behavior) = OPTIONAL];
+
+  // Unique identifier of the waypoint (client-generated or server-assigned UUID).
+  string id = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Pre-computed geographic summary & elevation profile stats.
@@ -323,12 +329,85 @@ message DownloadGpxTrackResponse {
   bytes file_content = 3;
 }
 
+// A contiguous splice operation on a segment's ordered points list (analogous to Array.splice).
+message SegmentPointSplice {
+  // Zero-based start index in the segment's points list (evaluated sequentially across splices).
+  int32 start_index = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Number of existing points to remove starting at `start_index`.
+  int32 delete_count = 2 [(google.api.field_behavior) = OPTIONAL];
+
+  // Replacement or newly inserted points to place at `start_index`.
+  repeated GeoPoint inserted_points = 3 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Partial update to an existing segment's metadata and/or ordered points.
+message SegmentUpdate {
+  // Identifier of the existing segment to update.
+  string segment_id = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Segment containing updated metadata fields.
+  Segment segment = 2 [(google.api.field_behavior) = OPTIONAL];
+
+  // Field mask specifying which metadata fields on `segment` to update
+  // (supported paths: "name", "description", "type", "custom_type", "display_color").
+  google.protobuf.FieldMask update_mask = 3 [(google.api.field_behavior) = OPTIONAL];
+
+  // Sequential splice operations applied to the segment's points.
+  repeated SegmentPointSplice point_splices = 4 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Partial update to an existing waypoint.
+message WaypointUpdate {
+  // Identifier of the existing waypoint to update.
+  string waypoint_id = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Waypoint containing updated fields.
+  Waypoint waypoint = 2 [(google.api.field_behavior) = OPTIONAL];
+
+  // Field mask specifying which fields on `waypoint` to update
+  // (supported paths: "name", "description", "type", "point").
+  google.protobuf.FieldMask update_mask = 3 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Incremental diff of segment, point, and waypoint modifications for a GPX track.
+message GpxTrackDiff {
+  // New segments to add to the track.
+  repeated Segment added_segments = 1 [(google.api.field_behavior) = OPTIONAL];
+
+  // Updates to existing segments (metadata changes and/or point splices).
+  repeated SegmentUpdate updated_segments = 2 [(google.api.field_behavior) = OPTIONAL];
+
+  // IDs of existing segments to delete from the track.
+  repeated string deleted_segment_ids = 3 [(google.api.field_behavior) = OPTIONAL];
+
+  // Final ordered list of segment IDs when segment order changes
+  // (may reference both existing `segment_id`s and `id`s of `added_segments`).
+  repeated string segment_order_ids = 4 [(google.api.field_behavior) = OPTIONAL];
+
+  // New waypoints to add to the track.
+  repeated Waypoint added_waypoints = 5 [(google.api.field_behavior) = OPTIONAL];
+
+  // Updates to existing waypoints.
+  repeated WaypointUpdate updated_waypoints = 6 [(google.api.field_behavior) = OPTIONAL];
+
+  // IDs of existing waypoints to delete from the track.
+  repeated string deleted_waypoint_ids = 7 [(google.api.field_behavior) = OPTIONAL];
+
+  // Final ordered list of waypoint IDs when waypoint order changes.
+  repeated string waypoint_order_ids = 8 [(google.api.field_behavior) = OPTIONAL];
+}
+
 message UpdateGpxTrackRequest {
-  // The GPX track resource with updated fields.
+  // The GPX track resource identifying the target track (`gpx_track.name`) and any updated track metadata.
   GpxTrack gpx_track = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Field mask indicating which fields are to be updated (AIP-134).
+  // Field mask indicating which top-level metadata fields on `gpx_track` to update
+  // (supported paths: "display_name", "description", "author", "is_default", "is_private").
   google.protobuf.FieldMask update_mask = 2 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional incremental diff for segments, points, and waypoints.
+  GpxTrackDiff diff = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message DeleteGpxTrackRequest {
