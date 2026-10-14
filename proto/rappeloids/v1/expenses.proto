@@ -151,6 +151,10 @@ message ExpenseTrip {
 
   // Timestamp when the expense trip was created (AIP-142).
   google.protobuf.Timestamp create_time = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Optional mapping from a dependent participant user resource ("users/{dependent_id}")
+  // to the responsible participant user resource ("users/{payer_id}") who settles their debts.
+  map<string, string> settled_by = 10 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Expense resource following AIP-122.
