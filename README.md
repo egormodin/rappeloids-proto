@@ -17,8 +17,26 @@ rappeloids-proto/
  │              └── users.proto
  ├── src/
  │    └── index.ts
+ ├── swift/
+ │    └── Sources/
+ │         └── RappeloidsProto/
+ │              ├── ProtoWireCodec.swift
+ │              └── RappeloidsProtos.swift
+ ├── Package.swift
  ├── package.json
  └── buf.gen.yaml
+```
+
+## 🚀 Usage in iOS (`rappeloids-ios`)
+Add the Swift Package dependency in `Package.swift` or Xcode (`project.yml`):
+```swift
+dependencies: [
+    .package(url: "https://github.com/egormodin/rappeloids-proto.git", from: "1.6.3")
+]
+```
+Import the shared Protobuf models and binary wire codec directly:
+```swift
+import RappeloidsProto
 ```
 
 ## 🚀 Usage in Frontend (`rappeloids-frontend`)

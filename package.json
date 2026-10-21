@@ -1,6 +1,6 @@
 {
   "name": "@egormodin/rappeloids-proto",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "type": "module",
   "description": "Shared Protobuf definitions and TypeScript gRPC/Connect clients for Rappeloids",
   "publishConfig": {
@@ -23,11 +23,13 @@
   },
   "files": [
     "dist",
-    "proto"
+    "proto",
+    "swift",
+    "Package.swift"
   ],
   "scripts": {
     "generate": "npx @bufbuild/buf generate proto --include-imports",
-    "build": "npm run generate && npx tsc",
+    "build": "npm run generate && npx tsc && node ./scripts/verify-swift-protos.mjs",
     "lint": "npx @bufbuild/buf lint proto",
     "prepublishOnly": "npm run build"
   },
