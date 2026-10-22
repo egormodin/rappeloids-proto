@@ -3,7 +3,10 @@ dist/
 src/gen/
 .buf/
 .gradle/
+.idea/
+.build/
 build/
 *.log
 .DS_Store
+
 
