@@ -4028,6 +4028,7 @@ public struct ExpenseTrip: ProtoBinaryMessage, Identifiable {
     public var participants: [String] = []
     public var createTimeStorage: ProtoTimestamp? = nil
     public var settledBy: [String: String] = [:]
+    public var isDeleted: Bool = false
 
     public var participantsList: [String] { participants }
     public var participantsCount: Int { participants.count }
@@ -4051,7 +4052,8 @@ public struct ExpenseTrip: ProtoBinaryMessage, Identifiable {
         organizer: String = "",
         participants: [String] = [],
         createTime: ProtoTimestamp? = nil,
-        settledBy: [String: String] = [:]
+        settledBy: [String: String] = [:],
+        isDeleted: Bool = false
     ) {
         self.name = name
         self.title = title
@@ -4063,6 +4065,7 @@ public struct ExpenseTrip: ProtoBinaryMessage, Identifiable {
         self.participants = participants
         self.createTimeStorage = createTime
         self.settledBy = settledBy
+        self.isDeleted = isDeleted
     }
 
     public func encodeToProtoWire(writer: inout ProtoWireWriter) {
@@ -4076,6 +4079,7 @@ public struct ExpenseTrip: ProtoBinaryMessage, Identifiable {
         writer.writeRepeatedStringField(fieldNumber: 8, values: participants)
         writer.writeOptionalMessageField(fieldNumber: 9, message: createTimeStorage)
         writer.writeStringToStringMapField(fieldNumber: 10, mapEntries: settledBy)
+        writer.writeBoolField(fieldNumber: 11, value: isDeleted)
     }
 
     public mutating func decodeFieldFromProtoWire(
@@ -4096,6 +4100,7 @@ public struct ExpenseTrip: ProtoBinaryMessage, Identifiable {
         case (10, .lengthDelimited):
             let mapEntry = try reader.readStringToStringMapEntry()
             settledBy[mapEntry.key] = mapEntry.value
+        case (11, .varint): isDeleted = try reader.readBool()
         default:
             try reader.skipField(wireType: wireType)
         }
@@ -4509,12 +4514,17 @@ public struct UpdateExpenseTripRequest: ProtoBinaryMessage {
 
 public struct DeleteExpenseTripRequest: ProtoBinaryMessage {
     public var name: String = ""
+    public var permanent: Bool = false
 
     public init() {}
-    public init(name: String) { self.name = name }
+    public init(name: String, permanent: Bool = false) {
+        self.name = name
+        self.permanent = permanent
+    }
 
     public func encodeToProtoWire(writer: inout ProtoWireWriter) {
         writer.writeStringField(fieldNumber: 1, value: name)
+        writer.writeBoolField(fieldNumber: 2, value: permanent)
     }
 
     public mutating func decodeFieldFromProtoWire(
@@ -4522,9 +4532,12 @@ public struct DeleteExpenseTripRequest: ProtoBinaryMessage {
         wireType: ProtoWireType,
         reader: inout ProtoWireReader
     ) throws {
-        if fieldNumber == 1 && wireType == .lengthDelimited {
+        switch (fieldNumber, wireType) {
+        case (1, .lengthDelimited):
             name = try reader.readString()
-        } else {
+        case (2, .varint):
+            permanent = try reader.readBool()
+        default:
             try reader.skipField(wireType: wireType)
         }
     }

@@ -155,6 +155,9 @@ message ExpenseTrip {
   // Optional mapping from a dependent participant user resource ("users/{dependent_id}")
   // to the responsible participant user resource ("users/{payer_id}") who settles their debts.
   map<string, string> settled_by = 10 [(google.api.field_behavior) = OPTIONAL];
+
+  // Whether the expense trip has been soft-deleted.
+  bool is_deleted = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Expense resource following AIP-122.
@@ -292,6 +295,9 @@ message DeleteExpenseTripRequest {
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/ExpenseTrip"
   ];
+
+  // If true, permanently deletes a soft-deleted expense trip from the database (requires admin).
+  bool permanent = 2 [(google.api.field_behavior) = OPTIONAL];
 }
 
 message ListExpensesRequest {
