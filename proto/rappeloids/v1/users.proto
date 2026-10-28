@@ -54,6 +54,29 @@ service UsersService {
     };
     option (google.api.method_signature) = "name";
   }
+
+  // Authenticates the mobile demo user via email and password when demo login is enabled.
+  rpc AuthenticateDemoUser(AuthenticateDemoUserRequest) returns (AuthenticateDemoUserResponse) {
+    option (google.api.http) = {
+      post: "/v1/users:authenticateDemo"
+      body: "*"
+    };
+  }
+
+  // Gets the mobile demo user login configuration. Requires admin or boss.
+  rpc GetDemoLoginConfig(GetDemoLoginConfigRequest) returns (DemoLoginConfig) {
+    option (google.api.http) = {
+      get: "/v1/users/demoLoginConfig"
+    };
+  }
+
+  // Updates the mobile demo user login configuration. Requires admin or boss.
+  rpc UpdateDemoLoginConfig(UpdateDemoLoginConfigRequest) returns (DemoLoginConfig) {
+    option (google.api.http) = {
+      patch: "/v1/users/demoLoginConfig"
+      body: "config"
+    };
+  }
 }
 
 // User profile resource following AIP-122.
@@ -80,6 +103,7 @@ message User {
     ADMIN = 2;
     BOSS = 3;
     EDITOR = 4;
+    DEMO = 5;
   }
 
   // Theme preference.
@@ -202,4 +226,25 @@ message DeleteUserRequest {
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference).type = "rappeloids.app/User"
   ];
+}
+
+message AuthenticateDemoUserRequest {
+  string email = 1 [(google.api.field_behavior) = REQUIRED];
+  string password = 2 [(google.api.field_behavior) = REQUIRED];
+}
+
+message AuthenticateDemoUserResponse {
+  string auth_token = 1;
+  User user = 2;
+}
+
+message DemoLoginConfig {
+  bool enabled = 1;
+  string demo_email = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+message GetDemoLoginConfigRequest {}
+
+message UpdateDemoLoginConfigRequest {
+  DemoLoginConfig config = 1 [(google.api.field_behavior) = REQUIRED];
 }

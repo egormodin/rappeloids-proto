@@ -364,12 +364,14 @@ public struct User: ProtoBinaryMessage, Identifiable {
         case admin = 2
         case boss = 3
         case editor = 4
+        case demo = 5
 
         public static let ROLE_UNSPECIFIED: Role = .roleUnspecified
         public static let USER: Role = .user
         public static let ADMIN: Role = .admin
         public static let BOSS: Role = .boss
         public static let EDITOR: Role = .editor
+        public static let DEMO: Role = .demo
 
         public var number: Int32 { rawValue }
         public static func forNumber(_ rawNumber: Int32) -> Role? { Role(rawValue: rawNumber) }
@@ -712,6 +714,151 @@ public struct DeleteUserRequest: ProtoBinaryMessage {
     ) throws {
         if fieldNumber == 1 && wireType == .lengthDelimited {
             name = try reader.readString()
+        } else {
+            try reader.skipField(wireType: wireType)
+        }
+    }
+}
+
+public struct AuthenticateDemoUserRequest: ProtoBinaryMessage {
+    public var email: String = ""
+    public var password: String = ""
+
+    public init() {}
+    public init(email: String, password: String) {
+        self.email = email
+        self.password = password
+    }
+
+    public func encodeToProtoWire(writer: inout ProtoWireWriter) {
+        writer.writeStringField(fieldNumber: 1, value: email)
+        writer.writeStringField(fieldNumber: 2, value: password)
+    }
+
+    public mutating func decodeFieldFromProtoWire(
+        fieldNumber: Int,
+        wireType: ProtoWireType,
+        reader: inout ProtoWireReader
+    ) throws {
+        switch (fieldNumber, wireType) {
+        case (1, .lengthDelimited):
+            email = try reader.readString()
+        case (2, .lengthDelimited):
+            password = try reader.readString()
+        default:
+            try reader.skipField(wireType: wireType)
+        }
+    }
+}
+
+public struct AuthenticateDemoUserResponse: ProtoBinaryMessage {
+    public var authToken: String = ""
+    public var userStorage: User? = nil
+
+    public var user: User {
+        get { userStorage ?? User() }
+        set { userStorage = newValue }
+    }
+    public var hasUser: Bool { userStorage != nil }
+
+    public init() {}
+    public init(authToken: String = "", user: User? = nil) {
+        self.authToken = authToken
+        self.userStorage = user
+    }
+
+    public func encodeToProtoWire(writer: inout ProtoWireWriter) {
+        writer.writeStringField(fieldNumber: 1, value: authToken)
+        writer.writeOptionalMessageField(fieldNumber: 2, message: userStorage)
+    }
+
+    public mutating func decodeFieldFromProtoWire(
+        fieldNumber: Int,
+        wireType: ProtoWireType,
+        reader: inout ProtoWireReader
+    ) throws {
+        switch (fieldNumber, wireType) {
+        case (1, .lengthDelimited):
+            authToken = try reader.readString()
+        case (2, .lengthDelimited):
+            userStorage = try reader.readMessage()
+        default:
+            try reader.skipField(wireType: wireType)
+        }
+    }
+}
+
+public struct DemoLoginConfig: ProtoBinaryMessage {
+    public var enabled: Bool = false
+    public var demoEmail: String = ""
+
+    public init() {}
+    public init(enabled: Bool = false, demoEmail: String = "") {
+        self.enabled = enabled
+        self.demoEmail = demoEmail
+    }
+
+    public func encodeToProtoWire(writer: inout ProtoWireWriter) {
+        writer.writeBoolField(fieldNumber: 1, value: enabled)
+        writer.writeStringField(fieldNumber: 2, value: demoEmail)
+    }
+
+    public mutating func decodeFieldFromProtoWire(
+        fieldNumber: Int,
+        wireType: ProtoWireType,
+        reader: inout ProtoWireReader
+    ) throws {
+        switch (fieldNumber, wireType) {
+        case (1, .varint):
+            enabled = try reader.readBool()
+        case (2, .lengthDelimited):
+            demoEmail = try reader.readString()
+        default:
+            try reader.skipField(wireType: wireType)
+        }
+    }
+}
+
+public struct GetDemoLoginConfigRequest: ProtoBinaryMessage {
+    public init() {}
+    public static func getDefaultInstance() -> GetDemoLoginConfigRequest { GetDemoLoginConfigRequest() }
+
+    public func encodeToProtoWire(writer: inout ProtoWireWriter) {}
+
+    public mutating func decodeFieldFromProtoWire(
+        fieldNumber: Int,
+        wireType: ProtoWireType,
+        reader: inout ProtoWireReader
+    ) throws {
+        try reader.skipField(wireType: wireType)
+    }
+}
+
+public struct UpdateDemoLoginConfigRequest: ProtoBinaryMessage {
+    public var configStorage: DemoLoginConfig? = nil
+
+    public var config: DemoLoginConfig {
+        get { configStorage ?? DemoLoginConfig() }
+        set { configStorage = newValue }
+    }
+    public var hasConfig: Bool { configStorage != nil }
+
+    public init() {}
+    public init(config: DemoLoginConfig) {
+        self.configStorage = config
+    }
+
+    public func encodeToProtoWire(writer: inout ProtoWireWriter) {
+        writer.writeOptionalMessageField(fieldNumber: 1, message: configStorage)
+    }
+
+    public mutating func decodeFieldFromProtoWire(
+        fieldNumber: Int,
+        wireType: ProtoWireType,
+        reader: inout ProtoWireReader
+    ) throws {
+        if fieldNumber == 1 && wireType == .lengthDelimited {
+            configStorage = try reader.readMessage()
         } else {
             try reader.skipField(wireType: wireType)
         }
